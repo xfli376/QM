@@ -1,2 +1,2 @@
 # QM 
-The Latex files for QM2024 lecture
+The Latex files for Quantum Mechanics （QM2024） lecture
