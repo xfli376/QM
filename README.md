@@ -1,2 +1,2 @@
-# lecture
-The lectures that I 'm teaching
+# QM 
+The Latex files for QM2024 lecture
