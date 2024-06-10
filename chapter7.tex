@@ -1,0 +1,1656 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame} [plain]
+    \frametitle{}
+    %\Background[2] 
+    \begin{center}
+    { {\huge 第七章：自旋与全同粒子 }}
+    \end{center}  
+    \addtocounter{framenumber}{-1}   
+\end{frame}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{自旋 }
+\subsection{电子自旋}
+\begin{frame}
+  \frametitle{斯特恩和盖拉赫实验}
+  1921年，Stern-Gerlach发现处于s态的银原子（类氢原子），经过非均匀磁场后分成两束。 磁矩在z方向的投影为一个玻尔磁子
+\begin{figure}[htbp]
+  \centering
+  \includegraphics[width=0.8\textwidth]{figs/sgexp.png}
+  %\caption{}
+    %\label{fig:}
+\end{figure}
+\end{frame} 
+
+\begin{frame}[label=current]
+  \frametitle{}
+\emf[分析：] 设氢原子磁矩为$\vec{M} $, 外磁场为$\vec{B}$，\\
+根据经典理论,磁场中氢原子的势能
+\[ U= - \vec{M} \cdot \vec{B} = -MB_z \cos\theta \] 
+氢原子受力
+\[ F= -\frac{\partial U}{\partial z } = -M \frac{\partial B_z}{\partial z }  \cos\theta \] 
+原子磁矩方向不定，$\cos\theta \in (-1, 1)$，不应出现两个峰 
+
+~~\\ 
+根据“量子理论”：角动量简并度$2l+1$,去简并产生“2“，有
+\[2l+1 =2 \implies l=\frac{1}{2}\]
+这是不可能的！s态氢原子有$l=0$
+\end{frame} 
+
+\begin{frame}[label=current]
+  \frametitle{}
+如果有 $ l=\dfrac{1}{2}  $ , 则有磁量子数
+\[ m=-l, -(l-1), \cdots, (l-1), +l, \implies m=\pm \frac{1}{2}\]
+角动量投影
+\[\implies L_z = m\hbar = \pm \frac{1}{2}\hbar\]
+
+~~\\ 
+实验证实存在角动量：$\pm \dfrac{1}{2}\hbar$,理论上却没有！
+
+~~\\ 
+怎么办？ 修改理论！
+\end{frame} 
+
+
+\begin{frame}
+  \frametitle{自旋假说}
+1925年，乌伦贝克和哥德斯密特假设：电子除了具有轨道角动量$L$外，还有一个新的角动量$S$（自旋角动量）\\
+
+（1）自旋角量子数 
+\[s = \frac{1}{2} \quad \text{对应：} l= 0,1,2,\cdots n-1\]
+
+（2）自旋磁量子数 
+\[m_s = \pm \frac{1}{2} \quad \text{对应：} m= 0,\pm 1,\pm_2,\cdots \pm l\]
+
+则自旋角动量的本征值为
+\[\begin{aligned}
+  S^2 &= s(s+1) \hbar^2 = \frac{3}{4} \hbar^2 \\
+  S_z &= m_s \hbar = \pm \frac{1}{2} \hbar \\
+\end{aligned}\]
+\end{frame} 
+
+\begin{frame}[label=current]
+  \frametitle{}
+（3）自旋磁矩与自旋角动量的关系为
+\[ M_S = - \frac{e}{\mu} S\]
+磁矩的Z轴的投影大小为一个玻尔磁子
+\[ M_{S_z} = - \frac{e}{\mu} S_z = \mp \frac{e}{2\mu } \hbar = \mp M_{B} \]
+注意：轨道磁矩与轨道角动量的关系为
+\[ M_L = - \frac{e}{2\mu} L\]
+\end{frame} 
+
+\begin{frame}[label=current]
+  \frametitle{}
+\begin{figure}[htbp]
+  \centering
+  \includegraphics[width=0.99\textwidth]{figs/spin10.png}
+  %\caption{}
+    %\label{fig:}
+\end{figure}
+${\color{red}\star}~$ 自旋是一种没有经典对应的纯量子效应，是粒子的固有属性。
+\end{frame} 
+
+
+\begin{frame}
+  \frametitle{自旋算符}
+这是一个可观测物理量，用厄密算符$\hat{S}$描述，称为自旋算符 
+
+~~\\ 
+(1) 对易关系
+\[
+\begin{aligned}
+  &\hat{S}\times \hat{S} = i\hbar \hat{S} \\
+  &[S_\alpha, S_\beta ] = \varepsilon_{\alpha\beta\gamma} i\hbar S_\gamma  \\
+  &[S_\alpha, S^2] =0
+\end{aligned}  
+\]
+\end{frame} 
+
+\begin{frame}[label=current]
+  \frametitle{}
+（2）本征方程 \\
+
+由于$[S_z, S^2] =0$, 它们有共同本征矢，记为
+$$\left\vert sm_s  \right\rangle \implies \left\{\begin{aligned}
+  \left\vert \uparrow \right\rangle = \left\vert +\right\rangle &= \left\vert \frac{1}{2}\frac{1}{2} \right\rangle \\ 
+  \left\vert \downarrow \right\rangle = \left\vert - \right\rangle &= \left\vert \frac{1}{2}-\frac{1}{2} \right\rangle \\ 
+\end{aligned} \right.$$
+本征方程（得解）
+$$\left\{\begin{aligned}
+  S^2 \left\vert sm_s \right\rangle &= s(s+1)\hbar^2\left\vert sm_s \right\rangle \\ 
+  S_z \left\vert sm_s \right\rangle &= m_s\hbar \left\vert sm_s \right\rangle 
+\end{aligned} \right.$$
+\end{frame} 
+
+\begin{frame}[label=current]
+  \frametitle{}
+  （3）自旋表象($S^2,S_z$) \\
+  本征矢 $\left\vert \uparrow \right\rangle$ 和 $\left\vert \downarrow \right\rangle$ 构成正交归一完备系, 任意态函数可在其上展开
+  \[ \left\vert \psi \right\rangle = a  \left\vert \uparrow \right\rangle + b \left\vert \downarrow \right\rangle\]
+  因此,有矩阵表示
+  \[ \left\vert \psi \right\rangle = \begin{pmatrix}
+   a\\
+   b
+  \end{pmatrix}\]
+  本征矢在自身表象的矩阵表示
+  \[ \left\vert \uparrow \right\rangle = \begin{pmatrix}
+    1\\
+    0
+   \end{pmatrix}, \qquad \left\vert \downarrow \right\rangle = \begin{pmatrix}
+    0\\
+    1
+   \end{pmatrix}\]
+\end{frame} 
+
+\begin{frame}[label=current]
+  \frametitle{}
+  根据算符理论，算符在其自身表象中为对角矩阵，矩阵的维度是本征函数的数目，对角元是本征值, 得自旋算符的矩阵表示
+  \[\hat{S}^2 = \frac{3}{4}\hbar^2\begin{pmatrix}
+    1 & 0\\
+    0 & 1
+   \end{pmatrix}, \qquad \hat{S}_z = \frac{1}{2}\hbar\begin{pmatrix}
+    1 & 0\\
+    0 & -1
+   \end{pmatrix}\]
+\end{frame} 
+
+\begin{frame}[label=current]
+  \frametitle{}
+\例[1]{试证明
+\[ \hat{S}_z = \frac{\hbar}{2}\left(\left\vert \uparrow \right\rangle\left\langle  \uparrow\right\vert - \left\vert \downarrow \right\rangle\left\langle  \downarrow\right\vert\right), \quad \hat{S}^2_z = \frac{\hbar^2}{4} I\]
+}
+\证 (1) 先计算矩阵
+\[ \begin{aligned}
+  \begin{pmatrix}
+    1 & 0\\
+    0 & -1
+   \end{pmatrix} &=  \begin{pmatrix}
+    1 & 0\\
+    0 & 0
+   \end{pmatrix}  -
+   \begin{pmatrix}
+    0 & 0\\
+    0 & 1
+   \end{pmatrix}\\ 
+   &= \begin{pmatrix}
+    1 \\
+    0 
+   \end{pmatrix} \begin{pmatrix}
+    1 & 0 \\ 
+   \end{pmatrix} - \begin{pmatrix}
+    0 \\
+    1 
+   \end{pmatrix} \begin{pmatrix}
+    0 & 1 \\ 
+   \end{pmatrix} \\
+   &= \left\vert \uparrow \right\rangle\left\langle  \uparrow\right\vert - \left\vert \downarrow \right\rangle\left\langle  \downarrow\right\vert
+\end{aligned}\]
+\[\hat{S}_z = \frac{1}{2}\hbar\begin{pmatrix}
+  1 & 0\\
+  0 & -1
+ \end{pmatrix} = \frac{\hbar}{2}\left(\left\vert \uparrow \right\rangle\left\langle  \uparrow\right\vert - \left\vert \downarrow \right\rangle\left\langle  \downarrow\right\vert\right)\]
+\end{frame} 
+
+\begin{frame}[label=current]
+  \frametitle{}
+(2) 先做本征矢计算
+\[ \begin{aligned}
+  &\left[\left\vert \uparrow \right\rangle\left\langle  \uparrow\right\vert - \left\vert \downarrow \right\rangle\left\langle  \downarrow\right\vert\right]\cdot \left[\left\vert \uparrow \right\rangle\left\langle  \uparrow\right\vert - \left\vert \downarrow \right\rangle\left\langle \downarrow\right\vert\right] \\
+  &= \left\vert \uparrow \right\rangle\left\langle  \uparrow\left\vert \uparrow \right\rangle\left\langle  \uparrow\right\vert\right. 
+  - \left\vert \uparrow \right\rangle\left\langle \uparrow \left\vert \downarrow \right\rangle\left\langle  \downarrow\right\vert\right. 
+  - \left\vert \downarrow \right\rangle\left\langle \downarrow \left\vert \uparrow \right\rangle\left\langle  \uparrow\right\vert\right.
+  + \left\vert \downarrow \right\rangle\left\langle \downarrow \left\vert \downarrow \right\rangle\left\langle \downarrow\right\vert\right. \\
+  &=\left\vert \uparrow \right\rangle\left\langle  \uparrow\right\vert + \left\vert \downarrow \right\rangle\left\langle  \downarrow\right\vert  \\
+  &= \begin{pmatrix}
+    1 & 0\\
+    0 & 1
+   \end{pmatrix} =I 
+\end{aligned}\]
+\[ \begin{aligned}\hat{S}^2_z &= \hat{S}_z\cdot\hat{S}_z \\
+  &= \frac{\hbar^2}{4} \left[\left\vert \uparrow \right\rangle\left\langle  \uparrow\right\vert - \left\vert \downarrow \right\rangle\left\langle  \downarrow\right\vert\right]\cdot \left[\left\vert \uparrow \right\rangle\left\langle  \uparrow\right\vert - \left\vert \downarrow \right\rangle\left\langle \downarrow\right\vert\right] ~\qquad \qquad \qquad \quad \qquad\\
+  &= \frac{\hbar^2}{4} I \end{aligned}\]
+\end{frame} 
+
+\begin{frame}[label=current]
+  \frametitle{}
+  \例[2]{试证明反对易关系
+  \[ \left\{\hat{S}_\alpha, \hat{S}_\beta\right\}\equiv \hat{S}_\alpha \hat{S}_\beta + \hat{S}_\beta \hat{S}_\alpha = 0 \]
+  }
+  \证
+  代入对易关系 $ \hat{S}_y \hat{S}_z - \hat{S}_z \hat{S}_y = i\hbar S_x  $, 有 
+  \[ \begin{aligned}
+    \hat{S}_x \hat{S}_y + \hat{S}_y \hat{S}_x  &=\frac{1}{i\hbar}(\hat{S}_y \hat{S}_z - \hat{S}_z \hat{S}_y)\hat{S}_y + \frac{1}{i\hbar}\hat{S}_y(\hat{S}_y \hat{S}_z - \hat{S}_z \hat{S}_y)  \\ 
+    &= \frac{1}{i\hbar}(\hat{S}_y \hat{S}_z \hat{S}_y -   \hat{S}_z \hat{S}_y\hat{S}_y + \hat{S}_y \hat{S}_y \hat{S}_z - \hat{S}_y \hat{S}_z \hat{S}_y)\\
+    &= \frac{1}{i\hbar}(\hat{S}_y \hat{S}_z \hat{S}_y -   \hat{S}_z \frac{\hbar^2}{4} I + \frac{\hbar^2}{4} I \hat{S}_z - \hat{S}_y \hat{S}_z \hat{S}_y) \\
+    &= 0
+  \end{aligned}\]
+\end{frame} 
+
+\begin{frame}[label=current]
+  \frametitle{}
+  \例[3]{试证明算符$S_x, S_y$在$S^2 S_z$表象有如下矩阵表示
+  \[\hat{S}_x = \frac{1}{2}\hbar\begin{pmatrix}
+    0 & 1\\
+    1 & 0
+   \end{pmatrix}, \qquad \hat{S}_y = \frac{1}{2}\hbar\begin{pmatrix}
+    0 & -i\\
+    i & 0
+   \end{pmatrix}\]
+  }
+  \证 $S_x$是厄密矩阵,有 
+  \[\hat{S}_x = \frac{1}{2}\hbar\begin{pmatrix}
+    a & c\\
+    b & d
+   \end{pmatrix} = \frac{1}{2}\hbar\begin{pmatrix}
+    a^* & b^*\\
+    c^* & d^*
+   \end{pmatrix} \]
+   可知: $a, d$是实数, $c=b^*$,即
+   \[\hat{S}_x = \frac{1}{2}\hbar\begin{pmatrix}
+    a & b^*\\
+    b & d
+   \end{pmatrix}\]
+\end{frame} 
+
+\begin{frame}[label=current]
+  \frametitle{}
+代入反对易关系
+\[\begin{aligned}
+  0&= \hat{S}_x \hat{S}_z + \hat{S}_z \hat{S}_x   \\ 
+  &= \frac{1}{4}\hbar^2 \left\{\begin{pmatrix}
+    a & b^*\\
+    b & d
+   \end{pmatrix} \begin{pmatrix}
+    1 & 0\\
+    0 & -1
+   \end{pmatrix} + \begin{pmatrix}
+    1 & 0\\
+    0 & -1
+   \end{pmatrix} \begin{pmatrix}
+    a & b^*\\
+    b & d
+   \end{pmatrix}  \right\} \\
+   &= \frac{1}{4}\hbar^2 \begin{pmatrix}
+    2a & 0\\
+    0 & -2d
+   \end{pmatrix}  \\
+   \implies & a = d =0
+\end{aligned}\]
+因此
+\[\hat{S}_x = \frac{1}{2}\hbar\begin{pmatrix}
+  0 & b^*\\
+  b & 0
+ \end{pmatrix}\]
+\end{frame} 
+
+\begin{frame}[label=current]
+  \frametitle{}
+代入 $\hat{S}^2_x = \frac{\hbar^2}{4} I $,得
+\[\begin{aligned}
+  \frac{\hbar^2}{4} I &= \hat{S}^2_x \\
+&= \frac{\hbar^2}{4}\hbar\begin{pmatrix}
+  0 & b^*\\
+  b & 0
+ \end{pmatrix} \cdot\begin{pmatrix}
+  0 & b^*\\
+  b & 0
+ \end{pmatrix} \\
+ &= \frac{\hbar^2}{4} \begin{pmatrix}
+  \left\vert b\right\vert^2 & 0\\
+  0 & \left\vert b\right\vert^2
+ \end{pmatrix}
+\end{aligned}\]
+得 $$ \left\vert b\right\vert^2 =1 $$
+为简单计,取 $ b =1 $ ,得 
+\[\hat{S}_x = \frac{1}{2}\hbar\begin{pmatrix}
+  0 & 1\\
+  1 & 0
+ \end{pmatrix}\]
+\end{frame} 
+
+\begin{frame}[label=current]
+  \frametitle{}
+代入对易关系 $ \hat{S}_z \hat{S}_x - \hat{S}_x \hat{S}_z = i\hbar S_y  $, 有
+\[\begin{aligned}
+  S_y &= \frac{1}{i\hbar} \left[\hat{S}_z \hat{S}_x - \hat{S}_x \hat{S}_z\right] \\
+  &= \frac{1}{i\hbar} \frac{1}{4}\hbar^2 \left\{\begin{pmatrix}
+    1 & 0\\
+    0 & -1
+   \end{pmatrix}\begin{pmatrix}
+    0 & 1\\
+    1 & 0
+   \end{pmatrix}- \begin{pmatrix}
+    0 & 1\\
+    1 & 0
+   \end{pmatrix} \begin{pmatrix}
+    1 & 0\\
+    0 & -1
+   \end{pmatrix}\right\} \\
+   &=\frac{1}{4i} \hbar \left\{\begin{pmatrix} 
+    0 & 1\\
+    -1 & 0
+   \end{pmatrix}  - \begin{pmatrix} 
+    0 & -1\\
+    1 & 0
+   \end{pmatrix} \right\} \\
+   &= \frac{1}{2}\hbar \begin{pmatrix} 
+    0 & -i\\
+    i & 0
+   \end{pmatrix}
+\end{aligned}\]
+\end{frame} 
+
+\begin{frame}[label=current]
+  \frametitle{泡利矩阵}
+  引入泡利矩阵, 自旋算符
+  \[\hat{S}^2 = \frac{3}{4}\hbar^2\begin{pmatrix}
+    1 & 0\\
+    0 & 1
+   \end{pmatrix} \quad \hat{S}_x = \frac{1}{2}\hbar\begin{pmatrix}
+    0 & 1\\
+    1 & 0
+   \end{pmatrix}\quad \hat{S}_y = \frac{1}{2}\hbar\begin{pmatrix}
+    0 & -i\\
+    i & 0
+   \end{pmatrix}  \quad \hat{S}_z = \frac{1}{2}\hbar\begin{pmatrix}
+    1 & 0\\
+    0 & -1
+   \end{pmatrix} \]
+   可表示为 
+   \[\quad \hat{S}^2 = \frac{3}{4}\hbar^2 I \quad \hat{S}_x = \frac{1}{2}\hbar\sigma _x \quad \hat{S}_y = \frac{1}{2}\hbar \sigma _y  \quad \hat{S}_z = \frac{1}{2}\hbar \sigma _z \]
+   显然, 存在反对易关系
+   \[\sigma _\alpha \sigma _\beta + \sigma _\beta \sigma _\alpha =0 \]
+\end{frame} 
+
+
+\subsection{电子波函数}
+\begin{frame}[label=current]
+  \frametitle{电子波函数}
+  电子既然具有自旋，应增加一个自由度，可用$S_z$表述，构成力学量完全集的力学量数目变为4个，波函数为：
+  \[ \Psi(\vec{q},t) = \Psi(\vec{r},S_z, t) = \Psi(x,y,z,S_z, t) \]
+  在自旋表象展开
+  \[\left\vert \Psi(x,y,z,S_z, t) \right\rangle  = a \left\vert \uparrow \right\rangle + b \left\vert \downarrow \right\rangle \]
+  取定本征值
+  \[\left\vert \Psi(x,y,z,S_z, t) \right\rangle  = \begin{pmatrix}
+    a\\
+    b 
+   \end{pmatrix} = \begin{pmatrix}
+    \left\vert \Psi(x,y,z,~~\frac{\hbar}{2}, t) \right\rangle\\
+    \left\vert \Psi(x,y,z,-\frac{\hbar}{2}, t) \right\rangle
+   \end{pmatrix} = \begin{pmatrix}
+    \left\vert \Psi _{~~\frac{\hbar}{2}}(x,y,z,t) \right\rangle\\
+    \left\vert \Psi_{-\frac{\hbar}{2}}(x,y,z,t) \right\rangle
+   \end{pmatrix}  \]
+\end{frame} 
+
+\begin{frame}[label=current]
+  \frametitle{}
+自旋向上的概率密度
+\[ \omega _{\frac{\hbar}{2}} = \left\vert a\right\vert^2 =\left\vert\Psi _{\frac{\hbar}{2}}(x,y,z,t)\right\vert^2\]
+自旋向下的概率密度
+\[ \omega _{-\frac{\hbar}{2}} = \left\vert b\right\vert^2 =\left\vert\Psi _{-\frac{\hbar}{2}}(x,y,z,t)\right\vert^2\]
+总概率归一
+\[ \left\vert\Psi _{\frac{\hbar}{2}}(x,y,z,t)\right\vert^2+ \left\vert\Psi _{-\frac{\hbar}{2}}(x,y,z,t)\right\vert^2 =1\]
+表明：电子在时空某点取自旋向上或向下的概率和为1
+\end{frame} 
+
+\begin{frame}[label=current]
+  \frametitle{}
+同理，球坐标系下，有
+\[\left\vert \Psi\right\rangle = \sum_k a_k \left\vert nlmm_s\right\rangle \]
+量子数组$\{n,l,m,m_s\}$有任何不同，即代表一个不同的量子态$k$
+\end{frame} 
+
+\begin{frame}[label=current]
+  \frametitle{}
+\例[4]{设氢原子处于如下状态, 
+\[\left\vert \Psi\right\rangle = \frac{1}{4} \left\vert 100\frac{1}{2}\right\rangle + \frac{\sqrt{5} }{4} \left\vert 100-\frac{1}{2}\right\rangle + \frac{\sqrt{7} }{4} \left\vert 210-\frac{1}{2}\right\rangle + \frac{\sqrt{3}  }{4} \left\vert 210\frac{1}{2}\right\rangle \]
+求（1）电子处于自旋向上的概率\\
+(2)电子处于自旋向下时,角动量$\hat{L}^2$的可能值及平均值}
+\解 波函数已归一化。\\
+（1）第一项和第四项电子自旋向上 \\
+因此自旋向上的概率为
+\[\omega _{\frac{1}{2}} = (\frac{1}{4})^2 + (\frac{\sqrt{3 } }{4})^2 = \frac{1}{4}\]
+\end{frame} 
+
+\begin{frame}[label=current]
+  \frametitle{}
+(2)第二项和第三项电子自旋向下，
+\begin{table}[htbp]
+  \centering\begin{tabular}{cccc}
+    第二项 & $l= 0$ & $\hat{L}^2 = l(l+1)\hbar^2 = 0$ & $\omega _{l=0} = \frac{5}{16}$ \\
+    \\
+    第三项 & $l= 1$ & $\hat{L}^2 = l(l+1)\hbar^2 = 2\hbar^2$ & $\omega _{l=1} = \frac{7}{16}$ \\
+  \end{tabular}
+  %\caption{<caption>}
+  %\label{<label>}
+\end{table}
+平均值
+$$\overline{\hat{L}^2} =2\hbar^2 \times \frac{7}{16} = \frac{7}{8}\hbar^2$$
+\end{frame} 
+
+\begin{frame}[label=current]
+  \frametitle{}
+  既然波函数增加了一个自由度，算符也一样
+  \[ \hat{F} =f (\hat{r},\hat{p}) \implies \hat{F} =f (\hat{r},\hat{p}, \hat{S}_z)  \]
+代入矩阵形式$\hat{S}_z = \frac{\hbar}{2} \begin{pmatrix} 1 &  0 \\ 0 & -1 \end{pmatrix}$,得 
+\[ \hat{F} = \begin{pmatrix} F_{11} &  F_{12} \\ F_{21} & F_{22} \end{pmatrix}\]
+\end{frame} 
+
+\begin{frame}[label=current]
+  \frametitle{}
+算符的平均值
+\[ \begin{aligned}
+\overline{F} &= \int \begin{pmatrix} \Psi ^* _\frac{\hbar}{2} &  \Psi^* _{-\frac{\hbar}{2}} \end{pmatrix} \begin{pmatrix} F_{11} &  F_{12} \\ F_{21} & F_{22} \end{pmatrix} \begin{pmatrix} \Psi _\frac{\hbar}{2} \\  \Psi _{-\frac{\hbar}{2}} \end{pmatrix} d \tau \\ 
+&= \int \left[ \Psi ^* _\frac{\hbar}{2} F_{11} \Psi _\frac{\hbar}{2}  
++ \Psi ^* _{\frac{\hbar}{2}} F_{12} \Psi _{-\frac{\hbar}{2}} 
++ \Psi ^* _{-\frac{\hbar}{2}} F_{21} \Psi _{\frac{\hbar}{2}} 
++ \Psi ^* _{-\frac{\hbar}{2}} F_{22} \Psi _{-\frac{\hbar}{2}}  \right]d\tau
+\end{aligned} 
+  \]
+第一项是电子只能自旋向上的情况, 第四项是电子只能自旋向下的情况,中间两项源于电子既自旋向上又自旋向下的叠加效应。
+\end{frame} 
+
+\begin{frame}[label=current]
+  \frametitle{自旋波函数}
+电子哈密顿$ H (\vec{r},S_z)  $, 如果轨道与自旋没有耦合，有 
+\[ H (\vec{r},S_z) = H (\vec{r}) + H (S_z)\]
+此时，电子波函数可以写成
+\[\Psi(\vec{r}, S_z, t)  = \Psi(\vec{r}, t)  \chi (S_z, t) \] 
+其中 $\chi (S_z, t)$描述电子的自旋状态，称为自旋波函数。
+\end{frame} 
+
+\begin{frame}[label=current]
+  \frametitle{}
+在$S^2 S_z$表象展开，有
+\[ \left \vert\chi (S_z) \right\rangle = a \left\vert \uparrow \right\rangle + b \left\vert \downarrow \right\rangle \]
+分别取$S_z=\pm \frac{1}{2}\hbar$，有
+\[ 
+  \left \vert\chi (\frac{1}{2}\hbar) \right\rangle  =\left \vert\chi _{\frac{1}{2}} \right\rangle= \begin{pmatrix}
+  1 \\
+  0 
+ \end{pmatrix} = \left\vert \uparrow \right\rangle = \left\vert + \right\rangle = \left\vert \frac{1}{2} \frac{1}{2} \right\rangle \equiv \alpha \]
+ \[ 
+  \left \vert\chi (-\frac{1}{2}\hbar) \right\rangle  =\left \vert\chi _{-\frac{1}{2}} \right\rangle= \begin{pmatrix}
+  0 \\
+  1 
+ \end{pmatrix} = \left\vert \downarrow \right\rangle = \left\vert - \right\rangle = \left\vert \frac{1}{2} -\frac{1}{2} \right\rangle  \equiv \beta\]
+ 氢原子波函数
+ \[\Psi _{nlmm_s}  = \psi _{nlm}  \chi _{m_z} = \begin{pmatrix}
+  \psi _{nlm} \chi _{+\frac{1}{2}} \\
+  \psi _{nlm} \chi _{-\frac{1}{2}} 
+ \end{pmatrix}  = \begin{pmatrix}
+  \psi _{+} \\
+  \psi _{-} 
+ \end{pmatrix} = \begin{pmatrix}
+  \psi _{1} \\
+  \psi _{2} 
+ \end{pmatrix}\] 
+\end{frame} 
+
+\subsection{磁场中原子的光谱劈裂}
+
+\begin{frame}
+  \frametitle{磁场中原子的光谱劈裂}
+   \例[5]{不考虑旋-轨耦合，求磁场中类氢原子的能级}
+  \解 取磁场方向为z方向，氢原子的附加能
+  \[ \begin{aligned}
+   U_B &= -\vec{M}\cdot \vec{B} \\ 
+   &= -(\vec{M}_L +\vec{M}_S )\cdot \vec{B} \\
+   &= \frac{e}{2 \mu } (L_z + 2S_z)B
+  \end{aligned} \]
+  哈密顿
+  \[H= - \frac{\hbar^2}{2\mu} \nabla^2 +V(r) + U_B\]
+  本征函数
+  \[\Psi _{nlmm_s}  = \psi _{nlm}  \chi _{m_s} = \begin{pmatrix}
+    \psi _{+} \\
+    \psi _{-} 
+   \end{pmatrix} \]
+\end{frame} 
+
+\begin{frame}
+  \frametitle{}
+代入定态薛定谔方程, 有
+\[ 
+\begin{aligned}
+  \begin{pmatrix}
+    - \frac{\hbar^2}{2\mu} \nabla^2 +V(r) + \frac{e}{2 \mu } (L_z + 2S_z)B 
+   \end{pmatrix}  \psi _{nlm}  \chi _{m_s} = E \psi _{nlm}  \chi _{m_s}  
+\end{aligned}
+\]
+取 $S_z = \pm \frac{1}{2} \hbar, m_s = \pm \frac{1}{2} $,得两个方程
+\[ 
+\begin{aligned}
+  \begin{pmatrix}
+    - \frac{\hbar^2}{2\mu} \nabla^2 +V(r) + \frac{e}{2 \mu } (L_z + \hbar)B 
+   \end{pmatrix} \psi _{+} = E_{+} \psi _{+} 
+\end{aligned}
+\]
+
+\[ 
+\begin{aligned}
+  \begin{pmatrix}
+    - \frac{\hbar^2}{2\mu} \nabla^2 +V(r) + \frac{e}{2 \mu } (L_z - \hbar)B 
+   \end{pmatrix} \psi _{-} = E_{-} \psi _{-} 
+\end{aligned}
+\]
+\end{frame} 
+
+\begin{frame}[label=current]
+  \frametitle{}
+统一写成
+\[ 
+\begin{aligned}
+  \begin{pmatrix}
+    - \frac{\hbar^2}{2\mu} \nabla^2 +V(r) + \frac{e}{2 \mu } (L_z \pm \hbar)B 
+   \end{pmatrix} \psi _{nlm}  = E \psi _{nlm}
+\end{aligned}
+\]
+代入$L_z = m \hbar$
+\begin{equation} \label{eq:enl}
+\begin{aligned}
+  \begin{pmatrix}
+    - \frac{\hbar^2}{2\mu} \nabla^2 +V(r)\end{pmatrix} \psi _{nlm} + \frac{eB}{2 \mu } (m \hbar \pm \hbar) 
+    \psi _{nlm}  = E \psi _{nlm}
+\end{aligned}
+\end{equation}
+若无磁场（$B=0$），则是中心势场问题，能量为
+\[ E_n = - \frac{\mu e_s^4}{2 \hbar^2 n^2}\]
+对于类氢原子，离子实对原子核有\emf[库仑屏蔽]作用，体系的能级与角量子数相关，记为$E_{nl}$ （见变分法），方程变为
+\[
+\begin{aligned}
+  \begin{pmatrix}
+    - \frac{\hbar^2}{2\mu} \nabla^2 +V(r) 
+   \end{pmatrix} \psi _{nlm}  = E_{nl} \psi _{nlm}
+\end{aligned}
+\]
+\end{frame} 
+
+\begin{frame}[label=current]
+  \frametitle{}
+  代回方程[\ref{eq:enl}]，有
+  \[\begin{aligned}
+    E_{nl} \psi _{nlm} + \frac{eB}{2 \mu } (m \hbar \pm \hbar) 
+      \psi _{nlm}  = E \psi _{nlm}
+  \end{aligned}\]
+  得能级
+  \[ E = E_{nl} + \frac{eB\hbar}{2 \mu } (m  \pm 1)  \]
+  磁场导致类氢原子能级与磁量子相关，记为 $ E = E_{nlm}  $  
+\end{frame} 
+
+\begin{frame}[label=current]
+  \frametitle{斯特恩－盖拉赫实验}
+  \分 （1）当类氢原子处于s态时($l=0, m=0$)，能级为 
+  \[E_{nlm} = E_{nl} + \frac{eB\hbar}{2 \mu } (m  \pm 1) = E_{n} \pm \frac{eB\hbar}{2 \mu } = E_{n} \pm M_B B\]
+  一个能级分裂成二个能级，正是斯特恩－盖拉赫实验结果
+\end{frame} 
+
+\begin{frame}[label=current]
+  \frametitle{塞曼效应}
+（2）当类氢原子处于非s态时($l\ne 0, m=0,\pm 1, \pm+2, \cdots \pm l$)，能级为 
+\[E_{nlm} = E_{nl} + \frac{eB\hbar}{2 \mu } (m  \pm 1) \]
+光谱频率为
+\[
+  \begin{aligned}
+    \omega &= \frac{E_{nlm} - E_{n'l'm'}}{\hbar} \\
+    &=  \frac{E_{nl} - E_{n'l'}}{\hbar} + \frac{eB}{2 \mu } (m-m')\\
+    &= \omega _0 + \frac{eB}{2 \mu } \Delta m 
+  \end{aligned}
+  \]
+\end{frame} 
+
+\begin{frame}[label=current]
+  \frametitle{}
+根据选择定则，有
+$$ \Delta m  = \begin{cases}
+    +1 \\
+    0 \\
+    -1
+\end{cases} \implies   \omega  = \begin{cases}
+  \omega_0 +\frac{eB}{2 \mu }  \\
+  \omega _0 \\
+  -\omega_0 -\frac{eB}{2 \mu }
+\end{cases} $$ 
+原来的一条谱线在磁场中劈裂成三条，称为\emf[塞曼效应]。
+
+~~\\ 
+塞曼效应是要求磁场很强，因为只有这样，自旋磁矩与轨道磁矩都与磁场平行，可以线性求和。当磁场变弱时，自旋磁矩与轨道磁矩方向不同，不能线性求和，因此必须考虑它们之间的耦合，产生复杂的塞曼效应。
+\end{frame} 
+
+\begin{frame}
+  \frametitle{旋轨耦合（L-S）}
+  \例[6]{考虑旋-轨耦合，求磁场中类氢原子的能级}
+  \解 相对论量子力学表明，$L-S$耦合能很小，可以看成微扰
+  \[ H' = \frac{1}{2\mu ^2 c^2} \frac{1}{r} \frac{\mathrm{d}V}{\mathrm{d} r} \hat{L}\cdot \hat{S} = \xi(r)\hat{L}\cdot \hat{S} \]
+  哈密顿为
+  \[ H = H^{(0)} + H' = - \frac{\hbar^2}{2\mu} \nabla^2 +V(r) + \xi(r)\hat{L}\cdot \hat{S} \]
+$\hat{L}\cdot \hat{S}$导致不能变量分离，即它们不再与$H$对易，不是守恒量，不能构成力学量最小完全集。 
+\end{frame} 
+
+\begin{frame}[label=current]
+  \frametitle{}
+(I) 考虑变量代换，
+\[ \begin{aligned}
+  H &= H^{(0)} + \frac{\xi(r)}{2}(2\hat{L}\cdot \hat{S}) \\ 
+  &= H^{(0)} + \frac{\xi(r)}{2}( \hat{L}^2 + 2\hat{L}\cdot \hat{S} + \hat{S}^2) - \frac{\xi(r)}{2}(\hat{L}^2 + \hat{S}^2) \\
+  &=  H^{(0)} + \frac{\xi(r)}{2} ( \hat{L} + \hat{S})^2 - \frac{\xi(r)}{2}(\hat{L}^2 + \hat{S}^2) \\
+  &= H^{(0)} + \frac{\xi(r)}{2} (\hat{J}^2 - \hat{L}^2 - \hat{S}^2) \\
+  &= H^{(0)} + \frac{\xi(r)}{2} (\hat{J}^2 - \hat{L}^2 - \frac{3}{4}\hbar^2)
+\end{aligned} \]
+式中 $\hat{J} = \hat{L} + \hat{S} $，称为总角动量\\
+
+很明显，耦合能变成了 $\hat{J}^2$, $\hat{L}^2$, $\hat{S}^2$ 的线性求和项， 可以分离变量。
+\end{frame} 
+
+\begin{frame}[label=current]
+  \frametitle{}
+(II)  问题转化为求$\hat{J}^2$的本征问题
+  \[ \boxed{\hat{J}^2 \psi _j = J^2_j \psi _j}\]
+  ~~\\ 
+  为方便，记
+  $$\hat{J} = \hat{L} + \hat{S} = J_1 + J_2$$ 
+  由对易关系
+  得
+  \[ J_1 \times J_1 = i\hbar J_1 \quad J_2 \times J_2 = i\hbar J_2 \quad [J_1, J_2] =0 \]
+\end{frame} 
+
+\begin{frame}[label=current]
+  \frametitle{}
+可以证明，总角动量有如下对易关系
+\[
+  \begin{aligned}
+   &(1) \quad [J_\alpha,J_\beta ] = \varepsilon_{\alpha\beta\gamma}  i \hbar J_\gamma , \qquad (2)\quad [J_z,J^2 ] =0  \\ 
+   &(3) \quad [J^2 _i,J^2 ] = 0 , \qquad~\quad \qquad (4)\quad [J_z, J_i^2 ] =0  \\ 
+  \end{aligned} 
+  \]
+例如：
+\[
+  \begin{aligned}
+  [J_x,J_y ] &= [J_{1x} + J_{2x},J_{1y} + J_{2y}] \\
+  &= [J_{1x}, J_{1y} ]+ [J_{1x} ,J_{2y}] + [J_{2x},J_{1y}] + [J_{2x},J_{2y}] \\
+  &= i \hbar J_{1z} + 0 + 0 + i \hbar J_{2z} \\
+  &= i \hbar J_{z}
+  \end{aligned} 
+  \]
+\end{frame}
+
+\begin{frame}[label=current]
+  \frametitle{}
+有两组相互对易的算符
+\begin{itemize}
+  \item 耦合表象 ： $J_1^2,J_2^2,J^2, J_z \implies \left\vert j_1, j_2, j, m \right\rangle $
+  \item 无耦合表象 $J_1^2,J_{1z},J^2 _2, J_{2z} \implies \left\vert j_1, m_1\right\rangle \left\vert j_2, m_2 \right\rangle $
+\end{itemize}
+\end{frame} 
+
+\begin{frame}[label=current]
+  \frametitle{}
+  耦合表象本征解
+  \[ \begin{aligned}
+    &\hat{J}^2  \left\vert j_1, j_2, j, m \right\rangle = j(j+1)\hbar^2 \left\vert j_1, j_2, j, m \right\rangle \\
+    & \hat{J}_z  \left\vert j_1, j_2, j, m \right\rangle = m\hbar \left\vert j_1, j_2, j, m \right\rangle  
+  \end{aligned} \]
+  耦合表象本征函数
+  \[ \begin{aligned}
+    \left\vert j_1, j_2, j, m \right\rangle &= \left\vert l, s, j, m \right \rangle \\
+    &=  \left\vert l, \frac{1}{2}, j, m \right \rangle = \left\vert l, j, m \right \rangle
+  \end{aligned}\]
+\end{frame}
+
+\begin{frame}[label=current]
+  \frametitle{}
+ (III) 耦合表象氢原子波函数
+  \[\begin{aligned}
+    \Psi _{nlm_lm_s} \implies \Psi _{nljm} &=R_{nl}Y_{ljm}(\theta, \varphi , S_z) \\ 
+    &= \left\vert n, l\right \rangle  \left\vert l, j, m \right \rangle
+  \end{aligned}\]
+  ~~\\ 
+无耦合表象氢原子波函数
+\[\begin{aligned}
+  \Psi _{nlm_lm_s} &=R_{nl}Y_{lm_l}(\theta, \varphi) \chi _{m_s}(S_z) \\ 
+  &= \left\vert n, l, m_l, m_s \right \rangle
+\end{aligned}\]
+\end{frame} 
+
+\begin{frame}[label=current]
+  \frametitle{}
+  耦合表象下：$m$与$m_1$,$m_2$的关系
+  \[J_z = J_{1z} + J_{2z} \to m= m_1 + m_2 = m_l + m_s\]
+  耦合表象：给定$j_1, j_2$后, $j$的取值范围
+  \[j = |j_1 - j_2|, |j_1 - j_2|+1, \cdots, j_1 + j_2 \]
+\end{frame} 
+
+\begin{frame}[label=current]
+  \frametitle{}
+  (IV) 能量一级修正 \\
+  哈密顿解耦
+  $$
+  H= H^{(0)} + H' = H^{(0)} + \frac{\xi(r)}{2} (\hat{J}^2 - \hat{L}^2 - \frac{3}{4}\hbar^2)  
+  $$ 
+  本征方程 
+  $$
+  (H^{(0)} + H')\psi = E \psi  
+  $$ 
+  波函数在耦合表象展开
+$$
+\psi = \sum C_{ljm}\left\vert l, j, m \right \rangle
+$$ 
+系数满足方程简并定态微扰矩阵方程
+
+  \begin{equation*}
+    \sum_{ljm}\begin{pmatrix}H^{\prime}_{l'j'm',ljm} -E^{(1)}_n \delta _{l'l} \delta _{j'j}\delta _{m'm} \end{pmatrix}C_{ljm} =0
+  \end{equation*}
+\end{frame} 
+
+\begin{frame}[label=current]
+  \frametitle{}
+算微扰矩阵元
+\begin{equation*}
+\begin{aligned}
+  H^{\prime}_{l'j'm',ljm} &=\left\langle n, l', j', m' \right\vert  H^{\prime}  \left\vert n, l,  j, m \right \rangle \\
+  &=\left\langle n, l', j', m' \right\vert  \frac{\xi(r)}{2} (\hat{J}^2 - \hat{L}^2 - \frac{3}{4}\hbar^2)  \left\vert n, l,  j, m \right \rangle \\
+  &= \frac{1}{2} \left\langle n, l' \right\vert  \xi(r) \left\vert n, l\right \rangle \left\langle l', j', m' \right\vert  (\hat{J}^2 - \hat{L}^2 - \frac{3}{4}\hbar^2)  \left\vert l,  j, m \right \rangle \\
+  &= \frac{1}{2} \left\langle n, l' \right\vert  \xi(r) \left\vert n, l\right \rangle \left\langle l', j', m' \right\vert  (j(j+1) - l(l+1) - \frac{3}{4})\hbar^2  \left\vert l,  j, m \right \rangle \\
+  &= \frac{\hbar^2}{2} (j(j+1) - l(l+1) - \frac{3}{4}) \xi(r)_{nl, nl} \delta _{l'l} \delta _{j'j}\delta _{m'm}  \\
+  &= H'_{nlj} \delta _{l'l} \delta _{j'j}\delta _{m'm}
+\end{aligned}
+\end{equation*}
+式中定义了$$ H'_{nlj} = \frac{\hbar^2}{2} (j(j+1) - l(l+1) - \frac{3}{4}) \xi(r)_{nl, nl} $$ 
+代回方程
+\end{frame} 
+
+\begin{frame}[label=current]
+  \frametitle{}
+得：
+\begin{equation*}
+  \begin{aligned}
+    & \sum_{ljm}\begin{pmatrix}H'_{nlj} \delta _{l'l} \delta _{j'l}\delta _{m'm} -E^{(1)}_n \delta _{l'l} \delta _{j'j}\delta _{m'm} \end{pmatrix}C_{ljm} =0 \\ 
+    & \sum_{ljm}(H'_{nlj} -E^{(1)}_n) \delta _{l'l} \delta _{j'j}\delta _{m'm} C_{ljm} =0 \\
+    & (H'_{nlj} -E^{(1)}_n)C_{ljm} =0 \\
+    & (H'_{nlj} -E^{(1)}_n) =0
+  \end{aligned}
+\end{equation*}
+解得能量一级修正
+\[E^{(1)}_{nlj} = H'_{nlj} = \frac{\hbar^2}{2} (j(j+1) - l(l+1) - \frac{3}{4}) \xi(r)_{nl, nl} \]
+根据量子数$lj$的取值组合,得到针对能级$E^{(0)}_n = E_1 \frac{1}{n^2}$的多个一级修正
+\end{frame} 
+
+\begin{frame}[label=current]
+  \frametitle{}
+  (V) 计算 $\xi(r)_{nl, nl} $\\
+  $$V(r) = - \frac{Ze^2}{r}  \implies \frac{\mathrm{d}V}{\mathrm{d} r} = \frac{Ze^2}{r^2} $$ 
+  $$\xi(r) = \frac{1}{2\mu ^2 c^2} \frac{1}{r} \frac{\mathrm{d}V}{\mathrm{d} r} = \frac{1}{2\mu ^2 c^2} \frac{Ze^2}{r^3}$$
+  \begin{equation*}
+    \begin{aligned}
+      \xi(r)_{nl, nl} = \left\langle n, l \right\vert  \xi(r) \left\vert n, l \right\rangle 
+      &= \int_0^\infty R^2 _{nl}  \xi(r) r^2 dr \\
+      &=  \int_0^\infty R^2 _{nl} \frac{1}{2\mu ^2 c^2} \frac{Ze^2}{r^3} r^2 dr \\
+      &= \frac{Ze^2}{2\mu ^2 c^2} \int_0^\infty \frac{R^2 _{nl}}{r}  dr \\
+      &= \frac{e^2}{2\mu ^2 c^2 a^3 _0} \frac{Z^4}{n^3l(l+\frac{1}{2})(l+1)}
+    \end{aligned}
+  \end{equation*}
+\end{frame} 
+
+\begin{frame}[label=current]
+  \frametitle{}
+  (VI) 一级修正下的能级
+  \[ E_{nlj} = E^{(0)}_{n} + \frac{\hbar^2}{2} (j(j+1) - l(l+1) - \frac{3}{4}) \frac{e^2}{2\mu ^2 c^2 a^3 _0} \frac{Z^4}{n^3l(l+\frac{1}{2})(l+1)}  \]
+代入 $a_0 = \frac{\hbar^2}{\mu e^2}, j = l \pm \frac{1}{2}$,并取$\alpha = \frac{e^2}{\hbar c} =\frac{1}{137}$, 得
+\[ \left\{\begin{aligned}
+  E_{nl,j=l+\frac{1}{2}} &= E^{(0)}_{n} + \frac{\mu c^2}{2}( \frac{\alpha Z}{n})^4 \frac{n}{(2l+1)(l+1)} \\ 
+  E_{nl,j=l-\frac{1}{2}} &= E^{(0)}_{n} - \frac{\mu c^2}{2}( \frac{\alpha Z}{n})^4 \frac{n}{(2l+1)l} \\
+\end{aligned}\right. \] 
+由于总角量子数$j$的不同,一条谱线在弱磁场作用下分裂成两条, 称为复杂塞曼效应。
+\end{frame} 
+
+\begin{frame}[label=current]
+  \frametitle{光谱线精细结构}
+  对给定的 $n,l$ 值, 总角量子数$j=l\pm \frac{1}{2}$有两个值,但由于$\xi(r)$能常很小,这两个能级间距非常小, 跃迁产生的谱线靠得非常近,称为光谱线的精细结构
+  \begin{figure}[htbp]
+    \centering
+    \includegraphics[width=0.45\textwidth]{figs/naspr.png}
+    %\caption{}
+      %\label{fig:}
+  \end{figure}
+  钠原子光谱中的一条亮黄线$5893$ \AA 在弱磁场出劈裂为 $5890$ \AA 和 $5896$ \AA 两条,只有用高分辨率的光谱仪才能观测得到。 
+\end{frame} 
+
+
+\begin{frame}[label=current]
+  \frametitle{课外作业}
+  1、求   $\sigma _y  =  \begin{pmatrix}
+    0 & -i\\
+    i & 0
+   \end{pmatrix} $ 的本征问题 \\
+
+  2、设电子处于态 $\psi=\begin{pmatrix}
+    a\\
+    b
+   \end{pmatrix}  $, 求测量得电子自旋向上的概率 \\
+
+  3、对于自旋为$\frac{1}{2}$的粒子，在磁场 $\mathbf{B} = B_x \vec{e}_x + B_y \vec{e}_y + B_z \vec{e}_z$中的哈密顿为
+  \[ H = - \frac{2\mu}{\hbar}\mathbf{B}\cdot \mathbf{S}\]
+  试求能量本征值 \\
+\end{frame} 
+
+
+\begin{frame}[label=current]
+  \frametitle{}
+  4、试证明 \[ [\mathbf{J}^2, J_z] =0, \qquad [\mathbf{J}^2, J_{1z}] \ne 0\]
+  5、假设轨道角动量允许存在半整数的$l$量子数，比如$l=\frac{1}{2}$\\
+    1）试证明函数 $Y_{1/2,1/2}(\theta, \varphi) = c_{\frac{1}{2}}e^{i \varphi/2} \sqrt{sin\theta}$ 满足方程 $$ L_+ Y_{1/2,1/2}(\theta, \varphi) =0 $$
+    2）试求由$L_{-}$作用于$Y_{1/2,1/2}(\theta, \varphi)$所产生的$Y_{1/2,-1/2}(\theta, \varphi)$\\
+    3）求满足方程$$ L_{-}Y_{1/2,-1/2}(\theta, \varphi) =0 $$ 的函数 $Y_{1/2,-1/2}(\theta, \varphi)$ \\ （这两个函数不可能相同，是轨道量子数不能取半奇整数的一个论据） 
+\end{frame} 
+
+\section{全同粒子体系 }
+\subsection{全同性原理}
+\begin{frame}[label=current]
+  \frametitle{全同粒子}
+  \alert{定义：} 所有\emf[固有属性] 都相同的粒子称为全同粒子。比如：一个体系中的粒子都是电子, 构成一种全同粒子体系； 所有光子, 固有属性都相同,也构成一种全同粒子体系。 
+\begin{figure}[htbp]
+  \centering
+  \includegraphics[width=0.45\textwidth]{figs/indis.png}
+\end{figure}
+
+\alert{特点：不可区分性}
+
+经典力学的全同粒子可通过位置和轨迹等信息进行区分，称为定域体系,量子力学没有轨道的概念, 在全同粒子波函数重叠区, 也没有确定的位置信息, 因此无法区分，称为非定域体系。比如：电子双缝干涉实验 
+\end{frame} 
+
+\begin{frame}[label=current]
+  \frametitle{全同性原理}
+    \begin{atcbox}
+      全同粒子体系的状态不会因为任意两全同粒子的交换而发生改变,这种交换不变性（对称性）称为全同性原理。数学上体现为，交换前后体系波函数的概率分布相等
+      \[\left\vert\psi(\vec{q}_1,\cdots, \vec{q}_{\color{red}i},\cdots,\vec{q}_{\color{red}j},\cdots,\vec{q}_N,t)\right\vert ^2 = \left\vert\psi(\vec{q}_1,\cdots, \vec{q}_{\color{red}j},\cdots,\vec{q}_{\color{red}i},\cdots,\vec{q}_N,t)\right\vert ^2 \]
+    \end{atcbox} 
+    全同性原理是量子力学中的基本原理之一，不能推导，只能实验验证。
+\end{frame}
+ 
+\subsection{全同粒子体系的波函数}
+
+\begin{frame}[label=current]
+  \frametitle{波函数特性}
+  \alert{特性-1:} 全同粒子体系波函数要么是交换对称的要么是交换反对称的 \\
+\证 设体系含N个全同粒子，哈密顿为
+\[ H(\vec{q}_1,\vec{q}_2,\cdots,\vec{q}_N) = \sum_{i=1}^{N}\left[-\frac{\hbar}{2\mu} \nabla^2_i +V(\vec{q}_i , t) \right] + \sum_{i<j}^N U(\vec{q}_i, \vec{q}_j)\]
+很明显：两粒子互换，哈密顿量是不变的 \\ 
+交换前的薛定谔方程为：
+\[i\hbar \frac{\partial }{\partial t} \psi(\vec{q}_1,\cdots, \vec{q}_{\color{red}i},\cdots,\vec{q}_{\color{red}j},\cdots,\vec{q}_N,t)=H(\vec{q}_1,\vec{q}_2,\cdots,\vec{q}_N)\psi(\vec{q}_1,\cdots, \vec{q}_{\color{red}i},\cdots,\vec{q}_{\color{red}j},\cdots,\vec{q}_N,t) \]
+\end{frame} 
+
+\begin{frame}[label=current]
+  \frametitle{}
+交换后，有
+\[i\hbar \frac{\partial }{\partial t} \psi(\vec{q}_1,\cdots, \vec{q}_{\color{red}j},\cdots,\vec{q}_{\color{red}i},\cdots,\vec{q}_N,t)=H(\vec{q}_1,\vec{q}_2,\cdots,\vec{q}_N)\psi(\vec{q}_1,\cdots, \vec{q}_{\color{red}j},\cdots,\vec{q}_{\color{red}i},\cdots,\vec{q}_N,t) \]
+即交换前后的波函数满足同一个方程，又因交换前后的波函数描述同一个态， 因此它们之间只多相差一个常数因子
+\[\psi(\vec{q}_1,\cdots, \vec{q}_{\color{red}i},\cdots,\vec{q}_{\color{red}j},\cdots,\vec{q}_N,t) = \lambda \psi(\vec{q}_1,\cdots, \vec{q}_{\color{red}j},\cdots,\vec{q}_{\color{red}i},\cdots,\vec{q}_N,t)\]
+再交换一次，则有
+\[\psi(\vec{q}_1,\cdots, \vec{q}_{\color{red}i},\cdots,\vec{q}_{\color{red}j},\cdots,\vec{q}_N,t) = \lambda ^2 \psi(\vec{q}_1,\cdots, \vec{q}_{\color{red}i},\cdots,\vec{q}_{\color{red}j},\cdots,\vec{q}_N,t)\]
+\end{frame} 
+
+\begin{frame}[label=current]
+  \frametitle{}
+得
+\[ \lambda ^2 =1 \implies \lambda = \pm 1\]
+当$\lambda = 1$时，交换前后的波函数相同，称波函数是交换对称的 \\
+当$\lambda = -1$时，交换前后的波函数反号，称波函数是交换反对称的。 
+
+~~\\ 
+\textcolor{red}{证毕！}
+\end{frame} 
+
+\begin{frame}[label=current]
+  \frametitle{}
+  \alert{特性-2:} 全同粒子体系波函数的交换对称性不随时间发生改变\\ 
+  \证 设$t$时刻波函数是交换对称的
+  \[ \psi(t) = \psi _s(t)\]
+  代入薛定谔方程
+  \[i\hbar \frac{\partial }{\partial t} \psi _s (t ) =H \psi _s (t ) \]
+  式左两因子都是交换对称的，所以式右的因子$\frac{\partial }{\partial t} \psi _s (t )$也是交换对称的 \\
+  $t+dt$时刻的波函数
+  \[ \psi(t+ dt) =\psi (t) + \frac{\partial }{\partial t} \psi (t )= \psi _s(t) + \frac{\partial }{\partial t} \psi _s (t ) \]
+  因此，$\psi(t+ dt)$是交换对称的，即它的交换对称性不随时间变化。\\
+  同理可证交换反对称波函数满足相同的结论。
+\end{frame} 
+
+\begin{frame}[label=current]
+  \frametitle{玻色子与费米子}
+  \alert{定义：} 波函数交换对称的全同粒子称为玻色子， 波函数交换反对称的全同粒子称为费米子。 记为 ：
+  \[ \left\{\begin{aligned}
+    & P_{ij}\left\vert \text{N个玻色子} \right\rangle = + \left\vert \text{N个玻色子} \right\rangle \\
+    & P_{ij}\left\vert \text{N个费米子} \right\rangle = - \left\vert \text{N个费米子} \right\rangle \\ 
+  \end{aligned}\right.
+  \]
+  \alert{特点：} 
+  \begin{itemize}
+    \item 玻色子的自旋量子数为$\frac{1}{2}$的偶数倍，服从玻色-爱因斯坦统计规律
+    \item 费米子的自旋量子数为$\frac{1}{2}$的奇数倍，服从费米-狄拉克统计规律
+  \end{itemize}     
+\end{frame} 
+
+\begin{frame}[label=current]
+  \frametitle{}
+  \alert{对易关系：} \\
+粒子场基态 
+\[ \left\vert 0,0,0,\cdots ,0 \right\rangle = \left\vert \mathbf{0} \right\rangle\]
+单粒子态 （占据第$i$本征态）
+\[\left\vert 0,0,0,\cdots, n_i =1 ,\cdots, 0 \right\rangle  = \left\vert k_i \right\rangle\]
+很明显，有
+\[ a_i \left\vert k_j \right\rangle = \delta _{ij} \left\vert \mathbf{0} \right\rangle \]
+\end{frame} 
+
+\begin{frame}[label=current]
+  \frametitle{}
+  双粒子态
+  \[\left\vert 0,0,0,\cdots, n_i =1 ,\cdots, n_j =1 ,\cdots, 0 \right\rangle = \left\vert k_{ij} \right\rangle\]
+  有
+  \[ a_i a_j \left\vert k_{ij} \right\rangle = \left\vert \mathbf{0} \right\rangle \]
+  考虑置换
+  \[ 
+    a_j a_i \left\vert k_{ij} \right\rangle = a_j a_i \pm \left\vert k_{ji} \right\rangle
+    = \pm  \left\vert \mathbf{0} \right\rangle  =  \pm  a_i a_j \left\vert k_{ij} \right\rangle
+  \] 
+  得对易关系
+\[\left\{ \begin{aligned}
+  &a_i  a_j  - a_j  a_i  = [a_i , a_j ] = 0 \qquad \text{玻色子} \\
+  &a_i  a_j  + a_j  a_i  = \{ a_i , a_j \} = 0 \quad \,\,\, \text{费米子} 
+\end{aligned}\right.\]
+\end{frame} 
+
+\begin{frame}[label=current]
+  \frametitle{}
+同理,由
+\[ a_i^{\dagger} \left\vert \mathbf{0} \right\rangle = \delta _{ij} \left\vert  k_j \right\rangle, \qquad a_i^{\dagger} a_j^{\dagger} \left\vert \mathbf{0} \right\rangle = \left\vert  k_{ij} \right\rangle \]
+可以导出
+\[\left\{ \begin{aligned}
+  &a_i ^{\dagger} a_j ^{\dagger} - a_j ^{\dagger} a_i ^{\dagger} = [a_i ^{\dagger}, a_j ^{\dagger}] = 0 \qquad \text{玻色子} \\
+  &a_i ^{\dagger} a_j ^{\dagger} + a_j ^{\dagger} a_i ^{\dagger} = \{ a_i ^{\dagger}, a_j ^{\dagger}\} = 0 \quad \,\,\, \text{费米子} 
+\end{aligned}\right.\]
+进一步,可得
+\[\left\{ \begin{aligned}
+  &a_i  a_j ^{\dagger} - a_j ^{\dagger} a_i  = [a_i , a_j ^{\dagger}] = \delta _{ij} \qquad \text{玻色子} \\
+  &a_i  a_j ^{\dagger} + a_j ^{\dagger} a_i = \{ a_i , a_j ^{\dagger}\} = \delta _{ij} \quad \,\,\, \text{费米子} 
+\end{aligned}\right.\]
+
+\end{frame} 
+
+\begin{frame}[label=current]
+  \frametitle{}
+\emf[泡利不相容原理：] \\ 
+在费米子对易关系中,取$i=j$ （双粒子占据同一本征态）
+\[ \begin{aligned}
+  a_i  a_j ^{\dagger} + a_j ^{\dagger} a_i &=  \delta _{ij}  \\
+  a_i  a_i ^{\dagger} + a_i ^{\dagger} a_i &=  1  \\
+\end{aligned}\]
+考虑对易关系  
+\[ [a_i, a_i ^{\dagger}] = 1\]
+得
+\[ n =  a_i ^{\dagger} a_i =0 \]
+即：不可能出现两全同费米子同时占据同一个态
+\end{frame} 
+
+\begin{frame}[label=current]
+  \frametitle{波函数$Hartree-Fock$积形式}
+1、两粒子体系的波函数 \\
+有哈密顿
+\[ H(\vec{q}_1,\vec{q}_2) = H_0(\vec{q}_1) + H_0(\vec{q}_2) +  U(\vec{q}_1, \vec{q}_2)\]
+定态薛定谔方程
+\[ H(\vec{q}_1,\vec{q}_2) \left \vert\psi(\vec{q}_1,\vec{q}_2) \right\rangle = E \left\vert \psi(\vec{q}_1,\vec{q}_2) \right\rangle \]
+当相互作用能很小，小到可以忽略不计时，有
+\[ H(\vec{q}_1,\vec{q}_2) = H_0(\vec{q}_1) + H_0(\vec{q}_2) \]
+称为近独立全同粒子体系，此时，定态薛定谔方程可分离变量，
+体系的本征能可表示为单粒子本征能的求和形式
+  \[ E= \varepsilon _i + \varepsilon _j\]
+\end{frame} 
+
+\begin{frame}[label=current]
+  \frametitle{}
+体系的本征态可表示为单粒子本征态的$Hartree$积形式
+\[\left\vert \psi(\vec{q}_1,\vec{q}_2) \right\rangle  = \left\vert \psi _i(\vec{q}_1)\right\rangle \left\vert \psi _j(\vec{q}_2)\right\rangle \]
+交换后的本征态为 
+  \[\left\vert \psi(\vec{q}_2,\vec{q}_1) \right\rangle  = \left\vert \psi _i(\vec{q}_2)\right\rangle \left\vert \psi _j(\vec{q}_1)\right\rangle \]
+当两粒子处于不同的态时（$i \ne j$），上述两个波函数既不是对称的也不是反对称的！违反全同性原理！
+\end{frame} 
+
+\begin{frame}[label=current]
+  \frametitle{}
+$Fock$发现，如果用 $Hartree$积的和差来表示体系的本征矢，则不违反全同性原理！
+\begin{itemize}
+  \item 对称 （玻色系统）\[\left\vert \psi _S(\vec{q}_1,\vec{q}_2) \right\rangle  \to \left[\left\vert \psi _i(\vec{q}_1)\right\rangle \left\vert \psi _j(\vec{q}_2) \right\rangle  + \left\vert \psi _i(\vec{q}_2)\right\rangle \left\vert \psi _j(\vec{q}_1) \right\rangle\right] \]
+  \item 反对称 （费米系统）\[\left\vert \psi _A (\vec{q}_1,\vec{q}_2) \right\rangle  \to \left[\left\vert \psi _i(\vec{q}_1)\right\rangle \left\vert \psi _j(\vec{q}_2) \right\rangle  - \left\vert \psi _i(\vec{q}_2)\right\rangle \left\vert \psi _j(\vec{q}_1) \right\rangle\right] \]
+\end{itemize}
+这种表示法，称为全同粒子体系波函数的$Hartree-Fock$积形式。
+\end{frame}  
+
+\begin{frame}[label=current]
+  \frametitle{}
+\例[7]{试证明泡利不相容原理}
+\证 （1）根据全同性原理，双玻色系统的波函数由如下项构成 
+\[\left\vert \psi _S(\vec{q}_1,\vec{q}_2) \right\rangle  \to \left\vert \psi _i(\vec{q}_1)\right\rangle \left\vert \psi _j(\vec{q}_2) \right\rangle  + \left\vert \psi _i(\vec{q}_2)\right\rangle \left\vert \psi _j(\vec{q}_1) \right\rangle \]
+设两粒子处于同一个态（$i = j$），有
+\[
+  \begin{aligned}
+\left\vert \psi _i(\vec{q}_1)\right\rangle \left\vert \psi _i(\vec{q}_2) \right\rangle  + \left\vert \psi _i(\vec{q}_2)\right\rangle \left\vert \psi _i(\vec{q}_1) \right\rangle= \left\vert \psi _i(\vec{q}_1)\right\rangle \left\vert \psi _i(\vec{q}_2) \right\rangle 
+  \end{aligned} \]
+  这种项不为零，整个波函数的模方也不会零，即两个玻色子同时处于同一个态是允许的
+\end{frame} 
+
+\begin{frame}[label=current]
+  \frametitle{}
+  （2）根据全同性原理，双费米系统的波函数为 
+  \[\left\vert \psi _A(\vec{q}_1,\vec{q}_2) \right\rangle  \to \left[\left\vert \psi _i(\vec{q}_1)\right\rangle \left\vert \psi _j(\vec{q}_2) \right\rangle  - \left\vert \psi _i(\vec{q}_2)\right\rangle \left\vert \psi _j(\vec{q}_1) \right\rangle\right] \]
+  设两粒子处于同一个态（$i = j$），有
+  \[
+  \begin{aligned}
+    \left\vert \psi _A(\vec{q}_1,\vec{q}_2) \right\rangle  \to \left[\left\vert \psi _i(\vec{q}_1)\right\rangle \left\vert \psi _i(\vec{q}_2) \right\rangle  - \left\vert \psi _i(\vec{q}_2)\right\rangle \left\vert \psi _i(\vec{q}_1) \right\rangle\right]  = 0 
+  \end{aligned} \]
+  两个全同费米子同时处于同一个态的概率等于零，即是不允许的 \\
+  \textcolor{red}{证毕！}
+\end{frame} 
+
+\begin{frame}[label=current]
+  \frametitle{}
+2、N玻色子体系的波函数 \\
+~~\\ 
+对于N玻色体系来说，多粒子占据同一态是允许的，波函数应是N个粒子占据k个态排列项求和：
+\[\begin{aligned}
+\left\vert \psi _S(\vec{q}_1,\vec{q}_2,\cdots \vec{q}_N) \right\rangle  
+ &= \sum_P P \left\vert n_1 n_2\cdots n_k\right\rangle 
+\end{aligned}  \]
+式中：$n_1 + n_2 + \cdots + n_k =N $
+\end{frame} 
+
+\begin{frame}[label=current]
+  \frametitle{}
+我们知道，N粒子占据K个态的排列项数目为
+$$\frac{N!}{n_1 !n_2 ! \cdots n_k !} = \frac{N!}{\prod\limits_{l=1}^{k}n_l !} $$ 
+因此，归一化的N玻色体系波函数为
+\[
+  \left\vert \psi _S(\vec{q}_1,\vec{q}_2,\cdots \vec{q}_N) \right\rangle  
+ = \sqrt{\left.\prod\limits_{l=1}^{k}n_l ! \right/ N!} \sum_P P\left\vert n_1 n_2\cdots n_k\right\rangle  \]
+\end{frame} 
+
+\begin{frame}[label=current]
+  \frametitle{}
+  3、N费米子体系的波函数 \\
+  考察双费米体系的波函数的和差项，可以写成行列式形式
+  \[\begin{aligned}
+    \left\vert \psi _A(\vec{q}_1,\vec{q}_2) \right\rangle  &= \frac{1}{\sqrt{2} }\left[\left\vert \psi _i(\vec{q}_1)\right\rangle \left\vert \psi _j(\vec{q}_2) \right\rangle  - \left\vert \psi _i(\vec{q}_2)\right\rangle \left\vert \psi _j(\vec{q}_1) \right\rangle\right] \\ 
+    &= \frac{1}{\sqrt{2}} \begin{vmatrix}\left\vert \psi _i(\vec{q}_1)\right\rangle  &\left\vert \psi _i(\vec{q}_2)\right\rangle \\ 
+    \left\vert \psi _j(\vec{q}_1) \right\rangle & \left\vert \psi _j(\vec{q}_2)\right\rangle 
+  \end{vmatrix}  
+  \end{aligned} \]
+  那么,三费米体系应为 
+  \[\begin{aligned}
+    \left\vert \psi _A(\vec{q}_1,\vec{q}_2,\vec{q}_3) \right\rangle  
+    &= \frac{1}{\sqrt{6}} \begin{vmatrix}\left\vert \psi _i(\vec{q}_1)\right\rangle  &\left\vert \psi _i(\vec{q}_2)\right\rangle &\left\vert \psi _i(\vec{q}_3)\right\rangle \\ 
+    \left\vert \psi _j(\vec{q}_1) \right\rangle & \left\vert \psi _j(\vec{q}_2)\right\rangle & \left\vert \psi _j(\vec{q}_3)\right\rangle \\
+    \left\vert \psi _k(\vec{q}_1) \right\rangle & \left\vert \psi _k(\vec{q}_2)\right\rangle & \left\vert \psi _k(\vec{q}_3)\right\rangle 
+  \end{vmatrix}  
+  \end{aligned} \]
+\end{frame} 
+
+\begin{frame}[label=current]
+  \frametitle{}
+推广到$N$费米体系
+\[\begin{aligned}
+  \left\vert \psi _A(\vec{q}_1,\vec{q}_2,\cdots,\vec{q}_N) \right\rangle  
+  &= \frac{1}{\sqrt{N!}} \begin{vmatrix}\left\vert \psi _1(\vec{q}_1)\right\rangle  &\left\vert \psi _1(\vec{q}_2)\right\rangle &\cdots &\left\vert \psi _1(\vec{q}_N)\right\rangle \\ 
+  \left\vert \psi _2(\vec{q}_1) \right\rangle & \left\vert \psi _2(\vec{q}_2)\right\rangle & \cdots &\left\vert \psi _2(\vec{q}_N)\right\rangle \\
+  \cdots & \cdots & \cdots & \cdots \\
+  \left\vert \psi _k(\vec{q}_1) \right\rangle & \left\vert \psi _k(\vec{q}_2)\right\rangle & \cdots & \left\vert \psi _k(\vec{q}_N)\right\rangle 
+\end{vmatrix}  
+\end{aligned} \]
+考察：
+\begin{itemize}
+  \item 交换两粒子，相当于行列式交换两列，行列式变号，满足交换反对称要求
+  \item 如果有两粒子处于同一状态，则行列式有两行相等，波函数为零，满足泡利不相容原理要求
+\end{itemize}
+\end{frame}
+
+\subsection{全同粒子体系的能级}
+
+\begin{frame}[label=current]
+  \frametitle{}
+\例[8]{一个体系由三个全同费米子构成，粒子间相互作用可忽略，单粒子有三个本征态为$\psi _1, \psi _2,\psi _3 $，对应的能级为1.2 eV, 1.2 eV, 1.5 eV,试求 \\
+(1) 体系的波函数,能级及简并度 \\
+(2) 若体系只包含两个全同费米子呢\\
+(3) 若体系包含的三个全同玻色子呢}
+\解 （1）三个费米子分别占据一个态，占据数分布为$\{111\}$，
+波函数为 
+\[\begin{aligned}
+  \left\vert \psi ^{111} _A(\vec{q}_1,\vec{q}_2,\vec{q}_3) \right\rangle  
+  &= \frac{1}{\sqrt{3!}} \begin{vmatrix}\left\vert \psi _1(\vec{q}_1)\right\rangle  &\left\vert \psi _1(\vec{q}_2)\right\rangle &\left\vert \psi _1(\vec{q}_3)\right\rangle \\ 
+  \left\vert \psi _2(\vec{q}_1) \right\rangle & \left\vert \psi _2(\vec{q}_2)\right\rangle & \left\vert \psi _2(\vec{q}_3)\right\rangle \\
+  \left\vert \psi _3(\vec{q}_1) \right\rangle & \left\vert \psi _3(\vec{q}_2)\right\rangle & \left\vert \psi _3(\vec{q}_3)\right\rangle 
+\end{vmatrix}  
+\end{aligned} \]
+能级 
+\[ E_1 = E^{111} = 1.2+1.2+1.5 =3.9~ (\text{eV}) \qquad \text{简并度:} ~1\]
+\end{frame} 
+
+\begin{frame}[label=current]
+  \frametitle{}
+（2）两个费米子可占据三个态，可能的占据数分布$\{110, 101, 011\}$\\
+波函数:
+\[\begin{aligned}
+  \left\vert \psi ^{110}_A(\vec{q}_1,\vec{q}_2) \right\rangle 
+  &= \frac{1}{\sqrt{2}} \begin{vmatrix}\left\vert \psi _1(\vec{q}_1)\right\rangle  &\left\vert \psi _1(\vec{q}_2)\right\rangle \\ 
+  \left\vert \psi _2(\vec{q}_1) \right\rangle & \left\vert \psi _2(\vec{q}_2)\right\rangle 
+\end{vmatrix}  \\
+\left\vert \psi ^{101}_A(\vec{q}_1,\vec{q}_2) \right\rangle 
+  &= \frac{1}{\sqrt{2}} \begin{vmatrix}\left\vert \psi _1(\vec{q}_1)\right\rangle  &\left\vert \psi _1(\vec{q}_2)\right\rangle \\ 
+  \left\vert \psi _3(\vec{q}_1) \right\rangle & \left\vert \psi _3(\vec{q}_2)\right\rangle 
+\end{vmatrix}  \\
+\left\vert \psi ^{011}_A(\vec{q}_1,\vec{q}_2) \right\rangle 
+  &= \frac{1}{\sqrt{2}} \begin{vmatrix}\left\vert \psi _2(\vec{q}_1)\right\rangle  &\left\vert \psi _2(\vec{q}_2)\right\rangle \\ 
+  \left\vert \psi _3(\vec{q}_1) \right\rangle & \left\vert \psi _3(\vec{q}_2)\right\rangle 
+\end{vmatrix}  
+\end{aligned} \]
+能量 ：$$ \begin{aligned} E^{110} &= 1.2+1.2 = 2.4~ (\text{eV}) \\ 
+  E^{101} &= 1.2+1.5 = 2.7~ (\text{eV}) \\
+  E^{011} &= 1.2+1.5 = 2.7~ (\text{eV}) 
+\end{aligned} $$
+\end{frame}
+
+\begin{frame}[label=current]
+  \frametitle{}
+能级：
+$$ \begin{aligned} E_1&= 2.4~ (\text{eV}), \qquad \text{简并度:} ~1  \\ 
+  E_2&= 2.7~ (\text{eV}), \qquad \text{简并度:} ~2  \\
+\end{aligned} $$
+
+~~\\ 
+（3）三个玻色子可占据三个态，可能的占据数分布共有10个
+$$300, 030, 003; 210, 201, 120, 102, 021,  012, 111 $$
+波函数:
+\[\begin{aligned}
+  \left\vert \psi ^{300}_S(\vec{q}_1,\vec{q}_2,\vec{q}_3) \right\rangle 
+  &= \sqrt{\frac{3!0!0!}{3!}} \left\vert \psi _1(\vec{q}_1)\right\rangle \left\vert \psi _1(\vec{q}_2)\right\rangle \left\vert \psi _1(\vec{q}_3)\right\rangle\\ 
+  \left\vert \psi ^{030}_S(\vec{q}_1,\vec{q}_2,\vec{q}_3) \right\rangle 
+  &= \left\vert \psi _2(\vec{q}_1)\right\rangle \left\vert \psi _2(\vec{q}_2)\right\rangle \left\vert \psi _2(\vec{q}_3)\right\rangle\\ 
+  \left\vert \psi ^{003}_S(\vec{q}_1,\vec{q}_2,\vec{q}_3) \right\rangle 
+  &=\left\vert \psi _3(\vec{q}_1)\right\rangle \left\vert \psi _3(\vec{q}_2)\right\rangle \left\vert \psi _3(\vec{q}_3)\right\rangle\\ 
+\end{aligned} \]
+\end{frame} 
+
+\begin{frame}[label=current]
+  \frametitle{}
+  波函数:
+  \[\begin{aligned}
+    \left\vert \psi ^{210}_S(\vec{q}_1,\vec{q}_2,\vec{q}_3) \right\rangle 
+    &= \sqrt{\frac{2!1!0!}{3!}} \left[\left\vert \psi _1(\vec{q}_1)\right\rangle \left\vert \psi _1(\vec{q}_2)\right\rangle \left\vert \psi _2(\vec{q}_3)\right\rangle 
+    + \left\vert \psi _1(\vec{q}_1)\right\rangle \left\vert \psi _1(\vec{q}_3)\right\rangle \left\vert \psi _2(\vec{q}_2)\right\rangle \right. \\
+    &  \left.\qquad + \left\vert \psi _1(\vec{q}_2)\right\rangle \left\vert \psi _1(\vec{q}_3)\right\rangle \left\vert \psi _2(\vec{q}_1)\right\rangle
+    \right]\\  
+    \left\vert \psi ^{120}_S(\vec{q}_1,\vec{q}_2,\vec{q}_3) \right\rangle 
+    &= \frac{1}{\sqrt{3}} \left[\left\vert \psi _1(\vec{q}_1)\right\rangle \left\vert \psi _2(\vec{q}_2)\right\rangle \left\vert \psi _2(\vec{q}_3)\right\rangle 
+    + \left\vert \psi _1(\vec{q}_2)\right\rangle \left\vert \psi _2(\vec{q}_2)\right\rangle \left\vert \psi _2(\vec{q}_3)\right\rangle \right. \\
+    &  \left.\qquad + \left\vert \psi _1(\vec{q}_3)\right\rangle 
+    + \left\vert \psi _2(\vec{q}_2)\right\rangle \left\vert \psi _2(\vec{q}_3)\right\rangle 
+    \right]\\
+    \left\vert \psi ^{012}_S(\vec{q}_1,\vec{q}_2,\vec{q}_3) \right\rangle 
+    &= \frac{1}{\sqrt{3}} \left[\left\vert \psi _2(\vec{q}_1)\right\rangle \left\vert \psi _3(\vec{q}_2)\right\rangle \left\vert \psi _3(\vec{q}_3)\right\rangle 
+    + \left\vert \psi _2(\vec{q}_2)\right\rangle \left\vert \psi _3(\vec{q}_1)\right\rangle \left\vert \psi _3(\vec{q}_3)\right\rangle \right. \\
+    &  \left.\qquad + \left\vert \psi _2(\vec{q}_3)\right\rangle 
+    + \left\vert \psi _3(\vec{q}_2)\right\rangle \left\vert \psi _3(\vec{q}_1)\right\rangle 
+    \right] \\
+    & \cdots 
+  \end{aligned} \]
+\end{frame} 
+
+\begin{frame}[label=current]
+  \frametitle{}
+能量：
+\[\begin{aligned}
+  E^{300} &=  3\times 1.2 = 3.6  ~ (\text{eV}) \\
+  E^{030} &=  3\times 1.2 = 3.6  ~ (\text{eV}) \\
+  E^{003} &=  3\times 1.5 = 4.5  ~ (\text{eV})  \\
+  E^{210} &=  2\times 1.2 +1.2 = 3.6  ~ (\text{eV})  \\
+  E^{201} &=  2\times 1.2 +1.5 = 3.9  ~ (\text{eV})  \\
+  E^{120} &=  1.2+ 2\times 1.2 = 3.6  ~ (\text{eV})  \\
+  E^{021} &=  2\times 1.2 + 1.5= 3.9  ~ (\text{eV})  \\
+  E^{102} &=  1.2+2\times 1.5= 4.2  ~ (\text{eV})  \\
+  E^{012} &=  1.2+2\times 1.5= 4.2  ~ (\text{eV})  \\
+  E^{111} &=  1.2+1.2+1.5= 3.9  ~ (\text{eV})  \\
+\end{aligned} \]
+\end{frame} 
+
+\begin{frame}[label=current]
+  \frametitle{}
+  能级：
+  $$ \begin{aligned} E_1&= 3.6~ (\text{eV}), \qquad \text{简并度:} ~4  \\ 
+    E_2&= 3.9~ (\text{eV}), \qquad \text{简并度:} ~3  \\
+    E_3&= 4.2~ (\text{eV}), \qquad \text{简并度:} ~2  \\
+    E_4&= 4.5~ (\text{eV}), \qquad \text{简并度:} ~1  \\
+  \end{aligned} $$
+* 玻色子体系低能级简并度高！
+
+  ~~\\ 
+  \textcolor{red}{结束！}
+\end{frame} 
+
+\subsection{自旋三重态}
+
+\begin{frame}[label=current]
+  \frametitle{双电子系统}
+现在考虑这样一个双费子全同粒子体系，比如氢分子或氦原子中的两个电子，由于体系很稳定，可设原子核不动，因此两个电子构成双电子系统
+\begin{figure}[htbp]
+  \centering
+  \includegraphics[width=0.3\textwidth]{figs/he1.png}
+  %\caption{}
+    %\label{fig:}
+\end{figure}
+\end{frame} 
+
+\begin{frame}[label=current]
+  \frametitle{}
+哈密顿： 
+  \[
+    H=\frac{\mathbf{p}_1^2}{2 m}+\frac{\mathbf{p}_2^2}{2 m}-\frac{2 e^2}{r_1}-\frac{2 e^2}{r_2}+\frac{e^2}{r_{12}}
+    \]
+电子间库仑相互作用能很大，不可忽略，不能做近独立粒子体系处理。\\
+~~\\ 
+为简单计，不考虑旋轨耦合，体系的波函数可写成$Hartree$积形式
+\[ \Psi(\vec{q}_1, \vec{q}_2) = \Psi(\vec{r}_1, S_{1z}, \vec{r}_2, S_{2z}) = \psi(\vec{r}_1, \vec{r}_2) \chi (S_{1z}, S_{2z})\]
+对于全同费米子体系，只有交换反对称的$Hartree$积才是合法的
+\end{frame} 
+
+\begin{frame}[label=current]
+  \frametitle{}
+ 分为两类：
+  \begin{itemize}
+    \item 若 $\psi(\vec{r}_1, \vec{r}_2)$交换对称, 则 $\chi (S_{1z}, S_{2z})  $ 必须交换反对称
+    \item 若 $\psi(\vec{r}_1, \vec{r}_2)$交换反对称, 则 $\chi (S_{1z}, S_{2z}) $ 必须交换对称
+  \end{itemize}
+
+  ~~\\ 
+  ${\color{red}\star}~$ 单就自旋波函数$\chi (S_{1z}, S_{2z}) $来说，它可以是对称的，也可以是反对称的
+\end{frame} 
+
+\begin{frame}[label=current]
+  \frametitle{自旋波函数}
+  电子间的库仑相互作用已体现在位置函数$\psi(\vec{r}_1, \vec{r}_2)$中，若不考虑电子间的自旋相互作用，自旋波函数可再分离变量
+  $$\chi (S_{1z}, S_{2z}) = \chi _{\pm \frac{1}{2}} (S_{1z})\chi_{\pm \frac{1}{2}} (S_{2z}) $$
+  可构造出四个满足要求的自旋波函数（一个反对称，三个对称）
+  \[ 
+    \begin{aligned}
+      \chi ^{(1)} _S &= \chi _{ \frac{1}{2}} (S_{1z})\chi_{ \frac{1}{2}} (S_{2z})  \qquad (\text{都自旋向上})\\ 
+      \chi ^{(2)} _S &= \chi _{ -\frac{1}{2}} (S_{1z})\chi_{ -\frac{1}{2}} (S_{2z})  \qquad (\text{都自旋向下}) \\ 
+      \chi ^{(3)} _S &= \frac{1}{\sqrt{2} }\left[\chi _{ \frac{1}{2}} (S_{1z})\chi_{ -\frac{1}{2}} (S_{2z})  + \chi _{ -\frac{1}{2}} (S_{1z})\chi_{\frac{1}{2}} (S_{2z})\right] \\ 
+      \chi ^{(4)} _A &= \frac{1}{\sqrt{2} }\left[\chi _{ \frac{1}{2}} (S_{1z})\chi_{ -\frac{1}{2}} (S_{2z})  - \chi _{ -\frac{1}{2}} (S_{1z})\chi_{\frac{1}{2}} (S_{2z})\right] 
+    \end{aligned}\]
+\end{frame} 
+
+\begin{frame}[label=current]
+  \frametitle{自旋算符的值}
+  先计算单电子自旋波函数的各种自旋算符的值 \\
+  (1) $\chi$是 $S^2$和$S_z$的同共本征态
+  \[\begin{aligned}
+    S_z \chi_{\frac{1}{2}} &= \frac{1}{2}\hbar \chi_{\frac{1}{2}}  \\
+    S^2 \chi_{\frac{1}{2}} &= \frac{3}{4}\hbar^2 \chi_{\frac{1}{2}}\\
+    S_z \chi_{-\frac{1}{2}}&=-\frac{1}{2}\hbar \chi_{-\frac{1}{2}}  \\
+    S^2 \chi_{-\frac{1}{2}}&= \frac{3}{4}\hbar^2 \chi_{-\frac{1}{2}}
+  \end{aligned}\]
+\end{frame} 
+
+\begin{frame}[label=current]
+  \frametitle{}
+  (2) $\chi$ 不是 $S_x$和$S_y$的本征态
+  \[\begin{aligned}
+    S_x \chi_{\frac{1}{2}} &= \frac{\hbar}{2}\begin{pmatrix}
+      0 & 1\\
+      1 & 0
+     \end{pmatrix} \begin{pmatrix}
+      1\\
+      0
+     \end{pmatrix}  = \frac{\hbar}{2} \begin{pmatrix}
+      0\\
+      1
+    \end{pmatrix} = \frac{\hbar}{2}\chi_{-\frac{1}{2}} \\
+    S_x \chi_{-\frac{1}{2}} &= \frac{\hbar}{2}\begin{pmatrix}
+      0 & 1\\
+      1 & 0
+     \end{pmatrix} \begin{pmatrix}
+      0\\
+      1
+     \end{pmatrix}  = \frac{\hbar}{2} \begin{pmatrix}
+      1\\
+      0
+    \end{pmatrix} = \frac{\hbar}{2}\chi_{\frac{1}{2}} \\
+    S_y \chi_{\frac{1}{2}} &= \frac{\hbar}{2}\begin{pmatrix}
+      0 & -i\\
+      i & 0
+     \end{pmatrix} \begin{pmatrix}
+      1\\
+      0
+     \end{pmatrix}  = \frac{i\hbar}{2} \begin{pmatrix}
+      0\\
+      1
+    \end{pmatrix} = \frac{i\hbar}{2}\chi_{-\frac{1}{2}} \\ 
+    S_y \chi_{-\frac{1}{2}} &= \frac{\hbar}{2}\begin{pmatrix}
+      0 & -i\\
+      i & 0
+     \end{pmatrix} \begin{pmatrix}
+      0\\
+      1
+     \end{pmatrix}  = -\frac{i\hbar}{2} \begin{pmatrix}
+      1\\
+      0
+    \end{pmatrix} = -\frac{i\hbar}{2}\chi_{\frac{1}{2}} \\
+  \end{aligned} \]
+\end{frame} 
+
+\begin{frame}[label=current]
+  \frametitle{}
+  再计算双电子自旋波函数的各种自旋算符的值 \\
+  (1) 总自旋算符与单电子自旋算符的关系
+  \[ \begin{aligned}
+    S^2 &= (S_1 + S_2)^2 \\
+    &=  S^2_1 + S^2_2 + 2S_1 \cdot S_2 \\
+    &=  S^2_1 + S^2_2 + 2(S_{1x}S_{2x} +S_{1y}S_{2y} + S_{1z}S_{2z} ) \\
+    S_z &= S_{1z} + S_{2z}
+  \end{aligned}
+  \]
+  (2) 总自旋算符作用于体系的四个波函数 $\chi ^{(1)}_S, \chi ^{(2)}_S, \chi ^{(3)}_S, \chi ^{(4)}_A$
+  \[ \begin{aligned}
+    S_z \chi ^{(1)}_S &= (S_{1z} + S_{2z})\chi _{ \frac{1}{2}} (S_{1z})\chi_{ \frac{1}{2}} (S_{2z}) \\
+    &= \left[S_{1z}\chi _{ \frac{1}{2}} (S_{1z})\right]\chi_{ \frac{1}{2}} (S_{2z}) +  \chi_{ \frac{1}{2}} (S_{1z})\left[S_{2z}\chi _{ \frac{1}{2}} (S_{2z})\right] \\
+    &= \frac{\hbar}{2}\chi _{ \frac{1}{2}} (S_{1z})\chi_{ \frac{1}{2}} (S_{2z}) + \frac{\hbar}{2} \chi_{ \frac{1}{2}} (S_{1z}) \chi_{ \frac{1}{2}} (S_{2z}) \\
+    &= \hbar \chi ^{(1)}_S
+  \end{aligned}
+  \]
+\end{frame} 
+
+\begin{frame}[label=current]
+  \frametitle{}
+同理可得其他三个,有
+\[ \begin{aligned}
+  S_z \chi ^{(1)}_S &= \hbar \chi ^{(1)}_S \\
+  S_z \chi ^{(2)}_S &= -\hbar \chi ^{(2)}_S \\
+  S_z \chi ^{(3)}_S &= 0 \\
+  S_z \chi ^{(4)}_A &= 0 \\
+\end{aligned}
+\]
+说明 $\chi ^{(1)}_S, \chi ^{(2)}_S, \chi ^{(3)}_S, \chi ^{(4)}_A$ 是 $S_z$的本征态 
+
+~~\\ 
+接着计算$S^2$
+\[ \begin{aligned}
+  S^2 \chi ^{(1)}_S &= \left[S^2_1 + S^2_2 + 2(S_{1x}S_{2x} +S_{1y}S_{2y} + S_{1z}S_{2z} )\right] \chi _{ \frac{1}{2}} (S_{1z})\chi_{ \frac{1}{2}} (S_{2z}) \\ 
+  &= \left[\frac{3}{4}\hbar^2 + \frac{3}{4}\hbar^2 + 2\frac{\hbar^2}{4}+ 2 (S_{1x}S_{2x} +S_{1y}S_{2y}  )\right] \chi _{ \frac{1}{2}} (S_{1z})\chi_{ \frac{1}{2}} (S_{2z}) 
+\end{aligned}
+\]
+\end{frame} 
+
+\begin{frame}[label=current]
+  \frametitle{}
+需要计算 
+\[ \begin{aligned}
+  (S_{1x}S_{2x})  \chi _{ \frac{1}{2}} (S_{1z})\chi_{ \frac{1}{2}} (S_{2z})  &=\left[S_{1x}\chi _{ \frac{1}{2}} (S_{1z})\right]\left[S_{2x}\chi_{ \frac{1}{2}} (S_{2z})\right] \\
+  &= \frac{\hbar}{2} \chi _{ -\frac{1}{2}} (S_{1z}) \frac{\hbar}{2} \chi _{ -\frac{1}{2}} (S_{2z}) \\
+  &= \frac{\hbar^2}{4} \chi ^{(2)}_S  \\
+  (S_{1y}S_{2y})  \chi _{ \frac{1}{2}} (S_{1z})\chi_{ \frac{1}{2}} (S_{2z})  &=\left[S_{1y}\chi _{ \frac{1}{2}} (S_{1z})\right]\left[S_{2y}\chi_{ \frac{1}{2}} (S_{2z})\right] \\
+  &= \frac{i\hbar}{2} \chi _{ -\frac{1}{2}} (S_{1z}) \frac{i\hbar}{2} \chi _{ -\frac{1}{2}} (S_{2z}) \\
+  &= -\frac{\hbar^2}{4} \chi ^{(2)}_S  \\
+\end{aligned}
+\]
+两式相加,结果为零,代回,有 $S^2 \chi ^{(1)}_S = 2 \hbar^2  \chi ^{(1)}_S$
+\end{frame} 
+
+\begin{frame}[label=current]
+  \frametitle{}
+  同理可得其他三个,有
+  \[ \begin{aligned}
+    S^2 \chi ^{(1)}_S &= 2 \hbar^2  \chi ^{(1)}_S \\
+    S^2 \chi ^{(2)}_S &= 2 \hbar^2  \chi ^{(2)}_S \\
+    S^2 \chi ^{(3)}_S &= 2 \hbar^2  \chi ^{(3)}_S \\
+    S^2 \chi ^{(4)}_A &= 0 \\
+  \end{aligned}
+  \]
+  说明 $\chi ^{(1)}_S, \chi ^{(2)}_S, \chi ^{(3)}_S, \chi ^{(4)}_A$ 也是 $S^2$的本征态 
+\end{frame} 
+
+\begin{frame}[label=current]
+  \frametitle{自旋单态和三态}
+  \begin{minipage}[b]{0.49\textwidth}
+  总自旋角动量大小 
+  \[ \begin{aligned}
+    S^2 \chi ^{(1)}_S &= 2 \hbar^2  \chi ^{(1)}_S \\
+    S^2 \chi ^{(2)}_S &= 2 \hbar^2  \chi ^{(2)}_S \\
+    S^2 \chi ^{(3)}_S &= 2 \hbar^2  \chi ^{(3)}_S \\
+    S^2 \chi ^{(4)}_A &= 0 \\
+  \end{aligned}
+  \]
+  \end{minipage}
+  \begin{minipage}[b]{0.49\textwidth}
+    总自旋角动量投影
+    \[ \begin{aligned}
+      S_z \chi ^{(1)}_S &= \hbar \chi ^{(1)}_S \\
+      S_z \chi ^{(2)}_S &= -\hbar \chi ^{(2)}_S \\
+      S_z \chi ^{(3)}_S &= 0 \\
+      S_z \chi ^{(4)}_A &= 0 \\
+    \end{aligned}
+    \]  
+\end{minipage}
+\begin{table}[htbp]
+  \centering\begin{tabular}{ccccccc}
+  \toprule
+   & $\hat{S}$ & $\hat{S}_z$ & $s$ & $m_s$ & $^{2s+1}\chi_{m_s}$ \\
+   \midrule
+   $\chi ^{(1)}_S$ & $\sqrt{2} \hbar$ & $\hbar$ & $1$ & $1$ & $^{3}\chi_{1}$ & $\text{三态}$ \\ 
+   $\chi ^{(2)}_S$ & $\sqrt{2} \hbar$ & $-\hbar$ & $1$ & $-1$ & $^{3}\chi_{-1}$ & $\text{三态}$ \\
+   $\chi ^{(3)}_S$ & $\sqrt{2} \hbar$ & $0$ & $1$ & $0$ & $^{3}\chi_{0}$ & $\text{三态}$ \\ 
+   $\chi ^{(4)}_A$ & $0 $ & $0$ & $0$ & $0$ & $^{1}\chi_{0}$ & $\text{单态}$\\
+   \bottomrule   
+  \end{tabular}
+  %\caption{<caption>}
+  %\label{<label>}
+\end{table}
+\end{frame} 
+
+\begin{frame}[label=current]
+  \frametitle{}
+\begin{figure}[htbp]
+  \centering
+  \includegraphics[width=0.43\textwidth]{figs/spintrp.png}
+  %\caption{}
+    %\label{fig:}
+\end{figure}
+物理图像: 交换对称态是自旋平行三重态，交换反对称态是自旋反平行单态
+\end{frame} 
+
+\subsection{氦原子}
+\begin{frame}[label=current]
+  \frametitle{氦原子}
+  以电荷为$+2\left\vert e \right\vert$的原子核为坐标原点
+  \begin{figure}[htbp]
+    \centering
+    \includegraphics[width=0.3\textwidth]{figs/he1.png}
+    %\caption{}
+      %\label{fig:}
+  \end{figure}
+  氦原子哈密顿
+  \[
+  H=\frac{\mathbf{p}_1^2}{2 m}+\frac{\mathbf{p}_2^2}{2 m}-\frac{2 e^2}{r_1}-\frac{2 e^2}{r_2}+\frac{e^2}{r_{12}}
+  \]
+  式中最后一项为电子间的相互作用能, 它的存在导致不能分离变量。\\
+\end{frame} 
+
+\begin{frame}[label=current]
+  \frametitle{}
+  1、先不考虑电子间的相互作用项, 则电子间无相互作用, 问题变为中心势场下的近独立双电子体系。其波函数记为
+  \[ \Psi(\vec{q}_1, \vec{q}_2) = \Psi(\vec{r}_1, S_{1z}, \vec{r}_2, S_{2z}) = \psi(\vec{r}_1, \vec{r}_2) \chi (S_{1z}, S_{2z})\]
+其中, 自旋波函数已求得（三个对称,一个反对称）
+  \[ 
+    \begin{aligned}
+      \chi ^{(1)} _S &= \chi _{ \frac{1}{2}} (S_{1z})\chi_{ \frac{1}{2}} (S_{2z})  \\ 
+      \chi ^{(2)} _S &= \chi _{ -\frac{1}{2}} (S_{1z})\chi_{ -\frac{1}{2}} (S_{2z})  \\ 
+      \chi ^{(3)} _S &= \frac{1}{\sqrt{2} }\left[\chi _{ \frac{1}{2}} (S_{1z})\chi_{ -\frac{1}{2}} (S_{2z})  + \chi _{ -\frac{1}{2}} (S_{1z})\chi_{\frac{1}{2}} (S_{2z})\right] \\ 
+      \chi ^{(4)} _A &= \frac{1}{\sqrt{2} }\left[\chi _{ \frac{1}{2}} (S_{1z})\chi_{ -\frac{1}{2}} (S_{2z})  - \chi _{ -\frac{1}{2}} (S_{1z})\chi_{\frac{1}{2}} (S_{2z})\right] 
+    \end{aligned}\]
+\end{frame} 
+
+\begin{frame}[label=current]
+  \frametitle{}
+由于两粒子间相互作用不计, 位置函数写成单电子形式, 考虑到交换对称性。 与自旋单态$\chi ^{(4)} _A$对应的对称位置函数,记为
+$$
+\psi _S \left(\vec{r}_1, \vec{r}_2\right)=\frac{1}{\sqrt{2}}\left[\psi_{n' l' m'}\left(\vec{r}_1\right) \psi_{n l m}\left(\vec{r}_2\right) + \psi_{n' l' m'}\left(\vec{r}_2\right) \psi_{n l m}\left(\vec{r}_1\right)\right]
+$$
+与自旋三态$\chi ^{(1)} _S, \chi ^{(2)} _S, \chi ^{(3)} _S$对应的反对称位置函数,记为
+$$
+\psi _A \left(\vec{r}_1, \vec{r}_2\right)=\frac{1}{\sqrt{2}}\left[\psi_{n' l' m'}\left(\vec{r}_1\right) \psi_{n l m}\left(\vec{r}_2\right) - \psi_{n' l' m'}\left(\vec{r}_2\right) \psi_{n l m}\left(\vec{r}_1\right)\right]
+$$
+\end{frame} 
+
+\begin{frame}[label=current]
+  \frametitle{}
+考虑基态, 只存在对称的 
+$$
+\begin{aligned}
+  \psi _S \left(\vec{r}_1, \vec{r}_2\right)&=\frac{1}{\sqrt{2}}\left[\psi_{100}\left(\vec{r}_1\right) \psi_{100}\left(\vec{r}_2\right) + \psi_{100}\left(\vec{r}_2\right) \psi_{100}\left(\vec{r}_1\right)\right] \\ 
+  &= \psi_{100}\left(\vec{r}_1\right) \psi_{100}\left(\vec{r}_2\right) \\
+  &= \frac{Z^3}{\pi a_0^3} e^{-Z\left(r_1+r_2\right) / a_0}
+\end{aligned}
+$$
+因此,有 
+\[ \Psi _{(1s)^2}(\vec{q}_1, \vec{q}_2) = \psi_{100}\left(\vec{r}_1\right) \psi_{100}\left(\vec{r}_2\right) \chi ^{(4)} _A \]
+能量
+\[ E^{(0)}_1 = 2 \times \frac{Z^2}{n^2}E_1 = 8 \times (-13.6 \, eV)  = -108. 8 \, eV\]
+\end{frame} 
+
+\begin{frame}[label=current]
+  \frametitle{}
+2、把电子间的相互作用能看成微扰, 则能量一级修正是如下平均值
+\[ E^{(1)}_1 = \left\langle \Psi _{(1s)^2} \middle| \frac{e^2}{r_{12}} \middle| \Psi _{(1s)^2} \right\rangle  = \frac{5}{2} \frac{e^2}{2 a_0}  = 34 \,eV\]
+因此,一级修正条件的基态能为
+\[ E_1 = E^{(0)}_1 + E^{(1)}_1  =-74.8 \, eV\]
+实验值为 $78.8 \, eV$
+\end{frame} 
+
+\begin{frame}[label=current]
+  \frametitle{}
+3、变分法 , 把任意在下能量平均值公式在哈密顿本征函数系展开
+$$
+\begin{aligned}
+\bar{H} & =\langle\psi|\hat{H}| \psi\rangle=\sum_n\left\langle\psi|\hat{H}| \phi_n>\left\langle\phi_n \mid \psi\right\rangle\right. \\
+& =\sum_n E_n\left\langle\psi\left|\phi_n>\phi_n\right| \psi\right\rangle  \\
+& \geq E_0 \sum_n\left\langle\psi \mid \phi_n\right\rangle\left\langle\phi_n \mid \psi\right\rangle \\
+& =E_0\langle\psi \mid \psi\rangle=E_0
+\end{aligned}
+$$ 
+${\color{red}\star}~$ 结论：任意态的能量平均值总大于等于基态能量
+\end{frame} 
+
+\begin{frame}[label=current]
+  \frametitle{}
+
+考虑库仑屏蔽作用, 把质子数作变分, 位置波函数变为
+\[ \left\vert \widetilde{0} \right\rangle = \Psi _{(1s)^2}(\vec{q}_1, \vec{q}_2, \mathfrak{Z} ) = \frac{\mathfrak{Z}^3}{\pi a_0^3} e^{-\mathfrak{Z}\left(r_1+r_2\right) / a_0} \]
+求能量平均值
+\[ \begin{aligned}
+  \overline{H} &= \left\langle \Psi _{(1s)^2}(\vec{q}_1, \vec{q}_2, \mathfrak{Z} ) \middle| H \middle| \Psi _{(1s)^2}(\vec{q}_1, \vec{q}_2, \mathfrak{Z} ) \right\rangle \\
+  &= \left\langle\widetilde{0}\left|\frac{\mathbf{p}_1^2}{2 m}+\frac{\mathbf{p}_2^2}{2 m}\right| \widetilde{0}\right\rangle-\left\langle\widetilde{0}\left|\frac{Z e^2}{r_1}+\frac{Z e^2}{r_2}\right| \widetilde{0}\right\rangle+\left\langle\widetilde{0}\left|\frac{e^2}{r_{12}}\right| \widetilde{0}\right\rangle \\
+  &= \left( 2 \frac{\mathfrak{Z}^2}{2} - 2 Z \mathfrak{Z}+ \frac{5}{8} \mathfrak{Z} \right) \frac{e^2}{a_0}
+\end{aligned} \]
+\end{frame} 
+
+\begin{frame}[label=current]
+  \frametitle{}
+极小值条件 
+\[ \frac{\partial \overline{H} }{\partial \mathfrak{Z} } = 2 \mathfrak{Z} -2 + \frac{5}{8} = 0 \]
+\[ \implies \mathfrak{Z} = 1.6875 \]
+代回, 得能量最小值
+\[ E_ 1 = \overline{H}_{\text{min}} = -77.5 \, eV \]
+与实验测量值已很接近了！
+\end{frame} 
+
+\begin{frame}[label=current]
+  \frametitle{}
+4、数值方法 \\
+多电子原子
+\[ \begin{aligned}
+  \mathrm{H} & =\sum_{i=1}^z\left(-\frac{1}{2} \nabla_i^2-\frac{Z}{r_i}\right)+\frac{1}{2} \sum_{i \neq j} \sum \frac{1}{r_{i j}} \\
+  & =\sum_{i=1}^z h_i+\frac{1}{2} \sum_{i \neq j} \sum \frac{1}{r_{i j}}
+  \end{aligned}\]
+电子无相互作用基态波函数
+$$
+\psi\left(r_1, r_2, \cdots r_z\right)=\phi_{k_1}\left(r_1\right) \phi_{k_2}\left(r_2\right) \cdots \phi_{k z}\left(r_z\right)
+$$
+\end{frame} 
+
+\begin{frame}[label=current]
+  \frametitle{}
+能量平均值
+$$
+\overline{H}=\sum_{i=1}^z \int \phi_{k_i}^*\left(\mathrm{r}_i\right) h_i \phi_{k_i}\left(\mathrm{r}_i\right) \mathrm{d} \tau_i+\frac{1}{2} \sum_{i \neq j} \sum \iint\left|\phi_{k_i}\left(\mathrm{r}_i\right)\right|^2 \frac{1}{r_{i j}}\left|\phi_{k_j}\left(\mathrm{r}_j\right)\right|^2 \mathrm{~d} \tau_i \mathrm{~d} \tau_j
+$$
+ 
+$$ 
+\begin{aligned}
+  \text{求变分:} \quad \delta \overline{H} & =\sum_i \int\left[\delta \phi_{k_i}^* h_i \phi_{k_i}+\phi_{k_i}^* h_i \delta \phi_{k_i}\right] \mathrm{d} \tau_i \\
+& +\frac{1}{2} \sum_{i \neq j} \sum \iint\left[\delta \phi_{k_i}^* \phi_{k_i}+\phi_{k_i}^* \delta \phi_{k_i}\right] \frac{1}{r_{i j}}\left|\phi_{k_j}\left(\boldsymbol{r}_j\right)\right|^2 \frac{1}{r_{i j}} \mathrm{~d} \tau_i \mathrm{~d} \tau_j \\
+& +\frac{1}{2} \sum_{i \neq j} \sum \iint\left|\phi_{k_i}\left(\boldsymbol{r}_i\right)\right|^2 \frac{1}{r_{i j}}\left[\delta \phi_{k_j}^* \phi_{k_j}+\phi_{k_j}^* \delta \phi_{k_j}\right] \mathrm{d} \tau_i \mathrm{~d} \tau_j \qquad  \\
+& =\sum_i \int\left[\delta \phi_{k_i}^* h_i \phi_{k_i}+\phi_{k_i}^* h_i \delta \phi_{k_i}\right] \mathrm{d} \tau_i \\
+& +\sum_{i \neq j} \sum \iint\left[\delta \phi_{k_i}^* \phi_{k_i}+\phi_{k_i}^* \delta \phi_{k_i}\right] \frac{1}{r_{i j}}\left|\phi_{k_j}\left(\boldsymbol{r}_j\right)\right|^2 \frac{1}{r_{i j}} \mathrm{~d} \tau_i \mathrm{~d} \tau_j
+\end{aligned}
+$$
+\end{frame} 
+
+\begin{frame}[label=current]
+  \frametitle{}
+能量变分用本征值概率变分表示
+$$
+\delta \overline{H} =\sum_i \varepsilon_i \delta\left|a_i\right|^2=\sum_i \varepsilon_i \delta\left(\int\left|\varphi_{k_i}\left(\mathrm{r}_i\right)\right|^2 \mathrm{~d} \tau_i\right)
+$$
+联立, 得单电子方程（Hartree方程）
+$$
+\left[-\frac{1}{2} \nabla_i^2+\left(-\frac{Z}{r_i}+\sum_{j \neq i} \int\left|\varphi_{k_j}\right|\left(\mathrm{r}_j\right)^2 \frac{1}{r_{i j}} \mathrm{~d} \tau_j\right)\right] \varphi_{k_i}=\varepsilon_i \varphi_{k_i}
+$$
+Hartree 势 由本征函数决定
+$$
+V^{(0)}\left(r_i\right)=\left(-\frac{Z}{r_i}+\sum_{j \neq i} \int\left|\varphi_{k_i}\right|^2 \frac{1}{r_{i j}} \mathrm{~d} \tau_j \right)
+$$
+\end{frame} 
+
+\begin{frame}[label=current]
+  \frametitle{}
+  迭代自洽求解: 
+  \begin{figure}[htbp]
+    \centering
+    \includegraphics[width=0.5\textwidth]{figs/hartree.png}
+    %\caption{}
+      %\label{fig:}
+  \end{figure}
+\end{frame} 
+
+\begin{frame}[label=current]
+  \frametitle{课外作业}
+  \begin{enumerate}
+    \item 对于一个自旋为 1 的系统， 哈密顿为
+    \[ H = A S_z^2 + B(S_x^2 - S_y^2)\]
+    试求体系的能量本征值和归一化的本征态
+    \item  在边长为 L 的三维盒子中有四个无相互作用自旋为$\frac{1}{2}$的全同粒子 \\
+      1）如果粒子不可区分，试给出系统的前三个最低能级及简并度 \\
+      2）如果粒子可区分，试给出系统的前三个最低能级及简并度 \\
+      3）如果粒子自旋为1呢？
+  \end{enumerate}
+\end{frame} 
+
+\begin{frame}[label=current]
+  \frametitle{本章要点}
+ \begin{enumerate}
+  \item 电子自旋的实验根据
+  \item 自旋假设的表述
+  \item 自旋算符的对易和反对易关系
+  \item 自旋算符及其本征态和本征值
+  \item 什么是塞曼效应，什么是光谱精细结构
+  \item 全同粒子概念
+  \item 全同性原理的表述
+  \item 全同粒子波函数的特点
+  \item 玻色子与费米子体系波函数的形式与能级
+  \item 自旋单态与三态的波函数及自旋计算
+  \item 原子波函数对称性
+ \end{enumerate}
+\end{frame} 

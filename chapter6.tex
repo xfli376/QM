@@ -1,0 +1,1877 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame} [plain]
+    \frametitle{}
+    %\Background[2] 
+    \begin{center}
+    { {\bf \huge 第六章：微扰理论 }}
+    \end{center}  
+    \addtocounter{framenumber}{-1}   
+\end{frame}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{定态微扰理论}
+
+\subsection{非简并定态微扰}
+\begin{frame}
+  \frametitle{微扰理论在物理学中的地位
+  }
+  \begin{itemize}
+    \Item 单体问题：一个粒子在确定势场中运动。
+    \Item 二体问题：两物体之间的相互作用使它们绕质心运动。
+    \Item 微扰问题：增加一个物体，构成三体问题，如果对原体系的扰动很小，考虑微扰法等。
+  \end{itemize}
+  \begin{figure}
+    \includegraphics[width=0.4\textwidth]{figs/2023-04-21-21-34-23.png}   
+\end{figure}
+\end{frame} 
+
+\begin{frame} 
+  \frametitle{}
+  \begin{itemize}
+    \Item 影响很大，则是标准三体问题，不能精确求解，考虑变分法等。
+    \Item 多体问题：考虑平均场近似方法
+    \Item 大数目问题：体系中物体数目众多，这时呈现出的规律性如：凝聚、超导、超流，体现出统计规律性，考虑统计物理方法。
+  \end{itemize}
+\end{frame} 
+
+\begin{frame}
+  \frametitle{}
+  \emf[定态微扰:] 哈密顿不显含时间，微扰导致状态移动——定态问题 \\
+  \begin{itemize}
+    \item 对非简并能级的扰动
+    \item 对简并能级的扰动
+  \end{itemize}
+
+  ~~\\ 
+  \emf[跃迁问题:] 哈密顿显含时间,微扰导致状态改变——跃迁问题 
+\end{frame} 
+
+\begin{frame}
+  \frametitle{定态微扰}
+  \emf[理想体系:] 不考虑微扰时能精确求解的体系 \\
+  \emf[实际体系:] 考虑微扰时不能精确求解的体系 \\
+
+  ~~\\ 
+设实际体系的哈密顿(不显含时间)，其本征方程为
+\[\hat{\boldsymbol{H}}\left|\psi_n\right\rangle =\boldsymbol{E}_n\left|\psi_n\right\rangle \]
+这是不能精确求解的。设它可以做某种展开，一阶情况为
+$$
+\hat{H}=\hat{H}^{(0)}+\lambda\hat{H}^{(1)} =\hat{H}^{(0)}+\hat{H}^{\prime} 
+$$
+其中,零阶$ \hat{H}^{(0)} $的本征方程是可以精确求解的
+$$
+\hat{H}^{(0)}\left|\psi_n^{(0)}\right\rangle=E_n^{(0)}\left|\psi_n^{(0)}\right\rangle
+$$
+\end{frame} 
+
+\begin{frame}
+  \frametitle{非简并定态微扰}
+若解得的能量本征值$ E_n^{(0)}$ 都是非简并的，则构成非简并定态微扰问题。\\
+
+~~\\ 
+实际体系的本征能量和本征函数也写成关于$\lambda$的级数展开式
+$$
+\begin{aligned}
+& E_n=E_n^{(0)}+\lambda E_n^{(1)}+\lambda^2 E_n^{(2)}+\cdots \\
+& \left|\psi_n>=\right| \psi_n^{(0)}>+\lambda\left|\psi_n^{(1)}>+\lambda^2\right| \psi_n^{(2)}>+\cdots
+\end{aligned}
+$$
+代回实际体系的本征方程
+\small $$ 
+\begin{aligned} 
+  \left(\hat{\boldsymbol{H}}^{(0)}+\lambda \hat{\boldsymbol{H}}^{(1)}\right)&\left(\left|\psi_n^{(0)}>+\lambda\right| \psi_n^{(1)}>+\lambda^2 \mid \psi_n^{(2)}>+\cdots\right) \\
+  & \left.=\left(\boldsymbol{E}_n^{(0)}+\lambda \boldsymbol{E}_n^{(1)}+\lambda^2 \boldsymbol{E}_n^{(2)}+\cdots\right)\left(\left|\psi_n^{(0)}\right\rangle+\lambda\left|\psi_n^{(1)}>+\lambda^2\right| \psi_n^{(2)}\right\rangle+\cdots\right) 
+\end{aligned}
+$$
+\end{frame} 
+\begin{frame}
+  \frametitle{}
+左右两端分别做乘法计算，并按$ \lambda  $的幂整理，得
+\[\begin{bmatrix} ~ & \hat{H}^{(0)}\left|\psi_n^{(0)}\right\rangle + \qquad \qquad \qquad \qquad\\ 
+  \lambda & \left[\hat{H}^{(0)}\left|\psi_n^{(1)}\right\rangle +\hat{H}^{(1)}\left|\psi_n^{(0)}\right\rangle\right] +  \\
+  \lambda ^2  & \left[\hat{H}^{(0)}\left|\psi_n^{(2)}\right\rangle+\hat{H}^{(1)}\left|\psi_n^{(1)}\right\rangle\right]+\\
+  \lambda ^3 & \cdots \\
+\end{bmatrix} = 
+\begin{bmatrix} ~ & E_n^{(0)}\left|\psi_n^{(0)}\right\rangle+ \qquad \qquad \qquad \qquad  \qquad \qquad \qquad \\ 
+  \lambda & \left.\left[E_n^{(0)}\left|\psi_n^{(1)}>+E_n^{(1)}\right| \psi_n^{(0)}\right\rangle\right]+ \qquad  \qquad \qquad \quad\\
+  \lambda ^2  & \left[E_n^{(0)}\left|\psi_n^{(2)}\right\rangle+E_n^{(1)}\left|\psi_n^{(1)}\right\rangle+E_n^{(2)}\left|\psi_n^{(0)}\right\rangle\right]+\\
+  \lambda ^3 & \cdots \\
+\end{bmatrix}
+\]
+等式两边同幂次的系数应相等
+\[
+  \begin{aligned}
+    &\hat{H}^{(0)}\left|\psi_n^{(0)}>=E_n^{(0)}\right| \psi_n^{(0)}> \cdots\cdots (a)\\
+    & \hat{H}^{(0)}\left|\psi_n^{(1)}\right\rangle+\hat{H}^{(1)}\left|\psi_n^{(0)}\right\rangle=E_n^{(0)}\left|\psi_n^{(1)}\right\rangle+E_n^{(1)}\left|\psi_n^{(0)}\right\rangle \cdots\cdots (b)\\ 
+    & \hat{H}^{(0)}\left|\psi_n^{(2)}\right\rangle+\hat{H}^{(1)}\left|\psi_n^{(1)}\right\rangle=E_n^{(0)}\left|\psi_n^{(2)}\right\rangle+E_n^{(1)}\left|\psi_n^{(1)}\right\rangle+E_n^{(2)}\left|\psi_n^{(0)}\right\rangle \cdots\cdots (c)\\
+  \end{aligned} 
+  \]
+  分别称方程(a),(b),(c)为零阶、一阶和二阶修正方程。
+\end{frame}
+
+\begin{frame} 
+  \frametitle{}
+以上三式左乘$\left\langle  \psi_n^{(0)} \right\vert$,得能量的各级修正
+\[
+  \begin{aligned}
+    & E_n^{(0)} = \left\langle  \psi_n^{(0)} \right\vert H^{(0)} \left\vert \psi_n^{(0)} \right\rangle \cdots\cdots (d)\\
+    & E_n^{(1)} = \left\langle  \psi_n^{(0)} \right\vert H' \left\vert \psi_n^{(0)} \right\rangle \cdots\cdots (e)\\
+    & E_n^{(2)} = \left\langle  \psi_n^{(0)} \right\vert H' \left\vert \psi_n^{(1)} \right\rangle \cdots\cdots (f)\\
+  \end{aligned} 
+  \]
+  同理，可写出能量的三级和四级修正
+  \[
+  \begin{aligned}
+    & E_n^{(3)} = \left\langle  \psi_n^{(0)} \right\vert H' \left\vert \psi_n^{(2)} \right\rangle \cdots\cdots (g)\\
+    & E_n^{(4)} = \left\langle  \psi_n^{(0)} \right\vert H' \left\vert \psi_n^{(3)} \right\rangle \cdots\cdots (h)\\
+  \end{aligned} 
+  \]
+\end{frame} 
+
+\begin{frame}
+  \frametitle{一阶修正}
+\例[1]{求解一阶修正方程
+\[ \hat{H}^{(0)}\left|\psi_n^{(1)}\right\rangle+\hat{H}^{(1)}\left|\psi_n^{(0)}\right\rangle=E_n^{(0)}\left|\psi_n^{(1)}\right\rangle+E_n^{(1)}\left|\psi_n^{(0)}\right\rangle\]
+}
+\解 整理，得标准形一级修正方程
+\begin{equation}\label{eq:yjxz}
+  \left[\hat{H}^{(0)}-E_n^{(0)}\right]\left|\psi_n^{(1)}\right\rangle=-\left[\hat{H}^{\prime}-E_n^{(1)}\right]\left| \psi_n^{(0)}\right\rangle
+\end{equation}
+左乘 $\left\langle\psi_n^{(0)}\right|$
+$$
+\left\langle\psi_n^{(0)}\left|\left[\hat{H}^{(0)}-E_n^{(0)}\right]\right| \psi_n^{(1)}\right\rangle=-\left\langle\psi_n^{(0)}\left|\left[\hat{H}^{\prime}-E_n^{(1)}\right]\right| \psi_n^{(0)}\right\rangle
+$$
+\end{frame} 
+\begin{frame}
+  \frametitle{}
+左端
+$$
+\begin{aligned}
+  \left\langle\psi_n^{(0)}\left|\left[\hat{H}^{(0)}-E_n^{(0)}\right]\right| \psi_n^{(1)}\right\rangle & =\left\langle\psi_n^{(0)}\left|\hat{H}^{(0)}\right| \psi_n^{(1)}\right\rangle-\left\langle\psi_n^{(0)}\left|E_n^{(0)}\right| \psi_n^{(1)}\right\rangle \\
+  &= E_n^{(0)} \left\langle\psi_n^{(0)}\left|\psi_n^{(1)}\right\rangle\right. - E_n^{(0)} \left\langle\psi_n^{(0)}\left|\psi_n^{(1)}\right\rangle\right. \\
+& =0
+\end{aligned}
+$$
+右端
+$$
+\begin{aligned}
+  \left\langle\psi_n^{(0)}\left|\left[E_n^{(1)}-\hat{H}^{\prime}\right]\right| \psi_n^{(0)}\right\rangle &=0 \\
+  \left\langle\psi_n^{(0)}\left|E_n^{(1)}\right| \psi_n^{(0)} \right\rangle  -  \left\langle\psi_n^{(0)}\left|\hat{H}^{\prime}\right| \psi_n^{(0)} \right\rangle  &=0 \\ 
+  E_n^{(1)} - \left\langle\psi_n^{(0)}\left|\hat{H}^{\prime}\right| \psi_n^{(0)} \right\rangle  &= 0 \\
+  E_n^{(1)} = \left\langle n \left|\hat{H}^{\prime}\right| n \right\rangle &= H'_{nn}
+\end{aligned}
+$$
+获得能量一级修正 $ E_n^{(1)}  $ ,下面求波函数的一级修正 $ \psi_n^{(1)}  $ 
+\end{frame}
+
+\begin{frame}
+  \frametitle{}
+本征矢$\{ \left| \psi_n^{(0)} \right\rangle\}$构成完备集, 任意函数都可以在其上展开，现把 $ \left|\psi_n^{(1)}\right\rangle + a \left|\psi_n^{(0)}\right\rangle  $展开 
+\[ \left|\psi_n^{(1)}\right\rangle + a \left|\psi_n^{(0)}\right\rangle  =\sum_l a_l^{(1)} \left|\psi_l^{(0)}\right\rangle \]
+合理选取$a$,以消除左端的$\left|\psi_n^{(0)}\right\rangle$因子，则有
+\begin{equation}\label{eq:yjzk}
+  \left|\psi_n^{(1)}\right\rangle =\sum_{l\ne n} a_l^{(1)} \left|\psi_l^{(0)}\right\rangle 
+\end{equation}
+左乘 $\left\langle \psi_n^{(0)} \right|$
+\[ \left\langle \psi_n^{(0)} \left| \psi_n^{(1)}\right\rangle \right.=\sum_{l\ne n} a_l^{(1)} \left\langle \psi_n^{(0)} \left|\psi_l^{(0)}\right\rangle \right.\]
+\end{frame} 
+
+\begin{frame}
+  \frametitle{}
+由正交性，式子右端为零， 得
+\[ \left\langle \psi_n^{(0)} \left| \psi_n^{(1)}\right\rangle \right.=0\]
+把展开式[\ref{eq:yjzk}]代回一级修正方程[\ref{eq:yjxz}]
+\begin{equation*}
+ \begin{aligned}
+   \left[\hat{H}^{(0)}-E_n^{(0)}\right]\left|\psi_n^{(1)}\right\rangle  &= -\left[\hat{H}^{\prime}-E_n^{(1)}\right]\left| \psi_n^{(0)}\right\rangle \\ 
+   \left[\hat{H}^{(0)}-E_n^{(0)}\right]\sum_{l\ne n} a_l^{(1)} \left|\psi_l^{(0)}\right\rangle   &= -\left[\hat{H}^{\prime}-E_n^{(1)}\right]\left| \psi_n^{(0)}\right\rangle \\
+   \sum_{l\ne n} a_l^{(1)}\left[\hat{H}^{(0)}-E_n^{(0)}\right] \left|\psi_l^{(0)}\right\rangle   &= -\left[\hat{H}^{\prime}-E_n^{(1)}\right]\left| \psi_n^{(0)}\right\rangle   
+ \end{aligned}
+\end{equation*}
+\end{frame} 
+
+\begin{frame}
+  \frametitle{}
+左乘$\left\langle \psi_m^{(0)} \right|, \quad (m \ne n)$， 得
+\begin{equation*}
+  \begin{aligned}
+    \sum_{l\ne n} a_l^{(1)}\left\langle \psi_m^{(0)} \right|\left[\hat{H}^{(0)}-E_n^{(0)}\right] \left|\psi_l^{(0)}\right\rangle   &= -\left\langle \psi_m^{(0)} \right|\left[\hat{H}^{\prime}-E_n^{(1)}\right]\left| \psi_n^{(0)}\right\rangle  \\
+    \sum_{l\ne n} a_l^{(1)}\left[E_m^{(0)}-E_n^{(0)}\right]\left\langle \psi_m^{(0)} \left|\psi_l^{(0)}\right\rangle \right.   &= -\left\langle \psi_m^{(0)} \right|\hat{H}^{\prime}\left| \psi_n^{(0)}\right\rangle + E_n^{(1)}\left\langle \psi_m^{(0)} \left| \psi_n^{(0)}\right\rangle\right. \\ 
+    \sum_{l\ne n} a_l^{(1)}\left[E_m^{(0)}-E_n^{(0)}\right] \delta _{ml}   &= -\left\langle \psi_m^{(0)} \right|\hat{H}^{\prime}\left| \psi_n^{(0)}\right\rangle \\ 
+    a_m^{(1)}\left[E_m^{(0)}-E_n^{(0)}\right] &= -\left\langle \psi_m^{(0)} \right|\hat{H}^{\prime}\left| \psi_n^{(0)}\right\rangle \\ 
+  \end{aligned}
+ \end{equation*}
+ 解得
+ \[ a_m^{(1)} = \frac{\left\langle \psi_m^{(0)} \right|\hat{H}^{\prime}\left| \psi_n^{(0)}\right\rangle}{E_n^{(0)}-E_m^{(0)}} = \frac{{H}^{\prime}_{mn}}{E_n^{(0)}-E_m^{(0)}}, \quad (m \ne n) \]
+\end{frame} 
+
+\begin{frame}
+  \frametitle{}
+得波函数的一级修正
+\[ \left|\psi_n^{(1)}\right\rangle =\sum_{m\ne n} a_m^{(1)} \left|\psi_m^{(0)}\right\rangle  
+= \sum_{m\ne n} \frac{H^{\prime}_{mn}}{E_n^{(0)}-E_m^{(0)}} \left|\psi_m^{(0)}\right\rangle \]
+实际体系(哈密顿$\hat{H} = \hat{H}^{(0)} + \hat{H}^{'} $)的一级修正解
+\begin{equation*}
+  \boxed{\left\{\begin{aligned}
+    E_n &= E_n^{(0)} + E_n^{(1)} = E_n^{(0)} + H'_{nn} \\
+    \left|\psi_n \right\rangle &= \left|\psi_n^{(0)}\right\rangle +\left|\psi_n^{(1)}\right\rangle = \left|\psi_n^{(0)}\right\rangle + \sum_{m\ne n} \frac{H^{\prime}_{mn}}{E_n^{(0)}-E_m^{(0)}} \left|\psi_m^{(0)}\right\rangle 
+  \end{aligned} \right.}
+\end{equation*}    
+\end{frame} 
+
+\begin{frame}
+  \frametitle{二级修正}
+\例[2]{求解能量的二级修正
+}
+\解 整理，得标准形二级修正方程
+\begin{equation}\label{eq:ejxz}
+  \left[\hat{H}^{(0)} - E_n^{(0)}\right]\left|\psi_n^{(2)}\right\rangle
+  =-  \left[\hat{H}^{\prime} - E_n^{(1)}\right] \left|\psi_n^{(1)}\right\rangle+E_n^{(2)}\left|\psi_n^{(0)}\right\rangle
+\end{equation}
+代入$\left|\psi_n^{(1)}\right\rangle = \sum_{m\ne n} a_m^{(1)} \left|\psi_m^{(0)} \right\rangle $
+\begin{equation*}
+  \begin{aligned}
+    \left[\hat{H}^{(0)} - E_n^{(0)}\right]\left|\psi_n^{(2)}\right\rangle
+    &= \left[E_n^{(1)}-\hat{H}^{\prime}\right] \sum_{m\ne n} a_m^{(1)} \left|\psi_m^{(0)} \right\rangle+E_n^{(2)}\left|\psi_n^{(0)}\right\rangle \\ 
+  \end{aligned}  
+\end{equation*}
+\end{frame} 
+
+\begin{frame}
+  \frametitle{}
+  左乘$\left\langle \psi_n^{(0)}\right|$
+  \begin{equation*}
+    \begin{aligned}
+      &\left\langle \psi_n^{(0)}\right|\left[\hat{H}^{(0)} - E_n^{(0)}\right]\left|\psi_n^{(2)}\right\rangle
+      = \sum_{m\ne n} a_m^{(1)}\left\langle \psi_n^{(0)}\right|\left[E_n^{(1)}-\hat{H}^{\prime}  \right]  \left|\psi_m^{(0)} \right\rangle
+      +E_n^{(2)}\left\langle \psi_n^{(0)}\left|\psi_n^{(0)}\right\rangle \right. \\
+      &\sum_{m\ne n} a_m^{(1)}\left\langle \psi_n^{(0)}\right|\left[E_n^{(1)}-\hat{H}^{\prime}  \right]  \left|\psi_m^{(0)} \right\rangle
+      +E_n^{(2)}\left\langle \psi_n^{(0)}\left|\psi_n^{(0)}\right\rangle \right. =0  \\
+      & \sum_{m\ne n} a_m^{(1)}\left\langle \psi_n^{(0)}\right|E_n^{(1)}  \left|\psi_m^{(0)} \right\rangle - \sum_{m\ne n} a_m^{(1)}\left\langle \psi_n^{(0)}\right|\hat{H}^{\prime} \left|\psi_m^{(0)} \right\rangle +E_n^{(2)} =0 \\ 
+      &\implies  E_n^{(2)} = \sum_{m\ne n} a_m^{(1)}\left\langle \psi_n^{(0)}\right|\hat{H}^{\prime} \left|\psi_m^{(0)} \right\rangle \\
+    \end{aligned}  
+  \end{equation*}
+\end{frame} 
+
+\begin{frame} 
+  \frametitle{}
+  得能量二级修正
+  \begin{equation*}
+    \begin{aligned}
+      E_n^{(2)} &= \sum_{m\ne n} a_m^{(1)}\left\langle \psi_n^{(0)}\right|\hat{H}^{\prime} \left|\psi_m^{(0)} \right\rangle \\
+      & = \sum_{m\ne n} \frac{H ^{\prime} _{mn}}{E_n^{(0)}-E_m^{(0)}} H^{\prime}_{nm} \\
+      &=  \sum_{m\ne n} \frac{H ^{\prime} _{mn}}{E_n^{(0)}-E_m^{(0)}} \left(H^{\prime}_{mn}\right)^* \\
+      &= \sum_{m\ne n}  \frac{|H ^{\prime} _{mn}|^2}{E_n^{(0)}-E_m^{(0)}} \quad \text{or} \quad  \sum_{m\ne n}  \frac{|H ^{\prime} _{nm}|^2}{E_n^{(0)}-E_m^{(0)}}
+    \end{aligned}  
+  \end{equation*}
+\end{frame} 
+
+\begin{frame}
+  \frametitle{}
+二级修正下体系的能量
+\[\begin{aligned}
+  E_n &= E_n^{(0)} + E_n^{(1)} + E_n^{(2)} \\
+   &= E_n^{(0)} + H'_{nn} + \sum_{m\ne n}  \frac{|H ^{\prime} _{mn}|^2}{E_n^{(0)}-E_m^{(0)}} \\ 
+\end{aligned} \]
+\end{frame} 
+
+\begin{frame}
+  \frametitle{小结}
+（1）实际体系,哈密顿本征方程不能精确求解
+\[ H \left|\psi_n \right\rangle = E_n \left|\psi_n \right\rangle\]
+若可以分解成理想体系+微扰
+\[ H = H^{(0)} + H', \qquad (H^{(0)} \gg H')\]
+且理想体系哈密顿本征方程可精确求解
+\[ H^{(0)}\left|\psi ^{(0)} _n \right\rangle = E^{(0)}_n \left|\psi ^{(0)} _n \right\rangle\]
+（2）如果理想体系的$ E_n^{(0)} $ 能级非简并，可以近似写出实际体系的本征解
+\begin{equation*}
+  \boxed{\left\{\begin{aligned}
+    E_n &= E_n^{0} + E_n^{(1)} + E_n^{(2)} + \cdots  \\
+    \left|\psi_n \right\rangle &= \left|\psi_n^{(0)}\right\rangle +\left|\psi_n^{(1)}\right\rangle + \cdots 
+  \end{aligned} \right.}
+\end{equation*}    
+\end{frame} 
+
+\begin{frame}
+  \frametitle{}
+  其中能级的一级修正是微扰对本能级的直接影响（平均值）
+  $$E_n^{(1)} = \left\langle \psi ^{(0)} _n \right|H' \left|\psi ^{(0)} _n \right\rangle $$
+  能级的二级修正是微扰导致临近能级发生耦合（矩阵元）
+  $$E_n^{(2)} = \sum_{m\ne n}  \frac{|H ^{\prime} _{mn}|^2}{E_n^{(0)}-E_m^{(0)}} $$
+  本征函数的一级修正是微扰导致临近能级发生耦合（矩阵元） 
+$$
+\left|\psi_n^{(1)}\right\rangle = \sum_{m\ne n} \frac{H^{\prime}_{mn}}{E_n^{(0)}-E_m^{(0)}} \left|\psi_m^{(0)}\right\rangle  
+$$ 
+（3）如果理想体系的能级简并,请参考简并微扰！
+\end{frame} 
+
+\begin{frame}
+  \frametitle{}
+（4）适用条件：修正公式符合级数收敛条件，
+\[\frac{H^{\prime}_{mn}}{E_n^{(0)}-E_m^{(0)}} \ll 1\]
+即：能级间隔要大，微扰矩阵元要小。
+\end{frame} 
+
+\begin{frame}
+  \frametitle{}
+  ~~\\ 
+  \例[3]{电荷量为$q$的电谐振子，置于微弱的电场$\varepsilon$中,其势函数可以表示为
+  \[ V(x) = \frac{1}{2}\omega ^2 x^2 -q \varepsilon x \]
+  试采用微扰法求能量本征值和本征函数
+  }
+  \解 体系的哈密顿为
+  \[ H = \left[- \frac{\hbar^2}{2 } \frac{\mathrm{d}^2}{\mathrm{d}x^2} + \frac{1}{2}\omega ^2 x^2\right] -q \varepsilon x = H^{(0)} + H'\]
+  其中
+  \[H^{(0)} = - \frac{\hbar^2}{2 } \frac{\mathrm{d}^2}{\mathrm{d}x^2} + \frac{1}{2}\omega ^2 x^2 \]
+  是可以精确求解的理想谐振子，有
+  \[E^{(0)}_n = \left(n+\frac{1}{2}\right)\hbar \omega, \qquad \left|\psi^{(0)}_n (x)\right\rangle = N_n \exp(-\frac{\alpha ^2 x^2}{2}) H_n(\alpha x)  \]
+\end{frame} 
+
+\begin{frame}
+  \frametitle{}
+由于能级非简并，且能级间隔较大（$\hbar \omega $），可采用微扰法求解\\
+能量一级修正
+$$
+\begin{aligned}
+  E_n^{(1)} &= \left\langle \psi ^{(0)} _n \right|H' \left|\psi ^{(0)} _n \right\rangle \\ 
+  &= -q \varepsilon N^2_n \int_{-\infty}^{\infty} H^* _n (\alpha x) x H_n (\alpha x) \exp(-\alpha ^2 x^2) dx \\ 
+  &= -q \varepsilon N^2_n \int_{-\infty}^{\infty} x H^2 _n(\alpha x) \exp(-\alpha ^2 x^2) dx \\
+ &= 0
+\end{aligned} $$
+\end{frame} 
+
+\begin{frame}
+  \frametitle{}
+  能量二级修正得先计算微扰矩阵元
+  $$
+\begin{aligned}
+  H'_{mn} &= \left\langle \psi ^{(0)} _m \right|H' \left|\psi ^{(0)} _n \right\rangle \\ 
+  &= -q \varepsilon \left\langle \psi ^{(0)} _m \right| \frac{\alpha x}{\alpha} \left|\psi ^{(0)} _n \right\rangle \\
+  &=  - \frac{q\varepsilon}{\alpha} \left\langle \psi ^{(0)} _m \right|  \left[\sqrt{\frac{n}{2}} \left|\psi ^{(0)} _{n-1} \right\rangle + \sqrt{\frac{n+1}{2 }} \left|\psi ^{(0)} _{n+1} \right\rangle\right] \\
+  &= - \frac{q\varepsilon}{\alpha}\left(\sqrt{\frac{n}{2}} \delta _{m, n-1} +  \sqrt{\frac{n+1}{2}} \delta _{m, n+1}\right)
+\end{aligned} $$
+\end{frame} 
+
+\begin{frame}
+  \frametitle{}
+  能量二级修正
+  $$
+  \begin{aligned}
+    E_n^{(2)} &= \sum_{m\ne n}  \frac{|H ^{\prime} _{mn}|^2}{E_n^{(0)}-E_m^{(0)}} \\ 
+    &=\left(\frac{q\varepsilon}{\alpha}\right)^2 \sum_{m\ne n} \frac{1}{E_n^{(0)}-E_m^{(0)}} \left(\frac{n}{2}\delta _{m, n-1} +\frac{n+1}{2}\delta _{m, n+1}  \right) \\
+    &=  \left(\frac{q\varepsilon}{\alpha}\right)^2 \left(\frac{n}{2}\frac{1}{E_n^{(0)}-E_{n-1}^{(0)}} +\frac{n+1}{2}\frac{1}{E_n^{(0)}-E_{n+1}^{(0)}}  \right)  \\
+    &= \left(\frac{q\varepsilon}{\alpha}\right)^2 \left(\frac{n}{2\hbar \omega } -\frac{n+1}{2 \hbar \omega}  \right) \qquad \Leftarrow \alpha ^2 = \frac{ \omega }{\hbar} \\
+    &= - \frac{q^2\varepsilon ^2}{2 \omega ^2}
+  \end{aligned} $$
+\end{frame} 
+
+\begin{frame}
+  \frametitle{}
+本征函数的一级修正
+$$
+\begin{aligned}
+  \left|\psi_n^{(1)}\right\rangle &= \sum_{m\ne n} \frac{H^{\prime}_{mn}}{E_n^{(0)}-E_m^{(0)}} \left|\psi_m^{(0)}\right\rangle \\
+    &=  - \left(\frac{q\varepsilon}{\alpha}\right)\left(\sqrt{\frac{n}{2}} \frac{1}{E_n^{(0)}-E_{n-1}^{(0)}}\psi ^{(0)} _{n-1} +\sqrt{\frac{n+1}{2}} \frac{1}{E_n^{(0)}-E_{n+1}^{(0)}}\psi ^{(0)} _{n+1}  \right)  \\
+    &=  - \left(\frac{q\varepsilon}{\alpha}\right)\left(\sqrt{\frac{n}{2}} \frac{1}{\hbar \omega}\psi ^{(0)} _{n-1} -\sqrt{\frac{n+1}{2}} \frac{1}{\hbar \omega}\psi ^{(0)} _{n+1}  \right)  \\ 
+    &= q \varepsilon  \sqrt{\frac{1}{2\hbar \omega ^3 }}\left( \sqrt{n+1}\psi ^{(0)} _{n+1} -  \sqrt{n}\psi ^{(0)} _{n-1}  \right)
+\end{aligned}  
+$$  
+\end{frame} 
+
+\begin{frame}
+  \frametitle{}
+二级修正下体系的能量
+\[ E_n = \left(n+\frac{1}{2}\right) \hbar \omega - \frac{q^2\varepsilon ^2}{2 \omega ^2}  \]
+二级修正下体系的本征函数
+\[ \psi _n =  \psi ^{(0)} _n + q \varepsilon  \sqrt{\frac{n+1}{2\hbar \omega ^3 }} \psi ^{(0)} _{n+1} - q \varepsilon  \sqrt{\frac{n}{2\hbar \omega ^3 }} \psi ^{(0)} _{n-1} \]
+\end{frame} 
+
+\begin{frame}
+  \frametitle{}
+  ~~\\ 
+  \例[4]{电荷量为$q$的电谐振子，置于微弱的电场$\varepsilon$中,其势函数可以表示为
+  \[ V(x) = \frac{1}{2}\omega ^2 x^2 -q \varepsilon x \]
+  试采用变量代换法求能量本征值和本征函数
+  }
+  \解 体系的哈密顿为
+  \[ 
+    \begin{aligned}
+      H &= - \frac{\hbar^2}{2 } \frac{\mathrm{d}^2}{\mathrm{d}x^2} + \frac{1}{2}\omega ^2 x^2 -q \varepsilon x \\
+      &=  - \frac{\hbar^2}{2 } \frac{\mathrm{d}^2}{\mathrm{d}x^2} + \frac{1}{2}\omega ^2 \left(x-\frac{q\varepsilon}{ \omega ^2} \right)^2 - \frac{q^2\varepsilon ^2}{2 \omega ^2}
+    \end{aligned} \]
+\end{frame} 
+
+\begin{frame}
+  \frametitle{}
+  薛定谔方程为
+  \[ \left[ - \frac{\hbar^2}{2 } \frac{\mathrm{d}^2}{\mathrm{d}x^2} + \frac{1}{2}\omega ^2 \left(x-\frac{q\varepsilon}{ \omega ^2} \right)^2 \right] \psi(x) =\left(E+\frac{q^2\varepsilon ^2}{2 \omega ^2} \right) \psi(x) \]
+  令 
+  \[ x' = x-\frac{q\varepsilon}{ \omega ^2}, \qquad E'= E+\frac{q^2\varepsilon ^2}{2 \omega ^2}\]
+  有
+  \[ \left[ - \frac{\hbar^2}{2 } \frac{\mathrm{d}^2}{\mathrm{d}x'^2} + \frac{1}{2}\omega ^2 x'^2 \right] \psi(x') =E' \psi(x') \]
+\end{frame} 
+
+\begin{frame}
+  \frametitle{}
+能级
+\[E'_n = \left(n+\frac{1}{2}\hbar \omega \right) = E_n+\frac{q^2\varepsilon ^2}{2 \omega ^2}\]
+所以 
+\[E_n = \left(n+\frac{1}{2}\hbar \omega \right)-\frac{q^2\varepsilon ^2}{2 \omega ^2}\]
+本征函数
+\[\psi _n(x') = N_n \exp(-\frac{\alpha ^2 x'^2}{2}) H_n(\alpha x') \]
+所以
+\[\psi _n(x) = N_n \exp(-\frac{\alpha ^2 \left(x-\frac{q\varepsilon}{ \omega ^2}\right) ^2}{2}) H_n(\alpha \left(x-\frac{q\varepsilon}{ \omega ^2}\right)) \]
+式中：$\alpha ^2 = \frac{ \omega }{\hbar}$
+\end{frame} 
+
+\begin{frame}
+  \frametitle{}
+  \例[5]{一粒子处于如下一维无限深势阱$V(x)$中运动，现在势阱中增加微扰$H'$，试求解能级与波函数的一级修正
+  $$ \displaystyle 
+ V(x)=\left \{ 
+ \begin{array}{cccc}
+   0	~~ ~~ 0<x<a \\  
+   +\infty ~~x<0, x>a\\
+ \end{array}
+ \right. \qquad H'(x)=\left \{ 
+  \begin{array}{cccc}
+    -b~~ ~~ 0<x<\frac{a}{2} \\  
+    +b ~~\frac{a}{2}<x<a\\
+  \end{array}
+  \right.
+ $$ }
+ \解 理想无限深势阱的能级及波函数为
+ \[ E^{(0)} _n = \frac{n^2\pi ^2 \hbar^2}{2\mu a^2}, \qquad \psi ^{(0)} _n (x) = \sqrt{\frac{2}{a}}\sin \frac{n\pi x}{a}  \]
+\end{frame} 
+
+\begin{frame}
+  \frametitle{}
+能级一级修正 
+\[
+  \begin{aligned}
+    E^{(1)} _n &= H'_{nn} \\ 
+    &= \int_{-\infty}^{\infty} \psi ^{*(0)} _n (x)H'\psi ^{(0)} _n (x)dx \\
+    &=  -\int_{0}^{\frac{a}{2}} \frac{2b}{a}\sin ^2\frac{n\pi x}{a} dx + \int_{\frac{a}{2}}^{a} \frac{2b}{a}\sin ^2\frac{n\pi x}{a} dx \\
+    &= 0
+  \end{aligned} 
+  \]
+\end{frame} 
+
+\begin{frame}
+  \frametitle{}
+微扰矩阵元
+\[
+\begin{aligned}
+  H'_{mn} &= \int_{-\infty}^{\infty} \psi ^{*(0)} _m (x)H'\psi ^{(0)} _n (x)dx  \\
+  &=  -\int_{0}^{\frac{a}{2}} \frac{2b}{a}\sin \frac{m\pi x}{a}\sin \frac{n\pi x}{a} dx + \int_{\frac{a}{2}}^{a} \frac{2b}{a}\sin \frac{n\pi x}{a} \sin \frac{m\pi x}{a} dx \\
+  &= \frac{2b}{a}\left[ \frac{1}{n+m}\sin \frac{n+m}{2}\pi - \frac{1}{n-m}\sin \frac{n-m}{2}\pi \right]
+\end{aligned} 
+\]
+波函数一级修正
+\[ 
+\begin{aligned}
+  \psi ^{(1)}_n (x) &= \sum_{m\ne n} \frac{H'_{mn}}{E^{(0)}_n - E^{(0)}_m } \psi ^{(0)}_m (x) \\
+  &= \frac{2\mu a^2}{\pi ^2\hbar^2} \sqrt{\frac{2}{a}} \sum_{m\ne n} \frac{H'_{mn} }{n^2 -m^2} \sin \frac{k\pi}{a}x   
+\end{aligned}  
+\]
+\end{frame} 
+
+\begin{frame}
+  \frametitle{}
+\例[6]{设某粒子的哈密顿为
+$$ H = \begin{bmatrix}
+  1 & c & 0  \\
+  c & 3 & 0  \\
+  0 & 0 & c-2 \\ 
+\end{bmatrix}, \qquad c\ll 1 
+$$
+试求:（1）粒子的本征能量到二级修正及波函数的一级修正, ~ (2)本征能的精确解}
+\解 改写哈密顿
+$$ H = H^{(0)} + H' = \begin{bmatrix}
+  1 & 0 & 0  \\
+  0 & 3 & 0  \\
+  0 & 0 & -2 \\ 
+\end{bmatrix} + \begin{bmatrix}
+  0 & c & 0  \\
+  c & 0 & 0  \\
+  0 & 0 & c  
+\end{bmatrix} 
+$$
+\end{frame} 
+
+\begin{frame}
+  \frametitle{}
+1）$ H^{(0)}  $ 的本征值（非简并）为
+\[ E^{(0)}_1 = 1, \quad E^{(0)}_2 = 3, \quad E^{(0)}_3 = -2\]  
+对应的本征函数为
+\[ \left\vert \psi^{(0)}_1\right\rangle  = \begin{bmatrix}
+  1  \\
+  0  \\
+  0  
+\end{bmatrix} , \quad \left\vert \psi^{(0)}_2 \right\rangle  = \begin{bmatrix}
+  0  \\
+  1  \\
+  0  
+\end{bmatrix} , \quad
+\left\vert \psi^{(0)}_3 \right\rangle  = \begin{bmatrix}
+  0  \\
+  0  \\
+  1  
+\end{bmatrix} \] 
+2）能级的一级修正
+\[ H'_{nn} = \left\langle\psi^{(0)}_n \right\vert H' \left\vert \psi^{(0)}_n \right\rangle\]
+\end{frame} 
+
+\begin{frame}
+  \frametitle{}
+\[ 
+\begin{aligned}
+  E^{(1)}_1 = H'_{11} &= \left\langle \psi^{(0)}_1 \right\vert H' \left\vert \psi^{(0)}_1 \right\rangle \\ 
+  &= \begin{pmatrix}
+    1 & 0 & 0  \\ 
+  \end{pmatrix} 
+  \begin{pmatrix}
+    0 & c & 0  \\
+    c & 0 & 0  \\
+    0 & 0 & c  
+  \end{pmatrix} 
+  \begin{pmatrix}
+    1  \\
+    0  \\
+    0  
+  \end{pmatrix} \\
+  &=0 
+\end{aligned}  
+\]
+
+\[ 
+\begin{aligned}
+  E^{(1)}_2 = H'_{22} &= \left\langle \psi^{(0)}_2 \right\vert H' \left\vert \psi^{(0)}_2 \right\rangle \\ 
+  &= \begin{pmatrix}
+    0 & 1 & 0  \\ 
+  \end{pmatrix} 
+  \begin{pmatrix}
+    0 & c & 0  \\
+    c & 0 & 0  \\
+    0 & 0 & c  
+  \end{pmatrix} 
+  \begin{pmatrix}
+    0  \\
+    1  \\
+    0  
+  \end{pmatrix} \\
+  &=0 
+\end{aligned}  
+\]
+\end{frame} 
+
+\begin{frame}
+  \frametitle{}
+  \[ 
+    \begin{aligned}
+      E^{(1)}_3 = H'_{33} &= \left\langle \psi^{(0)}_3 \right\vert H' \left\vert \psi^{(0)}_3 \right\rangle \\ 
+      &= \begin{pmatrix}
+        0 & 0 & 1  \\ 
+      \end{pmatrix} 
+      \begin{pmatrix}
+        0 & c & 0  \\
+        c & 0 & 0  \\
+        0 & 0 & c  
+      \end{pmatrix} 
+      \begin{pmatrix}
+        0  \\
+        0  \\
+        1  
+      \end{pmatrix} \\
+      &=c 
+    \end{aligned}  
+    \]
+\end{frame} 
+
+\begin{frame}
+  \frametitle{}
+  3）能级的二级修正，
+  \[ E^{(2)}_n = \sum_{m\ne n}  \frac{|H ^{\prime} _{mn}|^2}{E_n^{(0)}-E_m^{(0)}} \]
+  由于各微扰矩阵元$H ^{\prime} _{mn}$已知，可进行直接计算
+  \[ \begin{aligned}
+    E^{(2)}_1 &= \frac{|H ^{\prime} _{21}|^2}{E_1^{(0)}-E_2^{(0)}} + \frac{|H ^{\prime} _{31}|^2}{E_1^{(0)}-E_3^{(0)}} \\ 
+    &= \frac{c^2}{1-3} + \frac{0}{1-(-2)} \\
+    &= - \frac{1}{2}c^2
+  \end{aligned}  \]
+\end{frame} 
+
+\begin{frame}
+  \frametitle{}
+  \[ \begin{aligned}
+    E^{(2)}_2 &= \frac{|H ^{\prime} _{12}|^2}{E_2^{(0)}-E_1^{(0)}} + \frac{|H ^{\prime} _{32}|^2}{E_2^{(0)}-E_3^{(0)}} \\ 
+    &= \frac{c^2}{3-1} + \frac{0}{3-(-2)} \\
+    &= \frac{1}{2}c^2
+  \end{aligned}  \]
+  \[ \begin{aligned}
+    E^{(2)}_3 &= \frac{|H ^{\prime} _{13}|^2}{E_3^{(0)}-E_1^{(0)}} + \frac{|H ^{\prime} _{23}|^2}{E_3^{(0)}-E_2^{(0)}} \\ 
+    &= \frac{0}{-2-1} + \frac{0}{-2-3} \\
+    &= 0
+  \end{aligned}  \]
+\end{frame} 
+
+\begin{frame}
+  \frametitle{}
+因此，二级修正下各能级为 
+\[ E_1 = E^{(0)}_1 + E^{(1)}_1 + E^{(2)}_1 = 1 - \frac{1}{2}c^2 \]
+\[ E_2 = E^{(0)}_2 + E^{(1)}_2 + E^{(2)}_2 = 3 + \frac{1}{2}c^2 \]
+\[ E_3 = E^{(0)}_3 + E^{(1)}_3 + E^{(2)}_3 = -2 + c \]
+\end{frame} 
+
+\begin{frame}
+  \frametitle{}
+ 4）波函数的一级修正
+ $$
+\left|\psi_n^{(1)}\right\rangle = \sum_{m\ne n} \frac{H^{\prime}_{mn}}{E_n^{(0)}-E_m^{(0)}} \left|\psi_m^{(0)}\right\rangle  
+$$ 
+由于各微扰矩阵元$H ^{\prime} _{mn}$已知，可进行直接计算
+$$
+\left|\psi_1^{(1)}\right\rangle = \frac{H^{\prime}_{21}}{E_1^{(0)}-E_2^{(0)}} \left|\psi_2^{(0)}\right\rangle + \frac{H^{\prime}_{31}}{E_1^{(0)}-E_3^{(0)}} \left|\psi_3^{(0)}\right\rangle  = -\frac{c}{2} \left|\psi_2^{(0)}\right\rangle  
+$$ 
+$$
+\left|\psi_2^{(1)}\right\rangle = \frac{H^{\prime}_{12}}{E_2^{(0)}-E_1^{(0)}} \left|\psi_1^{(0)}\right\rangle + \frac{H^{\prime}_{32}}{E_2^{(0)}-E_3^{(0)}} \left|\psi_3^{(0)}\right\rangle  = \frac{c}{2} \left|\psi_1^{(0)}  \right\rangle  \quad 
+$$ 
+$$
+\left|\psi_3^{(1)}\right\rangle = \frac{H^{\prime}_{13}}{E_3^{(0)}-E_1^{(0)}} \left|\psi_1^{(0)}\right\rangle + \frac{H^{\prime}_{23}}{E_3^{(0)}-E_2^{(0)}} \left|\psi_2^{(0)}\right\rangle  = 0 \qquad \qquad 
+$$ 
+\end{frame} 
+
+\begin{frame}
+  \frametitle{}
+  一级修正下的波函数为
+  $$ \begin{aligned}
+    &\left|\psi_1 \right\rangle = \left|\psi_1^{(0)}\right\rangle + \left|\psi_1^{(1)}\right\rangle  =  \begin{pmatrix}
+      1  \\
+      0  \\
+      0  
+    \end{pmatrix}  -\frac{c}{2}  \begin{pmatrix}
+      0  \\
+      1  \\
+      0  
+    \end{pmatrix} \\
+    &\left|\psi_2 \right\rangle = \left|\psi_2^{(0)}\right\rangle + \left|\psi_2^{(1)}\right\rangle  =  \begin{pmatrix}
+      1  \\
+      0  \\
+      0  
+    \end{pmatrix}  + \frac{c}{2}  \begin{pmatrix}
+      0  \\
+      1  \\
+      0  
+    \end{pmatrix} \\
+    &\left|\psi_2 \right\rangle = \left|\psi_2^{(0)}\right\rangle + \left|\psi_2^{(1)}\right\rangle  =  \begin{pmatrix}
+      0  \\
+      0  \\
+      1  
+    \end{pmatrix}
+  \end{aligned}$$
+\end{frame} 
+
+\begin{frame}
+  \frametitle{}
+5）精确求解 \\
+设$H$的本征方程为
+$$ \begin{bmatrix}
+  1 & c & 0  \\
+  c & 3 & 0  \\
+  0 & 0 & c-2 \\ 
+\end{bmatrix}  \begin{bmatrix}
+  a_1 \\
+  a_2 \\
+  a_3 \\ 
+\end{bmatrix} = E \begin{bmatrix}
+  a_1 \\
+  a_2 \\
+  a_3 \\ 
+\end{bmatrix}
+$$ 
+解九期方程
+$$ \begin{bmatrix}
+  1-E & c & 0  \\
+  c & 3-E & 0  \\
+  0 & 0 & c-2-E \\ 
+\end{bmatrix} =0 $$
+$$ \implies (c-2-E)(E^2-4E+3-c^2) =0 $$
+\end{frame} 
+
+\begin{frame}
+  \frametitle{}
+解得本征能量的精确解
+$$ E_1 = 2- \sqrt{1+c^2}, \quad  E_2 = 2 + \sqrt{1+c^2}, \quad  E_3 = -2 + c $$
+由于$c$是小量,做级数展开,有
+$$ E_1 = 1-\frac{1}{2}c^2 + \frac{1}{8} c^4 + \cdots $$
+$$ E_1 = 3+\frac{1}{2}c^2 - \frac{1}{8} c^4 + \cdots $$
+微扰的二级修正解与精确解不计$c^4$及更高阶项时的结果相同！
+\end{frame} 
+
+\subsection{简并定态微扰}
+
+\begin{frame}
+  \frametitle{简并定态微扰}
+  ~~\\ 
+若$H^{(0)}$的能量本征值$ E_n^{(0)}$ 是简并的，则构成简并定态微扰问题。\\
+
+~~\\ 
+设简并度为$f$, 简并本征函数记为
+$$ \left\vert n_1 \right\rangle, \left\vert n_2 \right\rangle,\cdots \left\vert n_f \right\rangle $$
+它们都满足本征方程
+\[ H^{(0)} \left\vert n_\alpha \right\rangle = E_n^{(0)} \left\vert n_\alpha \right\rangle, \qquad (\alpha =1, 2, \cdots, f) \]
+\end{frame} 
+
+\begin{frame}
+  \frametitle{}
+这$f$简并本征函数构成的线性叠加态
+\begin{equation}\label{eq:jbdj}
+\left\vert \psi ^{(0)}_n \right\rangle = \sum_{\alpha=1}^f
+c_\alpha \left\vert n_\alpha \right\rangle, \qquad \sum |c_\alpha|^2 =1 
+\end{equation}
+依然满足本征方程
+\[ H^{(0)} \left\vert \psi ^{(0)}_n \right\rangle = E_n^{(0)} \left\vert \psi ^{(0)}_n \right\rangle \]
+即
+\[ \sum_{\alpha=1}^f
+c_\alpha H^{(0)} \left\vert n_\alpha \right\rangle =  \sum_{\alpha=1}^f
+c_\alpha E_n^{(0)}\left\vert n_\alpha \right\rangle\]
+\end{frame} 
+
+\begin{frame}
+  \frametitle{}
+把叠加态代入一级修正方程[\ref{eq:yjxz}]
+\begin{equation*}
+\begin{aligned}
+  \left[\hat{H}^{(0)}-E_n^{(0)}\right]\left|\psi_n^{(1)}\right\rangle &= -\left[\hat{H}^{\prime}-E_n^{(1)}\right]\left| \psi_n^{(0)}\right\rangle \\ 
+  &= -\left[\hat{H}^{\prime}-E_n^{(1)}\right]\sum_{\alpha=1}^f
+  c_\alpha \left\vert n_\alpha \right\rangle \\
+  &=\sum_{\alpha=1}^f
+  c_\alpha E_n^{(1)}\left\vert n_\alpha \right\rangle  -\sum_{\alpha=1}^f
+  c_\alpha \hat{H}^{\prime}\left\vert n_\alpha \right\rangle 
+\end{aligned}
+\end{equation*}
+左乘$\left\langle n_\beta \right\vert$
+\[\left\langle n_\beta \right\vert \left[\hat{H}^{(0)}-E_n^{(0)}\right]\left|\psi_n^{(1)}\right\rangle = \sum_{\alpha=1}^f
+c_\alpha E_n^{(1)}\left\langle n_\beta \left\vert n_\alpha \right\rangle\right. -\sum_{\alpha=1}^f
+c_\alpha \left\langle n_\beta \right\vert \hat{H}^{\prime}\left\vert n_\alpha \right\rangle \]
+\end{frame} 
+
+\begin{frame}
+  \frametitle{}
+计算
+\[
+  \begin{aligned}
+    c_\alpha \sum_{\alpha=1}^f E_n^{(1)} \delta _{\alpha \beta} - c_\alpha \sum_{\alpha=1}^f H^{\prime}_{\beta\alpha } &=0 
+  \end{aligned} 
+   \]
+  整理，得矩阵方程
+  \begin{equation}\label{eq:jqfc}
+    \begin{pmatrix}H^{\prime}_{11} -E^{(1)}_n &H^{\prime}_{12}&\cdots&H^{\prime}_{1f}\\
+      H^{\prime}_{21}&H^{\prime}_{22}-E^{(1)}_n&\cdots&H^{\prime}_{2f}\\\vdots&\vdots&\ddots&\vdots\\H^{\prime}_{f 1}&H^{\prime}_{f 2}&\cdots&H^{\prime}_{ff}-E^{(1)}_n\end{pmatrix}
+      \begin{pmatrix}c_{\alpha 1} \\c_{\alpha 2} \\ \cdots \\c_{\alpha f} \end{pmatrix} =0
+  \end{equation}
+\end{frame} 
+
+\begin{frame}
+  \frametitle{}
+  系数行列式为零
+\[\begin{bmatrix}H^{\prime}_{11} -E^{(1)}_n &H^{\prime}_{12}&\cdots&H^{\prime}_{1f}\\
+  H^{\prime}_{21}&H^{\prime}_{22}-E^{(1)}_n&\cdots&H^{\prime}_{2f}\\\vdots&\vdots&\ddots&\vdots\\H^{\prime}_{f 1}&H^{\prime}_{f 2}&\cdots&H^{\prime}_{ff}-E^{(1)}_n\end{bmatrix} =0\]
+  解久期方程,得$E_n^{(1)}$的$f$个根（能量一级修正）
+  \[ E_{n1} ^{(1)}, \quad  E_{n2} ^{(1)}, \quad\cdots, E_{nk} ^{(1)}, \cdots\quad E_{nf} ^{(1)}\]
+  若无重根，则简并完全消除。若有部分重根则简并部分消除，有必要考虑二级或更高级的修正才能实现简并完全消除。
+
+  ~~\\ 
+  把根依次代回矩阵方程[\ref{eq:jqfc}]，得$f$个$c_\alpha$, 记为 
+  \[ c_{\alpha 1} ^{(1)}, \quad  c_{\alpha 2} ^{(1)}, \quad\cdots, c_{\alpha k} ^{(1)}, \cdots\quad c_{\alpha f} ^{(1)}\]
+\end{frame} 
+
+\begin{frame}
+  \frametitle{}
+代回式[\ref{eq:jbdj}]，得$f$个零级近似波函数
+\[ \left\vert \psi ^{(0)}_{nk} \right\rangle = \sum_{\alpha=1}^f
+c_{\alpha k} \left\vert n_\alpha \right\rangle  , \quad k =1,2,\cdots, f\]
+
+~~\\ 
+$f$个简并的零级波函数
+$$ \left\vert n_1 \right\rangle, \left\vert n_2 \right\rangle,\cdots \left\vert n_f \right\rangle $$
+变成了$f$个非简并零级近似波函数
+$$ \left\vert \psi ^{(0)}_{n 1} \right\rangle, \left\vert \psi ^{(0)}_{n2} \right\rangle,\cdots \left\vert \psi ^{(0)}_{nf} \right\rangle  $$
+如果微扰致使简并完全消除，则这$f$个新的零级本征函数都是非简并的！代入非简并公式，可进一步求能量的二级修正和波函数的一级修正。
+\end{frame} 
+
+\begin{frame}
+  \frametitle{斯塔克效应}
+  \emf[定义：]氢原子在外电场作用下产生谱线分裂的现象称为$Stark$效应。\\
+~~\\ 
+\emf[定性分析：]电子受球对称库仑场作用，造成第$n$能级$n^2$度简并。外电场的存在破坏了原有势场的对称性，简并消除，导致谱线分裂。
+
+~~\\ 
+\emf[定量计算：]\\
+库仑场 $U=-\frac{e^2_s}{r}$,$\quad $外场势 $H'=e\vec{\varepsilon}\cdot \vec{r} = e \varepsilon r \cos\theta$
+
+$r$很小，内场远大于外场，$n$不大，能级间隔大，满足微扰法条件 
+$$E_n^{(0)} = - \frac{\mu Z^2 e_s^4}{2\hbar^2}\frac{1}{n^2}$$
+\end{frame} 
+
+\begin{frame}
+  \frametitle{}
+(1) 写出简并态：考虑谱线$E_2^{(0)}\to E_1^{(0)}$， $E_2^{(0)}$四度简并，记为
+\begin{itemize}
+  \item $ \left\vert 2_1 \right\rangle = \psi _{200} =\mathscr{R}_{20}(r) Y_{00}$ 
+  \item $ \left\vert 2_2 \right\rangle = \psi _{210} =\mathscr{R}_{21}(r) Y_{10} $ 
+  \item $ \left\vert 2_3 \right\rangle = \psi _{211}=\mathscr{R}_{21}(r) Y_{11}  $ 
+  \item $ \left\vert 2_4 \right\rangle = \psi _{21-1} =\mathscr{R}_{21}(r) Y_{1-1} $
+\end{itemize}
+\end{frame} 
+
+\begin{frame}
+  \frametitle{}
+  (2) 求微扰矩阵$\{H'_{nm}\}$
+  $$ \begin{pmatrix}
+    \left\langle 2_1 \right\vert H' \left\vert 2_1 \right\rangle & \left\langle 2_1 \right\vert H' \left\vert 2_2 \right\rangle & \left\langle 2_1 \right\vert H' \left\vert 2_3 \right\rangle & \left\langle 2_1 \right\vert H' \left\vert 2_4 \right\rangle \\
+    \left\langle 2_2 \right\vert H' \left\vert 2_1 \right\rangle & \left\langle 2_2 \right\vert H' \left\vert 2_2 \right\rangle & \left\langle 2_2 \right\vert H' \left\vert 2_3 \right\rangle & \left\langle 2_2 \right\vert H' \left\vert 2_4 \right\rangle \\
+    \left\langle 2_3 \right\vert H' \left\vert 2_1 \right\rangle & \left\langle 2_3 \right\vert H' \left\vert 2_2 \right\rangle & \left\langle 2_3 \right\vert H' \left\vert 2_3 \right\rangle & \left\langle 2_3 \right\vert H' \left\vert 2_4 \right\rangle \\
+    \left\langle 2_4 \right\vert H' \left\vert 2_1 \right\rangle & \left\langle 2_4 \right\vert H' \left\vert 2_2 \right\rangle & \left\langle 2_4 \right\vert H' \left\vert 2_3 \right\rangle & \left\langle 2_4 \right\vert H' \left\vert 2_4 \right\rangle 
+  \end{pmatrix} $$
+  细节
+  $$
+  \begin{aligned}
+    H'_{21} &= \left\langle 2_2 \right\vert H' \left\vert 2_1 \right\rangle   
+     \\ 
+     &= \left\langle \mathscr{R}_{21}Y_{10} \right\vert e \varepsilon r \cos\theta \left\vert \mathscr{R}_{20} Y_{00} \right\rangle   
+     \\ 
+     &= e \varepsilon\left\langle \mathscr{R}_{21}  \right\vert  r \left\vert \mathscr{R}_{20} \right\rangle  \left\langle  Y_{10} \right\vert \cos\theta \left\vert Y_{00} \right\rangle   
+     \\ 
+  \end{aligned}
+  $$ 
+\end{frame} 
+
+\begin{frame}
+  \frametitle{}
+  先求一般式 $ \left\langle  Y_{l'm'} \right\vert \cos\theta \left\vert Y_{lm} \right\rangle $  \\
+  代入递推式
+  $$
+   \cos\theta \left\vert Y_{lm} \right\rangle  = \sqrt{\frac{(l+1)^2-m^2}{(2l+1)(2l+3)}}\left\vert Y_{l+1,m} \right\rangle  + \sqrt{\frac{l^2-m^2}{(2l-1)(2l+1)}}\left\vert Y_{l-1,m} \right\rangle  
+  $$ 
+  有：
+  $$
+  \begin{aligned}
+   & \left\langle  Y_{l'm'} \right\vert \cos\theta \left\vert Y_{lm} \right\rangle \\
+    & \qquad = \sqrt{\frac{(l+1)^2-m^2}{(2l+1)(2l+3)}}\left\langle Y_{l'm'} \left\vert Y_{l+1,m} \right\rangle \right. + \sqrt{\frac{l^2-m^2}{(2l-1)(2l+1)}} \left\langle Y_{l'm'} \left\vert Y_{l-1,m} \right\rangle \right. \\
+    &\qquad = \sqrt{\frac{(l+1)^2-m^2}{(2l+1)(2l+3)}} \delta _{l'l+1} \delta _{m'm} + \sqrt{\frac{l^2-m^2}{(2l-1)(2l+1)}} \delta _{l'l-1}\delta _{m'm} 
+  \end{aligned}
+  $$ 
+  上式不为零，要求$l'=l\pm 1$且$m'=m$，发现只有$H'_{12}, H'_{21}$满足条件
+\end{frame} 
+
+\begin{frame}
+  \frametitle{}
+  $$ 
+  \begin{aligned}
+   \left\langle  Y_{10} \right\vert \cos\theta \left\vert Y_{00} \right\rangle 
+   &= \int_{0}^{\pi}\sqrt{\frac{3}{4\pi} }\cos\theta \cdot \cos\theta \cdot \frac{1}{\sqrt{4\pi} } \cdot\sin\theta d \theta \cdot \int_{0}^{2\pi}  d\varphi \\
+   &= \frac{\sqrt{3}}{2}\int_{0}^{\pi} \cos^2\theta  \sin \theta d \theta \\
+   &= \frac{1}{\sqrt{3} }
+  \end{aligned}
+  $$   
+  $$ 
+  \begin{aligned}
+    H'_{12} = H'_{21} &= e \varepsilon\left\langle \mathscr{R}_{21}  \right\vert  r \left\vert \mathscr{R}_{20} \right\rangle  \left\langle  Y_{10} \right\vert \cos\theta \left\vert Y_{00} \right\rangle   
+     \\ 
+     &= \frac{e \varepsilon }{\sqrt{3}} \left\langle \mathscr{R}_{21}  \right\vert  r \left\vert \mathscr{R}_{20} \right\rangle  \\
+     &= \frac{e \varepsilon }{\sqrt{3}} \int_{0}^{\infty} \left(\frac{1}{2 a_0}\right)^{3 / 2} \frac{r}{a_0 \sqrt{3}} \mathrm{e}^{-\frac{r}{2 a_0}} \cdot r \cdot \left(\frac{1}{2 a_0}\right)^{3 / 2}\left(2-\frac{r}{a_0}\right) \mathrm{e}^{-\frac{r}{2 a_0}}  \cdot  r^2 dr \\
+     &=  \frac{e \varepsilon }{24} (\frac{1}{a_0 })^4  \int_{0}^{\infty} \left(2-\frac{r}{a_0}\right) \mathrm{e}^{-\frac{r}{a_0}} r^4 dr = -3e \varepsilon a_0 \\ 
+  \end{aligned}
+  $$ 
+\end{frame} 
+
+\begin{frame}
+  \frametitle{}
+(3) 解轨期方程
+$$ \begin{bmatrix}
+  -E^{(1)}_2 & -3e\varepsilon a_0 & 0 & 0 \\
+  -3e\varepsilon a_0 & -E^{(1)}_2 & 0 & 0 \\
+  0 & 0 & -E^{(1)}_2 & 0 \\
+  0 & 0 & 0 & -E^{(1)}_2 \\  
+\end{bmatrix} = 0 $$
+得简并能级$E^{(1)}_2$的四个一级修正 
+$$E^{(1)}_{21} = 3e\varepsilon a_0, \quad E^{(1)}_{22} = - 3e\varepsilon a_0, \quad E^{(1)}_{23} = 0, \quad E^{(1)}_{24} = 0 $$
+\end{frame} 
+
+\begin{frame}
+  \frametitle{}
+（5）求$E^{(0)}_1 $的能量一级修正 \\
+这是非简并能级，一级修正是平均值
+$$ 
+\begin{aligned}
+  H'_{11} &= \left\langle R^{(0)}_{11}Y_{00} 
+ \right\vert e \varepsilon r \cos\theta \left\vert R^{(0)}_{11}Y_{00}  \right\rangle  \\ 
+ &= \left\langle R^{(0)}_{11} 
+ \right\vert e \varepsilon r \left\vert R^{(0)}_{11} \right\rangle   \left\langle Y_{00} 
+ \right\vert \cos\theta \left\vert Y_{00}  \right\rangle \\
+ &= 0 
+\end{aligned}
+$$ 
+\end{frame} 
+
+\begin{frame}
+  \frametitle{}
+$\star$ 解释$stark$ 效应
+\begin{figure}[htbp]
+  \centering
+  \includegraphics[width=0.9\textwidth]{figs/stocke.png}
+  %\caption{}
+    %\label{fig:}
+\end{figure}
+基态能量不变，第一激发态4度简并，电场导致部分去简并，谱线由一变三！
+\end{frame} 
+
+\begin{frame}
+  \frametitle{}
+(6) 求零级近似波函数\\
+把$E^{(1)}_2$的四个一级修正值 
+$$E^{(1)}_{21} = 3e\varepsilon a_0, \quad E^{(1)}_{22} = - 3e\varepsilon a_0, \quad E^{(1)}_{23} = 0, \quad E^{(1)}_{24} = 0 $$
+依次代入式[\ref{eq:jqfc}]，即下式 
+\begin{equation*}
+  \begin{pmatrix}-E^{(1)}_2 & -3e\varepsilon a_0 & 0 & 0 \\
+    -3e\varepsilon a_0 & -E^{(1)}_2 & 0 & 0 \\
+    0 & 0 & -E^{(1)}_2 & 0 \\
+    0 & 0 & 0 & -E^{(1)}_2 \end{pmatrix}
+    \begin{pmatrix}c_{\alpha 1} \\c_{\alpha 2} \\ c_{\alpha 3} \\c_{\alpha 4} \end{pmatrix} =0
+\end{equation*}
+可得四全零级近似波函数，
+\end{frame} 
+
+\begin{frame}
+  \frametitle{}
+  *取$E^{(1)}_2=E^{(1)}_{21} = 3e\varepsilon a_0 $，得
+  \begin{equation*}
+    \begin{pmatrix}-3e\varepsilon a_0 & -3e\varepsilon a_0 & 0 & 0 \\
+      -3e\varepsilon a_0 & -3e\varepsilon a_0 & 0 & 0 \\
+      0 & 0 & -3e\varepsilon a_0 & 0 \\
+      0 & 0 & 0 & -3e\varepsilon a_0 \end{pmatrix}
+      \begin{pmatrix}c_{2 1} \\c_{2 2} \\ c_{2 3} \\c_{2 4} \end{pmatrix} =0
+  \end{equation*}
+  解得 
+  \[ c_{2 1} = - c_{2 2} =c, \qquad c_{2 3} = c_{2 4} =0 \]
+  代入式[\ref{eq:jbdj}],有
+  \begin{equation*}
+    \left\vert \psi ^{(0)}_{21} \right\rangle = \sum_{\alpha=1}^4
+    c_\alpha \left\vert n_\alpha \right\rangle = c \left\vert 2_1 \right\rangle
+    -c \left\vert 2_2 \right\rangle \end{equation*}
+    归一化
+    \begin{equation*}
+      \left\vert \psi ^{(0)}_{21} \right\rangle = \frac{1}{\sqrt{2} } \left\vert \psi _{200} \right\rangle
+      -\frac{1}{\sqrt{2} } \left\vert\psi _{210} \right\rangle \end{equation*}
+\end{frame} 
+ 
+\begin{frame}
+  \frametitle{}
+  *取$E^{(1)}_2=E^{(1)}_{22} = -3e\varepsilon a_0 $，得
+  \begin{equation*}
+    \begin{pmatrix}3e\varepsilon a_0 & -3e\varepsilon a_0 & 0 & 0 \\
+      -3e\varepsilon a_0 & 3e\varepsilon a_0 & 0 & 0 \\
+      0 & 0 & 3e\varepsilon a_0 & 0 \\
+      0 & 0 & 0 & 3e\varepsilon a_0 \end{pmatrix}
+      \begin{pmatrix}c_{2 1} \\c_{2 2} \\ c_{2 3} \\c_{2 4} \end{pmatrix} =0
+  \end{equation*}
+  解得 
+  \[ c_{2 1} = c_{2 2} =c, \qquad c_{2 3} = c_{2 4} =0 \]
+  代入式[\ref{eq:jbdj}],有
+  \begin{equation*}
+    \left\vert \psi ^{(0)}_{22} \right\rangle = \sum_{\alpha=1}^4
+    c_\alpha \left\vert n_\alpha \right\rangle = c \left\vert 2_1 \right\rangle
+    +c \left\vert 2_2 \right\rangle \end{equation*}
+    归一化
+    \begin{equation*}
+      \left\vert \psi ^{(0)}_{21} \right\rangle = \frac{1}{\sqrt{2} } \left\vert \psi _{200} \right\rangle
+      +\frac{1}{\sqrt{2} } \left\vert\psi _{210} \right\rangle \end{equation*}
+\end{frame}  
+
+\begin{frame}
+  \frametitle{}
+  *取$E^{(1)}_2=E^{(1)}_{23} = E^{(1)}_{24}  = 0 $，得
+  \begin{equation*}
+    \begin{pmatrix}0 & -3e\varepsilon a_0 & 0 & 0 \\
+      -3e\varepsilon a_0 & 0 & 0 & 0 \\
+      0 & 0 & 0 & 0 \\
+      0 & 0 & 0 & 0 \end{pmatrix}
+      \begin{pmatrix}c_{2 1} \\c_{2 2} \\ c_{2 3} \\c_{2 4} \end{pmatrix} =0
+  \end{equation*}
+  解得 
+  \[ c_{2 1} = c_{2 2} =0, \qquad c_{2 3} =a, c_{2 4} =b \]
+  代入式[\ref{eq:jbdj}],有
+  \begin{equation*}
+    \left\vert \psi ^{(0)}_{23}/\psi ^{(0)}_{24} \right\rangle = \sum_{\alpha=1}^4
+    c_\alpha \left\vert n_\alpha \right\rangle = a \left\vert 2_3 \right\rangle
+    +b \left\vert 2_4 \right\rangle \end{equation*}
+\end{frame} 
+
+\begin{frame}
+  \frametitle{}
+不防取 
+\begin{equation*}
+  \left\vert \psi ^{(0)}_{23} \right\rangle = \left\vert 2_3 \right\rangle = \left\vert\psi _{211} \right\rangle \end{equation*}
+\begin{equation*}
+  \left\vert \psi ^{(0)}_{24} \right\rangle = \left\vert 2_4 \right\rangle = \left\vert\psi _{21-1} \right\rangle \end{equation*}
+得四个零级近似波函数
+\begin{equation*}
+  \begin{aligned}
+    \left\vert \psi ^{(0)}_{21} \right\rangle &= \frac{1}{\sqrt{2} } \left\vert \psi _{200} \right\rangle
+    -\frac{1}{\sqrt{2} } \left\vert\psi _{210} \right\rangle \\ 
+    \left\vert \psi ^{(0)}_{22} \right\rangle &= \frac{1}{\sqrt{2} } \left\vert \psi _{200} \right\rangle
+    +\frac{1}{\sqrt{2} } \left\vert\psi _{210} \right\rangle \\ 
+    \left\vert \psi ^{(0)}_{23} \right\rangle &= \left\vert\psi _{211} \right\rangle \\ 
+    \left\vert \psi ^{(0)}_{24} \right\rangle &= \left\vert\psi _{21-1} \right\rangle \\
+  \end{aligned} 
+\end{equation*}
+\end{frame} 
+
+\begin{frame}
+  \frametitle{}
+  (7) 讨论\\
+  氢原子基态,正负电荷中心重合,电场无其无影响。氢原子第一激发态, 正负电荷中心不重合, 这是电偶极矩（$\vec{D}$）, 在外电场（$\vec{\varepsilon}$）中有四种可能取向 \\
+  \begin{itemize}
+    \Item $\vec{D}$与$\vec{\varepsilon}$反向, $H' = - \vec{D} \cdot \vec{\varepsilon} = -D\varepsilon \cos\pi = 3 e \varepsilon a_0$,零级近似波函数为 
+    $$
+    \left\vert \psi ^{(0)}_{21} \right\rangle = \frac{1}{\sqrt{2} } \left\vert \psi _{200} \right\rangle -\frac{1}{\sqrt{2} } \left\vert\psi _{210} \right\rangle  
+    $$ 
+    \Item $\vec{D}$与$\vec{\varepsilon}$ 同向, $H' = -D\varepsilon \cos 0 = - 3 e \varepsilon a_0$,零级近似波函数
+    $$
+    \left\vert \psi ^{(0)}_{21} \right\rangle = \frac{1}{\sqrt{2} } \left\vert \psi _{200} \right\rangle + \frac{1}{\sqrt{2} } \left\vert\psi _{210} \right\rangle 
+    $$ 
+    \Item $\vec{D}$与$\vec{\varepsilon}$ 相互垂直, $H' = -D\varepsilon \cos \frac{\pi}{2} = 0$, 电场对氢原子状态无影响 \\
+    \begin{itemize}
+      \item $\vec{D}$处于$x$轴向 $\left\vert \psi ^{(0)}_{23} \right\rangle = \left\vert\psi _{211} \right\rangle$
+      \item $\vec{D}$处于$y$轴向 $\left\vert \psi ^{(0)}_{24} \right\rangle = \left\vert\psi _{21-1} \right\rangle$
+    \end{itemize}
+  \end{itemize}
+\end{frame} 
+
+\begin{frame}
+  \frametitle{}
+\例[7]{设某粒子的哈密顿为
+$$ H = \begin{bmatrix}
+  2 & 0 & c  \\
+  0 & 2 & 0  \\
+  c & 0 & 2 \\ 
+\end{bmatrix}, \qquad c\ll 1 
+$$
+试求:（1）粒子能级到一级修正和波函数的零级修正}
+\解 改写哈密顿
+$$ H = H^{(0)} + H' = \begin{bmatrix}
+  2 & 0 & 0  \\
+  0 & 2 & 0  \\
+  0 & 0 & 2 \\ 
+\end{bmatrix} + \begin{bmatrix}
+  0 & 0 & c  \\
+  0 & 0 & 0  \\
+  c & 0 & 0  
+\end{bmatrix} 
+$$
+\end{frame}
+
+\begin{frame}
+  \frametitle{}
+  1）$ H^{(0)}  $ 的本征值（三重简并）为
+  \[ E = 2\]  
+  对应的本征函数为
+  \[ \left\vert 1\right\rangle  = \begin{bmatrix}
+    1  \\
+    0  \\
+    0  
+  \end{bmatrix} , \quad \left\vert 2 \right\rangle  = \begin{bmatrix}
+    0  \\
+    1  \\
+    0  
+  \end{bmatrix} , \quad
+  \left\vert 3 \right\rangle  = \begin{bmatrix}
+    0  \\
+    0  \\
+    1  
+  \end{bmatrix} \]
+  构造零级近似波函数
+  $$\left\vert \psi ^{(0)} \right\rangle = \sum_{\alpha=1}^3 a_\alpha \left\vert \alpha \right\rangle $$
+\end{frame} 
+
+\begin{frame}
+  \frametitle{}
+系数$a_\alpha$满足方程
+\begin{equation}\label{eq:alpha}
+  \begin{pmatrix}
+    -E^{(1)} & 0 & c \\
+    0 & -E^{(1)} & 0 \\
+    c & 0 & -E^{(1)} \end{pmatrix}
+    \begin{pmatrix}a_{1} \\a_{2} \\ a_{3} \end{pmatrix} =0
+\end{equation}
+2）由系数行列式为零,解得三个根
+\[E_{1}^{(1)} = -c, \qquad E_{2}^{(1)} = 0, \qquad E_{3}^{(1)} = c\]
+它们是能量一级修正,因此简并完全消除！
+\end{frame} 
+
+\begin{frame}
+  \frametitle{}
+3）零级近似波函数 \\
+把$E_{1}^{(1)} = -c$代回方程[\ref{eq:alpha}],有 
+\begin{equation*}
+  \begin{pmatrix}
+    c & 0 & c \\
+    0 & c & 0 \\
+    c & 0 & c \end{pmatrix}
+    \begin{pmatrix}a_{1} \\a_{2} \\ a_{3 } \end{pmatrix} =0
+\end{equation*}
+解得 
+\[ a_{1} = - a_{3} =a, \quad a_{2} =0 \]
+得第一个零级近似波函数
+$$\left\vert \psi ^{(0)}_{1} \right\rangle = \sum_{\alpha=1}^3 a_\alpha \left\vert \alpha \right\rangle  = a \left\vert 1 \right\rangle -a \left\vert 3 \right\rangle = \frac{1}{\sqrt{2}} \left\vert 1 \right\rangle - \frac{1}{\sqrt{2}} \left\vert 3 \right\rangle = \frac{1}{\sqrt{2}} \begin{pmatrix}
+  1 \\
+  0  \\
+  -1 \end{pmatrix}$$
+\end{frame} 
+
+\begin{frame}
+  \frametitle{}
+  把$E_{2}^{(1)} = 0 $代回方程[\ref{eq:alpha}],有 
+  \begin{equation*}
+    \begin{pmatrix}
+      0 & 0 & c \\
+      0 & 0 & 0 \\
+      c & 0 & 0 \end{pmatrix}
+      \begin{pmatrix}a_{1} \\a_{2} \\ a_{3 } \end{pmatrix} =0
+  \end{equation*}
+  解得 
+  \[ a_{1} =  a_{3} =0, \quad a_{2} =a \]
+  得第二个零级近似波函数
+  $$\left\vert \psi ^{(0)}_{2} \right\rangle = a\left\vert 2 \right\rangle = \begin{pmatrix}
+    0 \\
+    1  \\
+    0 \end{pmatrix} $$
+\end{frame} 
+
+\begin{frame}
+  \frametitle{}
+  把$E_{3}^{(1)} = c$代回方程[\ref{eq:alpha}],有 
+  \begin{equation*}
+    \begin{pmatrix}
+      -c & 0 & c \\
+      0 & -c & 0 \\
+      c & 0 & -c \end{pmatrix}
+      \begin{pmatrix}a_{1} \\a_{2} \\ a_{3 } \end{pmatrix} =0
+  \end{equation*}
+  解得 
+  \[ a_{1} =  a_{3} =a, \quad a_{2} =0 \]
+  得第三个零级近似波函数
+  $$\left\vert \psi ^{(0)}_{3} \right\rangle = \frac{1}{\sqrt{2}} \left\vert 1 \right\rangle + \frac{1}{\sqrt{2}} \left\vert 3 \right\rangle = \frac{1}{\sqrt{2}} \begin{pmatrix}
+    1 \\
+    0  \\
+    1 \end{pmatrix} $$
+\end{frame} 
+
+\begin{frame}
+  \frametitle{}
+因此, 一级修正下的能级为
+\[E_{1} = 2-c, \qquad E_{2} = 2, \qquad E_{3} = 2+ c\]
+零级近似波函数为
+$$
+\begin{aligned}
+  \left\vert \psi ^{(0)}_{1} \right\rangle  = \frac{1}{\sqrt{2}} \begin{pmatrix}
+    1 \\
+    0  \\
+    -1 \end{pmatrix}, \quad  \left\vert \psi ^{(0)}_{2} \right\rangle  = \begin{pmatrix}
+      0 \\
+      1  \\
+      0 \end{pmatrix},  \quad \left\vert \psi ^{(0)}_{3} \right\rangle  =\frac{1}{\sqrt{2}} \begin{pmatrix}
+        1 \\
+        0  \\
+        1 \end{pmatrix}  
+\end{aligned}
+$$
+\end{frame} 
+
+\section{含时微扰}
+\subsection{$H^{(0)}$表象薛定谔方程}
+\begin{frame} 
+  \frametitle{跃迁问题}
+实际体系的哈密顿不显含时间,若可写成
+\[H = H^{(0)} + H'\]
+有$H^{(0)} \gg H'$, 且理想体系的能级间隔较远时,采用定态微扰法可使方程
+\[ H\psi _n = E_n \psi _n\]
+得解。因此有 
+\[ \Psi(\vec{r},t_0) = \sum_n a_n(t_0) \psi _n\]
+\[ 
+\begin{aligned}
+  \Psi(\vec{r},t)
+  &= \sum_n a_n(t_0)e^{-\frac{i}{\hbar}E_n t} \psi _n (\vec{r}) \\
+  &= \sum_n U(t,t_0) \psi _n (\vec{r}) 
+\end{aligned} \]
+\end{frame} 
+
+\begin{frame} 
+  \frametitle{}
+即：若实际体系哈密顿不显含时间则是封闭体系, 其波函数随时间的演化只是一种幺正变换。
+
+~~\\ 
+若实际体系哈密顿显含时间, 则不再是封闭体系。也就是说体系与环境之间存在能量交换 
+\begin{itemize}
+  \Item 获得能量（吸收光子）, 体系被激发到高能态
+  \Item 失去能量（放出光子）, 体系回到低能态
+\end{itemize}
+因此,含时微扰是微扰导致理想体系发生跃迁的问题。
+\end{frame} 
+
+\begin{frame} 
+  \frametitle{ $H^{(0)}$表象}
+设实际体系的哈密顿可写成 （$H'(t)\ll H^{(0)} $）
+\[H(t) = H^{(0)} + H'(t)\]
+若理想体系已得解
+\[H^{(0)}\phi _n = \varepsilon _n \phi _n \]
+则$\{\phi _n\}$构成 $H^{(0)}$表象的基。 \\
+~~\\ 
+本征函数演化到$t$时刻为
+\[ \Phi _n(t) =  \phi _n e^{-\frac{i}{\hbar}\varepsilon _n t}\]
+\end{frame} 
+
+\begin{frame} 
+  \frametitle{}
+实际体系$t$时刻的波函数可在$H^{(0)}$表象展开
+\begin{equation}\label{eq:twave}
+  \Psi(\vec{r},t) =\sum_n a_n(t) \Phi _n(t) 
+\end{equation}
+它服从薛定谔方程
+\[ i \hbar \frac{\partial }{\partial t}\Psi =(H^{(0)} +H' )\Psi\]
+代入展开式
+\[ i \hbar \frac{\partial }{\partial t}\sum_n a_n(t) \Phi _n  =(H^{(0)} +H' )\sum_n a_n(t) \Phi _n \]
+\[ i \hbar \sum_n \frac{d a_n(t)}{d t} \Phi _n + \sum_n a_n(t) \left[i \hbar \frac{\partial }{\partial t} \Phi _n\right]  =\sum_n H^{(0)}a_n(t) \Phi _n +  \sum_n H' a_n(t) \Phi _n \]
+\end{frame} 
+
+\begin{frame} 
+  \frametitle{}
+代入 
+\[i \hbar \frac{\partial }{\partial t} \Phi _n  = H^{(0)}\Phi _n  \]
+得
+\[ i \hbar \sum_n \frac{d a_n(t)}{d t} \left\vert \Phi _n  \right\rangle  = \sum_n H' a_n(t) \left\vert \Phi _n  \right\rangle \]
+左乘$\left\langle \Phi _m  \right\vert$,得
+\[ i \hbar \sum_n \frac{d a_n(t)}{d t} \left\langle \Phi _m \left\vert \Phi _n  \right\rangle\right.  = \sum_n a_n(t)\left\langle \Phi _m  \right\vert H'  \left\vert \Phi _n  \right\rangle \]
+\[ \begin{aligned}
+  i \hbar \sum_n \frac{d a_n(t)}{d t} \delta _{mn}  &= \sum_n a_n(t)\left\langle \phi _m  \right\vert H'  \left\vert \phi _n   \right\rangle e^{\frac{i}{\hbar}(\varepsilon _m -\varepsilon _n)t} \\ 
+  i \hbar \frac{d a_m(t)}{d t}  &= \sum_n a_n(t)\left\langle \phi _m  \right\vert H'  \left\vert \phi _n   \right\rangle e^{i\omega _{mn}{\hbar}t} 
+\end{aligned}\]
+\end{frame} 
+
+\begin{frame} 
+  \frametitle{}
+交换$n,m$, 有:
+\begin{equation}\label{eq:sdw-h0}
+\boxed{i \hbar \frac{d a_n(t)}{d t} = \sum_m a_m(t) H'_{nm}  e^{i \omega _{nm} t} }  
+\end{equation}
+式中微扰矩阵元定义于$H^{(0)}$表象
+\[ H'_{nm} = \left\langle \phi _n  \right\vert H'  \left\vert \phi _m   \right\rangle \]
+求解上方程,可得$a_n(t)$,代回式[\ref{eq:twave}], 则实际体系的波函数$\Psi(\vec{r},t)$得解。因此, 称上述方程为$H^{(0)}$表象中的薛定谔方程。
+\end{frame} 
+
+\begin{frame} 
+  \frametitle{近似求解}
+设$t=0$时刻,体系处于某定态$\Phi _k$, 
+\begin{equation*}
+  \Psi(\vec{r},t)|_{t=0} = \Phi _k = \sum_n \delta _{nk} \Phi _n(t)|_{t=0} 
+\end{equation*}
+它的展开式为
+\begin{equation*}
+  \Psi(\vec{r},t)|_{t=0} = \sum_n a_n(t)\Phi _n(t)|_{t=0} 
+\end{equation*}
+联立两式,有 
+\[ a_n(t)|_{t=0} =a_n(0) = \delta _{nk} \]
+\end{frame} 
+
+\begin{frame} 
+  \frametitle{}
+$\bullet$ 零级近似 ：\\
+取$H'(t)=0$, 则有微扰矩阵 $H'_{nm} =0$, 代入$H^{(0)}$表象中的薛定谔方程[\ref{eq:sdw-h0}], 得
+\begin{equation*}
+  i \hbar \frac{d a_n(t)}{d t} = \sum_m a_m(t) H'_{nm}  e^{i \omega _{nm} t} =0
+  \end{equation*}
+解得零级近似 
+\[ a^{(0)}_n(t) = c = a_n(0) = \delta _{nk}\]
+代入展开式
+\begin{equation*}
+  \Psi(\vec{r},t) = \sum_n a_n(t)\Phi _n(t) = \sum_n \delta _{nk}\phi _n(\vec{r})e^{-\frac{i}{\hbar}\varepsilon _n t} 
+\end{equation*}
+\end{frame} 
+
+\begin{frame} 
+  \frametitle{}
+  $\bullet$ 一级近似 ：\\
+  把零级近似写成
+  \[ a^{(0)}_m(t) = \delta _{mk}\]
+  代入$H^{(0)}$表象中的薛定谔方程[\ref{eq:sdw-h0}], 得 
+  \begin{equation*}
+    \begin{aligned}
+      i \hbar \frac{d a_n(t)}{d t} &= \sum_m \delta _{mk} H'_{nm}  e^{i \omega _{nm} t}  \\ 
+      &= H'_{nk}  e^{i \omega _{nk} t}
+    \end{aligned}
+    \end{equation*}
+  得一级近似公式
+  \[ a^{(1)}_n(t) = \frac{1}{i\hbar}\int_{0}^{t} H'_{nk}  e^{i \omega _{nk} \tau} d\tau\]
+\end{frame} 
+
+\begin{frame} 
+  \frametitle{}
+  代入展开式
+  \begin{equation*}
+    \begin{aligned}
+      \Psi(\vec{r},t) &= \sum_n a_n(t)\Phi _n(t) \\
+      &=  \frac{1}{i\hbar} \sum_n \int_{0}^{t} H'_{nk}  e^{i \omega _{nk} \tau} d\tau \phi _n(\vec{r})e^{-\frac{i}{\hbar}\varepsilon _n t} 
+    \end{aligned}
+  \end{equation*}
+  如果把一级近似结果再代回方程$H^{(0)}$表象中的薛定谔方程[\ref{eq:sdw-h0}]，可得到二级近似公式，逐级进行，可得更高级近似解。
+\end{frame} 
+
+\begin{frame} 
+  \frametitle{跃迁概率}
+设$t=0$时刻,粒子处于$\Phi _k$态, $t$时刻,粒子处于叠加态
+\begin{equation*}
+  \Psi(\vec{r},t) = \sum_m a_m(t)\Phi _m(t)
+\end{equation*}
+则$\left\vert a_m(t)\right\vert ^2$是微扰导致粒子从初态$\Phi _k$态激发到末态$\Phi _m $的概率,取一级近似,有
+\begin{equation*}
+  \begin{aligned}
+    W_{k\to m} &= \left\vert a^{(1)}_m(t)\right\vert ^2 \\
+    &= \frac{1}{\hbar^2} \left\vert \int_{0}^{t} H'_{mk}  e^{i \omega _{mk} \tau} d\tau \right\vert ^2 
+  \end{aligned}
+\end{equation*}
+跃迁概率与微扰矩阵元的大小,微扰作用时长及初末态频率差同共决定
+\end{frame} 
+
+\subsection{常微扰}
+
+\begin{frame} 
+  \frametitle{常微扰}
+如果含时微扰可以表示成如下分段函数形式
+\[ H'(t) = \left\{
+  \begin{aligned}
+   &0, \qquad (t<0)\\
+   &H'(\vec{r}), \quad (0\le t \le t_1) \\
+   &0, \qquad (t > t_1) 
+  \end{aligned}\right. \]
+称为常微扰
+
+~~\\ 
+设$t<t_1$, 一级近似为
+
+\[ a^{(1)}_n(t) = \frac{1}{i\hbar}\int_{0}^{t} H'_{mk}(r)  e^{i \omega _{mk} \tau} d\tau = \frac{H'_{mk}(r)}{i\hbar}\int_{0}^{t} e^{i \omega _{mk} \tau} d\tau \]
+\end{frame} 
+
+\begin{frame} 
+  \frametitle{}
+\[ 
+\begin{aligned}
+  a^{(1)}_n(t) &= \frac{H'_{mk}(r)}{i\hbar} \frac{1}{i \omega _{mk}} \left[ e^{i \omega _{mk}\tau }\right]^t _0 \\ 
+  &= - \frac{H'_{mk}(r) }{ \hbar \omega _{mk}}\left[ e^{i \omega _{mk}t} -1\right] \\
+  &= - \frac{H'_{mk}(r) }{ \hbar \omega _{mk}} e^{i \omega _{mk}t/2} \left[e^{i \omega _{mk}t/2} -e^{-i \omega _{mk}t/2}\right] \\
+  &= - \frac{H'_{mk}(r) }{ \hbar \omega _{mk}}  2i e^{i \omega _{mk}t/2} \sin(\frac{1}{2} \omega _{mk} t )
+\end{aligned}  
+\]
+跃迁概率 
+\begin{equation*}
+  \begin{aligned}
+    W_{k\to m} &= \left\vert a^{(1)}_m(t)\right\vert ^2 \\
+    &= \frac{4 \left\vert H'_{mk}(r)\right\vert ^2 \sin^2(\frac{1}{2} \omega _{mk} t ) }{\hbar^2 \omega ^2 _{mk}} 
+  \end{aligned}
+\end{equation*}
+\end{frame} 
+
+\begin{frame} 
+  \frametitle{}
+  考虑$t\to \infty$, 由数学公式
+  \[ \lim_{\alpha \to \infty} \frac{\sin^2 (\alpha x)}{\pi \alpha x^2} = \delta(x)\]
+  得
+  \[ \lim_{t \to \infty} \frac{\sin^2 (t \frac{1}{2} \omega _{mk} )}{ t (\frac{1}{2} \omega _{mk} )^2} = \pi\delta(\frac{1}{2} \omega _{mk} ) = 2 \pi \hbar \delta(\varepsilon _m - \varepsilon _k)\]
+代入,有跃迁概率 
+\begin{equation*}
+  \begin{aligned}
+    W_{k\to m} =  \frac{2\pi t}{\hbar} \left\vert H'_{mk}(r) \right\vert ^2 \delta(\varepsilon _m - \varepsilon _k)
+  \end{aligned}
+\end{equation*}
+跃迁速率（概率密度）
+\begin{equation*}
+  \begin{aligned}
+    w_{k\to m} = \frac{W_{k\to m} }{t} = \frac{2\pi }{\hbar} \left\vert H'_{mk}(r) \right\vert ^2 \delta(\varepsilon _m - \varepsilon _k)
+  \end{aligned}
+\end{equation*}
+常微扰只能导致简并态或极其临近态之间的跃迁。
+\end{frame} 
+
+\begin{frame} 
+  \frametitle{黄金定则}
+设末态$\varepsilon _m$附近$d\varepsilon _m$范围内态的数目为
+$\rho(\varepsilon _m)d\varepsilon _m$, 则从初态 $d\varepsilon _k$ 跃迁到这些末态的总跃迁速率为
+\[ 
+\begin{aligned}
+  w &= \int \rho(\varepsilon _m) w_{k\to m} d \varepsilon _m  \\ 
+  &= \int \rho(\varepsilon _m) \frac{2\pi }{\hbar} \left\vert H'_{mk}(r) \right\vert ^2 \delta(\varepsilon _m - \varepsilon _k) d \varepsilon _m 
+\end{aligned}  
+\] 
+在$\rho$和 $H'_{mk}(r)$都是平滑变化的情况下,有
+\[ 
+\begin{aligned}
+  \boxed{w = \frac{2\pi }{\hbar} \left\vert H'_{mk}(r) \right\vert ^2 \rho(\varepsilon _m) } 
+\end{aligned}  
+\] 
+跃迁速率与末态附近的态密度成比例,  上述公式称为\emf[黄金定则]。
+\end{frame} 
+
+\begin{frame} 
+  \frametitle{}
+\例[8]{求全空间自由粒子的态密度}
+\解 考虑三维解的箱归一化形式 
+\[ \psi _{\vec{p}}= \frac{1}{(2\pi \hbar)^{3/2}}e^{\frac{i}{\hbar} \vec{p}\cdot\vec{r}} = \frac{1}{L^{3/2}}e^{\frac{i}{\hbar} \vec{p}\cdot\vec{r}}
+\]
+其动量本征值为
+\[p_x = \frac{2\pi \hbar}{L} n_x, \quad p_y = \frac{2\pi \hbar}{L} n_y, \quad p_z = \frac{2\pi \hbar}{L} n_z\]
+由于第一组量子数$(n_x, n_y, n_z)$对应一个态, 所以在动量区域$\vec{p}\to \vec{p}+ d \vec{p}$内的总态数目为
+\[ dn = dn_x dn_y dn_z =(\frac{L}{2\pi \hbar})^3 dp_x dp_y dp_z =  (\frac{L}{2\pi \hbar})^3 p^2 dp d  \Omega\] 
+\end{frame} 
+
+\begin{frame} 
+  \frametitle{}
+由能量与动量的关系,得
+\[E = \frac{p^2}{2\mu} \implies dE = \frac{p}{\mu} d p \]
+代入态密度定义式,得
+\[ \rho(E) = \frac{dn}{dE} = (\frac{L}{2\pi \hbar})^3 \mu p d\Omega = (\frac{L}{2\pi \hbar})^3 \mu p \sin\theta d\theta d\varphi \]
+\end{frame} 
+
+\subsection{简谐微扰}
+
+\begin{frame} 
+  \frametitle{简谐微扰}
+  1）微扰：如果含时微扰可以表示成如下分段函数形式
+  \[ H'(t) = \left\{
+    \begin{aligned}
+     &0, \qquad (t<0)\\
+     &A\cos \omega t , \quad (t \ge 0) \\
+    \end{aligned}\right. \]
+  称为简谐微扰。 利用欧拉公式, 有
+  \[ A\cos \omega t = F(e^ {i \omega t} + e^ {-i \omega t}) \]
+  式中$F$为振幅
+  \end{frame} 
+
+  \begin{frame} 
+    \frametitle{}
+  2）微扰矩阵 
+  \[
+    \begin{aligned}
+      H'_{mk} &=  \left\langle \phi _m  \right\vert H'  \left\vert \phi _k   \right\rangle \\ 
+      &= \left\langle \phi _m  \right\vert F(e^ {i \omega t} + e^ {-i \omega t})   \left\vert \phi _k   \right\rangle  \\
+      &= (e^ {i \omega t} + e^ {-i \omega t}) \left\langle \phi _m  \right\vert F \left\vert \phi _k   \right\rangle  \\
+      &= (e^ {i \omega t} + e^ {-i \omega t}) F_{mk}
+    \end{aligned}
+    \]
+  \end{frame} 
+
+  \begin{frame} 
+    \frametitle{}
+   3） 一级近似
+   \[   \begin{aligned}
+    a^{(1)}_m(t) 
+    &= \frac{1}{i\hbar}\int_{0}^{t} H'_{mk}  e^{i \omega _{mk} \tau} d\tau \\
+    &= \frac{1}{i\hbar}\int_{0}^{t} (e^ {i \omega \tau} + e^ {-i \omega \tau}) F_{mk}  e^{i \omega _{mk} \tau} d\tau \\
+    &= \frac{F_{mk} }{i\hbar} \int_{0}^{t} (e^ { i \omega _{mk} \tau+i \omega \tau} + e^ {i \omega _{mk} \tau -i \omega \tau})   d\tau \\
+    &= \frac{F_{mk} }{i\hbar}  \left[\frac{e^ { i \omega _{mk} \tau+i \omega \tau}}{i(\omega _{mk}+ \omega)} + \frac{e^ { i \omega _{mk} \tau - i \omega \tau}}{(i\omega _{mk}- \omega)} \right]^t _{0}\\
+    &= - \frac{F_{mk} }{\hbar} \left[\frac{e^ { i (\omega _{mk} + \omega) t} -1 }{(\omega _{mk}+ \omega)} + \frac{e^ { i(\omega _{mk}  - \omega) t} -1}{(\omega _{mk}-  \omega)} \right]
+ \end{aligned}
+ \]
+  \end{frame} 
+
+  \begin{frame} 
+    \frametitle{}
+  4）设简谐微扰是光照，可见光频率很大，分子的值很小。
+  \begin{itemize}
+    \Item 当 $ \omega \approx \omega _{mk} $ 主要贡献源于第二项，有
+    \[ \varepsilon _m = \varepsilon _k + \hbar \omega ,\qquad \text{共振吸收}\]
+    \Item 当 $ \omega \approx - \omega _{mk} $ 主要贡献源于第一项，有
+    \[ \varepsilon _m = \varepsilon _k - \hbar \omega ,\qquad \text{共振发射}\]
+    \Item 当 $ \omega \ne \pm \omega _{mk} $  两项贡献都很小，没有显著跃迁发生
+  \end{itemize}
+  \end{frame} 
+
+  \begin{frame} 
+    \frametitle{}
+  5）跃迁概率 \\
+  共振跃迁： $ \omega \approx \omega _{mk}$ 
+\[ a^{(1)}_m(t)  = - \frac{F_{mk} }{\hbar} \frac{e^ { i(\omega _{mk}  - \omega) t} -1}{(\omega _{mk} \pm  \omega)} \]
+跃迁概率 
+\begin{equation*}
+  \begin{aligned}
+    W_{k\to m} =  \frac{2\pi t}{\hbar} \left\vert F_{mk}\right\vert ^2 \delta(\varepsilon _m - \varepsilon _k \pm \hbar \omega)
+  \end{aligned}
+\end{equation*}
+跃迁速率（概率密度）
+\begin{equation*}
+  \begin{aligned}
+    w_{k\to m} = \frac{2\pi }{\hbar} \left\vert F_{mk} \right\vert ^2 \delta(\varepsilon _m - \varepsilon _k \pm \hbar \omega)
+  \end{aligned}
+\end{equation*}
+  \end{frame} 
+
+\begin{frame} 
+  \frametitle{}
+  5）细致平衡 \\
+  由于$F$描述振幅，是厄密算符，有 $F_{mk} = F^* _{km} $，设 $\varepsilon _m > \varepsilon _ k$\\
+  \begin{equation*}
+    \begin{aligned}
+    \text{吸收光子} \quad  w_{k\to m} &= \frac{2\pi }{\hbar} \left\vert F_{mk}\right\vert ^2 \delta(\varepsilon _m - \varepsilon _k - \hbar \omega) \\
+    \text{发射光子} \quad w_{m\to k} &= \frac{2\pi }{\hbar} \left\vert F_{km}\right\vert ^2 \delta(\varepsilon _k - \varepsilon _m + \hbar \omega) \\
+    \end{aligned}
+  \end{equation*}
+  即：两能级间的发射跃迁速率与吸收跃迁速率相等，称为细致平衡原理
+\end{frame} 
+
+\section{ 光的吸收和发射}
+
+\subsection{吸收与发射系数}
+
+\begin{frame} 
+  \frametitle{三种过程}
+  \begin{minipage}[b]{0.99\textwidth}
+    \vspace{0.3em}
+    光与原子相互作用表现为三种基本过程  
+    \begin{itemize}
+      \Item 共振吸收： 系数$B_{km}$，每个低能$k$态原子受激跃迁到$m$态的概率\emf[$B_{km}I$]
+      \Item 自发发射： 系数$A_{mk}$，每个高能$m$态原子自发跃迁到$k$态的概率为\emf[$A_{mk}$]（非相干光）
+      \Item 受激发射： 系数$B_{mk}$，每个高能$m$态原子受激跃迁到$k$态的概率\emf[$B_{mk}I$] （相干光）
+    \end{itemize}
+    \vspace{2em}
+  \end{minipage}
+  \begin{minipage}[b]{0.99\textwidth}
+ \begin{figure}[h]
+    \centering
+    \includegraphics[width=0.99\textwidth]{figs/bab.png}
+    %\caption{}
+    %\label{fig:}
+\end{figure} 
+\end{minipage}
+\end{frame} 
+
+\begin{frame} 
+  \frametitle{两种框架}
+  处理光与原子相互作用的两种框架
+  \begin{itemize}
+    \Item 半经典框架：量子化原子+经典光场 (初等量子力学)\\
+    \Item 全量子框架：量子化原子+量子化光场 （量子光学与量子电动力学）
+  \end{itemize}
+  基于半经典框架，爱因斯坦成功获得自发发射系数、吸收系数和受汽发射系数之间的关系。
+\end{frame} 
+
+\begin{frame} 
+  \frametitle{偶极矩近似}
+  （I）忽略磁场分量的作用 \\
+  光的电场与磁场分量对原子核外电子的作用能
+  \[ U_E = e \vec{E}\cdot \vec{r} \approx e E a, \quad a = \frac{\hbar^2}{\mu e^2} \]
+  \[ U_B = - \vec{M}\cdot \vec{B} =  - \frac{-e}{2\mu c } L_z B\approx \frac{e}{2\mu c } \hbar E \]
+  二者的比值
+  \[ \frac{U_B}{U_E} = \frac{e^2}{\hbar c } = \frac{1}{137} =\alpha \quad (\text{精细结构常数})\]
+\end{frame} 
+
+\begin{frame} 
+  \frametitle{}
+（II）均匀电场近似 \\ 
+考虑沿$z$轴传播的单色偏振光，电场部分表示为
+\[ \left\{
+  \begin{aligned}
+    &E_x =E_0 \cos(\frac{2\pi}{\lambda}z - \omega t) \\ 
+    &E_y = E_z =0
+  \end{aligned} \right.\]
+  光子在原子核附近运动，原子的大小约为$10^{-10} m$, 而光波长约在$10^{-6} m$，因此在原子尺度，电场可作均匀场处理，有
+  \[ E_x =E_0 \cos(\omega t)\]
+\end{frame} 
+
+\begin{frame} 
+  \frametitle{计算过程}
+  1）微扰  \\
+  \[ 
+    \begin{aligned}
+      H' &=  exE_x \\ 
+      &= exE_0\cos \omega t \\
+      &= \frac{1}{2}exE_0[e^{i \omega t} + e^{-i \omega t}] \\
+      &= F [e^{i \omega t} + e^{-i \omega t}]
+    \end{aligned} \]
+    振幅为 $ F = \frac{1}{2}exE_0$，计算 $E_0$
+    \[ \overline{E^2} = \frac{1}{T} \int_0^T E^2_0 \cos^2 \omega t =\frac{1}{2} E^2_0\]
+    \[I = \frac{1}{8\pi} (\overline{E^2 + B^2}) =  \frac{1}{8\pi} E^2_0 \quad \implies \quad  E^2_0 = 8\pi I\] 
+\end{frame} 
+
+\begin{frame} 
+  \frametitle{}
+  2）微扰矩阵 \\
+  \[
+  \begin{aligned}
+    F_{mk} &=  \left\langle \phi _m  \right\vert F  \left\vert \phi _k   \right\rangle \\ 
+    &= \left\langle \phi _m  \right\vert (\frac{1}{2}ex (8\pi I)^\frac{1}{2})  \left\vert \phi _k   \right\rangle\\
+    &= \frac{1}{2}e (8\pi I)^\frac{1}{2} \left\langle \phi _m  \right\vert x \left\vert \phi _k   \right\rangle \\
+    &= \frac{1}{2}e (8\pi I)^\frac{1}{2} x_{mk}
+  \end{aligned}
+  \]
+
+\end{frame} 
+
+\begin{frame} 
+  \frametitle{}
+  3）跃迁速率  \\
+\begin{equation*}
+  \begin{aligned}
+    w_{k\to m} &= \frac{2\pi }{\hbar} \left\vert F_{mk} \right\vert ^2 \delta(\varepsilon _m - \varepsilon _k \pm \hbar \omega) \\
+    &= \frac{2\pi }{\hbar} \left\vert \frac{1}{2}e (8\pi I)^\frac{1}{2} x_{mk} \right\vert ^2 \delta(\varepsilon _m - \varepsilon _k \pm \hbar \omega) \\
+    &= \frac{4\pi ^2 e^2 }{\hbar^2} I \left\vert x_{mk} \right\vert ^2 \delta( \omega _{mk} - \omega)
+  \end{aligned}
+\end{equation*}
+\end{frame} 
+
+\begin{frame} 
+  \frametitle{}
+  4）回到自然光， (I) 去单色条件, 能量密度应是一个针对$\omega$的分布
+  \[ d w_{k\to m} = \frac{4\pi ^2 e^2 }{\hbar^2} I(\omega) \left\vert x_{mk} \right\vert ^2 \delta( \omega _{mk} - \omega)\]
+  \[ w_{k\to m} = \frac{4\pi ^2 e^2 }{\hbar^2} \left\vert x_{mk} \right\vert ^2 \int I(\omega)  \delta( \omega _{mk} - \omega) d \omega  = \frac{4\pi ^2 e^2 }{\hbar^2} \left\vert x_{mk} \right\vert ^2 I(\omega _{mk})\]
+  (II) 去偏振条件 (设各向同性)
+  \[ 
+   \begin{aligned}
+     w_{k\to m} &= \frac{4\pi ^2 e^2 }{\hbar^2} \frac{1}{3}[\left\vert x_{mk} \right\vert ^2 + \left\vert y_{mk} \right\vert ^2 + \left\vert z_{mk} \right\vert ^2 ]I(\omega _{mk}) \\ 
+     &= \frac{4\pi ^2 e^2 }{3\hbar^2} \left\vert \vec{r}_{mk} \right\vert ^2 I(\omega _{mk}) \\
+   \end{aligned}
+    \]
+\end{frame} 
+
+\begin{frame} 
+  \frametitle{}
+代入电偶极矩定义 $\overline{D}_{mk} = e \overline{r}$,得
+\[ w_{k\to m} = \frac{4\pi ^2 }{3\hbar^2} \left\vert \vec{D}_{mk} \right\vert ^2 I(\omega _{mk}) \qquad \text{吸收跃迁} \]
+\[ w_{m\to k} = \frac{4\pi ^2 }{3\hbar^2} \left\vert \vec{D}_{km} \right\vert ^2 I(\omega _{mk}) \qquad \text{受激发射跃迁} \]
+\end{frame} 
+
+\begin{frame} 
+  \frametitle{吸收系数与受激发射系数}
+  吸收系数$B_{km}$: 单位时间光子被吸收的几率（光强描述总光子数）\\
+  \[ B_{km} = \frac{w_{k\to m}}{I(\omega _{mk})} = \frac{4\pi ^2 }{3\hbar^2} \left\vert \vec{D}_{km} \right\vert ^2 \]
+  受激发射系数$B_{mk}$：单位时间激发态原子受激发出光子的几率
+  \[ B_{mk} = \frac{w_{m\to k}}{I(\omega _{mk})} = \frac{4\pi ^2 }{3\hbar^2} \left\vert \vec{D}_{mk} \right\vert ^2 \]
+  由于$\overline{r}$是厄密算符，有 
+  \[ B_{km} =  B_{mk} \]
+\end{frame}
+
+\begin{frame} 
+  \frametitle{自发发射系数}
+  自发发射系数$A_{mk}$: 在没有光照的情况下，单位时间激发态原子自发发射光子的几率 \\
+设处于初态的原子数目为$N_k$,处于激发态的原子数目为$N_m$ \\
+\begin{itemize}
+  \Item 单位时间吸收的光子数等于从初态$k$跃迁到激发态$m$的原子数目
+         \[N_k[B_{km}I(\omega _{mk})] \]
+  \Item 单位时间发射的光子数等于从激发态$m$跃迁到初态$m$的原子数目 
+        \[N_m[A_{mk} + B_{mk}I(\omega _{mk})] \]
+\end{itemize}
+\end{frame} 
+
+\begin{frame} 
+  \frametitle{}
+    最终会达到电磁辐射平衡
+    \[ N_k[B_{km}I(\omega _{mk})] = N_m[A_{mk} + B_{mk}I(\omega _{mk})]\]
+    得能量密度：
+    \[ I(\omega _{mk}) =   \frac{N_mA_{mk}}{N_kB_{km} -N_m B_{mk}} 
+    = \frac{A_{mk}}{B_{mk}\left( \frac{N_k}{N_m}-1\right)}
+    \]
+    由玻尔兹曼分布律，有
+    \[\frac{N_k}{N_m} = e^{\frac{\varepsilon _m - \varepsilon _k }{k_b T}} = e^{\hbar\omega _{mk} / k_b T} \]
+    代回，得 
+    \[ I(\omega _{mk}) 
+    = \frac{A_{mk}}{B_{mk}} \left[ \frac{1}{e^{\hbar\omega _{mk} / k_b T} -1}\right]
+    \]
+\end{frame} 
+
+\begin{frame} 
+  \frametitle{}
+  在 $\omega \to \omega + d \omega$ 区域， 光场的能量为
+  \[ I(\omega _{mk}) d \omega = \frac{A_{mk}}{B_{mk}} \left[ \frac{1}{e^{\hbar\omega _{mk} / k_b T} -1}\right] d \omega \]
+  黑体辐射平衡时，在$\nu \to \nu + d \nu$ 区域， 光场的能量为
+  \[ \rho(\nu)d \nu =  \frac{8\pi h  \nu ^3}{c^3} \frac{1}{e^{h \nu /k_b T} -1} d \nu\]
+  取 $d \omega = 2\pi d \nu$, 有
+  \[ \frac{A_{mk}}{B_{mk}} \left[ \frac{1}{e^{\frac{\hbar\omega _{mk}}{k_b T}} -1}\right] 2\pi d \nu = \frac{8\pi h  \nu ^3}{c^3} \frac{1}{e^{h \nu /k_b T} -1} d \nu \]
+\end{frame} 
+
+\begin{frame} 
+  \frametitle{}
+解得 
+\[ A_{mk} = \frac{4h \nu ^3 _{mk}}{c^3}  B_{mk}\]
+或者
+\[ A_{mk} = \frac{\hbar \omega ^3_{mk} }{\pi ^2 c^3}  B_{mk} =  \frac{4\omega ^3_{mk}}{3 \hbar c^3 } \left\vert \vec{D}_{km} \right\vert ^2  \]
+自发辐射的能量
+\[ J_{mk} = N_m A_{mk} \hbar \omega _{mk} = N_m \frac{4\omega ^4_{mk}}{3  c^3 } \left\vert \vec{D}_{km} \right\vert ^2 \]
+\end{frame} 
+
+\begin{frame} 
+  \frametitle{激发态寿命}
+  为求原子数目关于时间的函数,写出 $dt$时间内减少的原子数目
+  \[
+    \begin{aligned}
+      d N_m &= - A_{mk} N_m dt  \\ 
+      \frac{d N_m}{N_m} &= - A_{mk} dt \\
+      \ln N_m &= - A_{mk} t +c. \\
+      N_m(t) & = Ce^{-A_{mk} t}
+    \end{aligned} 
+    \]
+    取$t=0$,
+    \[ N_m (0) = C \]
+    因此
+    \[N_m (t)  = N_m (0)e^{-A_{mk} t} \]
+\end{frame} 
+
+\begin{frame} 
+  \frametitle{}
+  设$k$态下面还有大量的低能量，则有
+  \[
+  \begin{aligned}
+    N_m (t)  &= N_m (0)\prod_{n=1}^k e^{-A_{mn} t} \\ 
+     &=  N_m (0) e^{-\sum_{n=1}^k A_{mn} t}
+     &= N_m (0) e^{-t / \tau}
+  \end{aligned}  
+   \]
+   式中 $\tau = \frac{1}{\sum_{n=1}^k A_{mn}} $，称为平均寿命 
+
+   ~~\\ 
+   自发发射系数就是衰减系数，数值越大，衰减得越快，寿命越短。
+\end{frame} 
+
+\subsection{单电子选择定则}
+
+\begin{frame} 
+  \frametitle{禁戒跃迁}
+  在偶极矩近似下，有跃迁速率公式
+  \[ 
+   \begin{aligned}
+     w_{k\to m} &= \frac{4\pi ^2 e^2 }{\hbar^2} \frac{1}{3}\left[\left\vert x_{mk} \right\vert ^2 + \left\vert y_{mk} \right\vert ^2 + \left\vert z_{mk} \right\vert ^2 \right]I(\omega _{mk}) \\ 
+     &= \frac{4\pi ^2 e^2 }{3\hbar^2} \left\vert \vec{r}_{mk} \right\vert ^2 I(\omega _{mk}) \\
+   \end{aligned}
+    \]
+  表明：当 $\left\vert \vec{r}_{mk} \right\vert ^2 =0$时，跃迁速率为零，称为禁戒跃迁。
+  
+  ~~\\ 
+  要实现有效跃迁，必有 
+  \[\left\vert x_{mk} \right\vert ^2, \quad \left\vert y_{mk} \right\vert ^2 ,\quad \left\vert z_{mk} \right\vert ^2 \]
+三者不同时为零。
+\end{frame} 
+
+\begin{frame} 
+  \frametitle{选择定则}
+  原子的波函数在球坐标系
+  \[\psi_{nml} = R_{nl}(r)Y_{lm}(\theta,\varphi) = \left\vert nl \right\rangle \left\vert lm \right\rangle\]
+  算符也用球坐标系
+  $$\left\{\begin{aligned}
+	  &x= r\sin \theta \cos \varphi = \frac{r}{2 }\sin \theta [e^{i\varphi} + e^{-i\varphi}]\\
+	  &y= r\sin \theta \sin \varphi  = \frac{r}{2i }\sin \theta [e^{i\varphi} - e^{-i\varphi}]\\
+	  &z= r\cos \theta
+  \end{aligned} \right.$$ 
+\end{frame} 
+
+\begin{frame} 
+  \frametitle{}
+1）微扰矩阵元：
+$$\left\{\begin{aligned}
+  x_{mk}=  \frac{1}{2 }\left\langle n'l' \left\vert r \right\vert nl \right\rangle \left\langle l'm' \left\vert \sin \theta [e^{i\varphi} + e^{-i\varphi}] \right\vert lm \right\rangle  \\
+  y_{mk}=  \frac{1}{2i }\left\langle n'l' \left\vert r \right\vert nl \right\rangle \left\langle l'm' \left\vert \sin \theta [e^{i\varphi} - e^{-i\varphi}] \right\vert lm \right\rangle  \\
+  z_{mk}=  \left\langle n'l' \left\vert r \right\vert nl \right\rangle \left\langle l'm' \left\vert \cos \theta \right\vert lm \right\rangle \\
+\end{aligned} \right. $$ 
+（I）以前有计算 $\left\langle  Y_{l'm'} \right\vert \cos\theta \left\vert Y_{lm} \right\rangle$
+$$
+\begin{aligned}
+ & \left\langle l'm' \left\vert \cos \theta \right\vert nlm \right\rangle = \left\langle  Y_{l'm'} \right\vert \cos\theta \left\vert Y_{lm} \right\rangle  \\
+  & \qquad = \sqrt{\frac{(l+1)^2-m^2}{(2l+1)(2l+3)}}\left\langle Y_{l'm'} \left\vert Y_{l+1,m} \right\rangle \right. + \sqrt{\frac{l^2-m^2}{(2l-1)(2l+1)}} \left\langle Y_{l'm'} \left\vert Y_{l-1,m} \right\rangle \right. \\
+  &\qquad = \sqrt{\frac{(l+1)^2-m^2}{(2l+1)(2l+3)}} \delta _{l'l+1} \delta _{m'm} + \sqrt{\frac{l^2-m^2}{(2l-1)(2l+1)}} \delta _{l'l-1}\delta _{m'm} 
+\end{aligned}
+$$ 
+上式不为零，要求$l'=l\pm 1$且$m'=m$
+\end{frame} 
+
+\begin{frame} 
+  \frametitle{}
+  （II）计算 $\left\langle  l'm' \right\vert \sin\theta e^{\pm i\varphi}\left\vert lm \right\rangle$ \\
+代入递推式
+\[ \begin{aligned} \sin\theta e^{\pm i\varphi}\left\vert lm \right\rangle
+&= \pm \sqrt{\frac{(l\pm m+1)(l\pm m+2)}{(2l+1)(2l+3)}} \left\vert l+1,m \pm 1 \right\rangle  \\
+& \hspace{2em} \mp \sqrt{\frac{(l\mp m)(l\mp m -1)}{(2l-1)(2l+1)}} \left \vert  l-1,m\pm 1 \right\rangle 
+\end{aligned}
+\]
+得
+\[ \begin{aligned} \left\langle  Y_{l'm'} \right\vert \sin\theta e^{\pm i\varphi}\left\vert Y_{lm} \right\rangle 
+  &= \pm \sqrt{\frac{(l\pm m+1)(l\pm m+2)}{(2l+1)(2l+3)}} \delta _{l'l+1} \delta _{m'm\pm 1}  \\
+  & \hspace{2em} \mp \sqrt{\frac{(l\mp m)(l\mp m -1)}{(2l-1)(2l+1)}} \delta _{l'l-1} \delta _{m'm\pm 1} 
+  \end{aligned}
+  \]
+  上式不为零，要求$l'=l\pm 1$且$m'=m\pm 1$
+\end{frame} 
+
+\begin{frame} 
+  \frametitle{}
+  （III）计算 $\left\langle  n'l' \right\vert r \left\vert nl \right\rangle$ \\
+  \[ \begin{aligned} \left\langle  n'l' \right\vert r \left\vert nl \right\rangle 
+    &=  \int_0^{\infty} R_{n'l'} r^3 R_{nl} dr  \\
+    &\ne 0 
+    \end{aligned}
+    \]
+
+  ~~\\
+  综合(I)、(II) 、(III)，得偶极矩近似下的\emf[选择定则] 
+  \[
+  \left\{ \begin{aligned}
+     & \Delta l = \pm 1\\
+     &  \Delta m = 0,\quad \pm 1
+  \end{aligned}\right. 
+  \]
+\end{frame} 
+
+\begin{frame} 
+  \frametitle{}
+\begin{figure}[htbp]
+  \centering
+  \includegraphics[width=0.9\textwidth]{figs/jump.png}
+  %\caption{}
+    %\label{fig:}
+\end{figure}
+试指出图中哪些跃迁是禁戒跃迁
+\end{frame} 
+
+\begin{frame} 
+  \frametitle{严格禁戒跃迁}
+\begin{itemize}
+  \Item 不满足偶极矩近似选择定则的跃迁，称为\emf[禁戒跃迁]。
+  ~~\\  
+  \Item 四极矩近似、八极矩近似等更高级别近似有新的选择定则。不满足任意近似选择定则的跃迁，称为\emf[严格禁戒跃迁]。
+\end{itemize}
+\end{frame} 
+
+\begin{frame} 
+  \frametitle{1s与2p之间的跃迁}
+  
+  \begin{figure}[htbp]
+    \centering
+    \includegraphics[width=0.1\textwidth]{figs/1s2p.png}
+    %\caption{}
+      %\label{fig:}
+  \[\Delta l = \pm 1, \quad \Delta m = 0 \]
+  \end{figure}
+  \begin{center}
+    \animategraphics[height=2in,loop]{30}{figs/gif/sp}{1}{123} 
+  \end{center} 
+\end{frame} 
+
+\begin{frame} 
+  \frametitle{本章要点}
+ \begin{enumerate}
+  \item 非简并定态微扰求能量一二级修正及波函数的一级修正
+  \item 简并定态微扰求能量的一级修正及及零级近似波函数
+  \item 电偶极近似的内容
+  \item 微扰公式适用条件
+  \item $H^{(0)}$表象薛定谔方程
+  \item 黄金定则的表述
+  \item 选择定则的内容，禁戒跃迁的定义
+  \item 什么是斯塔克效应及产生原因
+  \item 态密度的概念及计算
+  \item 光的发射与吸收三种基本过程的系数表达式
+ \end{enumerate}
+\end{frame} 

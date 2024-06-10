@@ -1,0 +1,4341 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame} [plain]
+    \frametitle{}
+    %\Background[2] 
+    \begin{center}
+    { {\huge 第五章：求解薛定谔方程 }}
+    \end{center}  
+    \addtocounter{framenumber}{-1}   
+\end{frame}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}
+  \frametitle{薛定谔方程}
+  \emf[一般形式:]
+ \begin{equation}\label{eq:sch}
+     i\hbar \frac{\partial }{\partial t} \psi = \hat{H}\psi
+  \end{equation}
+
+  ~~\\ 
+  \emf[多粒子体系：]
+  \begin{equation} \label{eq:msch}
+	i\hbar \frac{\partial }{\partial t} \Psi(\mathbf{r},t) =\left[ \sum_{i=1}^{n} -\frac{\hbar^2}{2\mu }\nabla ^2 _i + \sum_{i=1}^{n} V(\vec{r_i},t) + \sum_{i,j=1, i\ne j}^{n}  U(\vec{r_i},\vec{r_j})\right]\Psi(\mathbf{r},t)
+ \end{equation}
+ 式中$U(\vec{r_i},\vec{r_j})$为粒子间的相互作用势，而$V(\vec{r_i},t) $是势函数，描述外界对体系中各粒子的影响。
+\end{frame} 
+
+\begin{frame}
+  \frametitle{}
+  \emf[单粒子体系：]
+  \begin{equation}\label{eq:ssch}
+    i\hbar \frac{\partial }{\partial t} \psi(\vec{r},t) =\left[ -\frac{\hbar^2}{2\mu }\nabla ^2 + V(\vec{r},t) \right]\psi(\vec{r},t) 
+ \end{equation}
+ 式中$V(\vec{r},t)$是势函数，描述外界对粒子的影响。
+
+~~\\ 
+若$V$不显含时间$t$, 体系处于定态，定态波函数为$ \psi(\vec{r},t)  =  \psi(\vec{r}) f(t) $, 其中时间函数
+\begin{equation}\label{eq:t}
+    f(t) = e^{-\dfrac{i}{\hbar}Et} 
+ \end{equation} 
+ 空间函数$ \psi(\vec{r})$ 服从
+
+~~\\
+ \emf[定态薛定谔方程:]
+ \begin{equation}\label{eq:dtsch}
+ \left[ -\frac{\hbar^2}{2\mu }\nabla ^2 + V(\vec{r}) \right]\psi(\vec{r}) = E\psi(\vec{r})
+ \end{equation}
+\end{frame} 
+
+\section{自由粒子}
+\begin{frame} 
+    \frametitle{自由粒子}
+    \emf[自由粒子:] 不受任何力约束的粒子
+
+    ~~\\ 
+    \begin{figure}[htbp]
+        \centering
+        \includegraphics[width=0.3\textwidth]{figs/freep.png}
+        %\caption{}
+        %\label{fig:}
+    \end{figure}
+    特点：动量和能量都保持不变，因此只是一种理想的模型，没有物理对应。 
+\end{frame}
+
+\begin{frame}
+	\frametitle{}
+	\例[1]{求自由粒子薛定谔方程}   
+	\解 考虑一维情况，薛定谔方程为
+	\begin{equation*}
+	   i\hbar \frac{\partial }{\partial t} \psi(x,t) =\left [ -\frac{\hbar^2}{2\mu }\frac{d^2 }{d x^2 } + V(x,t) \right ]\psi(x,t) 
+	\end{equation*}
+	自由粒子的势函数 $ V(x,t) = 0 $, 不显含时间$t$, 波函数为$$ \psi(\vec{r},t)  =  \psi(\vec{r}) f(t) = \psi(\vec{r}) e^{-iEt/\hbar}  $$
+ \end{frame}
+
+\begin{frame}
+	\frametitle{}
+    其中空间函数$ \psi(\vec{r})$ 服从定态薛定谔方程
+	$$
+	-\dfrac{\hbar^2}{2\mu } \frac{d^2 }{d x^2}\psi(x) = E \psi(x)
+	$$  
+ 整理,得
+ $$
+ \psi''(x) + \dfrac{2E\mu }{\hbar^2} \psi(x)=0
+ $$ 
+ 令$ k ^2 = \dfrac{2 \mu E }{\hbar^2}=\dfrac{p^2_x }{\hbar^2} $, 得 
+ $$
+ \psi''(x) + k ^2 \psi(x)=0
+ $$  
+方程的解为
+$$
+\psi(x) = A e^{i k x}+Be^{-i k x} = A e^{\dfrac{i}{\hbar}p_x x}  + B e^{-\dfrac{i}{\hbar}p_x x}   
+ $$
+ 无边界的限制，无法实现对$k$的量子化（也即动量$p_x$的量子化）。实际上，全空间自由的粒子，其动量有确定值。
+\end{frame}
+
+\begin{frame}
+  \frametitle{}
+  考虑到动量是矢量, $k$既可取正值又可取负值。应写成
+ $$
+ \psi(x)= C e^{i k x} = C e^{\dfrac{i}{\hbar}p_x x} 
+ $$ 
+  这是动量取确定值的解，因此是属于动量本征值$p_x$的本征函数，记为 $$\psi _{p_x} (x) = C e^{\dfrac{i}{\hbar}p_x x} $$
+  归一化
+  $$\psi _{p_x} (x) =  \frac{1}{\sqrt{2\pi \hbar}} e^{\dfrac{i}{\hbar}p_x x}  $$
+  因此,体系的波函数（基本解）为：
+  $$ \psi(x,t) = \frac{1}{\sqrt{2\pi \hbar }}e^{\dfrac{i}{\hbar}(p_x x  - E t)}  $$
+\end{frame} 
+
+\begin{frame}
+  \frametitle{}
+对于三维情况, 自由粒子的势函数可以写成求和形式
+$$ V(x,t) = 0 = V_x(x) + V_y(y) + V_z(z)$$
+因此，定态薛定谔方程可以分离成三个方程，固有函数为
+$$
+\begin{aligned}
+	\psi(\vec{r}) &= \psi(x) \psi(y) \psi(z)\\ 
+	&=\frac{1}{(2\pi \hbar)^{3/2}}e^{\dfrac{i}{\hbar}(p_x x + p_y y + p_z z)} \\
+	&=\frac{1}{(2\pi \hbar)^{3/2}}e^{\dfrac{i}{\hbar}(\vec{p} \cdot \vec{r})} 
+\end{aligned}
+$$
+基本解
+$$
+\psi(\vec{r},t) =  \frac{1}{(2\pi \hbar)^{3/2}}e^{\dfrac{i}{\hbar}(\vec{p} \cdot \vec{r}-Et)} 
+$$
+\end{frame} 
+
+\begin{frame}
+    \frametitle{}
+  叠加解
+  $$
+  \begin{aligned}
+    \Psi(\vec{r},t) &= \sum_{\vec{p}} c_{\vec{p}}\psi(\vec{r},t) \\ 
+    &=\frac{1}{(2\pi \hbar)^{3/2}} \iiint_{-\infty}^{+\infty}c(\vec{p} )e^{\dfrac{i}{\hbar}(\vec{p} \cdot \vec{r}-Et)} d_{p_x} d_{p_y}d_{p_z}
+  \end{aligned}  
+  $$
+\end{frame} 
+
+\begin{frame}[label=current]
+  \frametitle{定解问题}
+\例 [2] {一维自由粒子在$t=0$时处于\[ \psi(x,0) = A(\sin^2 k_0 x + \cos k_0 x)\]
+所描述的状态，求$t$时刻的波函数及动能的可能值平均值。}
+\解 自由粒子本征态为
+\[ \left\vert k_0 \right\rangle = \frac{1}{\sqrt{2\pi \hbar}} e^ {\frac{i}{\hbar} p_x x}= \frac{1}{\sqrt{2\pi \hbar}} e^ {i k x}\]
+$\psi(x,0)$必是本征态的叠加态
+\[ \begin{aligned}
+  \psi(x,0) &= A\left[\sin^2 k_0 x + \cos k_0 x\right] \\ 
+  &= A\left[\left(\frac{e^{ik_0 x}- e^{-ik_0 x}}{2i}\right)^2+ \frac{e^{ik_0 x}+ e^{-ik_0 x}}{2}\right] \\
+\end{aligned}\]
+\end{frame} 
+
+\begin{frame}[label=current]
+  \frametitle{}
+  \[ \begin{aligned}
+    \psi(x,0) 
+    &= A\left[\frac{1}{4}\left( 2 -e^{i 2k_0 x} - e^{-i 2k_0 x}\right)+ \frac{e^{ik_0 x}+ e^{-ik_0 x}}{2}\right] \\
+    &= A \sqrt{2\pi \hbar} \left[\frac{1}{2} \left\vert 0 \right\rangle - \frac{1}{4} \left\vert 2k_0 \right\rangle - \frac{1}{4} \left\vert -2k_0 \right\rangle + \frac{1}{2} \left\vert k_0 \right\rangle + \frac{1}{2} \left\vert -k_0 \right\rangle\right]
+  \end{aligned}\]
+  由于\[ \left(\frac{1}{2}\right)^2 + \left(-\frac{1}{4}\right)^2 +  \left(-\frac{1}{4}\right)^2 +  \left(\frac{1}{2}\right)^2  +  \left(\frac{1}{2}\right)^2 = \frac{7}{8} \]
+  归一化的函数为
+  \[ \begin{aligned}
+    \psi(x,0) 
+    &= \sqrt{\frac{8}{7} } \left[\frac{1}{2} \left\vert 0 \right\rangle - \frac{1}{4} \left\vert 2k_0 \right\rangle - \frac{1}{4} \left\vert -2k_0 \right\rangle + \frac{1}{2} \left\vert k_0 \right\rangle + \frac{1}{2} \left\vert -k_0 \right\rangle\right]
+  \end{aligned}\]
+\end{frame} 
+
+\begin{frame}[label=current]
+  \frametitle{}
+  由于\[f(k,t) = e^{-\dfrac{i}{\hbar}\hbar E t} = e^{-\dfrac{i}{\hbar} \dfrac{p^2}{2\mu} t } =   e^{-\dfrac{i \hbar}{2\mu} k^2 t }\]
+(1) t时刻的波函数
+\[ \begin{aligned}
+  \psi(x,t) 
+  = & \sqrt{\frac{8}{7} } \left[\frac{1}{2} \left\vert 0 \right\rangle - \frac{1}{4} \left\vert 2k_0 \right\rangle e^{-\dfrac{i \hbar}{2\mu} 4k_0^2 t }- \frac{1}{4} \left\vert -2k_0 \right\rangle e^{-\dfrac{i \hbar}{2\mu} 4k_0^2 t } \right. \\ & \left.+ \frac{1}{2} \left\vert k_0 \right\rangle e^{-\dfrac{i \hbar}{2\mu} k_0^2 t } + \frac{1}{2} \left\vert -k_0 \right\rangle e^{-\dfrac{i \hbar}{2\mu} k_0^2 t }\right]
+\end{aligned}\]
+\end{frame} 
+
+\begin{frame}[label=current]
+  \frametitle{}
+(2) 动能的可能值及权重 ($T(k)= \dfrac{p^2_x}{2\mu} = \dfrac{\hbar^2}{2\mu} k^2 $)
+\begin{table}[htbp]
+  \centering\begin{tabular}{c|c|c|c|c|c}
+    $k$ & 0 & $2k_0$ & $-2k_0$ & $k_0$& $-k_0$ \\
+    \hline
+    $T$& 0 & $\dfrac{\hbar^2}{2\mu} (2k_0)^2 $ & $\dfrac{\hbar^2}{2\mu} (2k_0)^2 $ & $\dfrac{\hbar^2}{2\mu} k_0^2 $& $\dfrac{\hbar^2}{2\mu} k_0^2 $ \\
+    \hline
+    $a^2_k$ & $\dfrac{1}{4} $ & $\dfrac{1}{16} $ & $\dfrac{1}{16} $ & $\dfrac{1}{4} $& $\dfrac{1}{4}$ \\
+  \end{tabular} 
+  %\caption{<caption>}
+  %\label{<label>}
+\end{table} 
+(3)动能的平均值
+\[ \overline{T} = \dfrac{\hbar^2}{2\mu} \frac{8}{7} \left[ 0 \times \dfrac{1}{4} + (2k_0)^2 \times \dfrac{1}{8}  + k_0^2 \times \dfrac{1}{2} \right]= \dfrac{4}{7}\dfrac{\hbar^2}{\mu}k_0^2 \]
+\end{frame} 
+
+%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{无限深势阱}
+\subsection{求解过程}
+\begin{frame}
+  \frametitle{模型}
+  这也是一种理想模型，但有物理对应。金属中的自由电子通常不能自发地逃出金属表面，即被无限深势阱束缚。
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=0.4\textwidth]{figs/infinite.png}
+    %\caption{}
+    %\label{fig:}
+\end{figure}
+\end{frame} 
+
+\begin{frame}
+  \frametitle{}
+  三维无限深势阱势的数学描述
+  $$ \displaystyle 
+      V(x,y,z)=\left\{ 
+      \begin{aligned}
+          &0, ~~\quad (0 < x,y,z < a) \\  
+          &+\infty,\quad~ ( x,y,z < 0, \quad x,y,z > a)\\
+      \end{aligned}
+      \right.
+  $$
+  可以写成三个一维无限深势阱势的线性求和形式，一维为
+  $$ \displaystyle 
+      V(x)=\left\{ 
+      \begin{aligned}
+          &0, ~~\quad (0 < x < a) \\  
+          &+\infty,\quad~ ( x < 0, \quad x > a)\\
+      \end{aligned}
+      \right.
+  $$
+\end{frame} 
+
+\begin{frame}
+	\frametitle{求解过程}
+	\例[3]{一粒子处于如下一维无限深势阱
+ 	$$ \displaystyle 
+	V(x)=\left \{ 
+	\begin{array}{cccc}
+		0	~~ ~~ 0<x<a \\  
+		+\infty ~~x<0, x>a\\
+	\end{array}
+	\right.
+	$$ 试求解波函数的具体形式}
+	\解 设粒子的状态用波函数$ \psi(x,t) $ 完全描述, 随时间的演化服从薛定谔方程
+\begin{equation*}
+	i\hbar \frac{\partial }{\partial t} \psi(x,t) =\left [ -\dfrac{\hbar^2}{2\mu } \frac{d^2 }{d x^2} + V(x) \right ]\psi(x,t) 
+\end{equation*}	
+\end{frame}
+
+\begin{frame}
+	\frametitle{}	
+势函数不显含时间，波函数$ \psi(x,t)$ 可写成$ \psi(x)f(t)$, 其中
+$$f(t) = e^{-iEt/\hbar} $$  
+$ \psi(x)$ 满足一维定态薛定谔方程
+\begin{equation*}
+	\left [ -\dfrac{\hbar^2}{2\mu } \frac{d^2 }{d x^2} + V(x) \right ]\psi(x) = E \psi(x)
+\end{equation*}
+代入势函数,由于势函数是分段函数,需要分段求解
+\[\begin{aligned}
+	I. &\left [ -\dfrac{\hbar^2}{2\mu } \frac{d^2 }{d x^2} + 0 \right ]\psi(x)  = E \psi(x), \quad (0 < x < a) \\
+	II. &\left [ -\dfrac{\hbar^2}{2\mu } \frac{d^2 }{d x^2} + \infty \right ]\psi(x)  = E \psi(x) ,\quad~ ( x < 0, x > a) \\
+\end{aligned}\]
+\end{frame}
+
+\begin{frame}
+	\frametitle{}
+	粒子跑到阱外的概率为零, 方程-II只有零解 ：$\psi(x) = 0$ \\
+    方程（I）：令 $ \omega ^2= \dfrac{2\mu E}{\hbar ^2} $, 得标准形
+\[\psi''(x) + \omega^2	\psi(x)=0\] 
+考虑到波函数的连续性, 方程-I的解在边界处应等于方程-II的解, 即
+\[\psi(0)=0~,~~ \psi(a)=0\]
+方程-I等价于如下边值问题 
+	$$ \displaystyle 
+		\begin{cases}
+			\psi''(x) + \omega^2	\psi(x)=0  \\
+			\psi(0)=0~,~~ \psi(a)=0 ~~~~~
+		\end{cases}
+	$$ 
+\end{frame}
+
+\begin{frame}
+	\frametitle{}
+	这是振动数学模型, 通解为：
+     	\begin{equation*}
+  			\psi(x) = A\cos(\omega x) +B\sin(\omega x) 
+    	\end{equation*}
+取 $x=0, x=a$，结合边值条件, 得方程组
+\[ \left\{
+\begin{aligned}
+	\psi(0) &= A\cos(0) +B\sin(0) = 0 \\ 
+	\psi(a) &= A\cos(\omega a) +B\sin(\omega a) =0
+\end{aligned} \right.	
+\]
+写成矩阵
+$$\qquad \begin{bmatrix}
+	1 & 0 \\ 
+	\cos(\omega a) & \sin(\omega a)
+\end{bmatrix} 
+\begin{bmatrix}
+	A\\ 
+	B
+\end{bmatrix}  =
+\begin{bmatrix}
+	0\\ 
+	0
+\end{bmatrix} $$
+\end{frame}
+
+\begin{frame}
+	\frametitle{}
+	系数行列式应为零, 有
+$$\sin \omega a =0$$
+解得 
+\[\omega a = n\pi, \to \omega =\frac{n\pi}{a} \]
+联立 $ \omega = \sqrt{\dfrac{2\mu E}{\hbar ^2}} $, 得  
+\[\sqrt{\dfrac{2\mu E_n}{\hbar ^2}}  =  \frac{n\pi}{a}\]
+能量固有值
+\[E_n = \dfrac{n^2\pi^2\hbar^2}{2\mu a^2} \]
+\end{frame}
+
+\begin{frame} 
+	\frametitle{}
+把$\omega a = n\pi$代回矩阵, 得 $[A \quad B]^T =[0 \quad B_n]^T$ \\
+~~\\ 
+把$A=0, B=B_n, \omega = \dfrac{n\pi}{a} $代回通解, 得固有函数
+\[\psi _n (x) = B_n\sin(\dfrac{n\pi}{a}x) \quad (n={\color{red}1},2,3,\cdots ) \]
+把两部分写成一起,得
+\[ \psi_n(x)=\left\{
+\begin{aligned}
+	& B_n\sin(\dfrac{n\pi}{a}x), \quad (0 < x < a) \\ 
+	& 0, \quad \quad ( x < 0, x > a)
+\end{aligned} \right.
+\]
+\end{frame}
+
+\begin{frame} 
+	\frametitle{}
+无限深势阱势的波函数
+\[ \psi _n (x,t)=\left\{
+\begin{aligned}
+	& B_n \sin(\dfrac{n\pi}{a}x) e^{-iE_nt/\hbar}, \quad (0 < x < a) \\ 
+	& 0, \quad \quad ( x < 0, x > a)
+\end{aligned} \right.
+\]
+波函数归一化
+\[ 
+\begin{aligned}
+	1 & = \int_{-\infty}^{+\infty}\psi_n ^* (x) \psi_n (x) dx\\ 
+	& = \int_{0}^{a}|B_n|^2\sin^2 (\dfrac{n\pi}{a}x)e^{-iE_nt/\hbar} e^{iE_nt/\hbar}dx\\
+	& = \frac{1}{2}|B_n|^2\int_{0}^{a}\left[1-\cos(\dfrac{2n\pi}{a})\right]dx\\
+	\to B_n & =\sqrt{\dfrac{2}{a}}
+\end{aligned}
+\]	
+\end{frame}
+
+\begin{frame} 
+	\frametitle{}
+因此，无限深势阱势的基本解
+	\[ \boxed{ \psi _n (x,t)=\left\{
+	\begin{aligned}
+		& \sqrt{\dfrac{2}{a}}\sin(\dfrac{n\pi}{a}x) e^{-iE_nt/\hbar}, \quad (0 < x < a) \\ 
+		& 0, \quad \quad ( x < 0, x > a)
+	\end{aligned} \right.}
+	\]
+叠加解
+\[ \psi(x,t) = \sum_{n=1} ^{+\infty} a_n \psi _n (x,t)
+\]	
+给出初值条件,可求出$a_n$,得特解。 
+\end{frame} 
+
+\begin{frame}
+  \frametitle{}
+同理,对于三维无限深势阱
+$$ \displaystyle 
+      V(x,y,z)=\left\{ 
+      \begin{aligned}
+          &0, ~~\quad (0 < x < a, 0 < y < b,0 < z < c) \\  
+          &+\infty,\quad~ ( \text{others})\\
+      \end{aligned}
+      \right.
+  $$
+能量本征值
+\[E_{N} = E_{n_x} +E_{n_y} + E_{n_z} = \dfrac{\pi^2\hbar^2}{2\mu } (\frac{n_x^2}{a^2} + \frac{n_y^2}{b^2} + \frac{n_z^2}{c^2}) \]
+基本解为
+\[ \boxed{ \psi _N (x,y,z,t)=\left\{
+\begin{aligned}
+    & \sqrt{\dfrac{8}{abc}}\sin(\dfrac{n_x\pi}{a}x)\sin(\dfrac{n_y\pi}{b}y) \sin(\dfrac{n_z\pi}{c}z)e^{-\frac{i}{\hbar}E_{N} t} \\ 
+    & 0, \quad  ( \text{others}) \quad (n_x, n_y, n_z = 1, 2, 3, \cdots )
+\end{aligned} \right.}
+\]
+\end{frame} 
+
+\begin{frame}[label=current]
+  \frametitle{课堂作业}
+  1、若有一质量为$\mu$的粒子处于边长为$L$的三维立方无限势阱
+  \begin{itemize}
+    \item 写出基态波函数
+    \item 写出第一激发态波函数
+  \end{itemize}
+\end{frame} 
+
+\subsection{势阱变换}
+
+\begin{frame}
+  \frametitle{平移与伸缩变换}
+  考虑势阱有如下变化,如何求解方程\\ 
+	 {$ \displaystyle 
+   V(x)=\left \{ 
+   \begin{array}{cccc}
+	   1	~~ ~~ 0<x<a \\  
+	   +\infty ~~x<0, x>a\\
+   \end{array}
+   \right.
+   ;$} \\ \vspace*{0.3em}
+   {$ \displaystyle  V(x)=\left \{ 
+	  \begin{array}{cccc}
+		  0	~~ ~~ -a<x<a \\  
+		  +\infty ~~x<-a, x>a\\
+	  \end{array}
+	  \right.
+  ;$}\\ \vspace*{0.3em}
+  {$ \displaystyle   V(x)=\left \{ 
+	  \begin{array}{cccc}
+		  0	~~ ~~ -\frac{a}{2}<x<\frac{a}{2} \\  
+		  +\infty ~~x<-\frac{a}{2}, x>\frac{a}{2}\\
+	  \end{array}
+	  \right.
+   $} \\
+\end{frame} 
+
+\begin{frame} 
+	\frametitle{}
+	\例[4]{若选取中点为坐标原点,则一维无限深势阱表示为
+$$ \displaystyle 
+	V(x)=\left\{ 
+	\begin{aligned}
+		&0, ~~\quad (-\dfrac{a}{2} < x < \dfrac{a}{2} ) \\  
+		&+\infty,~~\quad~~~ (|x| > \dfrac{a}{2})
+	\end{aligned}
+	\right.$$
+	试求解处于这个势阱中粒子的波函数及固有能量}
+	\解 势阱在物理上与上例无不同，但数学表达上存在平移关系\\
+	现令$x = x'- \dfrac{a}{2}$，代入势函数，
+	$$ \displaystyle 
+	V(x'- \dfrac{a}{2})=\left\{ 
+	\begin{aligned}
+		&0, ~~\quad (-\dfrac{a}{2} < x'- \dfrac{a}{2} < \dfrac{a}{2} ) \\  
+		&+\infty,~~\quad~~~ (x'- \dfrac{a}{2} < -\dfrac{a}{2} , x'- \dfrac{a}{2} > \dfrac{a}{2})
+	\end{aligned}
+	\right.$$
+\end{frame}
+
+\begin{frame} 
+	整理得
+	$$ \displaystyle 
+	V(x')=\left\{ 
+	\begin{aligned}
+		&0, ~~\quad (0 < x' < a ) \\  
+		&+\infty,~~\quad~~~ (x'< 0  , x' >a)
+	\end{aligned}
+	\right.$$
+	(1)  $V(x')$ 的固有函数
+\[ \psi_n(x')=\left\{
+\begin{aligned}
+	& \sqrt{\dfrac{2}{a}} \sin(\dfrac{n\pi}{a}x'), \quad (0 < x' < a) \\ 
+	& 0, \quad \quad ( x' < 0, x' > a)
+\end{aligned} \right.
+\]
+取 $x' = x + \dfrac{a}{2}$, 代入
+\[ \psi_n(x + \dfrac{a}{2}) =\left\{
+\begin{aligned}
+	& \sqrt{\dfrac{2}{a}} \sin[\dfrac{n\pi}{a}(x + \dfrac{a}{2})], \quad (0 < x + \dfrac{a}{2} < a) \\ 
+	& 0, \quad \quad ( x + \dfrac{a}{2} < 0, x + \dfrac{a}{2} > a)
+\end{aligned} \right.
+\]
+\end{frame}
+
+\begin{frame}
+  \frametitle{}
+  整理得
+  \[ \psi_n(x) =\left\{
+  \begin{aligned}
+	& \sqrt{\dfrac{2}{a}} \sin[\dfrac{n\pi}{a}(x + \dfrac{a}{2})], (-\dfrac{a}{2} < x < \dfrac{a}{2} ) \\ 
+	& 0, \quad \quad  (|x| > \dfrac{a}{2})
+\end{aligned} \right.
+\]
+波函数为
+\[ \psi_n(x,t) =\left\{
+  \begin{aligned}
+	& \sqrt{\dfrac{2}{a}} \sin[\dfrac{n\pi}{a}(x + \dfrac{a}{2})]e^{-iEt/\hbar}, (-\dfrac{a}{2} < x < \dfrac{a}{2} ) \\ 
+	& 0, \quad \quad  (|x| > \dfrac{a}{2})
+\end{aligned} \right.
+\]
+\end{frame}
+
+\begin{frame}
+  \frametitle{}
+  (2) $V(x')$ 的固有值
+  \[E_n = \dfrac{n^2\pi^2\hbar^2}{2\mu a^2} \qquad (n=1,2,3,...) \]
+  只与势阱的宽度有关，因此, $V(x)$的固有值为
+  \[E_n = \dfrac{n^2\pi^2\hbar^2}{2\mu a^2} \qquad (n=1,2,3,...) \]
+\end{frame} 
+
+\begin{frame}
+  \frametitle{}
+\例[5]{若势阱宽度变为原来的两倍,则势函数为
+$$ 
+	V(x)=\left\{ 
+	\begin{aligned}
+		&0, ~~\quad (0 < x < 2a) \\  
+		&+\infty,\quad~ ( x < 0, x > 2a)\\
+	\end{aligned}\right.
+$$
+	试求解处于这个势阱中粒子的固有函数及固有能量}
+	\解 势阱有物理的不同，数学上也存在伸缩变换关系\\
+	现令$x = 2x'$，代入势函数，
+	$$ \displaystyle 
+	V(x')=V(2x')=\left\{ 
+	\begin{aligned}
+		&0, ~~\quad (0 < x' < a)\\  
+		&+\infty,~~\quad~~~ (x' < 0, x' > a)
+	\end{aligned}
+	\right.$$
+\end{frame} 
+
+\begin{frame}
+  \frametitle{}
+  (1)  $V(x')$ 的固有函数
+  \[ \psi_n(x')=\left\{
+  \begin{aligned}
+	  & \sqrt{\dfrac{2}{a}} \sin(\dfrac{n\pi}{a}x'), \quad (0 < x' < a) \\ 
+	  & 0, \quad \quad ( x' < 0, x' > a)
+  \end{aligned} \right.
+  \]
+  取 $x' = \dfrac{x}{2}$, 代入
+  \[ \psi_n(\dfrac{x}{2})=\left\{
+  \begin{aligned}
+	  & \sqrt{\dfrac{2}{a}} \sin[\dfrac{n\pi}{a}\dfrac{x}{2}], \quad (0 < \dfrac{x}{2} < a) \\ 
+	  & 0, \quad \quad ( \dfrac{x}{2} < 0, \dfrac{x}{2} > a)
+  \end{aligned} \right.
+  \]
+\end{frame} 
+
+\begin{frame}
+  \frametitle{}
+  整理得有关 $V(x)$ 的固有函数
+  \[ \psi_n(x)=\left\{
+  \begin{aligned}
+	  & \sqrt{\dfrac{2}{a}} \sin[\dfrac{n\pi}{2a}x ], \quad (0 < x  < 2a) \\ 
+	  & 0, \quad \quad ( x < 0, x > 2a)
+  \end{aligned} \right.
+  \]
+  注意伸缩导致上述波函数没有归一化,做归一化，得
+  \[ \psi_n(x)=\left\{
+	  \begin{aligned}
+		  & \sqrt{\dfrac{1}{a}} \sin[\dfrac{n\pi}{2a}x ], \quad (0 < x   < 2a) \\ 
+		  & 0, \quad \quad ( x < 0, x > 2a)
+	  \end{aligned} \right.
+	  \]
+\end{frame} 
+
+\begin{frame}
+  \frametitle{}
+  (2) $V(x')$ 的固有值
+  \[E_n = \dfrac{n^2\pi^2\hbar^2}{2\mu a^2} \qquad (n=1,2,3,...) \]
+  只与势阱的宽度有关， $V(x')$的宽度是$a$ 而$V(x)$ 的宽度是$2a$ \\ 
+  因此, $V(x)$的固有值为
+  \[E_n = \dfrac{n^2\pi^2\hbar^2}{2\mu (2a)^2} \qquad (n=1,2,3,...) \]
+  整理得
+  \[E_n = \dfrac{n^2\pi^2\hbar^2}{8\mu a^2} \qquad (n=1,2,3,...) \]
+\end{frame} 
+
+\begin{frame}
+  \frametitle{}
+  \例[6]{若势阱变为
+  $$ 
+	  V(x)=\left\{ 
+	  \begin{aligned}
+		  &1, ~~\quad (0 < x < a) \\  
+		  &+\infty,\quad~ ( x < 0, x > a)\\
+	  \end{aligned}\right.
+  $$
+	  试求解处于这个势阱中粒子的波函数及能量}
+	  \解 代入定态薛定谔方程,得
+	  \[\begin{aligned}
+		  I. &\left [ -\dfrac{\hbar^2}{2\mu } \frac{d^2 }{d x^2} + 1 \right ]\psi(x)  = E \psi(x), \quad (0 < x < a) \\
+		  II. &\left [ -\dfrac{\hbar^2}{2\mu } \frac{d^2 }{d x^2} + \infty \right ]\psi(x)  = E \psi(x) ,\quad~ ( x < 0, x > a) \\
+	  \end{aligned}\]
+\end{frame} 
+
+\begin{frame}
+  \frametitle{}
+  整理得
+  \[\begin{aligned}
+	I. &\left [ -\dfrac{\hbar^2}{2\mu } \frac{d^2 }{d x^2} + 0 \right ]\psi(x)  = (E-1) \psi(x), \quad (0 < x < a) \\
+	II. &\left [ -\dfrac{\hbar^2}{2\mu } \frac{d^2 }{d x^2} + \infty \right ]\psi(x)  = E \psi(x) ,\quad~ ( x < 0, x > a) \\
+\end{aligned}\]
+令$E'=E-1$, 得
+\[\begin{aligned}
+	I. &\left [ -\dfrac{\hbar^2}{2\mu } \frac{d^2 }{d x^2} + 0 \right ]\psi(x)  = E' \psi(x), \quad (0 < x < a) \\
+	II. &\left [ -\dfrac{\hbar^2}{2\mu } \frac{d^2 }{d x^2} + \infty \right ]\psi(x)  = E \psi(x) ,\quad~ ( x < 0, x > a) \\
+\end{aligned}\]
+\end{frame} 
+
+\begin{frame}
+  \frametitle{}
+固有能量
+\[E_n = E'_n +1 = \dfrac{n^2\pi^2\hbar^2}{2\mu a^2} +1 \qquad (n=1,2,3,...) \]
+波函数
+\[ \begin{aligned}
+	\psi _n (x,t)&=\left\{
+	\begin{aligned}
+		& \sqrt{\dfrac{2}{a}}\sin(\dfrac{n\pi}{a}x) e^{-i(E_n-1)t/\hbar}, \quad (0 < x < a) \\ 
+		& 0, \quad \quad ( x < 0, x > a)
+	\end{aligned} \right. 
+\end{aligned} 
+	\]
+\end{frame} 
+
+\subsection{定解问题}
+\begin{frame}
+	\frametitle{定解问题}
+	\例[7]{
+	求解一维无限深势阱的定解问题 \\
+	$$ \displaystyle 
+			\begin{cases}
+				i\hbar \dfrac{\partial }{\partial t} \Psi = -\dfrac{\hbar^2}{2\mu } \dfrac{\partial ^2 \Psi }{\partial ^2  x ^2 } , ~~ (0<x<L, t>0) \\
+				\Psi (0,t) =0, ~~ \Psi (L,t) =0 \\
+				\Psi (x,0) =f(x)  \\
+			\end{cases}
+		$$ }
+	\解 分析发现这是宽度为$L$的一维无限深势阱问题\\ 	
+	固有能量：
+	\[E_n = \dfrac{n^2\pi^2\hbar^2}{2\mu a^2} = \dfrac{n^2\pi^2\hbar^2}{2\mu L^2}  \qquad (n=1,2,3,...) \]
+\end{frame}
+
+\begin{frame}
+  \frametitle{}
+  固有函数：
+  \[ \psi_n(x)=
+		  \sqrt{\dfrac{2}{L}} \sin[\dfrac{n\pi}{L}x ]
+	  \]
+基本解：
+$$ \Psi_n(x,t) = \sqrt{\frac{2}{L}}\sin(\dfrac{n\pi}{L}x) e^{-i E_n t/\hbar} $$ 
+叠加解：
+$$ \Psi(x,t) =\sum_{n=1} ^{\infty} b_n \Psi_n(x,t) = \sum_{n=1} ^{\infty} b_n \sqrt{\frac{2}{L}}\sin(\dfrac{n\pi}{L}x) e^{-i E_n t/\hbar} $$ 
+取$t=0$,结合初值条件,有
+$$ \Psi(x,0) = \sum_{n=1} ^{\infty} b_n \sqrt{\frac{2}{L}} \sin(\dfrac{n\pi}{L}x) = f(x) $$ 
+\end{frame}
+
+\begin{frame}
+  \frametitle{}
+  由傅里叶公式, 得
+  \[
+  \begin{aligned}
+    \sqrt{\frac{2}{L}} b_n & = \dfrac{2}{L} \int\limits_{0} ^{L} f(x) \sin^* (\dfrac{n\pi}{l}x) dx \\
+	b_n  &=  \int\limits_{0} ^{L} f(x) \psi^*_n(x) dx
+  \end{aligned}
+  \]
+  代回,得解函数
+$$ 
+\boxed{\begin{aligned}
+	\Psi(x,t) & = \sum_{n=1} ^{\infty} b_n \psi_n(x) e^{-i E_n t/\hbar} \\
+	b_n & = \int\limits_{0} ^{L} f(x) \psi ^*_n(x) dx  
+\end{aligned}}
+ $$	
+\end{frame} 
+
+\begin{frame}
+	\frametitle{课堂作业}
+	$\star$若 $$ \begin{aligned}
+		1. \quad f(x) & = 2\sin(\dfrac{2\pi}{L}x) + 3\sin(\dfrac{3\pi}{L}x) \\
+		2. \quad  f(x) & = x^2(x-L) 
+	  \end{aligned}
+	  $$ 分别求解波函数
+\end{frame}
+
+\subsection{解的物理含义}
+
+\begin{frame}
+  \frametitle{ 1、束缚态与量子化}
+
+\分 全空间完全自由的自由粒子和限制在一定区域内的“自由”粒子, 具有相同的固有值方程：
+$$
+\psi''(x) + k^2	\psi(x)=0  
+$$  
+前者无边界限制, 波函数扩展到整个空间且在无限远处不为零。
+
+~~\\ 
+后者被束缚，波函数局域在一定的区域而在无限远处为零，称为\emf[束缚态]。正是这种束缚导致出现\emf[量子化]现象。
+\[E_n = \dfrac{n^2\pi^2\hbar^2}{2\mu a^2} \]
+实际物理体系总是受到一定的束缚，因此量子化是普遍存在的现象。
+\end{frame}
+
+\begin{frame}
+  \frametitle{ 2、基态与零点能}
+\emf[基态：] 能量最低的态，对于一维无限深势阱，取$n=1$, 得
+基态波函数
+\[ \psi _1 (x,t)=\left\{
+\begin{aligned}
+    & \sqrt{\dfrac{2}{a}}\sin(\dfrac{\pi}{a}x) e^{-\frac{i}{\hbar}E_1 t}, \quad (0 < x < a) \\ 
+    & 0, \quad \quad ( x < 0, x > a)
+\end{aligned} \right.
+\]
+基态能量
+\[E_1 = \dfrac{\pi^2\hbar^2}{2\mu a^2} \]
+\end{frame} 
+
+\begin{frame}
+  \frametitle{ 3、能级间隔}
+  能级间隔是两临近能级的能量差
+  \[\Delta E = E_{n+1} - E_n = \dfrac{\pi^2\hbar^2}{2\mu a^2} (2n+1)\]
+  （1）粒子质量$\mu \to \infty, \Delta E \to 0$，宏观物体能级连续 \\
+  （2）势阱宽度$ a$ 变小, 能级间隔$\Delta E$ 变大，纳米体系能级分立（量子限域效应）
+\end{frame} 
+
+\begin{frame}
+  \frametitle{ 4 、驻波}
+  解函数图形如下
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=0.4\textwidth]{figs/infiniteb.png}
+    %\caption{}
+    %\label{fig:}
+\end{figure}
+利用欧拉公式,把解函数写成驻波形式$$
+\Psi_n(x, t)=C_1 e^{\frac{i}{\hbar}\left(\frac{n \pi \hbar}{a} x-E_n t\right)}+C_2 e^{-\frac{i}{\hbar}\left(\frac{n \pi \hbar}{a} x+E_n t\right)}
+$$
+\end{frame} 
+
+\begin{frame}
+  \frametitle{}
+\例[8]{试利用驻波条件求无限深势阱的能量}
+\解 设势阱宽为a，有驻波条件
+$$
+a=n \cdot \frac{\lambda _n}{2} \quad(n=1,2,3, \cdots) \implies \lambda _n = \frac{n}{2a} 
+$$
+代入德布罗意关系
+$$
+p_n=\hbar / \lambda _n =n \hbar / 2 a
+$$
+计算能量
+$$
+E_n=p_n^2 / 2 \mu=\frac{n^2 \pi^2 \hbar^2}{2 \mu a^2}
+$$
+\end{frame} 
+
+\begin{frame}
+  \frametitle{}
+  \例[9]{已知处于宽度为a的一维无限深势阱中一粒子, 在$t=0$时刻的波函数为
+$$
+\Psi(x,0)=\frac{4}{\sqrt{a}} \sin \frac{\pi x}{a} \cos ^2 \frac{\pi x}{a}
+$$
+求任意时刻测得粒子能量的可能值及概率
+  }
+\解 宽度为a的能量本征值
+\[E_n = \dfrac{n^2\pi^2\hbar^2}{2\mu a^2} \]
+由波函数形态,可知能量本征态应写为
+$$
+\psi_n(x)=\sqrt{\frac{2}{a}} \sin \frac{n \pi}{a} x
+$$
+\end{frame} 
+
+\begin{frame}
+  \frametitle{}
+把波函数写成本征态求和式
+$$
+\begin{aligned}
+\Psi(x,0) &= \frac{2}{\sqrt{a}} \sin \frac{\pi x}{a}\left(1+\cos \frac{2 \pi x}{a}\right) \\
+&=\frac{1}{\sqrt{a}}\left\{2 \sin \frac{\pi x}{a}+2 \sin \frac{\pi x}{a} \cos \frac{2 \pi x}{a}\right\}  \\
+&=\frac{1}{\sqrt{a}}\left\{2 \sin \frac{\pi x}{a}+\sin \frac{3 \pi x}{a}-\sin \frac{\pi x}{a}\right\} \\
+&=\frac{1}{\sqrt{a}}\left\{\sin \frac{\pi x}{a}+\sin \frac{3 \pi x}{a}\right\} \\
+&= \frac{1}{\sqrt{2}} \sqrt{\frac{2}{a}} \sin \frac{\pi x}{a}+\frac{1}{\sqrt{2}} \sqrt{\frac{2}{a}} \sin \frac{3 \pi x}{a} \\
+&=\frac{1}{\sqrt{2}} \psi_1(x)+\frac{1}{\sqrt{2}} \psi_3(x) 
+\end{aligned}
+$$
+\end{frame} 
+
+\begin{frame}
+  \frametitle{}
+叠加解为：
+\[\Psi(x,t)= \sum_{n=0} ^{\infty}  b_n \psi_n(x) e^{\frac{i}{\hbar}E_n t}\]
+取$t=0$
+$$
+\Psi(x,0)= \sum_{n=0} ^{\infty}  b_n \psi_n(x) = \frac{1}{\sqrt{2}} \psi_1(x)+\frac{1}{\sqrt{2}} \psi_3(x) 
+$$
+任意时刻的波函数为
+\[\Psi(x,t)= \frac{1}{\sqrt{2}} \psi_1(x) e^{\frac{i}{\hbar}E_1 t}+\frac{1}{\sqrt{2}} \psi_3(x) e^{\frac{i}{\hbar}E_3 t} \]
+因此，能量可能值为
+\[ E_1 = \dfrac{\pi^2\hbar^2}{2\mu a^2} ,  \quad E_3= \dfrac{9\pi^2\hbar^2}{2\mu a^2}\]
+且概率都是$ \dfrac{1}{2}  $ 
+\end{frame} 
+
+\begin{frame}
+    \frametitle{}
+    \例[10]{宽度为$a$的一维无限深势阱中，粒子处于能量为$ E^{(0)}= \dfrac{2\pi^2\hbar^2}{\mu a^2}$的态，突然把势阱宽度变为$2a$,求粒子处于能量为$ E^{(0)}$ 态的概率}
+    \解 宽度为$a$时的能量本征值为
+    $$ E^{(0)}_n= \dfrac{n^2\pi^2\hbar^2}{2\mu a^2}$$
+    可知 $ E^{(0)}= E^{(0)}_2 $，即粒子处于第一激发态，波函数为
+    $$
+    \Psi^{(0)}_2(x,0)=\sqrt{\dfrac{2}{a}}\sin(\dfrac{n\pi}{a}x) =\sqrt{\dfrac{2}{a}}\sin(\dfrac{2\pi}{a}x)
+    $$
+  宽度变为$2a$时，能量本征值变为
+  $$ E_n= \dfrac{n^2\pi^2\hbar^2}{8\mu a^2}$$
+  \end{frame} 
+  
+  \begin{frame}
+    \frametitle{}
+    可知 $ E^{(0)}= E_4 $，即粒子处于第三激发态，波函数为
+    $$
+    \Psi_4(x,0)=\sqrt{\dfrac{1}{a}} \sin[\dfrac{n\pi}{2a}x ]=\sqrt{\dfrac{1}{a}}\sin(\dfrac{2\pi}{a}x) = \frac{1}{\sqrt{2}} \Psi^{(0)}_2(x,0)
+    $$
+    因此，投影系数为 
+    \[ 
+    \begin{aligned}
+      b_4 &= \int_0^{2a} \Psi^{*}_4(x,0) \Psi^{(0)}_2(x,0) dx \\ 
+          &= \int_0^{a} \Psi^{*}_4(x,0) \Psi^{(0)}_2(x,0) dx \\
+          &= \int_0^{a} \frac{1}{\sqrt{2}} \Psi^{(0)}_2(x,0) \Psi^{(0)}_2(x,0) dx \\
+          &= \frac{1}{\sqrt{2}}
+    \end{aligned}  
+    \]
+    概率为: $|b_4|^2 = \dfrac{1}{2}$
+  \end{frame} 
+  \begin{frame}[label=current]
+    \frametitle{}
+  狄拉克法：
+  \[ 
+    \begin{aligned}
+      b_4 &= \lr{\Psi_4}{\Psi^{(0)}_2} = \frac{1}{\sqrt{2}} \lr{\Psi^{(0)}_2}{\Psi^{(0)}_2} = \frac{1}{\sqrt{2}}
+    \end{aligned}  
+    \]
+  \end{frame} 
+
+\begin{frame}
+  \frametitle{}
+  \例[11]{试写出三维立方无限深势阱中粒子的基态、第一激发态和第二激发态的能量并分析简并度}
+  \解 设$x,y,z$方向的宽度都为$a$,能量本征值为
+\[E_{N} = E_{n_x} +E_{n_y} + E_{n_z} = \dfrac{\pi^2\hbar^2}{2\mu a^2} (n_x^2 + n_y^2 + n_z^2) \]
+基本解为
+\[ \boxed{ \psi _N (x,y,z,t)=\left\{
+\begin{aligned}
+    & \sqrt{\dfrac{8}{a^3}}\sin(\dfrac{n_x\pi}{a}x)\sin(\dfrac{n_y\pi}{a}y) \sin(\dfrac{n_z\pi}{a}z)e^{-\frac{i}{\hbar}E_{N} t} \\ 
+    & 0, \quad  ( \text{others}) \quad (n_x, n_y, n_z = 1, 2, 3, \cdots )
+\end{aligned} \right.}
+\]
+\end{frame} 
+
+\begin{frame}
+  \frametitle{}
+（1）当$n_x, n_y, n_z$都取“1”时，粒子处于基态，能量为 
+\[E_{1} = \dfrac{3\pi^2\hbar^2}{2\mu a^2} \]
+（2）当$n_x, n_y, n_z$有两个取“1”另一个取“2”时，粒子处于第一激发态，能量为
+\[E_{2} = \dfrac{3\pi^2\hbar^2}{\mu a^2} \]
+（3）当$n_x, n_y, n_z$有两个取“2”另一个取“1”时，粒子处于第二激发态，能量为
+\[E_{3} = \dfrac{9\pi^2\hbar^2}{2\mu a^2} \]
+（4）$ E_{1}, E_{2}, E_{3}$ 的简并度分别为 “1”，“3”，“3”。 \hspace{3em} {\color{red} 若边长不等呢？} 
+\end{frame} 
+
+\begin{frame}[label=current]
+  \frametitle{5、宇称}
+  \例[12]{试证明当无限势阱的势函数关于坐标原点对称，则宇称守恒}
+  \证 令宇称算符为$\Pi$, 有定义式
+  \[ \Pi \left\vert x \right\rangle = \left\vert -x \right\rangle \]
+  (1) 对于动量的本征态 $\left| p_x \right\rangle $, 有
+  \[ \begin{aligned}
+    \Pi \hat{p}_x^2 \left\langle x \middle| p_x \right\rangle
+    &= p^2 \Pi \left\langle x \middle| p_x \right\rangle  \\ 
+    &= p^2 \left\langle - x \middle| p_x \right\rangle 
+  \end{aligned}\]
+\end{frame} 
+
+\begin{frame}[label=current]
+  \frametitle{}
+同时 
+\[ \begin{aligned}
+   \hat{p}_x^2 \Pi\left\langle x \middle| p_x \right\rangle
+  &= \hat{p}_x^2 \left\langle -x \middle| p_x \right\rangle  \\ 
+  &= p^2 \left\langle - x \middle| p_x \right\rangle 
+\end{aligned}\]
+因此 \[ [\Pi, \hat{p}_x^2 ] =0\]
+(2) 对于势函数\[ \Pi V(x) = V(-x) = V(x) = V(-x)\Pi = V(x)\Pi\]
+由于 \[ H = \frac{p^2_x}{2\nu} + V(x)\]
+即得 \[ [\Pi, H ] =0\]
+因此宇称守恒。
+\end{frame} 
+
+\begin{frame}[label=current]
+  \frametitle{}
+  \例[13]{求如下有限深势阱的能量本征值及本征态
+  \[ V(x)=\left\{\begin{array}{cc}
+    -V_{0}, & x \in(-L / 2, L / 2) \\ &~\\
+    0, & x \notin(-L / 2, L / 2)
+    \end{array}\right.\]
+  }
+  \解  把势函数代入定态薛定谔方程，得
+  \[ \psi_{E}^{\prime \prime}(x)=\left\{\begin{array}{lll}
+    -\dfrac{2 m E}{\hbar^{2}} \psi_{E}(x) & =\dfrac{2 m|E|}{\hbar^{2}} \psi_{E}(x) & (\text { regions I, III }) \\
+    -\dfrac{2 m}{\hbar^{2}}\left(E+V_{0}\right) \psi_{E}(x) & =-\dfrac{2 m}{\hbar^{2}}\left(V_{0}-|E|\right) \psi_{E}(x) & (\text { region II })
+    \end{array}\right.\]
+\end{frame} 
+
+\begin{frame}[label=current]
+  \frametitle{}
+定义参数 \[ k_{\mathrm{I}}^{2}=\frac{2 m|E|}{\hbar^{2}}=k_{\mathrm{III}}^{2}, \quad k_{\mathrm{II}}^{2}=\frac{2 m\left(V_{0}-|E|\right)}{\hbar^{2}}\]
+方程简化为
+\[ \psi_{E}^{\prime \prime}(x)=\left\{\begin{array}{ll}
+  k_{\mathrm{I}}^{2} \psi_{E}(x) & (\text { regions I, III }) \\
+  -k_{\mathrm{II}}^{2} \psi_{E}(x) & (\text { region II }) .
+  \end{array}\right.\]
+它们的通解为
+\[ \psi_{E}(x)=\left\{\begin{array}{ll}
+  a_{\mathrm{I}} e^{k_{\mathrm{I}} x} & (\text { region I } )\\
+  a_{\mathrm{II}} \cos k_{\mathrm{II}} x+b_{\mathrm{II}} \sin k_{\mathrm{II}} x & (\text { region II } )\\
+  a_{\mathrm{III}} e^{-k_{\mathrm{I}} x} & (\text { region III })
+  \end{array}\right.\]
+  波函数$\psi_{E}(x), \psi'_{E}(x)$ 在边界$ x= \pm \dfrac{L}{2}$连续，得四个约束条件，刚好确定四个系数， 方程可得解！（略）
+\end{frame} 
+
+\begin{frame}[label=current]
+  \frametitle{}
+对于$\delta$势： 
+\[ V(x) = - \beta \delta(x)\] 
+可令 $\beta = V_0 L$, 通过 $L \to o$, 问题可得解
+\[ E = - \frac{m \beta ^2}{2 \hbar^2}, \qquad \psi(x)=\sqrt{\frac{m \beta}{\hbar^{2}}} e^{-m \beta|x| / \hbar^{2}}\]
+\end{frame} 
+
+\begin{frame}[label=current]
+  \frametitle{课堂作业}
+  一粒子处于如下一维无限深势阱
+$$ \displaystyle 
+ V(x)=\left \{ 
+ \begin{array}{cccc}
+   c	~~ ~~ a<x<b \\  
+   +\infty ~~x<a, x>b\\
+ \end{array}
+ \right.
+ $$ 
+ 试求粒子的能量本征值，本征函数和在$t$时刻的波函数
+\end{frame} 
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{量子谐振子}
+
+\subsection{相互作用势}
+
+\begin{frame}
+  \frametitle{相互作用势}
+  $\bullet$\emf[简谐振动：]描述物体在平衡位置附近的振荡, 一种非常重要的物理模型，是多种复杂运动的初步近似。
+  \begin{itemize}
+    \item 分子振动
+    \item 晶格振动
+    \item 电磁辐射 
+  \end{itemize}
+  $\bullet$\emf[相互作用势:]平衡位置附近的势是原子分子间相互用势的二级近似
+  \begin{figure}[h]
+    \centering
+    \includegraphics[width=0.3\textwidth]{figs/force.png}
+\end{figure}
+\end{frame} 
+
+\begin{frame} 
+	\frametitle{}
+	\例[14]{试求原子分子间的相互作用势在平衡位置附近的二阶近似。}
+	\解 设势函数为$V(x)$, 在平衡位置$r_0$附近做泰勒展开 
+\begin{equation*}
+	V(x)=V(r_0) +\frac{1}{1!} \frac{\partial V}{\partial x} |_{x=r_0} (x-r_0) +\frac{1}{2!} \frac{\partial ^2 V}{\partial x ^2} |_{x=r_0} (x-r_0) ^2 + ... 
+\end{equation*}
+平衡位置附近一阶导的值应为零
+\[\frac{\partial V}{\partial x} |_{x=r_0} (x-r_0) =0 \]
+\end{frame}
+
+\begin{frame}
+	\frametitle{}
+	二阶近似可写为 \\
+	$$\begin{aligned}
+		V(x) &\approx V(r_0)+\dfrac{1}{2!} \dfrac{\partial ^2 V}{\partial x ^2} |_{x=r_0} (x-r_0) ^2   \\
+		& =V_0+\dfrac{1}{2} k (x-r_0) ^2 
+	\end{aligned}$$
+	把坐标原点平移至（$r_0, V_0 $）， 得：\\
+	\begin{equation*}
+		V(x)=\dfrac{1}{2} k x^2 
+	\end{equation*}	
+\end{frame}
+
+\begin{frame}
+	\frametitle{弹性势}
+	力是势函数V(x) 的一阶导\\
+	\begin{equation*}
+		F=-\frac{ \partial V}{\partial x}=-kx 
+	\end{equation*}	
+	这正是胡克定律。 因此, 令$k= \mu \omega ^2$, 势函数V(x)的二阶近似可写成弹性势形式\\
+	\begin{equation*}
+		V(x)=\dfrac{1}{2} \mu \omega ^2 x^2 
+	\end{equation*}
+	原子分子在平衡位置附近的运动可以看成一种弹性振动, 称为谐振子 。
+\end{frame}	
+
+\subsection{量子谐振子方程}
+\begin{frame}
+	\frametitle{量子谐振子方程}
+	\例[15]{写出量子谐振子方程及其解函数}
+	\解 设波函数$\psi(x,t)$ 完全描述量子谐振子的状态, 它随时间的演化服从薛定谔方程
+	\begin{equation*}
+		i\hbar \frac{\partial }{\partial t} \psi(x,t) =\left [ -\dfrac{\hbar^2}{2\mu } \frac{d^2 }{d x^2} + \dfrac{1}{2} \mu \omega ^2 x^2  \right ]\psi(x,t) 
+	\end{equation*}
+	由于势函数不显含时间，波函数$ \psi(x,t)$ 可写成分离变量形式$ \Psi(x)f(t)$, 其中
+	$$f(t) = e^{-iEt/\hbar} $$  
+	$ \Psi(x)$ 满足定态薛定谔方程
+	\begin{equation*}
+		\left [ -\frac{\hbar^2}{2\mu} \frac{\mathbf{d} ^2}{\mathbf{d} x^2} +\frac{1}{2}\mu \omega^2 x^2  \right ]\Psi(x)=E\Psi(x) 
+	\end{equation*}	
+\end{frame}
+
+%\begin{frame} 
+%	\frametitle{}
+%	整理,
+%	\begin{equation*}
+%		\frac{1}{\dfrac{\mu\omega}{\hbar}} \frac{\mathbf{d} ^2\Psi}%{\mathbf{d} x^2} +	\left ( \frac{2E}{\omega \hbar} -\frac{\mu %\omega}{\hbar} x^2 \right )\Psi=0
+%	\end{equation*}
+%	令：~~$ \xi =\alpha x$，做自变量伸缩变换 \\
+%	\begin{equation*}
+%		\frac{\mathbf{d} \Psi}{\mathbf{d} x} =\frac{\mathbf{d} \Psi}%{\mathbf{d} \xi} \frac{\mathbf{d} \xi}{\mathbf{d} x}  = \alpha %\frac{\mathbf{d} \Psi}{\mathbf{d} \xi}
+%	\end{equation*}
+%	\begin{equation*}
+%		\frac{\mathbf{d} \Psi ^2 }{\mathbf{d} x ^2} =\frac{\mathbf{d}}%{\mathbf{d} x}  ( \alpha \frac{\mathbf{d} \Psi}{\mathbf{d} %\xi} ) = \alpha ^2 \frac{\mathbf{d} ^2 \Psi}{\mathbf{d} \xi ^2} 
+%	\end{equation*}
+%	代回方程， 得\\
+%	\begin{equation*}
+%		\left[ \frac{\hbar ^2 \alpha ^2 }{2\mu} \frac{\mathbf{d^2}}%{\mathbf{d} \xi ^2}  + (E- \frac{\mu \omega ^2 \xi ^2}{2 \alpha %^2}  ) \right] \Psi(\xi) =0
+%	\end{equation*}	
+%\end{frame}
+%
+%\begin{frame}
+%	\frametitle{}
+%	同除二阶导数项系数， 得\\
+%	\begin{equation*}
+%		\left[ \frac{\mathbf{d^2}}{\mathbf{d} \xi ^2}  + \frac{2\mu}%{\hbar ^2 \alpha ^2 } (E- \frac{\mu \omega ^2 \xi ^2}{2 \alpha %^2}  ) \right] \Psi(\xi) =0
+%	\end{equation*}
+%	令最后一项$\dfrac{\mu ^2 \omega ^2 }{\hbar ^2 \alpha ^ 4}=1 $，得伸缩%系数：\\
+%	\begin{equation*}
+%		\alpha ^2= \frac{\mu\omega}{\hbar}
+%	\end{equation*}
+%	代回方程，得
+%	\begin{equation*}
+%		\left[ \frac{\mathbf{d} ^2}{\mathbf{d} \xi^2} + \left( \frac{2E}%{\hbar \omega} - \xi^2 \right) \right] \Psi=0 
+%	\end{equation*}
+%	引入一个新的固有值\\
+%	\begin{equation*}
+%		\lambda = \frac{2E}{\hbar \omega }
+%	\end{equation*}
+%\end{frame}
+%
+%\begin{frame}
+%  \frametitle{}
+%  得简洁型二阶变系数常微分方程\\
+%  \begin{equation}\label{eq:osc}
+%	  \boxed{\left[ \frac{\mathbf{d} ^2}{\mathbf{d} \xi^2} + \left( %\lambda - \xi^2 \right) \right] \Psi=0} 
+%  \end{equation}
+%  称为量子谐振子能量本征方程。
+%\end{frame} 
+%
+%\begin{frame}
+%	\frametitle{能量本征值}
+%    \begin{exampleblock} {例-16、求解量子谐振子能量本征问题
+%        \begin{equation*}
+%            \left[ \frac{\mathbf{d} ^2}{\mathbf{d} \xi^2} + \left( %\lambda - \xi^2 \right) \right] \Psi=0 
+%        \end{equation*}}
+%	\end{exampleblock}
+%    \解 (1) 考虑方程的渐近行为， 当 $ |x| \to \infty,  \xi =\alpha x %\to \infty$，有 $ \xi ^2  \gg  \lambda $，方程可近似为 \\
+%	\begin{equation}\label{eq:osc1}
+%		\left(\frac{\mathbf{d} ^2}{\mathbf{d} \xi^2} - \xi^2 \right) %\Psi=0 
+%	\end{equation} 
+%	这还是一个二阶变系数常微分方程, 因此方程无表达式解
+%\end{frame}
+%    \begin{frame}
+%      \frametitle{}
+%	考虑平方指数函数
+%	$$ \exp(\frac{\xi ^2}{2}), \quad \exp(-\frac{\xi ^2}{2})  $$ 
+%	对它们求导
+%	\begin{equation*}
+%		\frac{d^2 }{d \xi ^2} \exp(\frac{\xi ^2}{2}) =(\xi ^2 +1)  \exp%(\frac{\xi ^2}{2}) 
+%	\end{equation*}    
+%	\begin{equation*}
+%		\frac{d^2 }{d \xi ^2} \exp( - \frac{\xi ^2}{2}) =(\xi ^2 -1)  %\exp( - \frac{\xi ^2}{2}) 
+%	\end{equation*}   
+%    当 $ \xi \to \infty$， 两导数可近似为：\\
+%	\begin{equation*}
+%		(\xi ^2 )  \exp( \frac{\xi ^2}{2}) ~~, ~~ (\xi ^2 )  \exp( - %\frac{\xi ^2}{2}) 
+%	\end{equation*}      
+%    \end{frame} 
+%
+%\begin{frame}
+%	\frametitle{}
+%	代回方程\ref{eq:osc1}
+%    \begin{equation*}
+%		\left(\frac{\mathbf{d} ^2}{\mathbf{d} \xi^2} - \xi^2 \right) %\Psi \approx (\xi ^2 )  \exp( \frac{\xi ^2}{2}) - \xi ^2   \exp%( \frac{\xi ^2}{2}) =0 
+%	\end{equation*}
+%    即上述平方指数函数近似地满足方程，因此，极限状态下方程的解应与如下函数相关联
+%	\begin{equation*}
+%		C_1  \exp( \frac{\xi ^2}{2}) + C_2   \exp( - \frac{\xi ^2}{2})  
+%	\end{equation*}     
+%	考虑到波函数的有限性（标准化条件），应删除发散项（第一项）
+%	\begin{equation*}
+%		\Psi_\infty (\xi)  \sim C_2 \exp( - \frac{\xi ^2}{2})  
+%	\end{equation*}   
+%\end{frame}
+%
+%\begin{frame}
+%	\frametitle{}
+%	(2) 非极限状态的解函数可考虑对极限状态解函数作常数变异 
+%	\begin{equation*}
+%		\Psi(\xi) = H(\xi) e^{-\xi^2/2 }  
+%	\end{equation*}   
+%	求导
+%	\begin{equation*}
+%		\Psi'(\xi) = H'(\xi) e^{-\xi^2/2 } -  H(\xi) \xi e^{-\xi^2/2 } 
+%	\end{equation*} 
+%	再求导 
+%	\begin{equation*}
+%		\Psi''(\xi) = \left[  \left( \xi^2 -1 \right) H -2\xi H' +H''  %\right] e^{-\xi^2/2}
+%	\end{equation*}  
+%	代回量子谐振子方程\ref{eq:osc}, 得 
+%	$$ \left[  \left( \xi^2 -1 \right) H -2\xi H' +H''  \right] e^%{-\xi^2/2} + \left( \lambda - \xi^2 \right) H(\xi) e^{-\xi^2/2 }%=0 $$  \\ 
+%	整理
+%	\[\left[H'' -2 \xi H' +(\lambda -1) H \right]e^{-\xi^2/2 } =0\]
+%	系数项应为零, 得
+%	\[H'' -2 \xi H' +(\lambda -1) H =0\]
+%\end{frame}
+%
+%\begin{frame}
+%  \frametitle{}
+%  取$\lambda -1= 2n $，方程转化为n阶厄密方程 \\
+%  \begin{equation}\label{eq:Herm}
+%	  \boxed{H'' -2 \xi H' +2n H=0 } 
+%  \end{equation}  
+%  联立
+%  $$ \lambda -1= 2n, \quad \lambda = \frac{2E}{\hbar  \omega} $$ 
+%  解出能量固有值
+%  \begin{equation*}
+%	  \boxed{E_n=\left(n+\frac{1}{2}\right) \hbar \omega, ~~~  ( n=0,%1,2, ...)  } 
+%  \end{equation*}  
+%  固有函数由n阶厄密方程\ref{eq:Herm}给出。
+%\end{frame} 
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%\subsection{厄密方程}
+%
+%\begin{frame}
+%	\frametitle{厄密方程}
+%	\begin{exampleblock} {例-12、求n阶厄密方程}
+%		\begin{equation*}
+%			H'' -2 \xi H' +2n H=0 
+%		\end{equation*}  
+%	\end{exampleblock}
+%	\alert{解：} 	设方程有级数解
+%	\begin{equation*}
+%		H=\sum_{k=0}^{\infty} c_k \xi ^k
+%	\end{equation*}     
+%	求导
+%	$$\begin{aligned}
+%		H'&=\sum_{k=1}^{\infty} k c_k \xi ^{k-1} \\
+%		2 \xi H' &=\sum_{k=0}^{\infty} 2 k c_k \xi ^{k}
+%	\end{aligned}$$        
+%\end{frame}
+%
+% \begin{frame}
+%   \frametitle{}
+%   再求导
+%	$$\begin{aligned}
+%		H''&=\sum_{k=2}^{\infty} k(k-1) c_k \xi ^{k-2} \\
+%           &=\sum_{k-2=0}^{\infty} (k-2+2)(k-2+1) c_{k-2+2} \xi ^%{k-2} \\
+%		   &=\sum_{k=0}^{\infty} (k+2)(k+1) c_{k+2} \xi ^{k}
+%	\end{aligned}$$  
+%   代回厄密方程，得
+%   \begin{equation*}
+%	   \sum_{k=0}^{\infty} (k+2)(k+1) c_{k+2} \xi ^{k} -\sum_{k=0}^%{\infty} 2 k c_k \xi ^{k} +2n \sum_{k=0}^{\infty} c_k \xi ^k=0 
+%   \end{equation*}
+%   这是有关$\xi$的多项式, 前面的系数项应为零
+%   \[(k+2)(k+1) c_{k+2} - 2 k c_k  + 2n c_k =0 \]
+%\end{frame} 
+%
+%\begin{frame}
+%  \frametitle{}
+%   整理得
+%   \[(k+2)(k+1) c_{k+2} = 2 (k-n) c_k \]
+%   得系数递推式
+%   \begin{equation*}
+%	   c_{k+2} = \frac{ 2(k-n)}{(k+2)(k+1) } c_k, ~~  \left( k=0,1,2,%3, ...  \right)
+%   \end{equation*} 
+%
+%   对于n阶厄密方程来说, $n$是确定数, 而$k$是级数的脚标。当$k$增加到$k=n$时,系%数$c_{k+2} =0 $  \\
+%   因此, 无论$n$是奇还是偶数, 级数的最高次都是$k=n$，令最高次项系数为：
+%	\begin{equation*}
+%		c_n =2^n
+%	\end{equation*}
+% \end{frame} 
+%
+%\begin{frame}
+%	\frametitle{} 
+%    系数降幂递推式，\begin{equation*}
+%		c_{k-2} = -\frac{k(k-1) } { 2(n-(k-2))}  c_k
+%	\end{equation*}   
+%	取$k=n$
+%	\begin{equation*}
+%        \begin{aligned}
+%            c_{n-2} &=-\frac{n(n-1) } { 2(n-(n-2))}  c_n  \\
+%            &= -\frac{n(n-1) } { 2\times2}  2^n 
+%        \end{aligned}
+%	\end{equation*} 
+%    \begin{equation*}
+%        \begin{aligned}
+%            c_{n-4} &=-\frac{(n-2)(n-3) } { 2(n-(n-4))}  c_{n-2}  \\
+%            &=(-1)^2 \frac{(n-2)(n-3) } { 2(n-(n-4))}\frac{n(n-1) } %{ 2\times2}  2^n   \\
+%            &= (-1)^2 \frac{n(n-1)(n-2) (n-3) } { (2\times 2)\times %(2\times 4)}  2^n
+%        \end{aligned}
+%	\end{equation*}
+%\end{frame}
+%
+%\begin{frame}
+%	\frametitle{}
+%	\begin{equation*}
+%		\begin{aligned}
+%            c_{n-6} &= (-1)^3 \frac{n(n-1)(n-2) (n-3)(n-4) (n-5) } %{ (2\times 2)\times (2\times 4)\times (2\times 6)}  2^n %\\
+%		&= (-1)^3 \frac{n!/(n-6)!} {2^3 (6)!!}  2^n \\
+%		c_{n-2\times 3} &= (-1)^3 \frac{n!/(n-2\times 3)!} {2^3 2^3 %3!}  2^n \\
+%		&= (-1)^3 \frac{n!} { 3! (n-2\times 3)!}  2^{n-2\times 3}
+%		\end{aligned}
+%	\end{equation*} 
+%用$m$取代$3$，得一般式
+%	\begin{equation*}
+% c_{n-2m} =(-1)^m \frac{n! } {  m ! (n-2m)!}  2^{n-2m} 
+%	\end{equation*} 	
+%\end{frame}
+%
+%\begin{frame}
+%  \frametitle{}
+%  无论奇偶, n阶厄米多项式总可以表示为（$M=[n/2]$表示向下取整）
+%	\begin{equation*}
+%		H_n(\xi) =\sum_{m=0}^{M}  (-1)^m \frac{n! } {  m ! (n-2m)!}  2^%{n-2m} \xi^{n-2m} ,  ~~~ M=[n/2] 
+%	\end{equation*}
+%微分形式为
+%$$
+%H_n(\xi)=(-1)^n \mathrm{e}^{\xi^2} \frac{d^n}{d \xi^n} \mathrm{e}^%{-\xi^2}
+%$$   
+%本征函数由n阶厄密方程给出
+%  \begin{equation*}
+%	  \Psi_n(\xi) = N_n \exp(-\frac{\xi ^2}{2}) H_n(\xi) 
+%  \end{equation*}    
+%   由归一化公式，有
+%	\[
+%	\begin{aligned}
+%		1 = \int\limits_{-\infty}^{+\infty} \Psi^* _n (\xi) \Psi_n(\xi) %d\xi  = |N_n|^2 \int\limits_{-\infty}^{+\infty} e^{-\xi ^2} H_n %^2(\xi) d\xi 
+%	\end{aligned}	
+%	\]  
+%\end{frame} 
+%
+%\begin{frame}
+%  \frametitle{}
+%代入厄米多项式正交归一化公式\[ \int\limits_{-\infty}^{+\infty} e^{-\xi^%{2}} H_m(\xi) H_n(\xi)d\xi = \left\{ 
+%    \begin{aligned}
+%        & 0, \quad (m\ne n) \\ 
+%        & 2^n n! \sqrt{\pi} , \quad (m= n)
+%    \end{aligned}\right.\]
+%得归一化系数
+%\[ 
+%	N_n= \left( \frac{1}{\sqrt{\pi} 2^n n!}  \right) ^{1/2}
+%	\]  
+%归一化的本征函数
+%	\[\Psi_n(\xi) = \dfrac{1}{(2^n n! \sqrt{\pi}) ^{1/2}} \exp(-\frac%{\xi ^2}{2}) H_n(\xi) \]
+%考虑到伸缩系数,得归一化本征函数
+%\begin{equation*}
+%    \boxed{\Psi_n(x) = \left( \frac{\alpha}{\sqrt{\pi} 2^n n!}  %\right) ^{1/2} \exp(-\frac{\alpha^2 x ^2}{2}) H_n(\alpha x)} 
+%\end{equation*} 
+%\end{frame} 
+%
+%\subsection{解函数}
+\begin{frame}
+  \frametitle{数理方程解} 
+  能量固有值：
+  \[E_n = (n+\frac{1}{2})\hbar \omega, \qquad  n=0,1,2,\cdots  \]
+  固有函数：
+  \begin{equation*}
+	  \Psi_n(x) = \left( \frac{\alpha}{\sqrt{\pi} 2^n n!}  \right) ^{1/2}  \exp(-\frac{ \alpha^2 x^2}{2} ) H_n( \alpha x) , \qquad  \alpha = \sqrt{\frac{\mu\omega}{\hbar}} 
+  \end{equation*}
+  基本解（定态波函数）
+  \begin{equation*}
+	  \Psi_n(x,t) = \Psi_n(x) e^{-\frac{i}{\hbar} E_n t} 
+  \end{equation*}
+  叠加解：
+	\[\psi (x,t) = \sum_{n=0} ^{\infty} a_n\Psi_n (x,t) \]
+	如果存在初始条件, 可得系数
+\end{frame} 
+
+\begin{frame}[label=current]
+  \frametitle{}
+  \例 [16] {
+  一维谐振子($V_1=kx^2/2$)处于基态，如势场突然变成$V_2=kx^2$,即弹性力增大一倍，求$V_2$势场的
+  能级以及粒子处于新势场中基态的概率。}
+  \解 (1) $V_1$势场的能级($\omega = \sqrt{\dfrac{k}{m}} $)
+  \[ E^{(1)}_n = \left(n+\frac{1}{2}\right) \hbar \omega, \qquad n=0,1,2\cdots \]
+  $V_2$势场的能级($\omega^{(2)} = \sqrt{\dfrac{2k}{m}} = \sqrt{2}\omega$)
+  \[ E^{(2)}_n = \left(n+\frac{1}{2}\right) \hbar \omega^{(2)} = \left(n+\frac{1}{2}\right) \sqrt{2} \hbar \omega, \qquad n=0,1,2\cdots \]
+\end{frame} 
+
+\begin{frame}[label=current]
+  \frametitle{}
+  (2) $V_1$势场的基态($\alpha = \sqrt{\dfrac{\mu\omega}{\hbar}} $)
+  \begin{equation*}
+	  \Psi_0(x) = \left( \frac{\alpha}{\sqrt{\pi} 2^n n!}  \right) ^{1/2}  \exp(-\frac{ \alpha^2 x^2}{2} ) H_n( \alpha x) =  \left( \frac{\alpha}{\sqrt{\pi}}  \right) ^{1/2}  \exp(-\frac{ \alpha^2 x^2}{2} )
+  \end{equation*}
+  $V_2$势场的基态($\alpha ^{(2)} = \sqrt{\dfrac{\mu\omega ^{(2)}}{\hbar}} = \sqrt{2} \omega$)
+  \begin{equation*}
+	  \Psi ^{(2)}_0(x) =  \left( \sqrt{\frac{2}{\pi}} \alpha \right) ^{1/2}  \exp(-{ \alpha^2 x^2} )
+  \end{equation*}
+  概率： 
+  \[ P = \left\vert\int_{-\infty}^{+\infty} \Psi ^{(2)*}_0(x) \Psi_0(x) d x\right\vert^2 =0.9852\]
+\end{frame} 
+
+\subsection{产生湮灭算符解法}
+\begin{frame}
+    \frametitle{产生湮灭算符}
+    \例 [17] {试通过一维谐振子的哈密顿引入产生湮灭算符}
+    \解  有无表象哈密顿算子（$m$是粒子质量）
+  \begin{equation*}
+      \hat{H} = \frac{\hat{p}^2 }{2m} + \dfrac{1}{2} m \omega ^2 \hat{x}^2   \qquad \text{with} \quad [\hat{x},\hat{p}]=i\hbar 
+  \end{equation*}	
+  代入哈密顿正则方程: \\ 
+  \[ \dot{\hat{x}} = \frac{\partial H }{\partial \hat{p} } =  \frac{{\hat{p}}}{m}; \qquad   \dot{\hat{p}} = - \frac{\partial H }{\partial \hat{x} } = -m \omega ^2 \hat{x} \]
+  说明哈密顿量是由正则位置和正则动量描述的
+\end{frame}
+
+\begin{frame}
+    \frametitle{}
+  考虑由其他正则量构造哈密顿量, 令: 
+    \[ \hat{X} = \sqrt{\frac{m\omega}{\hbar}}\hat{x}, \quad \hat{P} = \sqrt{\frac{1}{m \hbar \omega}} \hat{p} \]
+  重写哈密顿量
+    \[  \hat{H}= \frac{\hbar \omega }{2} (\hat{X}^2 + \hat{P}^2 ) \qquad \text{with} \quad [\hat{X},\hat{P}]=i \]
+  再令:
+  \[ \hat{a}= \frac{1 }{\sqrt{2}} (\hat{X} + i\hat{P} ), \qquad \hat{a}^\dagger= \frac{1 }{\sqrt{2}} (\hat{X} - i\hat{P} ) \]
+  重写哈密顿量
+  \[  \boxed{\hat{H}= \hbar \omega \left(\hat{a}^\dagger \hat{a} + \frac{1 }{2}\right) \qquad \text{with} \quad [\hat{a},\hat{a}^\dagger]=1}  \]
+ 经两次变量代换,密顿量具有最简洁的形式
+\end{frame}
+
+\begin{frame}
+    \frametitle{}
+    代入$ \hat{X}, \hat{P} $, 得直接变换关系:
+    \[ \hat{a}= \sqrt{\frac{m\omega}{2\hbar}}\hat{x} + i \sqrt{\frac{1}{2 m \hbar \omega}} \hat{p}, \qquad 
+    \hat{a}^\dagger= \sqrt{\frac{m\omega}{2\hbar}}\hat{x} + i \sqrt{\frac{1}{2 m \hbar \omega}} \hat{p}\]
+    反向变换关系:
+    \[ \hat{x}= \sqrt{\frac{\hbar}{2m\omega}} (\hat{a}+ \hat{a}^\dagger), \qquad 
+    \hat{p}= -i \sqrt{\frac{m \omega \hbar}{2}} (\hat{a}-\hat{a}^\dagger)\]
+    很明显, $ \hat{a}~\text{和}~\hat{a}^\dagger $ 是一对正则共轭量.  \\
+\end{frame}
+
+\begin{frame}
+    \frametitle{}   
+    ${\color{red}\star}~$ 求对易关系 
+  \[ \begin{aligned}
+      [X,P] &=   XP- PX \\ 
+      &=  \sqrt{\frac{m\omega}{\hbar}} \sqrt{\frac{1}{m \hbar \omega}}   (xp-px)  {\hspace*{8em}}~\\
+      &=  \sqrt{\frac{m\omega}{\hbar}} \sqrt{\frac{1}{m \hbar \omega}} i \hbar  \\
+      &= i
+  \end{aligned}\]
+\end{frame}
+
+\begin{frame}[label=current]
+  \frametitle{}
+  \[ \begin{aligned}
+    [\hat{a},\hat{a}^\dagger] &=   \hat{a}\hat{a}^\dagger - \hat{a}^\dagger\hat{a} \\ 
+    &= \frac{1}{2} (\hat{X} + i\hat{P} )  (\hat{X} - i\hat{P} )  - \frac{1}{2} (\hat{X} - i\hat{P} ) (\hat{X} + i\hat{P} )  \\
+    &=  -i (\hat{X}\hat{P}-\hat{P}\hat{X}) \\
+    &= -i \times i \\
+    &= 1
+\end{aligned}\]
+因此，基于 
+\[  \boxed{\hat{H}= \hbar \omega \left(\hat{a}^\dagger \hat{a} + \frac{1 }{2}\right) \qquad \text{with} \quad [\hat{a},\hat{a}^\dagger]=1}  \]
+可实现一维谐振子的正则量子化 \\
+~~\\ 
+\alert{注：}（1） $ \hat{a}^\dagger, \hat{a}  $ 不是厄米算符， （2） 非必要头上的帽子可略去
+\end{frame} 
+
+
+\begin{frame} 
+    \frametitle{}
+    ~~\\ 
+      ${\color{red}\star}~$ 考察算符 $a, a^\dagger$的物理意义\\
+      ~~\\
+  哈密顿本征方程
+\[ H  \rs{n} = E_n  \rs{n}\]
+ $a$作用于两端
+\[aH  \rs{n} =E_n a \rs{n}\]
+计算$H a \rs{n}$
+\[
+\begin{aligned}
+      H a \rs{n} &=\hbar \omega (  a ^\dagger a + \frac{1}{2} )a \rs{n} \\ 
+      &= \hbar \omega (   a ^\dagger a a  + \frac{1}{2} a ) \rs{n} \\ 
+\end{aligned}
+\]
+\end{frame}
+
+\begin{frame}
+    代入对易关系  $ [a,a^\dagger] = a a^\dagger - a^\dagger a= 1$ 
+    \[
+    \begin{aligned}
+          H a \rs{n} 
+          &= \hbar \omega (   (-1+a a ^\dagger )a + \frac{1}{2} a ) \rs{n} \\ 
+          &= \hbar \omega  (  a a ^\dagger a -  a \frac{1}{2} ) \rs{n} \\ 
+  &= a( a ^\dagger a -  \frac{1}{2} )\hbar \omega \rs{n}  \\
+  &=  a( \hbar \omega   a ^\dagger a +  \frac{1}{2}\hbar \omega  - \hbar \omega ) \rs{n} \\ 
+  &=  \left[a(a ^\dagger a +  \frac{1}{2})\hbar \omega  - a \hbar \omega \right]  \rs{n} 
+\end{aligned}
+\]
+代入 $ H = (a ^\dagger a +  \frac{1}{2})\hbar \omega $, 得
+ \begin{equation}\label{eq:tmp}
+ \begin{aligned}
+    H a \rs{n}  
+      &=  (aH - a \hbar \omega ) \rs{n} \\ 
+\end{aligned}   
+ \end{equation}   
+\end{frame}
+
+\begin{frame}[label=current]
+  \frametitle{}
+  代入 $ aH  \rs{n} =E_n a \rs{n}  $, 得
+  \[ 
+    \begin{aligned}
+        H a \rs{n}  
+          &=  (E_n -  \hbar \omega ) a\rs{n} \\ 
+    \end{aligned}
+    \]
+    若用$a^\dagger$重利上述过程, 可得
+    \[ 
+        \begin{aligned}
+          H a^\dagger \rs{n}  
+              &=  (E_n +  \hbar \omega ) a^\dagger \rs{n} 
+        \end{aligned}
+        \]
+两式表明：$\hat{a} \rs{n}, a^\dagger\rs{n}$ 产生的态依然是能量本性态, 本征值分别为 $E_n -  \hbar \omega = E_{n-1}$, $E_n + \hbar \omega = E_{n+1}$。也就是说$\hat{a} \rs{n} $ 湮灭一份$ \hbar \omega $ 的能量, 而$a^\dagger\rs{n}$ 产生了一份$ \hbar \omega $的能量！\\
+~~\\ 
+故称 \emf[$\hat{a}$ 为湮灭算符, $a^\dagger$ 为产生算符]    
+\end{frame} 
+
+\begin{frame}
+      \frametitle{}
+      ~~\\ 
+    \例[18]{试证明$a, a^\dagger$与哈密顿算符H之间存在对易关系
+    \[ \boxed{[H, a ] = - a \hbar \omega, \qquad  [H, a^\dagger ] =  a^\dagger \hbar \omega} \]}
+\证 把式[\ref{eq:tmp}]
+\begin{equation*}
+    \begin{aligned}
+       H a \rs{n}  
+         &=  (aH - a \hbar \omega ) \rs{n} \\ 
+   \end{aligned}   
+    \end{equation*} 
+整理为
+\[ 
+\begin{aligned}
+    (H a-aH)\rs{n}  
+      &= - a \hbar \omega  \rs{n} \\ 
+\end{aligned}
+\]
+两端求和
+\[ 
+\begin{aligned}
+    (H a-aH)\sum_n c_n \rs{n}  &= - a \hbar \omega \sum_n c_n \rs{n}   \\ 
+    (H a-aH)\rs{\psi}  &= - a \hbar \omega \rs{\psi}  \\ 
+\end{aligned}
+\]
+\end{frame}
+
+\begin{frame}
+      \frametitle{}
+因此有 
+\[(H a-aH)= - a \hbar \omega\]
+同理可得
+\[(H a^\dagger-a^\dagger H)= a^\dagger \hbar \omega\]
+得证对易关系
+\[[H, a ] = - a \hbar \omega, \qquad  [H, a^\dagger ] =  a^\dagger \hbar \omega\]
+\end{frame}
+
+\subsection{数态表象}
+\begin{frame}
+    \frametitle{真空态}
+谐振子的本征能量不能被无限地湮灭，它应有最小值，设为$E_0$，对应的本征态记为$\rs{0}$。\\ 
+~~\\ 
+若对这个态再湮灭一次，则什么都没有了，记为：
+\[ \boxed{a \rs{0}= 0 }\] 
+${\color{red}\star}~$现在研究$ \rs{0}  $ 态的物理意义\\
+~~\\ 
+由哈密顿 \[H=(a ^\dagger a + \frac{1}{2})\hbar \omega\]  
+变形可得 
+\[H-\frac{1}{2}\hbar \omega=\hbar \omega a ^\dagger a \] 
+\end{frame}
+
+\begin{frame}[label=current]
+  \frametitle{}
+两端同时作用于$ \rs{0}  $ 态
+\[ 
+\begin{aligned}
+(H-\frac{1}{2}\hbar \omega) \rs{0} &= \hbar \omega a ^\dagger a \rs{0} \\
+&= \hbar \omega a ^\dagger 0 \\
+&= 0 \\ 
+\end{aligned}
+\] 
+因此有
+\[ 
+\begin{aligned} 
+H \rs{0} &= \frac{1}{2}\hbar \omega \rs{0}
+\end{aligned}
+\] 
+结合本征方程
+\[ 
+  \begin{aligned} 
+  H \rs{0} &= E_0 \rs{0}
+  \end{aligned}
+  \] 
+得$ \rs{0}  $ 态的能量
+\[ \boxed{E_0=\dfrac{1}{2}\hbar \omega} \]
+\end{frame}
+
+\begin{frame}[label=current]
+  \frametitle{}
+  根据能量子假说， 一个频率为 $\omega$的振子，激发的能量子应为$\hbar \omega$, 因此，$ \dfrac{1}{2}\hbar \omega $ 不可能是振子激发的能量子\\
+  ~~\\ 
+  考虑到理论上的谐振子工作于真空环境，我们只能认为它源于真空激发！\\ 
+  ~~\\ 
+  因此，谐振子的 $\rs{0}$ 被称为\emf[真空态]，真空态具有的能量为 $ E_0 =\dfrac{1}{2}\hbar \omega $。\\
+  ~~\\
+  即：频率为 $\omega$的谐振子因处于真空环境会自动带有$\dfrac{1}{2}\hbar \omega$的基础能量，即为基态能量。
+\end{frame} 
+
+\begin{frame}[label=current]
+  \frametitle{}
+\例[19]{求频率为 $\omega$的谐振子处于\rs{n}的能量} 
+\解 在公式 
+  \[ 
+    \begin{aligned}
+      H a^\dagger \rs{n}  
+          &=  (E_n +  \hbar \omega ) a^\dagger \rs{n} 
+    \end{aligned}
+    \]
+    中，取$n=0$, 得 
+\[ 
+    \begin{aligned}
+      H a^\dagger \rs{0}  
+          &=  (E_0 +  \hbar \omega ) a^\dagger \rs{0} \\
+          &=  (\frac{1}{2} + 1 )\hbar \omega a^\dagger \rs{0} 
+    \end{aligned}
+    \]
+    产生了一份能量，体系应处于第一激发态，记为$ \rs{1} $, \\ 能量为：$E_{1} = (1+\frac{1}{2}  )\hbar \omega $  
+\end{frame} 
+
+\begin{frame}
+依次激发，则经过$n$次激发后，谐振子处于第$n$激发态, 记为$ \rs{n} $， 能量为
+\[\boxed{E_n = (n+\frac{1}{2})\hbar \omega, \qquad n=0,1,2, \cdots}  \]
+正是能量本征值公式
+\end{frame} 
+
+
+\begin{frame}{数态}
+考察黑体，温度导致器壁原子在平衡位置附近的振荡可以近似成量子谐振子。对于理想黑体来说，所有原子所处的环境必相同，因此所有振子的频率都一样，记为$\omega$\\
+~~\\  
+\begin{wrapfigure} {r} {0.25\textwidth} %;图在右
+        \includegraphics[width=0.2\textwidth]{figs/blackbodypng.png}   
+    \end{wrapfigure}
+振荡导致原子的正负电子中心不重合，形成电谐振子。电谐振子辐射能量为$\hbar \omega$ 的光子。\\
+~~\\ 
+第$n$个激发态$\rs{n}$，即光子数为$n$的态，称为\emf[数态], 能量为
+\[E_n = n\hbar \omega+\frac{1}{2}\hbar \omega, \qquad n=0,1,2, \cdots  \]
+数态$\{ \rs{n} \}$构成正交归一完全集，称为数态表象
+\end{frame}
+
+
+\begin{frame}
+    \frametitle{粒子数算符}
+由于数态$\rs{n}$是谐振子的能量本征态，有本征方程
+\[  \hat{H}\rs{n} = E_n \rs{n}\]
+代入有
+\[\left(\hat{a}^\dagger \hat{a} + \frac{1 }{2}\right) \hbar \omega \rs{n} = (n+\frac{1}{2})\hbar \omega \rs{n} \]
+整理,得
+\[\hat{a}^\dagger \hat{a} \rs{n} = n \rs{n} \]
+\end{frame}
+
+\begin{frame}
+    令 $ \hat{n}  = \hat{a}^\dagger \hat{a}  $, 有
+\[\hat{n} \rs{n} = n \rs{n} \]
+考察发现：
+\begin{itemize}
+  \item 算符$\hat{n}$是\emf[粒子数算符] , 本征值为$n$, 本征态$\rs{n}$
+\end{itemize}
+~~\\
+即：$\hat{n}$与能$\hat{H}$有共同本征函数系，因此它们对易
+\[ [\hat{n}, \hat{H}] =0\]
+又 $\hat{n}$不显含时间， 因此粒子数有守恒量。
+\end{frame}
+
+\begin{frame}
+    \frametitle{}
+    ~~\\ 
+\例[20]{试证明产生湮灭算符作用于数态,有等式 \\
+$\hspace*{5em}\boxed{ {a \rs{n}= \sqrt{n}\rs{n-1}}, \qquad a^\dagger \rs{n}= \sqrt{n+1} \rs{n+1}}$ }
+\证 产生湮灭算符分别产生和消灭一个光子，记为 
+    \[ a^\dagger \rs{n}= C_n \rs{n+1}, \qquad a \rs{n}= D_n\rs{n-1} \] 
+对第二式左乘$a^\dagger$
+    \[ 
+      \begin{aligned}
+        a^\dagger a \rs{n} &=  D_n a^\dagger\rs{n-1} \\ 
+        &= D_n C_{n-1} \rs{n}       
+      \end{aligned}
+      \] 
+又有 
+\[ a^\dagger a \rs{n} = n \rs{n}  \]
+两者结合，得
+$$
+D_n C_{n-1}=n \qquad \cdots (1) 
+$$ 
+\end{frame}
+
+    \begin{frame}
+        \frametitle{}
+对第二式左乘 $ \ls{n-1}  $ 
+      \[ 
+        \begin{aligned}
+            D_n\rs{n-1} &= a \rs{n} \\
+            \ls{n-1} D_n\rs{n-1} &=  \ls{n-1} a \rs{n} \\
+          D_n &= \left(\lcr{n}{a^\dagger }{n-1}\right)^* \\
+          &=  \left(\ls{n}C_{n-1}\rs{n}\right)^* \\
+          &= C_{n-1} ^*   \qquad \cdots (2)
+        \end{aligned}
+        \] 
+        联立(1)(2)式, 
+        \[ \left\{
+            \begin{aligned}
+                &D_n C_{n-1}=n \\
+                &D_n = C_{n-1} ^* 
+            \end{aligned}\right.
+            \]       
+        解得 $C_{n-1}=\sqrt{n} \quad $  $$ \to \quad \left\{
+          \begin{aligned}
+              &C_{n}=\sqrt{n+1} \\
+              &D_n = \sqrt{n}  
+          \end{aligned}\right. $$   
+\end{frame}
+
+\begin{frame}[label=current]
+  \frametitle{升降算符}
+考察公式：
+$$\boxed{ {a \rs{n}= \sqrt{n}\rs{n-1}}, \qquad a^\dagger \rs{n}= \sqrt{n+1} \rs{n+1}}$$
+从谐振子能级角度来看:
+\begin{itemize}
+    \item $\hat{a}\rs{n} \to \rs{n-1} $, 能级下降一级
+    \item $\hat{a}^\dagger \rs{n} \to \rs{n+1} $ 能级上升一级
+\end{itemize}
+~~\\ 
+因此，也称 $\hat{a}^\dagger, \hat{a} $为能带的\emf[升降算符] 。 因此有：
+\[ (a^\dagger)^n \rs{0} \to \rs{n} \]
+
+\end{frame} 
+
+\begin{frame}
+    \frametitle{}
+    ~~\\ 
+    \例[21]{试证明 $ \quad 
+    \boxed{\rs{n} = \frac{(a^\dagger)^n }{\sqrt{n!}} \rs{0} } 
+    $ }
+    \证 对$  a^\dagger \rs{n}= \sqrt{n+1} \rs{n+1}  $变形, 有 
+    \[ 
+  \begin{aligned}
+      \rs{n+1} &= \frac{a^\dagger }{\sqrt{n+1}} \rs{n} \\
+      \rs{n} &= \frac{a^\dagger }{\sqrt{n}} \rs{n-1} \\
+             &= \frac{(a^\dagger)^2 }{\sqrt{n(n-1)}} \rs{n-2} \\
+             & \cdots \\
+      \rs{n} &= \frac{(a^\dagger)^n }{\sqrt{n!}} \rs{0} \\
+  \end{aligned}    
+    \]
+\end{frame}
+
+\begin{frame}
+    \frametitle{}
+    \例 [22] {求数态在位置表象中的波函数形式}
+    \解~ 数态为$\rs{n}$, 设位置本征态为 $\rs{x}$, 即要求 $\psi_n (x)=\lr{x}{n} $  \\
+    ~~\\ 
+    (1) 求真空态波函数$\psi_0 (x)$
+    \[ 
+  \begin{aligned}
+    0 &= a \rs{0}  \\ 
+    &= \ls{x} a \rs{0}  \\ 
+    &= \ls{x} \sqrt{\frac{m\omega}{2\hbar}}\hat{x} + i \sqrt{\frac{1}{2 m \hbar \omega}} \hat{p} \rs{0}  \qquad \leftarrow \hat{p} = -i \hbar\frac{\partial }{\partial x } \\ 
+    &= \ls{x} \sqrt{\frac{m\omega}{2\hbar}} x + \sqrt{\frac{\hbar}{2 m \omega}} \frac{\partial }{\partial x } \rs{0}  \\ 
+    &= (\sqrt{\frac{m\omega}{2\hbar}} x + \sqrt{\frac{\hbar}{2 m \omega}} \frac{\partial }{\partial x } )\lr{x}{0} 
+  \end{aligned} \] 
+\end{frame}
+
+\begin{frame}
+    \frametitle{}
+    因此有
+    $$
+        0= (\sqrt{\frac{m\omega}{2\hbar}} x + \sqrt{\frac{\hbar}{2 m \omega}} \frac{\partial }{\partial x } ) \psi_0 (x)   
+    $$ 
+    整理,得
+    \[ \begin{aligned}
+        \frac{\mathrm{d}}{\mathrm{d}x} \psi_0 (x)  &= - \frac{m \omega }{2 \hbar} x  \psi_0 (x) \\ 
+        \frac{1}{\psi_0 (x)}\frac{\mathrm{d}}{\mathrm{d}x} \psi_0 (x)  &= - \frac{m \omega }{\hbar} x \\
+        \ln \psi_0 (x) &= - \frac{m \omega }{2 \hbar} x^2 +c. \\
+        \psi_0 (x) &= A_0\exp( - \frac{m \omega }{2 \hbar} x^2)
+    \end{aligned}\]
+    归一化,得 \[ 
+      \psi_0 (x)=  (\frac{m \omega }{\pi  \hbar})^{\frac{1}{4}}  \exp(- \frac{m \omega }{2 \hbar} x^2) \]
+    \end{frame}
+
+    \begin{frame}
+        \frametitle{}
+    (2) 求第一激发态$\psi_1 (x)$
+    \[ 
+      \begin{aligned}
+        \psi_1 (x) &= \lr{x}{1}  \\ 
+        &=  \ls{x} \hat{a}^\dagger \rs{0}   \\ 
+        &= \ls{x} \sqrt{\frac{m\omega}{2\hbar}}\hat{x} - i \sqrt{\frac{1}{2 m \hbar \omega}} \hat{p} \rs{0}  \\ 
+        &= \ls{x} \sqrt{\frac{m\omega}{2\hbar}} x - \sqrt{\frac{\hbar}{2 m \omega}} \frac{\partial }{\partial x } \rs{0}  \\ 
+        &= (\sqrt{\frac{m\omega}{2\hbar}} x - \sqrt{\frac{\hbar}{2 m \omega}} \frac{\partial }{\partial x } )\lr{x}{0}  \\ 
+        &= \frac{1}{\sqrt{2}} (\xi - \frac{\mathrm{d}}{\mathrm{d}\xi}) \lr{x}{0} 
+      \end{aligned} \] 
+\end{frame}
+
+\begin{frame}
+    \frametitle{}
+    (3) 求$\psi_n (x)$
+    \[ 
+      \begin{aligned}
+        \psi_n (x) &= \lr{x}{n}  \\ 
+        &=  \frac{1}{\sqrt{n!}}\ls{x} (\hat{a}^\dagger)^n \rs{0}   \\ 
+        &=  \frac{1}{\sqrt{n!}}  \frac{1}{\sqrt{2^n}} (\xi - \frac{\mathrm{d} }{\mathrm{d}\xi} )^n \lr{x}{0}   \\ 
+        &=  \frac{1}{\sqrt{n!}}  \frac{1}{\sqrt{2^n}} (\xi - \frac{\mathrm{d} }{\mathrm{d}\xi} )^n (\frac{m \omega }{\pi  \hbar})^{\frac{1}{4}}  e^{- \frac{1 }{2 } \xi^2}    \\ 
+        &=  \frac{1}{\sqrt{n!}}  \frac{1}{\sqrt{2^n}} (\frac{m \omega }{\pi  \hbar})^{\frac{1}{4}} (-1)^n (  e ^{\frac{1}{2}\xi^2} \frac{\mathrm{d} }{\mathrm{d}\xi} e ^{-\frac{1}{2}\xi^2})^n  e^{- \frac{1 }{2 } \xi^2}  \\  
+        &= \left( \frac{\alpha}{\sqrt{\pi} 2^n n!}  \right) ^{1/2} e^{- \frac{1 }{2 } \xi^2} H_n(\xi)  
+      \end{aligned} \] 
+\end{frame}
+
+\begin{frame}
+    \frametitle{}
+     \例[23]{设量子谐振子处于基态，试证位置和动量的量子涨落存在如下关系\[ \Delta x \Delta p_x =\frac{\hbar}{2} \]}
+    \证 (1) 算符解法: 
+    \[\begin{aligned}
+       \overline{x} & = \lcr{n}{\hat{x}}{n} \\ 
+       &= \sqrt{\frac{\hbar}{2m\omega}} \lcr{n}{  (\hat{a}+ \hat{a}^\dagger)}{n} \\ 
+       &= \sqrt{\frac{\hbar}{2m\omega}} \lcr{n}{  \hat{a}}{n} +  \sqrt{\frac{\hbar}{2m\omega}}\lcr{n}{ \hat{a}^\dagger}{n}  \\ 
+       &= \sqrt{\frac{\hbar}{2m\omega}} \lcr{n}{  \sqrt{n}}{n-1} +\sqrt{\frac{\hbar}{2m\omega}} \lcr{n+1}{  \sqrt{n+1} }{n} \\ &=0  
+   \end{aligned} \]     
+   \end{frame}
+   
+   \begin{frame}
+   \[\begin{aligned}
+       \overline{x^2} & = \lcr{n}{\hat{x}^2}{n} \\ 
+       &=  \lcr{n}{ (\hat{a}+ \hat{a}^\dagger)^2}{n} \\ 
+       &= \frac{\hbar}{2m\omega} \lcr{n}{ aa + {a}^\dagger {a}^\dagger + 2{a}^\dagger a + 1}{n} \\ 
+       &= \frac{\hbar}{2m\omega} \lcr{n}{ aa + {a}^\dagger {a}^\dagger + 2 \hat{n} + 1}{n} \\ 
+       &= \frac{\hbar}{2m\omega} (2n+1)  \\ 
+       &= \frac{1}{m\omega^2}  (n+\frac{1}{2})\hbar\omega \\ 
+       &= \frac{1}{m\omega^2} E_n
+   \end{aligned} \]     
+   \end{frame}
+   
+   \begin{frame}
+       \frametitle{}
+       量子涨落
+       \[\begin{aligned}
+           \Delta x  &= \sqrt{ \overline{x^2}- \overline{x}^2}  \\ 
+           &= \sqrt{ \frac{1}{m\omega^2} E_n- 0}  \\ 
+           &= \sqrt{ \frac{1}{m\omega^2} E_n}  \\ 
+       \end{aligned} \]
+        同理:
+    \[\overline{p}_x =0, \qquad \overline{p^2}_x = m E_n\]
+   \end{frame}
+   
+   \begin{frame}
+    \frametitle{}
+
+         量子涨落
+         \[\begin{aligned}
+           \Delta p_x  &= \sqrt{ \overline{p^2 _x}- \overline{p}_x ^2}  \\ 
+             &= \sqrt{ m E_n}  \\ 
+         \end{aligned} \]
+         \[\begin{aligned}
+           \Delta x \Delta p_x  &= \sqrt{ \frac{1}{m\omega^2} E_n} \sqrt{ m E_n} \\ 
+           &= \frac{1}{\omega} E_n \qquad \leftarrow n=0\\ 
+           &= \frac{\hbar}{2}  \\
+         \end{aligned} \]
+         根据不确定性原理: 
+         \[ \Delta x \Delta p_x \geq  \frac{\hbar}{2}  \]
+         即：真空态 是最小不确定度乘积态.
+   \end{frame}
+
+
+   \begin{frame}
+    \frametitle{光场量子化}
+    由同种频率光子构成的光场称为单模光场。 如果黑体分子含两种不同原子，则存在两种不同频率的谐振子（记为$\omega _1, \omega _2$），
+    由两种不同频率的光子构成的光场称双模光场。\\
+    ~~\\ 
+    设模-1和模-2的光子数分别为$n_1, n_2$， 则光场量子态为
+    $$\rs{n_1}\rs{n_2}\equiv\rs{n_1 n_2} $$
+    若模-1和模-2的产生湮灭算符分别记得$a_1^\dagger,a_1$和 $a_2^\dagger,a_2$， 则有
+    $$a_2^\dagger \rs{n_1}\rs{n_2} = \sqrt{n_2 +1} \rs{n_1}\rs{n_2 +1} $$
+    \end{frame}
+    
+    \begin{frame}[label=current]
+      \frametitle{}
+      对于具有N个模的光场，态矢量为
+      $$ \rs{n_1}\rs{n_2}\cdots \rs{n_N} = \rs{n_1n_2\cdots n_N}$$ 
+      如果知道每一个模上光子占据数目，则构成一个占据数分布，一个占据数分布确定一个量子态，称为多模光场的数态，也称$Fock$态。\\
+      真空态
+      \[\rs{0}\equiv \rs{00\cdots 0} \]
+      ~~\\ 
+      有：
+      $$a_1^\dagger a_2^\dagger \rs{n_1}\rs{n_2}\cdots \rs{n_N} = \sqrt{(n_1 +1)(n_2 +1)}\rs{n_1 +1}\rs{n_2 +1} \cdots \rs{n_N}$$
+    \end{frame} 
+
+\begin{frame} \frametitle{}
+{\Bullet}一次量子化:\\
+考虑真空能, $n$个频率为$\omega$的光子的能量为:
+\[ H = \hbar \omega \left( n + \frac{1 }{2}\right)\]
+物理量的算符化：
+\[  \hat{H}= \hbar \omega \left(\hat{a}^\dagger \hat{a} + \frac{1 }{2}\right) \qquad \text{with} \quad [\hat{a},\hat{a}^\dagger]=1 \]
+基本解:
+\[ \psi_n(x,t) = \psi_n(x)e^{-\frac{i}{\hbar} E_n t } =\psi_n(x)e^{-i \omega t } = \lr{x}{n}e^{-i \omega t }\]  
+叠加解（单模光场）:
+\[ \Psi = \sum_n a_n \left\vert n \right\rangle\] 
+\end{frame}
+
+\begin{frame} 
+\frametitle{}
+{\Bullet}二次量子化: \\
+态矢量算符化:
+\[ \hat{\Psi} = \sum_n \hat{a}_n \left\vert n \right\rangle\]
+称$\hat{\Psi}$为单模场($\omega$)算符. \\ 
+~~\\    
+对于多模场，有 
+\[\hat{\Psi} = \sum \hat{a}_1\hat{a}_2\cdots\hat{a}_i\cdots \hat{a}_N \rs{n_1n_2\cdots  n_i \cdots n_N }\]
+即：每一个模$\{ \omega_i \}$ 都有自己的产生湮灭算符($\hat{a}^{\dagger} _{i}, \hat{a}_{i}$)\\
+显然，有 
+\[ a^{\dagger} _{i}\rs{n_1n_2\cdots  n_i \cdots n_N }= \sqrt{n_i +1} \rs{n_1n_2\cdots  (n_i+1) \cdots n_N }\]
+\end{frame}
+
+\subsection{讨论}
+
+\begin{frame}
+  \frametitle{ 1、能谱}
+  由能量本征值公式
+  \[E_n = \left(n+\frac{1}{2}\right)\hbar\omega \]
+  \begin{itemize}
+    \Item 等间隔的分离能谱：$\Delta E = \hbar\omega $
+    \Item 非简并 \begin{equation*}
+        \Psi_n(x) = N_n  \exp(-\frac{ \alpha^2 x^2}{2}) H_n( \alpha x) 
+    \end{equation*}
+    \Item 基态能-零点振动能-真空能: $E_0 = \frac{1}{2}\hbar\omega $
+  \end{itemize}
+  \emf[实验事实:] 光被晶体散射实验发现，在趋于绝对零度时，散射光的强度趋于一确定值，说明零点振动能的存在。常压下，温度趋于零度，液态氦也不会变成固体，说明有显著的零点能 
+\end{frame}
+
+\begin{frame}
+  \frametitle{}
+  \例[24]{试证明零点能源于不确定性原理} 
+  \证 谐振子的能量
+  $$
+  E=\overline{H}=\frac{\overline{p^2}}{2 \mu}+\frac{1}{2} \mu \omega^2 \overline{x^2}
+  $$
+  由量子涨落公式
+  $$
+\left\{\begin{array}{l}
+\overline{(\Delta x)^2}=\overline{x^2}-\bar{x}^2 \\
+\overline{(\Delta p)^2}=\overline{p^2}-\bar{p}^2
+\end{array}\right. \implies \left\{\begin{array}{l}
+    \overline{x^2}=\overline{(\Delta x)^2}+\bar{x}^2 \\
+    \overline{p^2}=\overline{(\Delta p)^2}+\bar{p}^2
+    \end{array}\right.
+$$
+由平均值公式(波函数法)
+$$
+\bar{x}=\int_{-\infty}^{\infty} \psi_n^*  x \psi_n d x=N_n^2 \int_{-\infty}^{\infty} x e^{-\alpha^2 x^2} H_n{ }^2(\alpha x) d x=0
+$$
+\end{frame} 
+
+%\begin{frame}
+%  \frametitle{}
+%  $$
+%  \begin{aligned}
+%  \bar{p} & =\int_{-\infty}^{\infty} \psi_n^* \hat{p} \psi_n d x \\
+%  &=\int_{-\infty}^{\infty} \psi_n^* \left(-i \hbar \frac{\partial}%{\partial x}\right) \psi_n d x \\
+%  & =\int_{-\infty}^{\infty}\left(-i \hbar \frac{\partial}{\partial %x} \psi _n \right)^* \psi_n d x \\
+%  &=i \hbar \int_{-\infty}^{\infty} \psi_n \frac{\partial}{\partial %x} \psi_n^* d x \\
+%  & =-\int_{-\infty}^{\infty} \psi_n^* \left(-i \hbar \frac%{\partial}{\partial x}\right) \psi_n d x=-\bar{p} \\
+%  \implies \bar{p} &= 0 
+%  \end{aligned}
+%  $$
+%\end{frame} 
+
+\begin{frame}
+  \frametitle{}
+  $$
+  \begin{aligned}
+  \bar{p}  = (\psi_n, \hat{p} \psi_n) 
+  &=\left(\psi_n, -i \hbar \frac{\partial}{\partial x} \psi_n\right) \\
+  & =\left(-i \hbar \frac{\partial}{\partial x} \psi _n, \psi_n\right) \\
+  & =i \hbar\left( \frac{\partial}{\partial x} \psi _n, \psi_n\right) \\
+  & =i \hbar\left(\psi_n, \frac{\partial}{\partial x} \psi _n\right)^* \\ 
+  &= i \hbar\left(\psi_n, \frac{\partial}{\partial x} \psi _n\right)\\ 
+  &= -(-i \hbar)\left(\psi_n, \frac{\partial}{\partial x} \psi _n\right)\\ 
+  &=-\left(\psi_n, -i \hbar\frac{\partial}{\partial x} \psi _n\right) =-\bar{p} \\
+  \implies \bar{p} &= 0 
+  \end{aligned}
+  $$
+\end{frame} 
+
+\begin{frame}
+  \frametitle{}
+因此，有
+$$
+\left\{\begin{array}{l}
+\overline{x^2}=\overline{(\Delta x)^2} \\
+p^2=\overline{(\Delta p)^2}
+\end{array}\right.
+$$
+  代回谐振子能量公式
+  $$
+  E=\frac{\overline{p^2}}{2 \mu}+\frac{1}{2} \mu \omega^2 \overline{x^2}=\overline{\frac{(\Delta p)^2}{2 \mu}}+\frac{1}{2} \mu \omega^2 \overline{(\Delta x)^2}
+  $$
+  由不确定性原理
+  $$
+\overline{(\Delta x)^2} \cdot \overline{\left(\Delta p_x\right)^2} \geq \frac{\hbar^2}{4}
+$$
+为求 E 的最小值，取等号
+$$
+\overline{\left(\Delta p_x\right)^2}=\frac{\hbar^2}{4 \overline{(\Delta x)^2}}
+$$
+\end{frame} 
+
+\begin{frame}
+  \frametitle{}
+因此， 
+$$
+\begin{aligned}
+    E&=\frac{\hbar^2}{8 \mu \overline{(\Delta x)^2}}+\frac{1}{2} \mu \omega^2 \overline{(\Delta x)^2} \\
+    &=\frac{\hbar^2}{8 \mu y}+\frac{1}{2} \mu \omega^2 y
+\end{aligned}
+$$
+极值要求
+$$
+\frac{\partial E}{\partial y}=-\frac{\hbar^2}{8 \mu y^2}+\frac{1}{2} \mu \omega^2 = 0
+$$
+解得 
+$$
+y=\pm \frac{\hbar}{2 \mu \omega}=\overline{(\Delta x)^2}
+$$
+代回，
+$$
+E=\frac{\hbar^2}{8 \mu\left(\frac{\hbar}{2 \mu \omega}\right)}+\frac{1}{2} \mu \omega^2\left(\frac{\hbar}{2 \mu \omega}\right)=\frac{1}{2} \hbar \omega
+$$
+得证！
+\end{frame} 
+
+\begin{frame}
+  \frametitle{ 2、本征函数} 
+  根据厄米多项式公式
+  \begin{equation*}
+    H_n(x) =\sum_{m=0}^{M}  (-1)^m \frac{n! } {  m ! (n-2m)!}  2^{n-2m} x^{n-2m} ,  ~~~ M=[n/2] 
+\end{equation*}
+可得前几个厄米多项式的具体形式
+\[\begin{aligned} H_0 (x) &= 1,\\ H_1 (x) &= 2x \\ H_2 (x) &= 4x^2 -2 \\  H_3 (x) &= 8x^3 -12x \\ H_4 (x) &= 16x^4 -48x^2 +12 \end{aligned}\]
+\end{frame} 
+
+\begin{frame}
+  \frametitle{}
+  代入本征函数公式
+  \begin{equation*}
+	  \Psi_n(x) = \left( \frac{\alpha}{\sqrt{\pi} 2^n n!}  \right) ^{1/2}  \exp(-\frac{ \alpha^2 x^2}{2}) H_n( \alpha x) 
+  \end{equation*}
+  可得前几个本征函数，其中基态本征函数为 
+  \begin{figure}[htbp]
+	\centering
+	\includegraphics[width=0.7\textwidth]{figs/bct_1.png}
+\end{figure} 
+\emf[宇称: ] 如图所示，$\psi _n $ 具有$n$宇称, 当$n$
+  为奇数时具有奇宇称, 当$n$为偶数时具有偶宇称。由厄密多项式决定。
+\end{frame} 
+
+\begin{frame}
+	\frametitle{ }
+		\例 [25] {求函数
+			\[ f(x) =2x^3 +3x \] 
+			的厄密展开式}
+\解：
+设$f(x)$的厄密展开式为
+\[ f(x) = \sum_{n=0}^{+\infty} a_n H_n(x) \] 
+由前五厄密多项式的幂阶, 可知展开式中的最高阶应为$n=3$
+\end{frame}
+
+\begin{frame}
+	\frametitle{ }
+	\[
+\begin{aligned}
+	f(x) & = \sum_{n=0}^{3} a_n H_n(x) \\ 
+	&= a_0 H_0(x) + a_1 H_1(x) + a_2 H_2(x) +  a_3 H_3(x) \\
+	&= a_0 + a_1 (2x) + a_2 (4x^2 -2)  + a_3 (8x^3 -12x) \\
+	&= (a_0 -2 a_2) + (2 a_1 - 12a_3 )x +  4 a_2 x^2 + 8a_3 x^3 
+\end{aligned}
+\]
+代入 $f(x)$, 并整理， 得
+\[ (a_0 -2 a_2) + (2 a_1 - 12a_3 -3)x +  4 a_2 x^2 + (8a_3 -2) x^3 = 0 \]
+\end{frame}
+
+\begin{frame}
+	\frametitle{ }
+	多项式等于零的充要条件是各项系数都为零, 解得
+\[\left\{
+\begin{aligned}
+	a_0 &= 0\\ 
+	a_1 &= 3\\
+	a_2 &= 0\\
+	a_3 &= \frac{1}{4}
+\end{aligned} \right.
+\]
+因此,有 
+\[ f(x) =   \frac{1}{4} H_3(x)+ 3 H_1(x)\] 
+\end{frame}
+
+\begin{frame}[label=current]
+  \frametitle{}
+当然，也可用拼凑的方法
+\[
+  \begin{aligned}
+    f(x) &= 2x^3 +3x \\
+    &= \frac{1}{4}(8x^3 -12x)+ 3x +3x \\
+    &= \frac{1}{4}(8x^3 -12x)+ 3(2x) \\
+    &= \frac{1}{4} H_3(x) + 3H_1(x)
+  \end{aligned}
+  \]
+\end{frame} 
+
+
+\begin{frame}
+    \frametitle{}
+    \vspace{0.3em}
+    \例[26]{已知 $t=0$时刻，谐振动波函数为$\Psi(x, 0) =(2\alpha ^3 x^3 +3\alpha x)e^{-\alpha^2 x^2 /2}$, 求任意时刻体系的波函数, 并求能量平均值}
+  \解 (1) 谐振子的叠加解为 
+	 \[\Psi (\xi,t) = \sum_{n=0} ^{\infty} a_n \Psi_n(\xi,t) = \sum_{n=0} ^{\infty} a_n N_n e^{-\frac{ \xi ^2}{2} -\frac{i}{\hbar} E_n t } H_n( \xi ) \]
+	 取$t=0$
+	 \[2\xi^3 +3 \xi e^{-\frac{ \xi^2}{2}} = \Psi(x, 0) = \sum_{n=0} ^{\infty} a_n \Psi_n(\xi) \]
+\end{frame} 
+
+\begin{frame}
+    \frametitle{}
+    代入$(2\xi^3 +3 \xi)$的厄密展开式
+		 \[  \begin{aligned}
+			\sum_{n=0} ^{\infty} a_n \Psi_n(\xi) &= \left[\frac{1}{4} H_3(\xi)+ 3 H_1(\xi)\right] e^{-\frac{ \xi^2}{2}} \\
+			&= \frac{1}{4 N_3} N_3 H_3(\xi) e^{-\frac{ \xi^2}{2}} + \frac{3}{N_1} N_1 H_1(\xi) e^{-\frac{ \xi^2}{2}} 
+		 \end{aligned}\]
+		因此,有\[ \sum_{n=0} ^{\infty} a_n \Psi_n(\xi) = \frac{1}{4 N_3}\Psi_3(\xi) + \frac{3}{N_1} \Psi_1(\xi)\]
+		归一化
+		\[ \begin{aligned}
+			\sum_{n=0} ^{\infty} a_n \Psi_n(\xi) &= \frac{1}{\sqrt{(\frac{1}{4 N_3})^2 + (\frac{3}{N_1})^2} } \left[ \frac{1}{4 N_3}\Psi_3(\xi) + \frac{3}{N_1} \Psi_1(\xi)\right] \\ 
+			&= \frac{1}{\sqrt{21 \sqrt{\pi} }} \left[\frac{1}{4 N_3}\Psi_3(\xi) + \frac{3}{N_1} \Psi_1(\xi)\right]
+		\end{aligned}\]
+  \end{frame} 
+  
+  \begin{frame}
+    \frametitle{}
+	找回时间因子
+	\[\begin{aligned}
+	 \Psi (\xi,t) &= \sum_{n=0} ^{\infty} a_n \Psi_n(\xi) e^{-\frac{i}{\hbar} E_n t} \\ &= \frac{1}{\sqrt{21 \sqrt{\pi} }} \left[\frac{1}{4 N_3}\Psi_3(\xi) e^{-\frac{i}{\hbar} E_3 t}+ \frac{3}{N_1} \Psi_1(\xi)e^{-\frac{i}{\hbar} E_1 t} \right]\\ 
+	 &= \frac{1}{\sqrt{21 \sqrt{\pi} }} \left[\frac{1}{4} H_3(\xi) e^{ -\frac{ \xi^2}{2} -\frac{i}{\hbar} E_3 t}+ 3 H_1(\xi)e^{ -\frac{ \xi^2}{2} -\frac{i}{\hbar} E_1 t} \right] 
+	\end{aligned} \]
+	解函数
+	\[\begin{aligned}
+	 \Psi (x,t) &= \sqrt{\frac{\alpha}{21 \sqrt{\pi} }} \left[\frac{1}{4} H_3(\xi) e^{ -\frac{ \xi^2}{2} -\frac{i}{\hbar} E_3 t}+ 3 H_1(\xi)e^{ -\frac{ \xi^2}{2} -\frac{i}{\hbar} E_1 t} \right] \\
+	 &= \sqrt{\frac{\alpha}{21 \sqrt{\pi} }} \left[\frac{1}{4} (8\alpha ^3 x^3 -12 \alpha x) e^{ -\frac{ \alpha ^2 x^2}{2} -\frac{7}{2} i \omega t}+ 3 \times 2 \alpha x e^{ -\frac{ \alpha ^2 x^2 }{2} -\frac{3}{2} i \omega t} \right]\\
+	 &= \sqrt{\frac{\alpha}{21 \sqrt{\pi} }} \left[(2\alpha ^3 x^3 -3 \alpha x) e^{ -\frac{ \alpha ^2 x^2}{2} -\frac{7}{2} i \omega t}+ 6 \alpha x e^{ -\frac{ \alpha ^2 x^2 }{2} -\frac{3}{2} i \omega t}\right]
+	\end{aligned} \]
+  \end{frame} 
+
+  \begin{frame}[label=current]
+	\frametitle{}
+  (2)由解函数 
+  \[\begin{aligned}
+    \Psi (\xi,t)  &= \frac{1}{\sqrt{21 \sqrt{\pi} }} \left[\frac{1}{4 N_3}\Psi_3(\xi) e^{-\frac{i}{\hbar} E_3 t}+ \frac{3}{N_1} \Psi_1(\xi)e^{-\frac{i}{\hbar} E_1 t} \right]
+   \end{aligned} \]
+  能量的可能值 $E_1 = \dfrac{3}{2} \hbar \omega $ , 概率： $\omega_1 = (\dfrac{1}{\sqrt{21 \sqrt{\pi} }} \dfrac{3}{N_1})^2 = \dfrac{6}{7}$ \\
+  能量的可能值 $E_3 = \dfrac{7}{2} \hbar \omega $ , 概率： $\omega_3 = (\dfrac{1}{\sqrt{21 \sqrt{\pi} }} \dfrac{1}{4 N_3})^2 =\dfrac{1}{7}$ \\
+  能量平均值 
+  \[ \overline{E} = \omega_1 E_1 + \omega_3E_3 = \frac{25}{14}\hbar \omega \]
+  \end{frame} 
+
+  \begin{frame}
+    \frametitle{}
+  \vspace{0.3em}
+  \例[27]{已知一维谐振子的能量本征函数系为$\{\psi_n(x)\}$，若$t=0$时刻，谐振子的初态可以表示为
+  $$
+  \Psi(x, 0)=\cos \frac{\theta}{2} \psi_0(x)+\sin \frac{\theta}{2} \psi_1(x)
+  $$
+  求任意时刻体系的波函数,并计算能量平均值}
+  \解 （1）设$t$时刻体系的波函数为$\Psi(x, t)$,有
+  \[
+  \begin{aligned}
+    \Psi(x, t) 
+    &=  \cos \frac{\theta}{2} \psi_0(x) e^{-\frac{i}{\hbar}E_0t} + \sin \frac{\theta}{2} \psi_1(x) e^{-\frac{i}{\hbar}E_1 t} \\
+    &= \cos \frac{\theta}{2} \psi_0(x) e^{-i\frac{1}{2}\omega t} + \sin \frac{\theta}{2} \psi_1(x) e^{-i\frac{3}{2}\omega t}
+  \end{aligned}  
+  \]
+  \end{frame} 
+
+  \begin{frame}
+    \frametitle{}
+  (2) 利用平均值公式
+  \[
+    \begin{aligned}
+     \overline{H} &= \int_{-\infty}^{+\infty} \Psi ^*(x, t) \hat{H} \Psi(x, t) dx \\
+     &= \int_{-\infty}^{+\infty} \left[\cos \frac{\theta}{2} \psi_0(x) e^{i\frac{1}{2}\omega t} + \sin \frac{\theta}{2} \psi_1(x) e^{i\frac{3}{2}\omega t} \right] \\
+     &\hspace{4em}\hat{H} \left[\cos \frac{\theta}{2} \psi_0(x) e^{-i\frac{1}{2}\omega t} + \sin \frac{\theta}{2} \psi_1(x) e^{-i\frac{3}{2}\omega t} \right] dx \\
+     &= \int_{-\infty}^{+\infty} \left[\cos \frac{\theta}{2} \psi_0(x) e^{i\frac{1}{2}\omega t} + \sin \frac{\theta}{2} \psi_1(x) e^{i\frac{3}{2}\omega t} \right] \\
+     &\hspace{4em} \left[\frac{1}{2}\hbar \omega \cos \frac{\theta}{2} \psi_0(x) e^{-i\frac{1}{2}\omega t} + \frac{3}{2}\hbar \omega \sin \frac{\theta}{2} \psi_1(x) e^{-i\frac{3}{2}\omega t} \right] dx \\
+    \end{aligned}     
+    \]
+  \end{frame} 
+
+  \begin{frame}
+    \frametitle{}
+    利用正交归一性
+    \[
+        \begin{aligned}
+         \overline{H} &= \frac{1}{2}\hbar \omega \cos^2 \frac{\theta}{2} + \frac{3}{2}\hbar \omega \sin^2 \frac{\theta}{2} \\
+         &=\frac{1}{2}\hbar \omega \left( \cos^2 \frac{\theta}{2} + 3 \sin^2 \frac{\theta}{2} \right) \\ 
+         &= \frac{1}{2}\hbar \omega \left( 1 + 2 \sin^2 \frac{\theta}{2} \right)  \\
+         &= \left(1-\frac{1}{2} \cos \theta\right) \hbar \omega
+        \end{aligned}     
+        \]
+  \end{frame} 
+  \begin{frame}[label=current]
+    \frametitle{}
+  (3) 狄拉克解法：能量本征态即数态
+  $$
+  \rs{\Psi}=\cos \frac{\theta}{2} \rs{0}+\sin \frac{\theta}{2} \rs{1}
+  $$
+  在数态表象计算
+\[ \begin{aligned}
+  \overline{H} &= \lcr{\Psi}{H}{\Psi} \\ 
+  &= \ls{\Psi} \cos \frac{\theta}{2} H \rs{0}+\sin \frac{\theta}{2} H \rs{1} \\
+  &= \ls{\Psi} \cos \frac{\theta}{2} \frac{1}{2}\hbar \omega \rs{0}+\sin \frac{\theta}{2} \frac{3}{2}\hbar \omega \rs{1} \\
+  &= \cos ^2\frac{\theta}{2} \frac{1}{2}\hbar \omega + \sin ^2\frac{\theta}{2} \frac{3}{2}\hbar \omega \\
+  &= \left(1-\frac{1}{2} \cos \theta\right) \hbar \omega
+\end{aligned}\]
+  \end{frame} 
+
+\begin{frame}[label=current]
+  \frametitle{课堂作业}
+\begin{enumerate}
+  \item 求一维谐振子处于第一激发态时，粒子出现概率最大的位置
+  \item 试证明在数态表象证明无论处于哪个能量本征态，一维谐振子的动能平均值等于势能平均值
+  \item 试证明 \[ \]
+\end{enumerate}
+\end{frame} 
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{势垒贯穿}
+
+\begin{frame}
+  \frametitle{ Josephson 结}
+  1962年，22岁的研究生 Brian Josephson 通过量子计算发现“超导体/绝缘体/超导体”结（SIS）存在电流通过，在不到一年的时间内，P.W.安德森和J.M.罗厄耳等人在实验上测得隧穿电流。
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=0.4\textwidth]{figs/JosephsonJ.png}
+    %\caption{}
+    %\label{fig:}
+\end{figure}
+1973年诺贝尔物理学奖
+
+~~\\ 
+如今，量子隧穿效应广泛应用于：恒星核聚变，放射性衰变，天体化学，量子生物学，纳米材料，硬盘等诸多领域。
+\end{frame} 
+
+\begin{frame}
+  \frametitle{势垒模型}
+设绝缘体宽为$a$,势垒高度为$U_0$。电子能量为$E$。 \\
+\begin{minipage}[b]{0.49\textwidth}
+    \vspace{0.3em}
+    势垒在数学上可表述成：  
+    $$
+    U(x)=\left\{\begin{aligned}
+    &0, \quad x<0 \quad \text { or } \quad x>a \\
+    &U_0>0, \quad 0<x<a
+    \end{aligned}\right.
+    $$
+    \vspace{2em}
+  \end{minipage}
+  \begin{minipage}[b]{0.49\textwidth}
+ \begin{figure}[h]
+    \centering
+    \includegraphics[width=0.5\textwidth]{figs/JosephsonJ1.png}
+    %\caption{}
+    %\label{fig:}
+\end{figure} 
+  \end{minipage}
+  经典物理学认为，当$E < U_0 $时，电子是不可能穿过势垒的
+\end{frame} 
+
+\subsection{求解过程}
+\begin{frame}
+  \frametitle{求解过程}
+（1）透射幅与反射幅 \\
+设电子的状态用波函数$\psi(x,t)$描述，由于势函数不显含时间$t$，有
+$$ \psi(x,t) = \psi(x)f(t) = \psi(x) e^{-\frac{i}{\hbar}Et} $$
+位置函数满足定态薛定谔方程
+$$
+	\left[-\dfrac{\hbar^2}{2\mu } \frac{d^2 }{d x^2}+U(x)\right]\psi(x) = E \psi(x)
+	$$  
+\end{frame} 
+
+\begin{frame}
+  \frametitle{}
+  代入势函数,由于势函数是分段函数,需分段求解
+  \[\left\{\begin{aligned}
+      &\left [ -\dfrac{\hbar^2}{2\mu } \frac{d^2 }{d x^2} + 0 ~\right ]\psi _{I}(x)  = E \psi_{I}(x), \quad ( x < 0) \\
+      &\left [ -\dfrac{\hbar^2}{2\mu } \frac{d^2 }{d x^2} + U_0 \right ]\psi_{II}(x)  = E \psi_{II}(x) ,\quad~ (  0< x < a) \\
+      &\left [ -\dfrac{\hbar^2}{2\mu } \frac{d^2 }{d x^2} + 0~ \right ]\psi_{III}(x) = E \psi_{III}(x),\quad~ ( x > a)
+  \end{aligned}\right.\]
+  整理，得
+  \[\left\{\begin{aligned}
+    &\psi'' _{I}(x) +  \frac{2\mu E}{\hbar^2} \psi_{I} = 0, \quad ( x < 0) \\
+    & \psi'' _{II}(x) +  \frac{2\mu (E-U_0)}{\hbar^2} \psi_{II} = 0 ,\quad~ (  0< x < a) \\
+    &\psi'' _{III}(x) +  \frac{2\mu E}{\hbar^2} \psi_{III} = 0,\quad~ ( x > a)
+\end{aligned}\right.\]  
+\end{frame} 
+
+\begin{frame}
+  \frametitle{}
+考虑$E-U_0 > 0$ 令 
+\[ k^2=\frac{2\mu E}{\hbar^2}, \qquad  k^2_{II}=\frac{2\mu (E-U_0)}{\hbar^2} \]
+方程变为
+\[\left\{\begin{aligned}
+    &\psi'' _{I}(x) +  k^2 \psi_{I} = 0, \quad ( x < 0) \\
+    & \psi'' _{II}(x) +  k^2_{II}{\hbar^2} \psi_{II} = 0 ,\quad~ (  0< x < a) \\
+    &\psi'' _{III}(x) +  k^2\psi_{III} = 0,\quad~ ( x > a)
+\end{aligned}\right.\] 
+\end{frame} 
+
+\begin{frame}
+  \frametitle{}
+  这是振动数学模型，取指数通解
+  \[\left\{\begin{aligned}
+    &\psi _{I} = A e^{ikx} + A' e^{-ikx}, \quad ( x < 0) \\
+    & \psi _{II} = B e^{ik_{II}x} + B' e^{-ik_{II}x} ,\quad~ (  0< x < a) \\
+    &\psi_{III}= C e^{ikx} + C' e^{-ikx},\quad~ ( x > a)
+\end{aligned}\right.\] 
+第III区无反射波， $C'=0$,得
+\begin{equation}\label{eq:tunn}
+ \left\{\begin{aligned}
+  &\psi _{I} = A e^{ikx} + A' e^{-ikx}, \quad ( x < 0) \\
+  & \psi _{II} = B e^{ik_{II}x} + B' e^{-ik_{II}x} ,\quad~ (  0< x < a) \\
+  &\psi_{III}= C e^{ikx},\quad~ ( x > a)
+\end{aligned}\right.   
+\end{equation}
+\end{frame} 
+
+\begin{frame}
+  \frametitle{}
+  由波函数的连续性，得边界条件
+  \[\left\{\begin{aligned}
+    &\psi _{I}(0) = \psi _{II}(0)\\
+    &\psi' _{I}(0) = \psi' _{II}(0)\\
+    &\psi _{II}(a) = \psi _{II}(a)\\
+    &\psi' _{II}(a) = \psi' _{III}(a)\\
+  \end{aligned}\right.\]
+在方程\ref{eq:tunn}中，分别取$x=0,a$并结合边界条件，得
+\[\left\{\begin{aligned}
+    &A+A' = B+B'\\
+    &ikA-ikA' = ik_{II}B-ik_{II}B' \\
+    &B e^{ik_{II}a} + B' e^{-ik_{II}a} = C e^{ka}  \\
+    &ik_{II}B e^{ik_{II}a} - ik_{II}B' e^{-ik_{II}a} = ik C e^{ika} \\
+  \end{aligned}\right.\]
+\end{frame} 
+
+\begin{frame}
+  \frametitle{}
+四个方程，五个待定系数，因此，设 A 已知，则所有待定系数都可用 $A$表示。
+
+~~\\ 
+解得, 透射幅
+$$
+C=\frac{4 k k_{II} e^{-i k a}}{\left(k+k_{II}\right)^2 e^{-i k_{II} a}-\left(k-k_{II}\right)^2 e^{i k_{II} a}} A
+$$
+反射幅
+$$
+A^{\prime}=\frac{2 i\left(k_1^2-k_2^2\right) \sin a k_2}{\left(k_1-k_2\right)^2 e^{i k_2 a}-\left(k_1+k_2\right)^2 e^{-i k_2 a}} A
+$$
+\end{frame} 
+
+\begin{frame}
+  \frametitle{}
+  （2）透射系数与反射系数\\
+有概率流密度公式
+$$
+\vec{J} \equiv \frac{i \hbar}{2 \mu}\left(\psi \nabla \psi^*-\psi^* \nabla \psi\right)
+$$
+代入入射波$Ae^{ikx}$, 计算入射概率流密度
+$$
+\begin{aligned}
+    \vec{J} &= \frac{i \hbar}{2 \mu}\left(Ae^{ikx} \nabla A^* e^{-ikx}-A^*e^{-ikx} \nabla Ae^{ikx}\right) \\ 
+    &= \frac{i \hbar}{2 \mu} \left\vert A \right\vert ^2 \left[e^{ikx} (-ik) e^{-ikx} - e^{-ikx}(ik)e^{ikx} \right] \\
+    &= \frac{i \hbar}{2 \mu} \left\vert A \right\vert ^2 
+\end{aligned}
+$$
+\end{frame} 
+
+\begin{frame}
+  \frametitle{}
+  代入透射波$Ce^{ikx}$, 计算可得透射概率流密度
+  $$
+\begin{aligned}
+    \vec{J}_T 
+    &= \frac{i \hbar}{2 \mu} \left\vert C \right\vert ^2 
+\end{aligned}
+$$
+代入反射波$A'e^{-ikx}$, 计算可得反射概率流密度
+  $$
+\begin{aligned}
+    \vec{J}_R 
+    &= \frac{i \hbar}{2 \mu} \left\vert A' \right\vert ^2 
+\end{aligned}
+$$
+\end{frame} 
+
+\begin{frame}
+  \frametitle{}
+透射系数
+\begin{equation}\label{eq:T}
+ T=\frac{J_T}{J}=\frac{|C|^2}{|A|^2}=\frac{4 k^2 k_{II}^2}{\left(k^2-k_{II}^2\right)^2 \sin ^2 (a k_{II})+4 k^2 k_{II}^2}   
+\end{equation}
+反射系数
+\begin{equation}\label{eq:R}
+    R=\frac{\left|J_R\right|}{J}=\frac{\left|A^{\prime}\right|^2}{|A|^2}=\frac{\left(k^2-k_{II}^2\right)^2 \sin ^2 (a k_{II})}{\left(k^2-k_{II}^2\right)^2 \sin ^2 (a k_{II})+4 k^2 k_{II}^2}   
+   \end{equation}
+\emf[注意：] 由于$E-U_0 > 0$，入射的电子总有一定概率透射进行第III区。并且有\[ T+R =1\] 
+\end{frame} 
+
+\begin{frame}
+  \frametitle{}
+  （3）量子隧穿效应 \\
+  现考虑$E-U_0 < 0$， 有
+\[k^2_{II}=\frac{2\mu (E-U_0)}{\hbar^2} \]
+即 $k_{II}$ 是虚数。令 $k_{II}= i k_2 $
+代入式\ref{eq:T},式\ref{eq:R}， 得 
+
+~~\\ 
+透射系数
+\begin{equation}\label{eq:T2}
+ T=\frac{4 k^2 k_{2}^2}{\left(k^2+k_{2}^2\right)^2 \sinh ^2 (a k_{II})+4 k^2 k_{2}^2}   
+\end{equation}
+反射系数
+\begin{equation}\label{eq:R2}
+    R=\frac{\left(k^2+k_{2}^2\right)^2 \sinh ^2 (a k_{2})}{\left(k^2-k_{2}^2\right)^2 \sinh ^2 (a k_{2})+4 k^2 k_{2}^2}   
+   \end{equation}
+式中双曲函数$\sinh(x) = -i \sin(ix)$
+\end{frame} 
+
+\begin{frame}
+  \frametitle{}
+只需要
+\[\left(k^2+k_{2}^2\right)^2 \sinh ^2 (a k_{II})+4 k^2 k_{2}^2 > 0 \]
+则透射系数
+\begin{equation*}
+ T=\frac{4 k^2 k_{2}^2}{\left(k^2+k_{2}^2\right)^2 \sinh ^2 (a k_{II})+4 k^2 k_{2}^2} >0    
+\end{equation*}
+表明：即使电子能量$E$小于势垒$U_0$,也有一定概率隧穿到第III区！
+
+~~\\ 
+$$\boxed{\text{入射波:} Ae^{ikx}} \quad \implies \quad \boxed{\text{透射波:} Ce^{ikx}}$$
+
+~~\\ 
+物理上把这种粒子能够穿透比它动能还要高的势垒而不失去能量的现象称为\emf[量子隧道效应]（ tunnel effect）。它是粒子具有波动性的最为生动的表现。
+
+\end{frame} 
+
+\subsection{分析与讨论}
+
+\begin{frame}
+  \frametitle{ 1、低能粒子}
+当$E$很小时， 有 $U_0 \gg E $, 只要 势垒宽度($a$)不是很小，则有 
+$$ 
+\begin{aligned}
+    & k_2 a \gg 1  \\ 
+    & e^{k_2 a} \gg e^{-k_2 a} \\
+    & \sinh ^2 (k_2 a ) = \left[\frac{e^{k_2 a} - e^{-k_2 a}}{2}\right]^2 \approx \frac{1}{4} e^{2k_2 a} \gg  1 
+\end{aligned}
+$$ 
+代入透射系数公式，得 
+$$
+T=\frac{4}{\frac{1}{4}\left(\frac{k}{k_2}+\frac{k_2}{k}\right)^2 e^{2 k_2 a}+4} \approx 16 \left(\frac{k}{k_2}+\frac{k_2}{k}\right)^{-2} e^{ - 2 k_2 a} = T_0 e^{ - 2 k_2 a}
+$$
+\emf[结论：透射系数$T$随着$U_0$增加或$a$的增加而呈指数衰减。]
+\end{frame} 
+
+\begin{frame}
+  \frametitle{ 2、任意势垒}
+上述讨论都基于方型势垒，实际的体系，势垒是任意的
+  \begin{minipage}[b]{0.49\textwidth}
+      \vspace{0.3em}
+任意形状的势垒可进行微分分割,则每一个微分势垒可近似成方型势垒进行处理。
+$$
+T=T_0 e^{-2 k_2 a} =T_0 e^{-\dfrac{2}{\hbar} \sqrt{2 \mu(U(x)-E)} d x}
+$$
+  \end{minipage}
+  \begin{minipage}[b]{0.49\textwidth}
+        \vspace{0.8em}
+   \begin{figure}[h]
+      \centering
+      \includegraphics[width=0.8\textwidth]{figs/JosephsonJ3.png}
+      %\caption{}
+      %\label{fig:}
+   \end{figure} 
+  \end{minipage}
+
+~~\\ 
+总透射系数为各微分透射系数系数之积
+$$ \displaystyle 
+T=T_0 e^{-\frac{2}{\hbar} \int\limits_a^b \sqrt{2 \mu(U(x)-E)} d x}
+$$
+\end{frame} 
+
+\begin{frame}
+    \frametitle{ 3、共振隧穿}
+    当 $\sin ^2 (a k_{II}) =0$时, 透射系数取最大值
+    \begin{equation*}
+      T=\frac{4 k^2 k_{II}^2}{\left(k^2-k_{II}^2\right)^2 \sin ^2 (a k_{II})+4 k^2 k_{II}^2} =1   
+    \end{equation*}
+    称为共振隧穿
+  
+    ~~\\ 
+    共振隧穿条件：
+    \begin{itemize}
+      \Item $E\ge U_0$
+      \Item $\sin ^2 (a k_{II}) =0 \quad \implies \quad a\left(\frac{2 \mu}{\hbar^2}\left(E-U_0\right)\right)^{1 / 2}=0, \pi, 2 \pi, \ldots$
+      \Item  $E_n = V_0 + \frac{\pi ^2 \hbar^2}{2\mu a^2} n^2, (n=1,2,3,\cdots ) $
+    \end{itemize}
+  \end{frame} 
+  
+  \begin{frame}
+    \frametitle{}
+    \vspace{3em}
+  \begin{figure}[htbp]
+      \centering
+      \includegraphics[width=0.55\textwidth]{figs/JosephsonJ2.png}
+      %\caption{}
+      %\label{fig:}
+  \end{figure}
+  $$\text{共振隧穿示意图}$$
+  \end{frame} 
+
+  \begin{frame}
+    \frametitle{4、应用}
+    \begin{itemize}
+        \item 场致发射: 冷发射与热发射
+        \item 隧道二极管 
+        \item 闪存与固态硬盘
+        \item 扫描隧穿显微镜（STM）
+        \item 原子衰变
+    \end{itemize}
+  \end{frame} 
+
+  \begin{frame}
+    \frametitle{隧穿动画}
+    \begin{center}
+      \animategraphics[height=2in,loop]{30}{figs/gif/jj}{1}{218} 
+    \end{center} 
+  \end{frame} 
+
+\begin{frame}
+  \frametitle{}
+\例[28]{试求台阶势的量子隧穿问题}
+\begin{minipage}[b]{0.49\textwidth}
+  \vspace{0.3em}
+\解 设台阶势的数学描述为
+$$
+U(x)=\left\{\begin{array}{cc}
+0 & x<0 \\
+U_0 & x>0
+\end{array}\right.
+$$
+根据前面的分析,第I区的波
+$$
+\psi(x)=A e^{i k x}+A' e^{-i k x}
+$$
+\end{minipage}
+\begin{minipage}[b]{0.49\textwidth}
+    \vspace{0.8em}
+\begin{figure}[h]
+  \centering
+  \includegraphics[width=0.8\textwidth]{figs/JosephsonJ4.png}
+  %\caption{}
+  %\label{fig:}
+\end{figure} 
+\end{minipage}
+
+~~\\ 
+第II区的波
+$$
+\psi(x)=B e^{i k_{II} x}
+$$
+\end{frame} 
+
+\begin{frame}
+  \frametitle{}
+由波函数在边界连续性得
+\[\left\{\begin{aligned}
+  &A+A' = B\\
+  &kA-kA' = k_{II}B \\
+\end{aligned}\right.\]
+解得 
+\[
+A'=\frac{k-k_{II}}{k+k_{II}} A, \qquad
+B = \frac{2k}{k+k_{II}}A \]
+计算入射概率流密度
+$$
+J=|A|^2 \frac{\hbar k}{\mu}, \quad J_T = |A|^2 \frac{\hbar k_{II}}{m} \frac{4 k^2}{\left(k+k_{II}\right)^2}, \quad J_R = |A|^2 \frac{\hbar k}{m}\left(\frac{k-k_{II}}{k+k_{II}}\right)^2
+$$
+\end{frame} 
+
+\begin{frame}
+  \frametitle{}
+  透射系数
+  \begin{equation}\label{eq:T3}
+   T=\frac{4 k k_{II}}{ (k +k_{II})^2}   
+  \end{equation}
+  反射系数
+  \begin{equation}\label{eq:R3}
+      R=\left(\frac{k-k_{II}}{k+k_{II}}\right)^2
+     \end{equation}
+  \emf[分析：] （1）当 $ E > U_0,
+  k_{II}=\sqrt{\dfrac{2 m(E-U_0)}{\hbar^2}}
+  $时,有
+  $$
+E \rightarrow U_0 \quad (k_{II}\rightarrow 0 ) \quad \Rightarrow \quad T \rightarrow 0 \quad\text { and } \quad R \rightarrow 1
+$$
+$$
+E \rightarrow \infty \quad (k_{II} \rightarrow k ) \quad \Rightarrow \quad R \rightarrow 0 \quad\text { and } \quad T \rightarrow 1
+$$
+\end{frame} 
+
+\begin{frame}
+  \frametitle{}
+  （2）当 $ E < U_0,
+  k_{II}= i k_2,  k_2 = \sqrt{\dfrac{2 m(U_0 -E)}{\hbar^2}}
+  $时,第II区的波为
+$$
+\psi(x)=B e^{i k_{II} x} = B e^{- k_{2} x}
+$$
+表明透射到第II区波按指数衰减,因此透射深度是非常浅的。
+\end{frame} 
+
+
+
+\section{中心势场和氢原子}
+
+\subsection{中心势场}
+\begin{frame}
+  \frametitle{中心势场}
+单粒子体系的哈密顿
+\[H = -\dfrac{\hbar^2}{2\mu } \nabla ^2 + V(\vec{r})\]
+(1) 若 $V(\vec{r})= V_x (x) + V_y (y) + V_z (z) $， 则在（$x,y,z$）坐标系中，有
+\[
+\begin{aligned}
+  H &= -\dfrac{\hbar^2}{2\mu } \left[\frac{\partial ^2 }{\partial x^2 } + \frac{\partial ^2 }{\partial y^2 } + \frac{\partial ^2 }{\partial z^2 } \right] + V_x (x) + V_x (y) + V_z (z) \\
+  &=  \left[ -\dfrac{\hbar^2}{2\mu } \frac{\partial ^2 }{\partial x^2 } +  V_x (x)   \right] + \left[ -\dfrac{\hbar^2}{2\mu } \frac{\partial ^2 }{\partial y^2 } +  V_y (y)   \right] + \left[ -\dfrac{\hbar^2}{2\mu } \frac{\partial ^2 }{\partial z^2 } +  V_z (z)   \right] \\
+  &= H_x + H_y + H_z
+\end{aligned}
+  \]
+  三维薛定谔方程可分离变量成三个一维薛定谔方程求解。
+\end{frame} 
+
+\begin{frame}
+  \frametitle{}
+  \emf[中心势场:] 可以写成如下形式的势场
+  $$V(\vec{r}) = V (r)$$
+  中心势场在（$r,\theta,\varphi$）坐标系中只含 $r$, 可考虑分离变量求解。
+\end{frame}   
+
+\begin{frame}
+  \frametitle{}
+  \emf[库仑势场:] 点电荷激发的场称为库仑势场, 与方向无关：
+$$
+V(r)=-\frac{Z e_s^2}{r}, \quad e_s=\frac{e}{\sqrt{4 \pi \varepsilon_0}}
+$$
+库仑势场是中心势场的一个实例，因此，处于库仑势场单粒子薛定谔方程可在（$r,\theta,\varphi$）坐标系考虑分离变量。
+\end{frame} 
+
+\subsection{氢原子模型} 
+\begin{frame}
+  \frametitle{氢原子}
+  量子力学发展史上，一个最为突出的成就就是对氢原子光谱给予了相当满意的解释。氢原子虽然是最简单的原子，但氢原子的严格求解是理解其他所有原子和分子的基础。
+  \begin{figure}[htbp]
+    \centering
+    \includegraphics[width=0.3\textwidth]{figs/hydr.png}
+    %\caption{}
+    %\label{fig:}
+  \end{figure}
+  氢原子是二体问题，但可以转化为单体的中心势场问题
+\end{frame} 
+
+
+\begin{frame}
+\frametitle{}
+氢原子哈密顿
+\begin{equation*}
+  \begin{aligned}
+    H (\vec{r_1},\vec{r_2})&=\left[-\frac{\hbar^2}{2 m_1} \nabla_1 ^2 + V(\vec{r_1},t) \right]  + \left[-\frac{\hbar^2}{2 m_2} \nabla_2 ^2 + V(\vec{r_2},t) \right]  +U(| \vec{r_1}-\vec{r_2} | ) \\ 
+    &= H_1 + H_2 + U(| \vec{r_1}-\vec{r_2} | )
+  \end{aligned}
+\end{equation*}
+其中, 第一项是核的动能和势能, 第二项是核外电子的动能和势能, 第三项$U$是相互作用势, 忽略核与电子之间的万有引用
+\begin{equation*}
+  U(| \vec{r_1}-\vec{r_2} | )=-\frac{e_s ^2}{| \vec{r_1}-\vec{r_2} |} ~~,~~~ e_s =\frac{Ze}{\sqrt{4\pi\epsilon_0}}
+\end{equation*}
+原子很小，$|\vec{r_1}-\vec{r_2}| \approx 10^{-10}\, \text{m}$，库仑势很大，不可忽略。
+\end{frame}
+
+\begin{frame}
+\frametitle{分离变量-1}
+氢原子薛定谔方程
+\begin{equation*}
+  i\hbar \frac{\partial }{\partial t} \Psi (\vec{r_1},\vec{r_2},t ) =H (\vec{r_1},\vec{r_2}, t  )  \Psi (\vec{r_1},\vec{r_2},t ) 
+\end{equation*}
+当背景势Ｖ不显含时间t，有$$ \Psi (\vec{r_1},\vec{r_2},t ) = \Psi (\vec{r_1},\vec{r_2})f(t) $$其中时间函数：
+\begin{equation*}
+  f(t) =e^{-iEt/\hbar}
+\end{equation*}
+空间函数$ \Psi (\vec{r_1},\vec{r_2})$服从定态薛定谔方程：
+\begin{equation*}
+  \left[-\frac{\hbar^2}{2 m_1} \nabla_1 ^2 + V_1  -\frac{\hbar^2}{2 m_2} \nabla_2 ^2 + V_2  +U_{1,2} \right] \Psi (\vec{r_1},\vec{r_2}) =E \Psi (\vec{r_1},\vec{r_2}) 
+\end{equation*}
+\end{frame}		
+
+\begin{frame}
+\frametitle{}
+假设氢原子是全空间自由粒子,背景势$V=0$，方程简化为：
+\begin{equation*}
+  \left[-\frac{\hbar^2}{2 m_1} \nabla_1 ^2  -\frac{\hbar^2}{2 m_2} \nabla_2 ^2 +U(| \vec{r_1}-\vec{r_2} | ) \right] \Psi (\vec{r_1},\vec{r_2}) =E \Psi (\vec{r_1},\vec{r_2}) 
+\end{equation*}
+其中, 
+\begin{equation*}
+  U(| \vec{r_1}-\vec{r_2} | )=-\frac{e_s ^2}{| \vec{r_1}-\vec{r_2} |} = \frac{e_s ^2}{\sqrt{(x_1 -x_2)^2 + (y_1 -y_2)^2 + (z_1 -z_2)^2} } 
+\end{equation*}
+这是二体势函数,6个变量是纠缠在一起的，不能写成它们的线性求和势形式，因此不能进一步分离变量。
+\end{frame}		
+
+\subsection{相对/质心坐标系}
+\begin{frame}
+\frametitle{相对/质心坐标系}
+（1） 引入相对位置矢量
+\begin{equation} \label{eq:hydr-1}
+\vec{r} (x,y,z)= \vec{r_1}-\vec{r_2}	
+\end{equation}
+它描述原子核与核外电子的相对位置, 构成氢原子相对坐标系。此时，相互作用势变为一个非常简单的函数 
+$$U(| \vec{r_1}-\vec{r_2} | ) = U(|\vec{r}|) = U(r)$$
+在球坐标系下,它就是一个一维函数！6变量纠缠解除。
+\end{frame}		
+
+\begin{frame}
+（2）引入质心位置矢量
+\begin{equation} \label{eq:hydr-2}
+\vec{R} (X,Y,Z)= \dfrac{ m_1\vec{r_1}+ m_2\vec{r_2}  }{ m_1+m_2} 	
+\end{equation}
+它描述氢原子质心位置,构成质心坐标系\\
+（3）定义质心质量（$M$）和折合质量（$m$）
+\[ \left\{
+\begin{aligned}
+M &= m_1+m_2 \\
+  m &= \dfrac{m_1m_2}{m_1+m_2} \\ 
+\end{aligned}\right.
+\]
+\end{frame}		
+
+\begin{frame}
+坐标$ (\vec{r_1},\vec{r_2} )$ 与相对坐标 $ (\vec{r},\vec{R} )$的变换关系：
+\begin{equation}\label{eq:trans} 
+\left\{\begin{aligned}
+      &\vec{r} (x,y,z)  = \vec{r_1}-\vec{r_2} \\
+  &\vec{R} (X,Y,Z) = \dfrac{ m_1\vec{r_1}+ m_2\vec{r_2}  }{ m_1+m_2} 	
+\end{aligned}\right.
+\end{equation}
+定态薛定谔方程：
+\begin{equation}\label{eq:trans1}
+\left[-\frac{\hbar^2}{2 m_1} \nabla_1 ^2  -\frac{\hbar^2}{2 m_2} \nabla_2 ^2   +U(r) \right] \Psi (\vec{r_1},\vec{r_2}) =E \Psi (\vec{r_1},\vec{r_2}) 
+\end{equation}
+问题转化为把拉普拉斯$\nabla_1 ^2$和$\nabla_2 ^2$转化为相对坐标系的$\nabla_r ^2$和$\nabla_R ^2$
+\end{frame}		
+
+\begin{frame}
+把式\ref{eq:trans} 改写成
+$$\displaystyle \begin{cases}
+  \vec{r_1}= f_1(\vec{r},\vec{R}) \\
+  \vec{r_2}= f_2(\vec{r},\vec{R}) 
+\end{cases}$$ 	
+存在函数$u(\vec{r_1},\vec{r_2})$，就其对 $\vec{r_1}$链式求导
+\begin{equation*}
+\dfrac{du}{d\vec{r_1}}= \dfrac{\partial u}{\partial \vec{R}}  \dfrac{\partial \vec{R}}{ \partial \vec{r_1}} +\dfrac{\partial u}{\partial \vec{r}}  \dfrac{\partial \vec{r}}{\partial \vec{r_1}} 
+\end{equation*}	
+计算$x_1$分量
+\begin{equation*}
+\dfrac{d }{dx_1}= \dfrac{\partial}{\partial X}  \dfrac{\partial X}{ \partial x_1} +\dfrac{\partial }{\partial x}  \dfrac{\partial x}{\partial x_1} 
+= \dfrac{m_1}{M}  \dfrac{\partial }{ \partial X} +\dfrac{\partial }{\partial x} 
+\end{equation*}	
+\end{frame}		
+
+\begin{frame}
+求二阶导
+$$
+\begin{aligned}
+\dfrac{d^2}{dx^2 _1}
+&= \dfrac{m^2 _1}{M^2 }  \dfrac{\partial^2 }{ \partial X^2} + \dfrac{2m _1}{M }  \dfrac{\partial^2 }{ \partial X \partial x}+\dfrac{\partial ^2 }{\partial x^2} 	\\ 
+\end{aligned}
+$$ 
+同理, 得其他两分量
+$$
+\begin{aligned}
+\dfrac{d^2}{dy^2 _1}
+&= \dfrac{m^2 _1}{M^2 }  \dfrac{\partial^2 }{ \partial Y^2} + \dfrac{2m _1}{M }  \dfrac{\partial^2 }{ \partial Y \partial y}+\dfrac{\partial ^2 }{\partial y^2} 	\\ 
+\dfrac{d^2}{dz^2 _1}
+&= \dfrac{m^2 _1}{M^2 }  \dfrac{\partial^2 }{ \partial Z^2} + \dfrac{2m _1}{M }  \dfrac{\partial^2 }{ \partial Z \partial z}+\dfrac{\partial ^2 }{\partial z^2} 
+\end{aligned}
+$$ 
+以上三式相加, 有
+\begin{equation*} 
+\begin{aligned}
+  (\dfrac{d^2}{dx^2 _1} +  \dfrac{d^2}{dy^2 _1} + \dfrac{d^2}{dz^2 _1}) &= \dfrac{m^2 _1}{M^2 } (\dfrac{\partial^2 }{ \partial X^2} + \dfrac{\partial^2 }{ \partial Y^2} +\dfrac{\partial^2 }{ \partial Z^2} ) + \dfrac{2m _1}{M }  (\dfrac{\partial^2 }{ \partial X \partial x} +  \dfrac{\partial^2 }{ \partial Y \partial y} + \dfrac{\partial^2 }{ \partial Z \partial z})  \\
+  &\hspace{2em} + (\dfrac{\partial ^2 }{\partial x^2}+\dfrac{\partial ^2 }{\partial y^2}+\dfrac{\partial ^2 }{\partial z^2}) \\
+\end{aligned}
+\end{equation*}
+\end{frame}	
+
+\begin{frame}
+\frametitle{}
+由拉普拉斯算子定义,得
+$$
+  \nabla ^2 _1 = \dfrac{m^2 _1}{M^2 }  \nabla ^2 _R + \dfrac{2m _1}{M }  (\dfrac{\partial^2 }{ \partial X \partial x} +  \dfrac{\partial^2 }{ \partial Y \partial y} + \dfrac{\partial^2 }{ \partial Z \partial z})    + \nabla ^2 _r  \qquad (a)
+$$ 
+同样的方法，对 $\vec{r_2}$再做一次，注意方程\ref{eq:trans}中$\vec{r_2}$前的“-”号的影响，有
+$$
+\nabla ^2 _2= \dfrac{m^2 _2}{M^2 }  \nabla ^2 _R - \dfrac{2m _2}{M }  (\dfrac{\partial^2 }{ \partial X \partial x} +  \dfrac{\partial^2 }{ \partial Y \partial y} + \dfrac{\partial^2 }{ \partial Z \partial z})    + \nabla ^2 _r \qquad (b) 
+$$ 
+$(a)\times \dfrac{\hbar}{2m_1}+(b)\times \dfrac{\hbar}{2m_2} $，得:	
+\begin{equation*}
+\dfrac{\hbar}{2m_1}\nabla ^2 _1	+ \dfrac{\hbar}{2m_2}\nabla ^2 _2 = \dfrac{\hbar}{2M}\nabla ^2 _R+ \dfrac{\hbar}{2m}\nabla ^2 _r
+\end{equation*}	
+\end{frame} 
+
+\begin{frame}
+\frametitle{}
+代回\ref{eq:trans1}, 记新坐标系下的波函数为$ \Psi (\vec{R},\vec{r}) $, 有
+\begin{equation} \label{eq:hydr-2}
+\left[-\frac{\hbar^2}{2 M} \nabla_R ^2  -\frac{\hbar^2}{2 m} \nabla_r ^2 +U(r) \right] \Psi (\vec{R},\vec{r}) =E \Psi (\vec{R},\vec{r}) 
+\end{equation} 
+整理
+\begin{equation*} 
+\left[-\frac{\hbar^2}{2 M} \nabla_R ^2 \right] \Psi (\vec{R},\vec{r}) +  \left[-\frac{\hbar^2}{2 m} \nabla_r ^2 +U(r) \right] \Psi (\vec{R},\vec{r}) =E \Psi (\vec{R},\vec{r}) 
+\end{equation*}
+第一项有关于$\vec{R}$坐标系的, 第二项有关于$\vec{r}$坐标系的, 可变量分离！
+\end{frame} 
+
+\begin{frame}
+\frametitle{分离变量-2}
+令： $\Psi (\vec{R},\vec{r}) = \Psi (\vec{R}) \psi (\vec{r})  $, 代入上式, 得
+\[
+\begin{aligned}
+  \left[-\frac{\hbar^2}{2 M} \nabla_R ^2 \right] \Psi (\vec{R}) \psi (\vec{r}) +  \left[-\frac{\hbar^2}{2 m} \nabla_r ^2 +U(r) \right] \Psi (\vec{R}) \psi (\vec{r})=E \Psi (\vec{R}) \psi (\vec{r}) \\ 
+  \end{aligned}
+\]
+拉普拉斯只对自身坐标系作用
+\[
+\begin{aligned}
+\psi (\vec{r})\left[-\frac{\hbar^2}{2 M} \nabla_R ^2 \right] \Psi (\vec{R})  +  \Psi (\vec{R})\left[-\frac{\hbar^2}{2 m} \nabla_r ^2 +U(r) \right]  \psi (\vec{r})=E \Psi (\vec{R}) \psi (\vec{r}) \\ 
+\end{aligned}
+\]
+\end{frame} 
+
+\begin{frame}[label=current]
+\frametitle{}
+两边同除$\Psi (\vec{R}) \psi (\vec{r})$
+\[
+\begin{aligned}
+   \frac{1}{\Psi (\vec{R})}\left[-\frac{\hbar^2}{2 M} \nabla_R ^2 \right] \Psi (\vec{R})  +  \frac{1}{\psi (\vec{r})}\left[-\frac{\hbar^2}{2 m} \nabla_r ^2 +U(r) \right]  \psi (\vec{r})=E \\ 
+\end{aligned}
+\]
+整理
+\[
+\begin{aligned}
+  \frac{1}{\Psi (\vec{R})}\left[-\frac{\hbar^2}{2 M} \nabla_R ^2 \right] \Psi (\vec{R})  = E +  \frac{1}{\psi (\vec{r})}\left[-\frac{\hbar^2}{2 m} \nabla_r ^2 +U(r) \right]  \psi (\vec{r}) \\ 
+\end{aligned}
+\]
+令上式等于$E_c$, 得两个方程\\
+\end{frame} 
+
+\begin{frame}
+\frametitle{}
+方程（1）：
+\begin{equation*}
+  -\frac{\hbar^2}{2 M} \nabla_R ^2  \psi (\vec{R}) =E_c \psi (\vec{R})  ..... (1)
+\end{equation*}	
+这是质心运动方程，解为自由粒子平面波：
+\begin{equation*}
+\psi (\vec{R},t)=-\frac{1}{(2\pi\hbar)^{3/2}}e^{-\frac{i}{\hbar}(E_c t -\vec{p}\cdot\vec{R})}
+\end{equation*}
+\end{frame}		
+
+\begin{frame}
+\frametitle{}
+方程（2）：
+\begin{equation*}
+  \left[-\frac{\hbar^2}{2 m} \nabla ^2 +U(r) \right] \psi (\vec{r}) =(E- E_c) \psi (\vec{r}) 
+\end{equation*}
+式中的$m$为约化质量, 不失一般性
+\begin{equation} \label{eq:qdrb}
+  \left[-\frac{\hbar^2}{2 \mu} \nabla ^2 +U(r) \right] \Psi (\vec{r}) =E \Psi (\vec{r}) 
+\end{equation}
+这是描述氢原子相对于质心的运动方程.\\
+\end{frame}	
+
+\begin{frame}
+\frametitle{分离变量-3}	
+球坐标系拉普拉斯算子为 
+$$\nabla ^2 =\frac{1}{r^2} \frac{\partial }{\partial r} (r^2\frac{\partial }{\partial r} )+
+\frac{1}{r^2 \sin \theta  } \frac{\partial }{\partial \theta } (\sin \theta \frac{\partial }{\partial \theta } )
++\frac{1}{r^2 \sin^2 \theta  } \frac{\partial^2}{\partial\varphi ^2}$$
+代入方程[\ref{eq:qdrb}], 得
+{\small \begin{equation*}
+  \left\{-\frac{\hbar^2}{2 \mu} \left[\frac{1}{r^2} \frac{\partial }{\partial r} (r^2\frac{\partial }{\partial r} )+
+  \frac{1}{r^2 \sin \theta  } \frac{\partial }{\partial \theta } (\sin \theta \frac{\partial }{\partial \theta } )
+  +\frac{1}{r^2 \sin^2 \theta  } \frac{\partial^2}{\partial\varphi ^2}\right] +U(r) \right\} \Psi (\vec{r}) =E \Psi (\vec{r}) 
+\end{equation*}}
+球坐标系角向（方）算子为：
+\begin{equation*}
+  L^2 =  -\left[ \frac{1}{ \sin \theta  } \frac{\partial }{\partial \theta } (\sin \theta \frac{\partial }{\partial \theta } )
+  +\frac{1}{ \sin^2 \theta  } \frac{\partial^2}{\partial\varphi ^2} \right]
+\end{equation*}		
+\end{frame}	
+
+\begin{frame}
+代入,得球坐标系下的方程：
+\begin{equation*}
+  \left[-\frac{\hbar^2}{2 \mu r^2}  \frac{\partial }{\partial r} (r^2\frac{\partial }{\partial r} ) +  \frac{\hbar ^2 }{2 \mu r^2} L^2  -\frac{e_s ^2}{r} \right] \Psi
+  =E\Psi
+\end{equation*}
+径向/角向可分离变量，令： 
+\begin{equation*}
+  \Psi=R (r) Y(\theta,\varphi)
+\end{equation*}	
+代回原方程，得：
+\begin{equation*}
+  \frac{ L^2 Y}{Y}= \frac{1}{R}   \frac{\partial }{\partial r} (r^2\frac{\partial R }{\partial r} ) + \frac{2 \mu r^2} {\hbar^2}(E+ \frac{e_s ^2}{r} ) R =\lambda
+\end{equation*}	
+\end{frame}		
+
+\begin{frame}
+得两个方程：	\\
+~~\\ 
+(1)径向方程：
+\begin{equation*}
+  \frac{d}{d r} (r^2\frac{d R }{d r} ) + \frac{2 \mu r^2} {\hbar^2}(E+ \frac{e_s ^2}{r} ) R =\lambda R
+\end{equation*}
+(2)角向方程：
+\begin{equation*}
+  L^2 Y=\lambda Y
+\end{equation*}	
+\end{frame}	
+
+\begin{frame}
+\frametitle{分离变量-4}
+角向方程：
+\begin{equation*}
+  L^2 Y=\lambda Y
+\end{equation*}	
+是$L^2$的固有值方程\\
+~~\\ 	
+代入$L^2$的具体形式,得
+\begin{equation*}
+  \left[ \frac{1}{ \sin \theta  } \frac{\partial }{\partial \theta } (\sin \theta \frac{\partial }{\partial \theta } )
+  +\frac{1}{ \sin^2 \theta  } \frac{\partial^2}{\partial\varphi ^2}  +\lambda \right] Y=0 
+\end{equation*}	
+方程可进一步分离变量　$\cdots$ 
+\end{frame}	
+
+\begin{frame}
+令：
+\begin{equation*}
+  Y(\theta,\varphi)= \Theta(\theta) \Phi(\varphi)
+\end{equation*}	
+代回上方程,得:
+\begin{equation*}
+  \Phi \frac{1}{\sin \theta} \frac{d}{d \theta}\left(\sin \theta \frac{d \Theta}{d \theta}\right)+\Theta \frac{1}{\sin ^{2} \theta} \frac{d^{2} \Phi}{d \varphi^{2}}+\lambda \Theta \Phi=0
+\end{equation*}	
+整理,并令新的分离变量常数为$\lambda'$
+\begin{equation*}
+  \frac{\sin ^{2} \theta}{\Theta \sin \theta} \frac{d}{d \theta}\left(\sin \theta \frac{d \Theta}{d \theta}\right)+\sin ^{2} \theta \lambda=-\frac{1}{\Phi} \frac{d^{2} \Phi}{d \varphi^{2}}=\lambda'
+\end{equation*}	
+纬度方程：
+\begin{equation}\label{eq:theta}
+  \frac{1}{\sin \theta} \frac{d}{d \theta}\left(\sin \theta \frac{d \Theta}{d \theta}\right)+\left[\lambda-\frac{\lambda'}{\sin ^{2} \theta}\right] \Theta=0,(0<\theta \le \pi)
+\end{equation}		
+经度方程：
+\begin{equation}\label{eq:varphi}
+  \frac{d^{2} \Phi}{d \varphi^{2}}+\lambda' \Phi=0,(0<\varphi\le2 \pi)
+\end{equation}		
+\end{frame}	
+
+\begin{frame}[label=current]
+\frametitle{小结：}
+氢原子的定态薛定谔方程可分离成三个一维方程：\\
+(1)径向方程：
+\begin{equation*}
+  \frac{d}{d r} (r^2\frac{d R }{d r} ) + \frac{2 \mu r^2} {\hbar^2}(E+ \frac{e_s ^2}{r} ) R =\lambda R
+\end{equation*}
+（2）纬度方程：
+\begin{equation*}\label{eq:theta}
+  \frac{1}{\sin \theta} \frac{d}{d \theta}\left(\sin \theta \frac{d \Theta}{d \theta}\right)+\left[\lambda-\frac{\lambda'}{\sin ^{2} \theta}\right] \Theta=0,(0<\theta \le \pi)
+\end{equation*}		
+（3）经度方程：
+\begin{equation*}\label{eq:varphi}
+  \frac{d^{2} \Phi}{d \varphi^{2}}+\lambda' \Phi=0,(0<\varphi\le2 \pi)
+\end{equation*}	  
+
+\end{frame} 
+
+\subsection{解经度方程}
+\begin{frame}
+\frametitle{解经度方程}
+经度方程:\\
+\[\begin{cases}
+  \dfrac{d^{2} \Phi}{d \varphi^{2}}+\lambda' \Phi=0,0<\varphi<2 \pi \\ 
+  \Phi(0)=\Phi(2 \pi), \Phi^{\prime}(0)=\Phi^{\prime}(2 \pi)
+\end{cases}\]
+是周期性边界条件下的固有值问题, 解为\\
+固有值和固有函数为
+\[\begin{cases}
+  \lambda'=m^2, ~~~ (m=0,\pm 1,\pm 2,\cdots) \\ 
+  \Phi_m (\varphi)=A_m e^{im\varphi}
+\end{cases}\]	
+\end{frame}	
+
+\begin{frame}
+求归一化系数 ：
+\begin{equation*}
+\begin{split}
+  \int_{0}^{2\pi}  |\Phi_m (\varphi)|^2 d\varphi &= 1 \\
+  \int_{0}^{2\pi}  A_m e^{im\varphi} A_m e^{-im\varphi} d\varphi &= 1 \\
+  A^2_m \int_{0}^{2\pi} 1 d\varphi &= 1 \\
+  A^2_m 2\pi &= 1 \\
+  A_m&=\frac{1}{\sqrt{2\pi}} 
+\end{split}
+\end{equation*}	
+\begin{equation*}
+\to 	\Phi_m (\varphi)=\frac{1}{\sqrt{2\pi}} e^{im\varphi}
+\end{equation*}	
+\end{frame}	
+
+\subsection{解纬度方程}
+\begin{frame}
+\frametitle{解纬度方程}
+把固有值$\lambda'=m^2$代回纬度方程，得
+\begin{equation*}
+  \boxed{\frac{1}{\sin \theta} \frac{d}{d \theta}\left(\sin \theta \frac{d \Theta}{d \theta}\right)+\left[\lambda-\frac{m^{2}}{\sin ^{2} \theta}\right] \Theta=0}
+\end{equation*}	
+\alert{解：}~微分展开，得：
+\begin{equation*}
+  \frac{d^{2} \Theta}{d \theta^{2}}+\frac{\cos \theta}{\sin \theta} \frac{d \Theta}{d \theta}+\left[\lambda-\frac{m^{2}}{\sin ^{2} \theta}\right] \Theta=0
+\end{equation*}		
+令：$x=\cos \theta$,  $y(x)= y(\cos \theta) =\Theta (\theta)$, 有：
+\begin{equation*}
+  \frac{d x}{d  \theta} =-\sin \theta  
+\end{equation*}		
+\begin{equation*}
+  \frac{d \Theta}{d \theta} =\frac{d y}{d x}\frac{d x}{d \theta} =-\sin \theta \frac{d y}{d x}
+\end{equation*}		
+\end{frame}	
+
+\begin{frame}
+\begin{equation*}
+  \frac{ d^2 \Theta }{d \theta ^2} =\sin ^2 \theta \frac{d^2 y}{d x^2} -\cos \theta \frac{d y}{d x}
+\end{equation*}		
+代回方程,注意($\cos\theta =x,~ \sin ^2\theta =1-x^2 $)， \\
+得标准连带勒让德方程：
+\begin{equation*}
+  \left(1-x^{2}\right) \frac{d^{2} y}{d x^{2}}-2 x \frac{d y}{d x}+\left[\lambda-\frac{m^{2}}{1-x^{2}}\right] y=0, \quad (|x|\le 1)
+\end{equation*}		
+若 m=0，就是勒让德方程：
+\begin{equation*}
+  \left(1-x^{2}\right) \frac{d^{2} y}{d x^{2}}-2 x \frac{d y}{d x}+\lambda y=0
+\end{equation*}		
+\end{frame}	
+
+\begin{frame}
+\frametitle{解勒让德方程}
+\begin{equation*}
+  \boxed{\left(1-x^{2}\right) \frac{d^{2} y}{d x^{2}}-2 x \frac{d y}{d x}+\lambda y=0}
+\end{equation*}		
+\alert{解：} 令方程有级数解，
+\[ y=\sum_{k=0}^{\infty} a_k x ^k \]
+求导，并代回方程，得：
+\begin{equation*}
+  \sum_{k=0}^{\infty}\left\{(k+1)(k+2) a_{k+2}+[\lambda-k(k+1)] a_{k}\right\} x^{k}=0
+\end{equation*}	
+系数项为零：
+\begin{equation*}
+  (k+1)(k+2) a_{k+2}+[\lambda-k(k+1)] a_{k}=0
+\end{equation*}	   
+\end{frame}	
+
+\begin{frame}
+得递推式：
+\begin{equation} \label{eq:dts}
+  a_{k+2}=-\frac{k(k+1)-\lambda}{(k+1)(k+2) }a_{k}
+\end{equation}
+这是隔项递推，若 $a_0$ 已知，则所有的偶数次幂的系数 $a_{2m}$ 可得, 同理若 $a_1$ 已知，则所有的偶数次幂的系数 $a_{2m+1}$ 可得。\\
+%得递推式：
+%\begin{equation*}
+%	a_{k+2}=-\frac{(l-k)(l+k+1)}{(k+1)(k+2) }a_{k}
+%\end{equation*}
+k为偶数的项写在一起
+\begin{equation*}
+  y_{1}(x)= a_{0} + a_{2} x^2 + a_{2} x^4 +...  
+\end{equation*}	
+k为奇数项写在一起
+\begin{equation*}
+  y_{2}(x)= a_{1} x+ a_{3} x^3 + a_{5} x^5 +... 
+\end{equation*}
+方程的级数解：\[ y(x)=  y_{1}(x) +  y_{2}(x) \]	
+\end{frame}	
+
+\begin{frame}[label=current]
+\frametitle{}
+考虑级数解的收敛性, 由递推式[\ref{eq:dts}], 得
+\[ \frac{a_{k+2}}{a_{k}} = -\frac{k(k+1)-\lambda}{(k+1)(k+2) }\]
+当 $k \to \infty$时，有
+\[ \lim_{k \to \infty}|\frac{a_{k+2}}{a_{k}}| \approx 1-\frac{2}{k}\]
+对于偶数项
+\[ \lim_{k \to \infty} |\frac{a_{k+2}}{a_{k}}| \approx 1-\frac{2}{2m} = 1-\frac{1}{m} \]
+对于函数$\ln(1+x)+\ln(1-x) = \ln (1-x^2)$在$x=\pm 1$的泰勒展开式，相邻项展开系数有
+\[ \lim_{k \to \infty} \frac{a_{k+1}}{a_{k}} = 1-\frac{1}{k} \]
+我们知道$\ln (1-x^2)$在$x=\pm 1$处发散，因此，有$$ \lim_{\left \vert x \right \vert \to 1} y_{1}(x) \to \infty $$
+\end{frame} 
+\begin{frame}
+\frametitle{}
+同理，对于奇数项, 有$$ \lim_{\left \vert x \right \vert \to 1} y_{2}(x) \to \infty $$
+~~\\ 
+即：级数解 $ y(x)=  y_{1}(x) +  y_{2}(x) $ 在 $x=\pm 1$处发散。\\
+~~\\ 
+这不满足波函数有限性的条件, 因此不是一个物理解!
+\end{frame} 
+
+\begin{frame}[label=current]
+\frametitle{}
+考察式[\ref{eq:dts}], 如果设
+\[\lambda = l(l+1), (l=0,1,2,\cdots )\]
+则有新的递推式
+\begin{equation}\label{eq:dts2}
+  a_{k+2}=-\frac{k(k+1)-l(l+1)}{(k+1)(k+2) }a_{k}
+\end{equation}
+考虑到$l$对应角向(方)算符本征方程
+\begin{equation*}
+  L^2 Y=\lambda Y
+\end{equation*}	
+的本征值$\lambda$, 对于一个确定的本征值$\lambda$来说, $l$有确定值。式[\ref{eq:dts2}]表明：对于确定的$l$来说, 当$k$增长到 $k=l$, 有$a_{k+2} =0$, 级数截断成$l$次多项式。
+\end{frame} 
+
+\begin{frame}
+\frametitle{}
+分情况讨论：
+\begin{itemize}
+  \item $k = 2m, \quad y_{1} \text{截断}\quad(y_2\text{仍为无穷级数})$
+  \item $k = 2m+1, \quad y_{2} \text{截断}\quad(y_1\text{仍为无穷级数})$
+\end{itemize}
+因此, 通过设定$\lambda = l(l+1)$, 可得在$[-1, 1]$收敛的多项式, 称为勒让德多项式（$P_n(x)$）, 它是满足波函数有限性要求的解函数。即：
+\begin{itemize}
+\item $k = 2m, \quad P_n(x)=y_1 $
+\item $k = 2m+1, \quad P_n(x)=y_2 $
+\end{itemize}
+\end{frame} 
+
+\begin{frame}
+\frametitle{}
+把递推式
+\begin{equation*}
+  a_{k+2}=-\frac{(l-k)(l+k+1)}{(k+1)(k+2) }a_{k}
+\end{equation*}
+改写为 
+\begin{equation*}
+  a_{k}=-\frac{(k+1)(k+2) }{(l-k)(l+k+1)}a_{k+2}
+\end{equation*}	
+得逆向递推式：
+\begin{equation*}
+  a_{k-2}=-\frac{(k-1)(k) }{(l-k+2)(l+k-1)}a_{k}
+\end{equation*}	
+递推一次
+\begin{equation*}
+  \begin{aligned}
+    a_{k-4}&=-\frac{(k-3)(k-2)}{(l-(k-4))(l+k-3)}a_{k-2} \\ 
+    &= (-1)^2\frac{(k-3)(k-2)(k-1)(k)}{(l-(k-4))(l-(k-2))(l+k-3)(l+k-1)}a_{k}
+  \end{aligned}
+\end{equation*}
+\end{frame}	
+
+\begin{frame}
+注意到最高阶项为 $k=l$,现以$n$描述, 有 
+\begin{equation*}
+  a_{n-2}=-\frac{(n-1) n}{2(2n-1)} a_{n}
+\end{equation*}	
+\begin{equation*}
+  a_{n-4}=(-1)^2\frac{(n-3)(n-2)(n-1)(n)}{(2\times 2)(2\times 1)(2n-3)(2n-1)}a_{n}
+\end{equation*}
+令最高阶项系数: \[a_n=\frac{(2n)!}{2^n (n!)^2} = \frac{(2n-2)!\times 2n \times (2n-1)}{2^n (n-1)!\times n \times (n-2)!\times n \times (n-1)  } \]
+代回上面两式并约分,得：
+\begin{equation*}
+  a_{n-2}=-\frac{(2 n-2) !}{2^{n} 1! (n-1) !(n-2) !}
+\end{equation*}	
+\begin{equation*}
+  a_{n-2\times2}=(-)^2\frac{(2 n-2\times2) !}{2^{n} 2! (n-2) !(n-2\times2) !}
+\end{equation*}	
+\end{frame}	
+
+\begin{frame}
+比较，可得一般式
+\begin{equation*}
+  a_{n-2 m}=(-1)^{m} \frac{(2 n-2 m) !}{2^{n} m !(n-m) !(n-2 m) !}
+\end{equation*}	
+
+~~\\ 
+勒让德方程的多项式解：
+\begin{equation*}
+  P_{n}(x) = y(x)=\sum_{k=0}^{\infty}a_k x^k =\sum_{m=0}^{[n / 2]}(-1)^{m} \frac{(2 n-2 m) !}{2^{n} m !(n-m) !(n-2 m) !} x^{n-2 m}
+\end{equation*}	 
+\end{frame}	
+
+\begin{frame}[label=current]
+\frametitle{}
+由于$n$只是暂时借用, 真正决定最高项的是$l$,勒让德多项式应记为
+\begin{equation*}
+\boxed{P_{l}(x)=\sum_{m=0}^{[l / 2]}(-1)^{m} \frac{(2 l-2 m) !}{2^{l} m !(l-m) !(l-2 m) !} x^{l-2 m}} 
+\end{equation*}
+\end{frame} 
+
+\begin{frame}[label=current]
+\frametitle{解连带勒让德方程}
+若 $m \ne 0$，是n阶连带勒让德方程，代入$\lambda = (l(l+1))$,  有：
+\begin{equation*}
+\left(1-x^{2}\right) \frac{d^{2} y}{d x^{2}}-2 x \frac{d y}{d x}+\left[l(l+1)-\frac{m^{2}}{1-x^{2}}\right] y=0, \quad (|x|\le 1) 
+\end{equation*}
+\解 勒让德多项式满足勒让德方程
+\[\left(1-x^{2}\right) P'' _l  (x) -2 x P' _l (x)+l(l+1)P_l(x)=0\]
+对$x$求导
+\[\left[-2x P'' _l  (x) + \left(1-x^{2}\right) P''' _l  (x)\right] - \left[2 P' _l (x) +2 x P'' _l (x) \right] + l(l+1)P'_l(x)=0 \]
+整理
+\[\left(1-x^{2}\right) P^{(3)} _l (x) -2(1+1) x P'' _l (x)+\left[l(l+1)-1(1+1)\right]P'_l(x)=0	\]
+\end{frame}	
+
+\begin{frame}[label=current]
+\frametitle{}
+再求导
+\[ \begin{aligned}
+0=&\left[-2x P^{(3)}_l (x) + \left(1-x^{2}\right) P^{(4)} _l (x)\right] \\
+&- \left[2(1+1) P'' _l (x) +2(1+1) x P^{(3)} _l (x)\right] + \left[l(l+1)-1(1+1) \right] P''_l(x)\\ 
+\end{aligned}
+\]
+整理,得
+\[\left(1-x^{2}\right) P^{(4)} _l  (x) -2(2+1) x P^{(3)} _l (x)+(l(l+1)-2(2+1)P''_l(x)=0\]
+递推，经$m$次求导后，有
+{\small \begin{equation}\label{eq:lege}
+\left(1-x^{2}\right) P^{(m+2)} _l  (x) -2(m+1) x P^{(m+1)} _l (x)+\left[l(l+1)-m(m+1)\right]P^{(m)} _l(x)=0
+\end{equation}}
+\end{frame} 
+
+\begin{frame}[label=current]
+\frametitle{}
+定义连带勒让德多项式： $$ \boxed{P^{m} _l(x)=(1-x^2)^{m/2}P^{(m)} _l(x), \quad 0\le m\le l, \quad l=1,2,3,\cdots} $$
+%并对$x$求导
+%\[
+%\begin{aligned}
+%	  \frac{d}{d x} P^m_{l}(x) &= -mx P^{(m)} _l(x) + (1-x^2)^{m/2}P^{(m+1)} _l(x) \\ 
+% \end{aligned}\]
+% 再求导
+%  \[ \small 
+%	\begin{aligned} 
+%		\frac{d^2}{d x^2} P^m_{l}(x) &= -m P^{(m)} _l(x) -mx P^{(m+1)} _l(x) -mx P^{(m+1)} _l(x) + (1-x^2)^{\frac{m}{2}}P^{(m+2)} _l(x) \\ 
+%	\end{aligned}\]
+求导，并代回方程[\ref{eq:lege}],整理得
+\begin{equation*}
+  \left(1-x^{2}\right) \frac{d^{2}}{d x^{2}} P^m_{l}(x) -2 x \frac{d}{d x} P^m_{l}(x)+\left[l(l+1)-\frac{m^{2}}{1-x^{2}}\right] P^m_{l}(x)=0
+\end{equation*}		
+即：连带勒让德多项式$P^m _{l}(x)$是连带勒让德方程的解，其中$m$称为连带勒让德多项式的阶, $l$称为连带勒让德多项式的自由度。
+\end{frame} 
+
+\begin{frame}[label=current]
+\frametitle{小结：}
+(1) 纬度方程：
+{\small \begin{equation*}
+\frac{1}{\sin \theta} \frac{d}{d \theta}\left(\sin \theta \frac{d \Theta}{d \theta}\right)+\left[\lambda-\frac{m^{2}}{\sin ^{2} \theta}\right] \Theta=0, \quad (0< \theta \le \pi)
+\end{equation*}}	
+固有值与固有函数: 
+ $$ \small \left\{
+ \begin{aligned}
+&\lambda = l (l+1), \quad l =0,1,2,\cdots \\
+&\Theta (\theta) = \frac{(l-m)!} {(l+m)!} \frac{2l+1}{2} P^m _{l}(\cos\theta) ,\quad m = 0, \pm 1, \pm 2, \cdots , \pm l  
+ \end{aligned} \right. $$ 
+(2) 经度方程 
+\begin{equation*}
+\frac{d^{2} \Phi}{d \varphi^{2}}+\lambda' \Phi=0,\quad (0<\varphi\le2 \pi)
+\end{equation*}
+固有值与固有函数:
+ $ \left\{
+ \begin{aligned}
+&\lambda' = m^2,\quad m = 0, \pm 1, \pm 2, \cdots , \pm l \\
+&\Phi_m (\varphi)=\frac{1}{\sqrt{2\pi}} e^{im\varphi}  
+ \end{aligned} \right. $
+\end{frame} 
+
+\begin{frame}
+\frametitle{}
+角向解为球谐函数：
+\begin{equation*}
+  Y_{l}^{m} (\theta,\varphi)= A_{lm}  P_l ^m (cos \theta)  e^{im\varphi} 
+\end{equation*}	
+归一化
+\begin{equation*}
+\begin{split}
+   \iint  |Y_{l}^{m}| ^2  \sin \theta d \theta d \varphi  & =1  \\
+    A^2_{lm} \int_0^{\pi}  |P_l ^m (cos \theta)|^2 \sin\theta d \theta \int_0^{2\pi} |\Phi (\varphi)|^2 d \varphi  & =1  \\
+      A^2_{lm} 2\pi  \int_{0}^{\pi}    |P_l ^m (cos \theta)|^2  \sin \theta d\theta &=1 \\
+      A^2_{lm}  2\pi  \frac{(l+m)!}{(l-m)!}  \frac{2}{2l+1}  &=1 \\
+      A_{lm} &= \sqrt{\frac{(2l+1)(l-m)!}{4\pi (l+m)!}}
+\end{split}		
+\end{equation*}	 
+\end{frame}	
+
+\begin{frame}[label=current]
+  \frametitle{}
+\例[29]{氢原子处于某态时，测得$L^2$的大小为$6\hbar^2$，测得$L_z$的大小为$\hbar$，求测得$L_x$的可能值、概率和平均值}
+\解 I、$L^2$和$L_z$同时有确定值，体系必处于共同本征态$R_{nl}Y_{lm}$, 由于
+\[ L^2 = l(l+1)\hbar^2, \quad L_z = m\hbar\]
+ 得 $l=2, \quad m=1$\\
+ ~~\\
+$L^2$和$L_x$有共同本征态， 当 $L^2 = 6\hbar^2$时，$L_x$的可能值有$0, \pm \hbar, \pm 2\hbar $， $L^2_x$的可能值有$0, \hbar^2, 4\hbar^2 $ \\
+$L^2$和$L_y$有共同本征态， 当 $L^2 = 6\hbar^2$时，$L_y$的可能值有$0, \pm \hbar, \pm 2\hbar $， $L^2_y$的可能值有$0, \hbar^2, 4\hbar^2 $  \\
+~~\\ 
+存在关系
+\[ L^2_x + L^2_y = L^2 -L^2_z = 5\hbar^2\]
+\end{frame} 
+
+\begin{frame}[label=current]
+  \frametitle{}
+综上，有两总情况是可能的
+\begin{itemize}
+  \item $L^2_x = \hbar, L^2_y = 4\hbar, \qquad \to \qquad  L_x = \pm \hbar, L_y = \pm 2\hbar$
+  \item $L^2_x = 4\hbar, L^2_y = \hbar, \qquad \to \qquad  L_x = \pm 2\hbar, L_y = \pm \hbar$
+\end{itemize}
+即，测得$L_x$的可能值为$\pm \hbar, \pm 2\hbar$. \\
+~~\\ 
+II、 平均值
+  \[ \begin{aligned}
+    \overline{L}_x &= \left\langle ml \right\vert L_x \left\vert lm \right\rangle\\ 
+    &= \frac{1}{i \hbar} \left\langle ml \right\vert [L_y, L_z] \left\vert lm \right\rangle\\
+    &= \frac{1}{i \hbar} \left\langle ml \right\vert (L_yL_z - L_zL_y) \left\vert lm \right\rangle\\
+    &= \frac{1}{i \hbar} \left\langle ml \right\vert (L_y m \hbar - m \hbar L_y) \left\vert lm \right\rangle\\
+    &=0 
+    \end{aligned} \]
+\end{frame} 
+
+\begin{frame}[label=current]
+  \frametitle{}
+III、 设测得$L_x$的值为$\pm \hbar, \pm 2\hbar$的概率为 $a_{\pm}, b_{\pm}$, 由对称性，有 
+\[ a_{-} = a_{+},  b_{-} = b_{+}\]
+由于
+\[ a_{-} + a_{+} + b_{-} + b_{+} = 1\]
+有
+\[ a_{-} +  b_{-} = 0.5 \]
+很明显， 测得 $L_x$为$\pm \hbar$ 正好是测得$L_y$为$\pm 2\hbar$
+因此，有
+\[ a_{-} = a_{+} = b_{-} = b_{+} = 0.25\]
+\end{frame} 
+
+
+\subsection{解径向方程}
+
+
+\begin{frame}
+\frametitle{径向方程}
+求解径向方程：
+\begin{equation*}
+  \boxed{\frac{d}{d r} (r^2\frac{d R }{d r} ) + \frac{2 \mu r^2} {\hbar^2}(E+ \frac{e_s ^2}{r} ) =\lambda R}
+\end{equation*}	
+\解 代入固有值$ \lambda =l(l+1)  $
+\begin{equation*}
+  \frac{d}{d r} (r^2\frac{d R }{d r} ) + \frac{2 \mu r^2} {\hbar^2}(E+ \frac{e_s ^2}{r} ) R=l(l+1) R
+\end{equation*}	
+整理：
+\begin{equation*}
+  \frac{d^2 R}{d r^2} + \frac{2}{r^2}\frac{d R }{d r}  + \frac{2 \mu} {\hbar^2}(E+ \frac{e_s ^2}{r} ) R- \frac{l(l+1)}{r^2} R=0
+\end{equation*}	
+令 $\xi=\alpha r$, $U(\xi)=R(\xi /\alpha) $, $\alpha =\sqrt{-\dfrac{8\mu E}{\hbar^2}}$, $\beta=\dfrac{2\mu e^2 _s}{\alpha \hbar^2}$,\\
+进行伸缩变换 ......，
+\end{frame}	
+
+\begin{frame}	
+链式求导
+\[\frac{d U }{d \xi } = \frac{d R }{d r } \frac{d r }{d \xi } = \frac{d R }{d r } \frac{1}{\alpha}, \quad \frac{d^2 U }{d \xi ^2 } =  \frac{d^2 R }{d r^2 } \frac{1}{\alpha ^2}\]
+代入上式, 得：
+\begin{equation*}
+\frac{d^2 U}{d \xi ^2} + \frac{2}{\xi }\frac{d U }{d \xi} + \dfrac{2\mu}{\alpha ^2 \hbar^2}\left[E+\dfrac{\mu e^2 _s}{\xi/\alpha} - \frac{l(l+1)}{\xi ^2}\right] U=0  
+\end{equation*}	
+为最简化, 令 
+\[ \dfrac{2\mu E}{\alpha ^2 \hbar^2}= -\frac{1} {4}, ~\beta=\dfrac{2\mu e^2 _s}{\alpha \hbar^2} \implies ~\alpha =\sqrt{-\dfrac{8\mu E}{\hbar^2}}, ~\beta=\dfrac{ e^2 _s}{\hbar} \sqrt{\frac{-\mu}{2E}}  \]
+方程化为
+\begin{equation}\label{eq:lagu}
+\frac{d^2 U}{d \xi ^2} + \frac{2}{\xi }\frac{d U }{d \xi}  -[ \frac{1} {4}  -\frac{\beta}{\xi} + \frac{l(l+1)}{\xi ^2}] U=0 
+\end{equation}
+\end{frame}	
+
+\begin{frame} 
+考虑方程解的渐近行为： \\
+(1) $r\to \infty$, $\xi \to \infty$,有方程：
+\begin{equation*}
+  \frac{d^2 U}{d \xi ^2}   - \frac{1} {4}  U=0
+\end{equation*}	
+特征方程有两互异实根，通解为：
+\begin{equation*}
+  U=C_1 exp(\frac{1}{2}\xi ) +C_2 exp(-\frac{1}{2}\xi ) 
+\end{equation*}	
+考虑到有界性，有特解：
+\begin{equation*}
+  U_\infty  =  C  exp(-\frac{1}{2}\xi ) 
+\end{equation*}	
+\end{frame}	
+
+\begin{frame}
+(2) $r\to 0$, $\xi \to 0$，有欧拉方程：
+\begin{equation*}
+  \frac{d^2 U}{d \xi ^2} + \frac{2}{\xi }\frac{d U }{d \xi}  +[ - \frac{l(l+1)}{\xi ^2}] U=0
+\end{equation*}	 
+通解为：
+\begin{equation*}
+  U=C_1 \xi ^{-(l+1)}+C_2 \xi ^ l 
+\end{equation*}	
+考虑到有界性，有特解：
+\begin{equation*}
+  U_0=C  \xi ^ l 
+\end{equation*}
+结合$U_\infty,~U_0 $的形态, 方程的解应具有如下形式 
+\begin{equation*}
+  U(\xi)=C \xi ^ l  exp(-\frac{1}{2}\xi ) 
+\end{equation*}		
+作常数变异，令方程的解为：
+\begin{equation*}
+  U=L(\xi)  \xi ^ l  exp(-\frac{1}{2}\xi ) 
+\end{equation*}	
+问题变为求多项式 $L(\xi)$
+\end{frame}	
+
+\begin{frame}	
+  利用乘积函数求导公式
+\[(uvw)' = u'vw + uv'w + uvw'\]
+得
+\begin{equation*}
+\begin{aligned}
+  U'(\xi)= & L'(\xi)  \xi ^ l  exp(-\frac{1}{2}\xi ) \\
+  &+  l L(\xi)  \xi ^ {l-1}  exp(-\frac{1}{2}\xi ) \\
+  &+ L(\xi) \xi ^ {l} (-\frac{1}{2}) exp(-\frac{1}{2}\xi ) \\
+  = & \left(L'(\xi)  \xi ^ l+l L(\xi)  \xi ^ {l-1} -\frac{1}{2} L(\xi) \xi ^ {l} \right) exp(-\frac{1}{2}\xi )
+\end{aligned}	
+\end{equation*}
+再求导， 得
+\[ U''(\xi)= \left[ \xi L'' +(2l\xi ^{l-1}-\xi ^l)L' +\left(l(l-1)\xi ^{l-2}+\frac{1}{4}\xi ^l - l\xi ^{l-1}\right)L   \right]exp(-\frac{1}{2}\xi )\]
+\end{frame}	
+
+\begin{frame}
+代回式[\ref{eq:lagu}], 得
+\begin{equation*}
+  \xi L''  + [2(l+1) -\xi] L' +[\beta -(l+1)] L =0
+\end{equation*}	
+令
+\begin{equation*}\label{eq:lagu-1}
+  m=2l+1,\qquad n=\beta, \qquad k=\beta-(l+1) 
+\end{equation*}	
+方程变为标准的连带拉盖方程
+\begin{equation*}
+  \xi L''  + [m+1 -\xi] L' +k L =0
+\end{equation*}	
+不失一般性, 记连带拉盖方程为
+\begin{equation*}
+  \boxed{x L''  + (m+1 -x) L' +n L =0}
+\end{equation*}
+\end{frame}	
+
+\begin{frame}[label=current]
+\frametitle{能量固有值}
+由量子数关系
+\[ n=\beta = \dfrac{ e^2 _s}{\hbar} \sqrt{\frac{-\mu}{2E}} \]
+解出氢原子能量固有值
+\[ E_n = \frac{1}{n^2} \left(- \frac{\mu e^4 _s }{2\hbar^2}\right) \]
+令 $n=1$, 得氢原子基态能量
+$$E_1 = - \frac{\mu e^4 _s }{2\hbar^2} = -13.6~eV$$
+因此，有 
+\[ E_n = \frac{1}{n^2} E_1 \]
+\end{frame} 
+
+\begin{frame}[label=current]
+\frametitle{}
+量子数$n$称为主量子数, 确定氢原子能量固有值。
+\[ E_n = \frac{1}{n^2} E_1 \]
+量子数$l$称为角量子数, 决定角动量固有值 $$L^2 = l(l+1)\hbar^2 $$
+量子数$k$称为径量子数。由于存在约束关系 $$ k=n-(l+1)$$ 通常只需关注主量子数$n$和角量子数$l$。\\ 
+\end{frame} 
+
+\begin{frame}[label=current]
+\frametitle{}
+径向函数$R(\xi /\alpha)=U(\xi) = L(\xi)  \xi ^ l  exp(-\frac{1}{2}\xi )$中的$L(\xi)$由连带拉盖方程
+\begin{equation*}
+  x L''  + (m+1 -x) L' +n L =0
+\end{equation*}
+确定, 中的$m= 2l+1$ 完全由角量子数$l$决定, 称为连带拉盖方程的阶。当取 $m=0$时, 称为（零阶）拉盖方程：
+\begin{equation*}
+  x y''  + (1 -x) y' +n y =0
+\end{equation*}
+${\color{red}\star}~$ 注意: 方程中的$n$不是主量子数, 而是径量子数$k$！
+\end{frame} 
+
+\begin{frame}
+\frametitle{拉盖方程}
+解拉盖方程
+\begin{equation*}
+  x y''  + (1 -x) y' +n y =0
+\end{equation*}	
+\解 设方程有级数解
+\begin{equation*}
+  y=\sum_{k=0}^{\infty} c_k x^k
+\end{equation*}
+求导
+$$
+  \begin{aligned}
+    y' &= \sum\limits_{k=1}^{\infty} k c_k x^{k-1} \\ 
+      & =\sum\limits_{k=0}^{\infty} (k+1) c_{k+1} x^{k}\\
+    xy' &= \sum\limits_{k=0}^{\infty} k c_k x^{k} 
+  \end{aligned}
+$$
+\end{frame}	
+
+\begin{frame}
+$$
+  \begin{aligned}
+    y'' &= \sum\limits_{k=2}^{\infty} k (k-1) c_k x^{k-2} \\
+    xy''&=  \sum\limits_{k=1}^{\infty} k (k-1) c_k x^{k-1} \\
+        &=\sum\limits_{k=0}^{\infty} (k+1) k c_{k+1} x^{k}
+  \end{aligned}
+$$
+  代回方程 
+\[\sum\limits_{k=0}^{\infty} (k+1) k c_{k+1} x^{k} + \sum\limits_{k=0}^{\infty} (k+1) c_{k+1} x^{k} - \sum\limits_{k=0}^{\infty} k c_k x^{k} + \sum_{k=0}^{\infty} n c_k x^k =0\]
+整理,得
+\begin{equation*}
+  \sum_{k=0}^{\infty} [(n-k)c_k +(k+1)^2 c_{k+1}  ] x^k =0
+\end{equation*}	
+\end{frame}	
+
+\begin{frame}
+得系数递推式：
+\begin{equation*}
+  c_{k+1}=-\frac{n-k}{(k+1)^2} c_k, \qquad (k=0,1,2,\cdots)
+\end{equation*}	
+反复递推
+\begin{equation*}
+  \begin{aligned}
+    c_{1} &=-\frac{n-0}{(0+1)^2} c_0 \\ 
+    c_{2} &=-\frac{n-1}{(1+1)^2} c_1 \\ 
+    &= (-1)^2\frac{n(n-1)}{(2!)^2} c_0
+  \end{aligned}
+\end{equation*}
+得一般式
+\begin{equation*}
+  c_{k}=(-1)^k \frac{n(n-1)\cdots (n-k+1)}{(k!)^2} c_0, \qquad (k=1,2,\cdots, n)
+\end{equation*}	
+显然, 当$(k-1) = n$时, 分子为零, 即最高阶项为$k=n$。
+\end{frame}	
+
+\begin{frame}
+最高阶项系数为：
+\begin{equation*}
+  c_{n}=(-1)^n \frac{1}{n!} c_0, 
+\end{equation*}	
+级数解转化为多项式解（拉盖多项式$L_n$），若取
+\begin{equation*}
+  c_{0}=n!, \quad  c_{n}=(-1)^n = (-1)^k 
+\end{equation*}	
+代回, 得拉盖多项式系数表达式
+\begin{equation*}
+  c_{k}=(-1)^k \frac{(n!) ^2}{(k!)^2 (n-k)!},  \qquad (k=0,1,2,\cdots, n)
+\end{equation*}	
+\end{frame}	
+
+\begin{frame}
+代回级数表达式,得拉盖多项式
+\begin{equation*}
+\begin{split}
+  L_n(x) &=\sum_{k=0}^{n} c_{k} x^k \\
+  &= \sum_{k=0}^{n} (-1)^k \frac{(n!)^2 }{(k!)^2 (n-k)!}x^k \\
+  &= \sum_{k=0}^{n} (-1)^k \frac{n! }{(k!) (n-k)!} \frac{n!}{k!}x^k   \\
+  &= \sum_{k=0}^{n} (-1)^k C^k _n \frac{n!}{k!}x^k
+\end{split}		
+\end{equation*}	
+\end{frame}	
+
+\begin{frame}
+\frametitle{连带拉盖多项式}
+连带拉盖方程
+\begin{equation*}
+x L''  + [m+1 -x] L' +n L =0
+\end{equation*}	
+的解函数为连带拉盖多项式
+\begin{equation*}
+  L^m _n (x)= \frac{1} {n!}  \sum_{k=0}^{n} (-1)^k C^k _n \frac{(n+m)!}{(m+k)!}x^k
+\end{equation*}	
+微分形式： 
+\begin{equation*}
+  L^m _n(x) =\frac{x^{-m}e^x  }{n!} \frac{d ^n}{d x^n} (x^{m+n} e^{-x})
+\end{equation*}	
+\end{frame}		
+
+\begin{frame}
+递推式：
+\begin{equation*}
+  (n+1)	L^m _{n+1} = (2n+1+m -x) L^m _n  - (n+m)  L_{n-1}  
+\end{equation*}	
+正交性：
+\begin{equation*}
+  \int_{0}^{\infty}  e^{-x} x^m  L^m _n L^ m _k dx =0, \qquad  (k\ne n)
+\end{equation*}	
+归一性：
+\begin{equation*}
+  \int_{0}^{\infty}  e^{-x} x^m  [L^m _{n}]^2  dx = \frac{(n+m)!}{n!} 
+\end{equation*}			
+归一性推论：
+\begin{equation*}
+  \int_{0}^{\infty}  e^{-x} x^{m+1}  [L^m _{n}]^2  dx = \frac{(n+m)!}{n!}  (2n+m+1)
+\end{equation*}			
+\end{frame}		
+
+\begin{frame}
+\frametitle{径向解：}	
+固有值：
+\begin{equation*}
+  \begin{split}
+    E_n =& - \frac{1}{n^2} \frac{\mu e^4 _s }{2 \hbar ^2} =\frac{E_1}{n^2}, \qquad (n=1,2,3,\cdots) 
+  \end{split}		
+\end{equation*}	
+固有函数（$m=2l+1, k= n-(l+1)$）
+\begin{equation*}
+  \begin{aligned}
+    R_{nl}(r) & = N_{nl} L_{n-l-1} ^{2l+1} (\xi)  \xi  ^l e^{-\xi/2}  \\
+    &= \sqrt{\alpha^3 \frac{ (n-l-1)!}{2n (n+1)!}} L_{n-l-1} ^{2l+1} (\xi)  \xi  ^l e^{-\xi/2}  \\
+    &=  \sqrt{\left(\frac{2}{a_0 n}\right)^3 \frac{ (n-l-1)!}{2n (n+l)!}} L_{n-l-1} ^{2l+1} (\xi)  \xi  ^l e^{-\xi/2} \\
+    &= \sqrt{\left(\frac{2}{a_0 n}\right)^3 \frac{ (n-l-1)!}{2n (n+1)! }} L_{n-l-1} ^{2l+1} (\frac{2r}{a_0 n}) \left(\frac{2r}{a_0 n}\right)^l e^{-\frac{r}{a_0 n}} 
+  \end{aligned}
+\end{equation*}
+\end{frame}	
+
+\begin{frame}[label=current]
+\frametitle{}
+${\color{red}\star}~$ 氢原子径向函数的归一化 
+\begin{equation*}
+  R_{nl}(r)= N_{nl} L_{n-l-1} ^{2l+1} (\xi)  \xi  ^l e^{-\xi/2} 
+\end{equation*} 
+代入归一化公式
+\begin{equation*}
+  \begin{split}
+    \iiint  &\Psi(r,\theta,\varphi) d \tau =1  \\
+    \iiint  &|N_{nl} R (r) Y_{lm} (\theta,\varphi)| ^2 r^2 \sin \theta dr d\theta d\varphi =1  \\
+     \int  &|N_{nl} R (r) r| ^2 dr \iint |Y_{lm} (\theta,\varphi)| ^2 \sin \theta d\theta d\varphi =1  \\
+    \int_{0}^{\infty}  & N^2_{nl} R^2  (r)  r^2 dr =1 	
+  \end{split}		
+\end{equation*}
+\end{frame}	
+
+\begin{frame}[label=current]
+\frametitle{} 
+代入$\xi = \alpha r$
+\begin{equation*}
+  \begin{split}
+  \frac{1}{\alpha^3 }	&\int_{0}^{\infty}  N^2_{nl}  R^2 (\xi)  \xi^2 d\xi =1   \\
+  \frac{1}{\alpha^3 } &	\int_{0}^{\infty}  N^2_{nl}  \xi ^{2l+2}  [L_{n-l-1} ^{2l+1} (\xi)]^2 e^{-\xi}  d\xi =1   \\
+  \frac{1}{\alpha^3 } &	\int_{0}^{\infty}  N^2_{nl}  \xi ^{M+1}  [L_N ^M (\xi)]^2 e^{-\xi}  d\xi =1   \\
+  \end{split}		
+  \end{equation*}
+  利用归一化推论
+  \begin{equation*}
+    \frac{1}{\alpha^3} 	  N^2_{nl}  \frac{(N+M)!}{N!} (2N+M+1) =1  	
+  \end{equation*}	
+  代回 $~ N = n-l-1, \quad M = 2l+1$
+  \begin{equation*}
+    N^2 _{nl}  \frac{2n (n+1)!} {\alpha ^3 (n-l-1)!} =1 \quad \to \quad N_{nl}  =\sqrt{\alpha^3 \frac{ (n-l-1)!}{2n (n+1)!}}
+  \end{equation*} 
+\end{frame}	
+
+
+\begin{frame}[label=current]
+\frametitle{氢原子解函数}
+归一化的经度函数
+\begin{equation*}
+\Phi_m (\varphi) = \frac{1}{\sqrt{2\pi}} e^{im\varphi}
+\end{equation*}
+归一化的纬度函数
+\begin{equation*}
+P_l ^m (cos \theta)= \sqrt{\frac{(2l+1)(l-m)!}{2 (l+m)!}}  (1-cos^2 \theta)^{\frac{m}{2}}P^{(m)} _l(cos \theta)
+\end{equation*}
+归一化的角向函数
+\[ Y_{lm} (\theta,\varphi)= \sqrt{\frac{(2l+1)(l-m)!}{4\pi (l+m)!}} (1-cos^2 \theta)^{\frac{m}{2}}P^{(m)} _l(cos \theta)  e^{im\varphi}\]
+归一化的径向函数
+\[R_{nl}(r) = \sqrt{\left(\frac{2}{a_0 n}\right)^3 \frac{ (n-l-1)!}{2n (n+l)!}} L_{n-l-1} ^{2l+1} (\frac{2r}{a_0 n}) \left(\frac{2r}{a_0 n}\right)^l e^{-\frac{r}{a_0 n}} \]
+归一化的波函数
+\[ \small
+\begin{aligned}
+\Psi _{n,l,m}(r,\theta,\varphi) & = R_{nl}(r) Y_{lm} (\theta,\varphi) \\
+&= \left\{\sqrt{ \left( \frac{2}{n a_0}\right)^3 \frac{(n-l-1)!}{2n(n+l)!} } e^{-r/na_0} \left( \frac{2r}{na_0} \right)^l \left[ L^{2l+1}_{n-l-1} \left( \frac{2r}{na_0} \right) \right]\right\} Y^m_l(\theta,\phi) 
+\end{aligned}  
+\]
+\end{frame} 
+
+\begin{frame}
+\frametitle{}
+基本解（定态波函数）
+$$ \small \begin{aligned}
+  \Psi _{nlm}(r,\theta,\varphi,t) &= \Psi _{nlm}(r,\theta,\varphi) f(t) \\
+  &= N_{nl}R(r)Y_{lm}(\theta,\varphi) e^{-\frac{i}{\hbar} E_n t } \\
+  &= \sqrt{\left(\frac{2}{a_0 n}\right)^3 \frac{ (n-l-1)!}{2n (n+1)! }}(\frac{2r}{a_0 n})^l L_{n-l-1} ^{2l+1} (\frac{2r}{a_0 n})   Y_{lm}(\theta,\varphi) e^{-\frac{r}{a_0 n} - \frac{i}{\hbar n^2 }E_1 t }
+\end{aligned} $$ 
+叠加解 
+\[u(\vec{r},t) = \sum_{nlm} a_{nlm} \Psi _{nlm}(r,\theta,\varphi,t) \]
+若初值条件给定，则可求得待定系数$a_{nlm}$
+\end{frame} 
+
+
+%%\section{氢原子量子描述}
+%
+%\begin{frame}
+%	\frametitle{小结:解氢原子}
+%	\tcbset{enhanced jigsaw,fonttitle=\bfseries,%opacityback=0.35,colback=blue!5!white,
+%		frame style={left color=red!75!black,right %color=red!10!yellow}}
+%	\begin{tikzpicture}% draw two balls
+%	  \path[use as bounding box] (0,0.8) rectangle %+(0.1,0.1);
+%	  \shadedraw [shading=ball] (0,0.3) circle (1cm);
+%	  %\shadedraw [ball color=yellow!20] (3,-2.2) %circle (1cm);
+%	\end{tikzpicture}
+%	\begin{tcolorbox}[title=\faEnvira\hspace{1em} 第一%次分离变量,
+%	  overlay=
+%	  {\begin{tcbinvclipframe}
+%	  \draw[red,line width=1cm] ([xshift=-2mm,%yshift=2mm]frame.north west)
+%	  --([xshift=2mm,yshift=-2mm]frame.south east);
+%	  \draw[red,line width=1cm] ([xshift=-2mm,%yshift=-2mm]frame.south west)
+%	  --([xshift=2mm,yshift=2mm]frame.north east);
+%	  \end{tcbinvclipframe}}]
+%	  {\Bullet}氢原子定态薛定谔方程：
+%		\begin{equation*}
+%			\left[-\frac{\hbar^2}{2 m_1} \nabla_1 ^2  %-\frac{\hbar^2}{2 m_2} \nabla_2 ^2 +U(| %\vec{r_1}-\vec{r_2} | ) \right] \Psi (\vec%{r_1},\vec{r_2}) =E \Psi (\vec{r_1},\vec%{r_2}) 
+%		\end{equation*}
+%	{\Bullet} 质心运动方程
+%	  \begin{equation*}
+%		-\frac{\hbar^2}{2 M} \nabla_R ^2  \psi (\vec%{R}) =E_c \psi (\vec{R}) 
+%	\end{equation*}	
+%	{\Bullet} 相对运动方程
+%	\begin{equation*}
+%		\left[-\frac{\hbar^2}{2 m} \nabla ^2 +U(\vec%{r}) \right] \Psi (\vec{r}) =E \Psi (\vec%{r})   
+%	\end{equation*}
+%	  \end{tcolorbox}
+%\end{frame}
+%
+%\begin{frame}
+%	\frametitle{}
+%	\tcbset{enhanced jigsaw,fonttitle=\bfseries,%opacityback=0.35,colback=blue!5!white,
+%		frame style={left color=red!75!black,right %color=red!10!yellow}}
+%	\begin{tikzpicture}% draw two balls
+%	  \path[use as bounding box] (0,0.8) rectangle %+(0.1,0.1);
+%	  \shadedraw [shading=ball] (0,0.3) circle (1cm);
+%	  %\shadedraw [ball color=yellow!20] (3,-2.2) %circle (1cm);
+%	\end{tikzpicture}
+%	\begin{tcolorbox}[title=\faEnvira\hspace{1em} 第二%次分离变量,
+%	  overlay=
+%	  {\begin{tcbinvclipframe}
+%	  \draw[red,line width=1cm] ([xshift=-2mm,%yshift=2mm]frame.north west)
+%	  --([xshift=2mm,yshift=-2mm]frame.south east);
+%	  \draw[red,line width=1cm] ([xshift=-2mm,%yshift=-2mm]frame.south west)
+%	  --([xshift=2mm,yshift=2mm]frame.north east);
+%	  \end{tcbinvclipframe}}]
+%	{\Bullet}角向方程：
+%	\begin{equation*}
+%		\left[ \frac{1}{ \sin \theta  } \frac%{\partial }{\partial \theta } (\sin \theta %\frac{\partial }{\partial \theta } )
+%		+\frac{1}{ \sin^2 \theta  } \frac{\partial^2}%{\partial\varphi ^2}  +l(l+1) \right] Y=0 
+%	\end{equation*}
+%	{\Bullet}径向方程：
+%	\begin{equation*}
+%		\frac{d^2 R}{d r^2} + \frac{2}{r^2}\frac{d R }%{d r}  + \frac{2 \mu} {\hbar^2}(E+ \frac{e_s %^2}{r} ) R- \frac{l(l+1)}{r^2} R=0
+%	\end{equation*}	
+%	  \end{tcolorbox}
+%\end{frame}
+%
+%\begin{frame}
+%	\frametitle{}
+%	\tcbset{enhanced jigsaw,fonttitle=\bfseries,%opacityback=0.35,colback=blue!5!white,
+%		frame style={left color=red!75!black,right %color=red!10!yellow}}
+%	\begin{tikzpicture}% draw two balls
+%	  \path[use as bounding box] (0,0.8) rectangle %+(0.1,0.1);
+%	  \shadedraw [shading=ball] (0,0.3) circle (1cm);
+%	  %\shadedraw [ball color=yellow!20] (3,-2.2) %circle (1cm);
+%	\end{tikzpicture}
+%	\begin{tcolorbox}[title=\faEnvira\hspace{1em} 第三%次分离变量,
+%	  overlay=
+%	  {\begin{tcbinvclipframe}
+%	  \draw[red,line width=1cm] ([xshift=-2mm,%yshift=2mm]frame.north west)
+%	  --([xshift=2mm,yshift=-2mm]frame.south east);
+%	  \draw[red,line width=1cm] ([xshift=-2mm,%yshift=-2mm]frame.south west)
+%	  --([xshift=2mm,yshift=2mm]frame.north east);
+%	  \end{tcbinvclipframe}}]
+%	{\Bullet}经度方程：
+%	\begin{equation*}
+%		\frac{d^{2} \Phi}{d \varphi^{2}}+\lambda %\Phi=0,(0<\varphi\le2 \pi)
+%	\end{equation*}	
+%	{\Bullet}纬度方程：
+%	\begin{equation*}
+%		\frac{1}{\sin \theta} \frac{d}{d \theta}\left%(\sin \theta \frac{d \Theta}{d \theta}\right)%+\left[l(l+1)-\frac{\lambda}{\sin ^{2} \theta}%\right] \Theta=0,(0<\theta \le \pi)
+%	\end{equation*}	
+%	{\Bullet}径向方程：
+%	\begin{equation*}
+%		\frac{d^2 R}{d r^2} + \frac{2}{r^2}\frac{d R }%{d r}  + \frac{2 \mu} {\hbar^2}(E+ \frac{e_s %^2}{r} ) R- \frac{l(l+1)}{r^2} R=0
+%	\end{equation*}	
+%	  \end{tcolorbox}
+%\end{frame}
+%
+%\begin{frame}
+%	\frametitle{}
+%	\tcbset{enhanced jigsaw,fonttitle=\bfseries,%opacityback=0.35,colback=blue!5!white,
+%		frame style={left color=red!75!black,right %color=red!10!yellow}}
+%	\begin{tikzpicture}% draw two balls
+%	  \path[use as bounding box] (0,0.8) rectangle %+(0.1,0.1);
+%	  \shadedraw [shading=ball] (0,0.3) circle (1cm);
+%	  %\shadedraw [ball color=yellow!20] (3,-2.2) %circle (1cm);
+%	\end{tikzpicture}
+%	\begin{tcolorbox}[title=\faEnvira\hspace{1em} 经度%方程的解,
+%	  overlay=
+%	  {\begin{tcbinvclipframe}
+%	  \draw[red,line width=1cm] ([xshift=-2mm,%yshift=2mm]frame.north west)
+%	  --([xshift=2mm,yshift=-2mm]frame.south east);
+%	  \draw[red,line width=1cm] ([xshift=-2mm,%yshift=-2mm]frame.south west)
+%	  --([xshift=2mm,yshift=2mm]frame.north east);
+%	  \end{tcbinvclipframe}}]
+%	{\Bullet}经度方程：
+%	\begin{equation*}
+%		\frac{d^{2} \Phi}{d \varphi^{2}}+\lambda %\Phi=0,(0<\varphi\le2 \pi)
+%	\end{equation*}	
+%	固有值和固有函数：
+%	\[\begin{cases}
+%		\lambda=m^2, ~~~ (m=0,\pm 1,\pm 2,\cdots,\pm %l) \\ 
+%		\Phi_m (\varphi)=\frac{1}{\sqrt{2\pi}} e^%{im\varphi}
+%	\end{cases}\]
+%	物理上对应角动量Z方向投影:
+%	\[L_z =m\hbar \]
+%	\end{tcolorbox}
+%\end{frame}
+%
+%\begin{frame}
+%	\frametitle{}
+%	\tcbset{enhanced jigsaw,fonttitle=\bfseries,%opacityback=0.35,colback=blue!5!white,
+%		frame style={left color=red!75!black,right %color=red!10!yellow}}
+%	\begin{tikzpicture}% draw two balls
+%	  \path[use as bounding box] (0,0.8) rectangle %+(0.1,0.1);
+%	  \shadedraw [shading=ball] (0,0.3) circle (1cm);
+%	  %\shadedraw [ball color=yellow!20] (3,-2.2) %circle (1cm);
+%	\end{tikzpicture}
+%	\begin{tcolorbox}[title=\faEnvira\hspace{1em} 纬度%方程的解,
+%	  overlay=
+%	  {\begin{tcbinvclipframe}
+%	  \draw[red,line width=1cm] ([xshift=-2mm,%yshift=2mm]frame.north west)
+%	  --([xshift=2mm,yshift=-2mm]frame.south east);
+%	  \draw[red,line width=1cm] ([xshift=-2mm,%yshift=-2mm]frame.south west)
+%	  --([xshift=2mm,yshift=2mm]frame.north east);
+%	  \end{tcbinvclipframe}}]
+%	  {\Bullet}纬度方程：
+%	  \begin{equation*}
+%		  \frac{1}{\sin \theta} \frac{d}{d \theta}%\left(\sin \theta \frac{d \Theta}{d \theta}%\right)+\left[l(l+1)-\frac{m^2}{\sin ^{2} %\theta}\right] \Theta=0,(0<\theta \le \pi)
+%	  \end{equation*}	
+%	固有值
+%	\[\begin{cases}
+%		 m^2, ~~~ (m=0,\pm 1,\pm 2,\cdots,\pm l) \\
+%		l(l+1), ~~~ (l=0,1, 2,\cdots, n-1) \\ 
+%	\end{cases}\]
+%	固有函数：
+%	\[
+%		\Theta_{lm}(\theta)= P^m  _{l}(\cos \theta) \]
+%\end{tcolorbox}
+%\end{frame}
+%
+%\begin{frame}
+%	\frametitle{}
+%	\tcbset{enhanced jigsaw,fonttitle=\bfseries,%opacityback=0.35,colback=blue!5!white,
+%		frame style={left color=red!75!black,right %color=red!10!yellow}}
+%	\begin{tikzpicture}% draw two balls
+%	  \path[use as bounding box] (0,0.8) rectangle %+(0.1,0.1);
+%	  \shadedraw [shading=ball] (0,0.3) circle (1cm);
+%	  %\shadedraw [ball color=yellow!20] (3,-2.2) %circle (1cm);
+%	\end{tikzpicture}
+%	\begin{tcolorbox}[title=\faEnvira\hspace{1em} 角向%方程的解,
+%	  overlay=
+%	  {\begin{tcbinvclipframe}
+%	  \draw[red,line width=1cm] ([xshift=-2mm,%yshift=2mm]frame.north west)
+%	  --([xshift=2mm,yshift=-2mm]frame.south east);
+%	  \draw[red,line width=1cm] ([xshift=-2mm,%yshift=-2mm]frame.south west)
+%	  --([xshift=2mm,yshift=2mm]frame.north east);
+%	  \end{tcbinvclipframe}}]
+%	{\Bullet}角向方程：
+%	\begin{equation*}
+%		\left[ \frac{1}{ \sin \theta  } \frac%{\partial }{\partial \theta } (\sin \theta %\frac{\partial }{\partial \theta } )
+%		+\frac{1}{ \sin^2 \theta  } \frac{\partial^2}%{\partial\varphi ^2}  +l(l+1) \right] Y=0 
+%	\end{equation*}
+%	角动量固有值
+%	\[\begin{cases}
+%		m\hbar, ~~~ (m=0,\pm 1,\pm 2,\cdots,\pm l) \\
+%		l(l+1)\hbar^2, ~~~ (l=1, 2,\cdots, n-1) \\ 
+%	\end{cases}\]
+%	固有函数：
+%	\[
+%		Y_{lm} (\theta,\varphi)= \sqrt{\frac{(2l+1)%(l-m)!}{4\pi (l+m)!}}  P_l ^m (cos \theta)  e^%{im\varphi}  \]
+%\end{tcolorbox}
+%\end{frame}
+%
+%\begin{frame}
+%	\frametitle{}
+%	\tcbset{enhanced jigsaw,fonttitle=\bfseries,%opacityback=0.35,colback=blue!5!white,
+%		frame style={left color=red!75!black,right %color=red!10!yellow}}
+%	\begin{tikzpicture}% draw two balls
+%	  \path[use as bounding box] (0,0.8) rectangle %+(0.1,0.1);
+%	  \shadedraw [shading=ball] (0,0.3) circle (1cm);
+%	  %\shadedraw [ball color=yellow!20] (3,-2.2) %circle (1cm);
+%	\end{tikzpicture}
+%	\begin{tcolorbox}[title=\faEnvira\hspace{1em} 径向%方程的解,
+%	  overlay=
+%	  {\begin{tcbinvclipframe}
+%	  \draw[red,line width=1cm] ([xshift=-2mm,%yshift=2mm]frame.north west)
+%	  --([xshift=2mm,yshift=-2mm]frame.south east);
+%	  \draw[red,line width=1cm] ([xshift=-2mm,%yshift=-2mm]frame.south west)
+%	  --([xshift=2mm,yshift=2mm]frame.north east);
+%	  \end{tcbinvclipframe}}]
+%	  {\Bullet}径向方程：
+%	  \begin{equation*}
+%		\frac{d^2 R}{d r^2} + \frac{2}{r^2}\frac{d R }%{d r}  + \frac{2 \mu} {\hbar^2}(E+ \frac{e_s %^2}{r} ) R- \frac{l(l+1)}{r^2} R=0
+%	  \end{equation*}	
+%	能量固有值
+%	\[ E_n =- \frac{1}{n^2} \frac{\mu e^4 _s }{2 %\hbar ^2} =\frac{E_1}{n^2}, \qquad (n=1,2,3,%\cdots) \]
+%	固有函数：
+%	\[
+%		R_{nl} (r) =\sqrt{(\frac{2}{n a_0})^3 \frac{% %(n-l-1)!}{2n [(n+1)!]^3}}  (\frac{2}{n a_0}r)%% ^l  L_{n-l-1} ^{2l+1} (\frac{2}{n a_0}r) e%^%{-\frac{r}{n a_0}}\]
+%%\end{tcolorbox}
+%\end{frame}%
+%
+
+%\begin{frame}
+%	\frametitle{}
+%	\tcbset{enhanced jigsaw,fonttitle=\bfseries,%opacityback=0.35,colback=blue!5!white,
+%		frame style={left color=red!75!black,right% color=red!10!yellow}}
+%	\begin{tikzpicture}% draw two balls
+%	  \path[use as bounding box] (0,0.8) rectangle %+(0.1,0.1);
+%	  \shadedraw [shading=ball] (0,0.3) circle (1cm);
+%	  %\shadedraw [ball color=yellow!20] (3,-2.2) %circle (1cm);
+%	\end{tikzpicture}
+%	\begin{tcolorbox}[title=\faEnvira\hspace{1em} 氢原%子的解,
+%	  overlay=
+%	  {\begin{tcbinvclipframe}
+%	  \draw[red,line width=1cm] ([xshift=-2mm,%yshift=2mm]frame.north west)
+%	  --([xshift=2mm,yshift=-2mm]frame.south east);
+%	  \draw[red,line width=1cm] ([xshift=-2mm,%yshift=-2mm]frame.south west)
+%	  --([xshift=2mm,yshift=2mm]frame.north east);
+%	  \end{tcbinvclipframe}}]
+%	  {\Bullet}	氢原子固有值和固有函数:
+%	\begin{equation*}	
+%		 \Psi_{nlmm_s}(r, \theta, \varphi, s)= R_{nl} (r) Y_{lm} (\theta,\varphi)S_{m_s}(s)
+%	\end{equation*} 
+%	\begin{itemize}
+%		  \item 主量子数: $n=1,2,3,\cdots$, 能级,轨道能量 (主 K，L，M, N, O, P, Q)
+%		  \item 角量子数: $l=0,1,2,\cdots, n-1$, 角动量大小, 轨道形状 (次 s, p, d, f) 
+%		  \item 磁量子数: $m=0,\pm 1,\pm 2,\cdots, \pm l$, 角动量方向, 轨道空间取向 
+%		  \item 自旋量子数: $m_s=\pm 1/2$
+%	\end{itemize}
+%\end{tcolorbox}
+%\end{frame}
+
+\subsection{分析与讨论}
+
+\begin{frame}[label=current]
+\frametitle{1、量子数与轨道}
+由于${n-(l+1) = k \ge 0}$,有:
+\[n=1,2,3,\cdots, \qquad l=0,1,2,3,\cdots, n-1\]
+因此，氢原子量子数关系为：
+\[
+  \begin{aligned}
+    \text{主量子数：} &n, \quad n=1,2,3, \cdots  \\ 
+    \text{角量子数：} &l, \quad l=0,1,2, \cdots, n-1 \\ 
+    \text{磁量子数：} &m, \quad m=0,\pm 1, \pm 2, \cdots, \pm l \\ 
+  \end{aligned} 
+  \]
+  \begin{itemize}
+        \item $n=1,2,3,\cdots$, 对应主壳层 K，L，M, N, O, P, Q 
+        \item $l=0,1,2,\cdots, n-1$, 对应次壳层 s, p, d, f
+        \item 磁量子数: $m=0,\pm 1,\pm 2,\cdots, \pm l$, 对应轨道空间取向
+  \end{itemize}
+\end{frame} 
+
+
+\begin{frame}
+  \frametitle{}
+  轨道的标识
+  \begin{center}
+  \includegraphics[width=0.90\textwidth]{figs/orbitals.png}
+ \end{center}
+\end{frame}
+
+\begin{frame}
+  \frametitle{}
+  轨道的形态
+  \begin{center}
+     \includegraphics[width=1.0\textwidth,height=2.5in]{figs/2022-03-25-19-35-50.png}
+  \end{center}	 
+\end{frame}	
+
+\begin{frame}[label=current]
+  \frametitle{ 2、量子化}
+\begin{figure}[htbp]
+  \centering
+  \includegraphics[width=0.5\textwidth]{figs/en.png}
+  %\caption{}
+    %\label{fig:}
+\end{figure} 
+能量量子化 (主量子数$n$)
+  $$
+E_n=-\frac{\mu Z^2 e_s^4}{2 \hbar^2} \frac{1}{n^2}=E_1 \frac{1}{n^2}, \quad n=1, 2, 3, \cdots 
+$$
+\end{frame} 
+
+\begin{frame}
+  \frametitle{}
+  能级与光谱
+  \[ E_n = - \frac{1}{n^2} \frac{\mu e^4 _s }{2 \hbar ^2} =\frac{E_1}{n^2}, \quad (n=1,2,3,\cdots) , \qquad \nu=\frac{E_n -E_m}{h} = R_H c [\frac{1}{m^2} -\frac{1}{n^2}]
+  \]
+  \begin{center}
+     \includegraphics[width=0.38\textwidth]{figs/spectra.png}
+  \end{center}
+\end{frame}
+
+\begin{frame}[label=current]
+  \frametitle{}
+\begin{figure}[htbp]
+  \centering
+  \includegraphics[width=0.7\textwidth]{figs/l2lz.png}
+  %\caption{}
+    %\label{fig:}
+\end{figure} 
+角动量大小与方向量子化 (角量子数$l$，磁量子数$m$)
+$$
+L=\sqrt{l(l+1)}\hbar \quad l=0,1, 2, \cdots, n-1 \qquad L_z = m \hbar \quad m=0, \pm 1, \pm 2,\cdots, \pm l 
+$$
+\end{frame} 
+
+\begin{frame}[label=current]
+  \frametitle{3、简并度}
+
+氢原子角动量方的简并度： $2l+1$\\
+对于一个指定的量子数$l$,  量子数$m$有$2l+1$种不同的取法
+ \[ m=0, \pm 1, \pm 2, \cdots ,\pm l\]
+
+~~\\ 
+氢原子能级的简并度： $n^2$\\
+对于一个指定的量子数$n$, 量子数$l$有$n$ 种取法，而对于每个$l$,量子数$m$又有$2l+1$种取法，因此总共有
+$$
+\sum_{l=0}^{n-1}(2 l+1)=\frac{1}{2}[(2 l+1)+1] n=n^2
+$$
+\end{frame} 
+
+
+\begin{frame}
+  \frametitle{}
+  \例[30]{设$t=0$时刻,氢原子处于叠加态
+  \[\psi=\frac{1}{2}\psi _{100} + \frac{\sqrt{3} }{2}\psi _{210} \]
+  试求此后任意时刻氢原子的波函数, 及能量$E$和角动量$Z$分量$L_z$的平均值}
+  \解 氢原子能量固有值：
+  \[E_n = \frac{1}{n^2}E_1\]
+  动量（$L_z$）固有值：
+  \[L_z = m \hbar \]
+  氢原子叠加解：
+  \[
+  \begin{aligned}
+   u(\vec{r},t) &= \sum_{nlm} a_{nlm} \Psi _{nlm}(r,\theta,\varphi,t) \\
+   &=  \sum_{nlm} a_{nlm} \Psi _{nlm}(r,\theta,\varphi) e^{-\frac{i}{\hbar}E_n t}
+  \end{aligned} 
+  \]
+  \end{frame} 
+  
+  \begin{frame}[label=current]
+  \frametitle{}
+  取$t=0$, 
+  \[
+  \begin{aligned}
+   u(\vec{r},0)  =  \sum_{nlm} a_{nlm} \Psi _{nlm}(r,\theta,\varphi) e^{-\frac{i}{\hbar}E_n 0 } =\frac{1}{2}\psi _{100} + \frac{\sqrt{3} }{2}\psi _{211}
+  \end{aligned} 
+  \]
+  由正交性可知,$t$时刻氢原子有两个基本解
+  \[ \psi _{100}, \qquad \psi _{211}\]
+  因此, $t$时刻氢原子的叠加解为
+  \[
+  \begin{aligned}
+   u(\vec{r},t) &= \frac{1}{2}\psi _{100}e^{-\frac{i}{\hbar}E_1 t} + \frac{\sqrt{3} }{2}\psi _{211} e^{-\frac{i}{\hbar}E_2 t}
+  \end{aligned} 
+  \]
+  \end{frame} 
+  
+  \begin{frame}[label=current]
+  \frametitle{}
+  能量平均值
+  \[
+  \begin{aligned}
+   \overline{E} &= \omega _1 E_1 + \omega _2 E_2 \\ &=\frac{1}{4}E_1 + \frac{3}{4}E_2 \\ & = \frac{7}{16}E_1 \\ &= -5.95 \text{eV}
+  \end{aligned} 
+  \]
+  $L_z$的平均值
+  \[
+  \begin{aligned}
+   \overline{L}_z &= \frac{1}{4}\times(0\hbar) + \frac{3}{4}\times(1\hbar) = \frac{3}{4}\hbar 
+  \end{aligned} 
+  \]
+  \end{frame} 
+
+\begin{frame}[label=current]
+  \frametitle{}
+\例[31]{一粒子处于中心势场,若$t=0$时刻状态函数为 
+$$
+\psi(r, \theta, \varphi)=R_{n l}(r) \Theta_{l m}(\theta) \cos^2 \varphi
+$$
+试求$t$时刻测得$L_z$的可能值,概率及平均值}
+\解 中心势场粒子的本征函数
+$$
+\psi(r, \theta, \varphi)=R_{n l}(r) \Theta_{l m}(\theta) \Phi_m(\varphi)
+$$
+有
+\[\Phi_m(\varphi) = \frac{1}{\sqrt{2\pi} }e^{im\varphi}\]
+
+\end{frame}
+
+\begin{frame}[label=current]
+  \frametitle{}
+$$
+\begin{aligned}
+  \cos ^2 \varphi&=\frac{1}{2}(1+\cos 2 \varphi) \\ 
+  &=\frac{1}{2}+\frac{1}{4}\left(e^{ i 2\varphi}+e^{- i 2\varphi}\right)\\
+  &= \frac{\sqrt{2 \pi}}{2} \frac{1}{\sqrt{2 \pi}}e^{i0\varphi} + \frac{\sqrt{2 \pi}}{4} \frac{1}{\sqrt{2 \pi}}e^{i2\varphi} + \frac{\sqrt{2 \pi}}{4} \frac{1}{\sqrt{2 \pi}}e^{i(-2)\varphi} \\
+&=\frac{\sqrt{2 \pi}}{2} \Phi_0(\varphi)+\frac{\sqrt{2 \pi}}{4} \Phi_2(\varphi)+\frac{\sqrt{2 \pi}}{4} \Phi_{-2}(\varphi) \\
+\end{aligned}
+$$
+归一化 
+\[= \sqrt{\frac{2}{3}} \Phi_0(\varphi)+\sqrt{\frac{1}{6}} \Phi_2(\varphi)+\sqrt{\frac{1}{6}} \Phi_{-2}(\varphi) \qquad \qquad \]
+\end{frame} 
+
+\begin{frame}[label=current]
+  \frametitle{}
+量子数$m$的可能值
+$$ -2, \qquad 0, \qquad 2$$
+$L_z$的可能值($m\hbar$)
+$$ -2\hbar, \quad 0\hbar, \quad 2\hbar$$
+对应概率
+$$ \frac{1}{6}, \quad \frac{2}{3}, \quad \frac{1}{6}$$
+平均值
+$$\overline{L}_z = -2\hbar \times \frac{1}{6} + 2\hbar \times \frac{1}{6} =0 $$
+\end{frame} 
+
+
+%\begin{frame} 
+%    \frametitle{角动量量子化}
+%    \begin{wrapfigure} {b} {0.4\textwidth} %;图在右
+%        \includegraphics[width=0.35\textwidth]{figs/%LandL2.png}   
+%    \end{wrapfigure}
+%    {\Bullet} 角动量大小  $L^2=l(l+1) \hbar^2$\\
+%	$L=\sqrt{l(l+1)}\hbar, \quad (l=1,2,\cdots, n-1)%$\\
+%    ~~\\ \vspace{0.3em}
+%    {\Bullet} 角动量Z投影 $L^2_z=m^2\hbar^2$\\
+%    $L_z=m\hbar, \quad (m=0,\pm 1,\pm 2, \cdots, \pm %l)$\\
+%	~~\\
+%    {\Bullet} 大小和方向皆量子化
+%\end{frame} 
+
+
+\begin{frame}
+\frametitle{4、概率分布 }
+ 概率密度
+$$
+w_{n l m}(r, \theta, \varphi)=\left|\psi_{n l m}(r, \theta, \varphi)\right|^2=R_{n l}^2(r) \Theta_{l m}^2(\theta)\left|\Phi_m(\varphi)\right|^2
+$$
+体系元$d\tau$内电子出现的概率--体元分布
+$$
+\begin{aligned}
+w_{n l m}(r, \theta, \varphi) d \tau &= R_{n l}^2(r) \Theta_{l m}^2(\theta)\left|\Phi_m(\varphi)\right|^2 d \tau \\
+&=R_{n l}^2(r) \Theta_{l m}^2(\theta)\left|\Phi_m(\varphi)\right|^2 r^2 \sin \theta d r d \theta d \varphi \\
+&=R^2_{n l}(r) r^2 d r\left|Y_{l m}(\theta, \varphi)\right|^2 \sin \theta d \theta d \phi \\
+&=R^2_{n l}(r) r^2 d r\left|Y_{l m}(\theta, \varphi)\right|^2 d\Omega
+\end{aligned}
+$$
+\end{frame} 
+
+\begin{frame}[label=current]
+\frametitle{}
+球壳元$r \sim r+dr$内电子出现的概率--径向分布
+$$
+\begin{aligned}
+w_{n l m}(r, \theta, \varphi) d r 
+& =R^2_{n l}(r) r^2 d r \iint \left|Y_{l m}(\theta, \varphi)\right|^2 \sin \theta d \theta d \varphi \\
+&= R^2_{n l}(r) r^2 d r \\
+&= N^2_{n l} R^2 (r) r^2 d r \\
+&= \left(\frac{2}{a_0 n}\right)^3 \frac{ (n-l-1)!}{2n [(n+1)!]^3 } (\frac{2r}{a_0 n})^l L_{n-l-1} ^{2l+1} (\frac{2r}{a_0 n}) \exp(-\frac{r}{a_0 n}) r^2 d r
+\end{aligned}
+$$
+\end{frame}
+
+\begin{frame}[label=current]
+\frametitle{}
+立体角$\Omega \sim \Omega + d\Omega $内电子出现的概率--角向分布
+$$
+\begin{aligned}
+w_{n l m}(r, \theta, \varphi) d\Omega 
+& =\int R^2_{n l}(r) r^2 d r  \left|Y_{l m}(\theta, \varphi)\right|^2 d\Omega \\
+&= \left|Y_{l m}(\theta, \phi)\right|^2 d\Omega  \\
+&= \left|A_{lm}Y(\theta,\varphi)\right|^2 \sin \theta d \theta d \varphi \\
+&= \frac{(2l+1)(l-m)!}{4\pi (l+m)!}\left|  P^m _{l}(\sin\theta)\right|^2 \sin \theta d \theta  \frac{1}{2\pi} |e^{im\varphi}|^2d \varphi \\
+&=\frac{(2l+1)(l-m)!}{8\pi ^2 (l+m)!}\left|  P^m _{l}(\sin\theta)\right|^2 \sin \theta d \theta d \varphi
+\end{aligned}
+$$
+\end{frame} 
+
+\begin{frame}[label=current]
+\frametitle{}
+角向$\theta \sim \theta + d\theta $内电子出现的概率--纬度分布
+$$
+\begin{aligned}
+w_{n l m}(r, \theta, \varphi) d \theta 
+&=\frac{(2l+1)(l-m)!}{8\pi ^2 (l+m)!}\left|  P^m _{l}(\sin\theta)\right|^2 \sin \theta d \theta \int_0^{2\pi} d \varphi \\
+&=\frac{(2l+1)(l-m)!}{4\pi (l+m)!}\left|  P^m _{l}(\sin\theta)\right|^2 \sin \theta d \theta 
+\end{aligned}
+$$
+因此，只要给出计算多项式$P^m _{l}(\sin\theta)$和$ L_{n-l-1} ^{2l+1} (\frac{2r}{a_0 n})$的子程序，则可以做出各本征函数的图像 
+\end{frame} 
+
+\begin{frame}[label=current]
+  \frametitle{}
+\例[32]{氢原子处于态$$
+\psi(r, \theta, \varphi)=\frac{1}{\left(\pi a_0^3\right)^{1 / 2}} e^{-r / a_0}
+$$
+试求：\\
+1、$r$的平均值 \\
+2、在$r \sim r+dr$内找到电子的概率}
+\解 代入平均值公式$$
+\bar{F}=\int \psi^*(x) \hat{F} \psi^*(x) d x
+$$
+\end{frame} 
+
+\begin{frame}[label=current]
+  \frametitle{}
+  $$
+  \begin{aligned}
+  & \bar{r}=\int \psi^*(r, \theta, \varphi) \hat{r} \psi(r, \theta, \varphi) d \tau \\
+  &= \frac{1}{\left(\pi a_0^3\right)^{1 / 2}} \int_0^{\infty}   e^{-2 r / a_0} \cdot r \cdot r^2 d r\int_0^\pi\sin \theta  d \theta \int_0^{2 \pi}d \varphi \\
+  & =\frac{2 \times 2 \pi}{\left(\pi a_0^3\right)^{1 / 2}} \int_0^{\infty} e^{-2 r / a_0} r^3 d r \\
+  & =\frac{4 \pi}{\left(\pi a_0^3\right)^{1 / 2}} \frac{3 !}{\left(2 / a_0\right)^4}\\
+  &=\frac{3}{2} a_0
+  \end{aligned}
+  $$
+\end{frame} 
+
+\begin{frame}[label=current]
+  \frametitle{}
+  $$
+  \begin{aligned}
+    w_{n l m}(r) d r&= \left|\psi_{n l m}(r, \theta, \varphi)\right|^2 r^2 d r\int_0^\pi\sin \theta  d\theta \int_0^{2 \pi} d \varphi \\
+    &=4 \pi\left|\psi_{n l m}\right|^2 r^2 d r \\ 
+    &= \frac{4}{a_0^3} e^{-2 r / a_0} r^2 d r
+  \end{aligned}
+  $$
+\end{frame} 
+
+
+
+%\begin{frame}
+%	\frametitle{随堂测试}
+%	\begin{exampleblock} {1.粒子处于如下势场中：}
+%		\begin{equation*}
+%			V(x)= \frac{1}{2} \mu \omega ^2 x^2  +1
+%		\end{equation*}
+%		\hspace{2em}求能量固有值和定态波函数。
+%	\end{exampleblock}	
+%	\begin{exampleblock} {2.基于厄米多项式的正交性求积分：}
+%		\begin{equation*}
+%			\int\limits_{-\infty}^{+\infty} (x^3 +1)e^{-x^{2}} H_n(x) d x 
+%		\end{equation*}
+%	\end{exampleblock}	
+%\end{frame}%
+%
+
+%\begin{frame}
+%	\frametitle{}
+%	\begin{exampleblock} {1.粒子处于如下势场中：}
+%	  \begin{equation*}
+%		  V(x)= \frac{1}{2} \mu \omega ^2 x^2  +1
+%	  \end{equation*}
+%	\end{exampleblock}
+%	  \hspace{2em}求能量固有值和定态波函数。\\	
+%	  \解 ~ (1)含时分离变量, 得时间函数： $T(t)  = \exp%(-i E t /\hbar) $ \\
+%	  (2) 定态薛定谔方程:
+%	  \begin{equation*}
+%		  \begin{split}
+%			  \left [ -\frac{\hbar^2}{2\mu} \frac{\mathrm{d} ^2}{\mathrm{d} x^2} +\frac{1}{2}\mu \omega^2 x^2 +1 \right ]\Psi(x)&=E\Psi(x) \\ 
+%			  \left [ -\frac{\hbar^2}{2\mu} \frac{\mathrm{d} ^2}{\mathrm{d} x^2} +\frac{1}{2}\mu \omega^2 x^2  \right ]\Psi(x)&=(E-1)\Psi(x) 	
+%		  \end{split}
+%	  \end{equation*}
+%	  令 $E'=E-1$, 得:
+%	  \[\left [ -\frac{\hbar^2}{2\mu} \frac{\mathrm%{d} ^2}{\mathrm{d} x^2} +\frac{1}{2}\mu %\omega^2 x^2  \right ]\Psi(x)=E'\Psi(x) \]
+%	  此方程就是谐振子标准方程!
+%\end{frame}%
+
+%\begin{frame}
+%		\frametitle{}	  
+%	  能量固有值(能级$E_n$)
+%	  \begin{equation*}
+%		  E'_n=\left(n+\frac{1}{2}\right) \hbar %\omega=E_n-1, ~~~  ( n=0,1,2, ...)  
+%	  \end{equation*}  
+%	  定态波函数为
+%	  \begin{equation*}
+%		  \Psi_n(x,t) = \left( \frac{\alpha}{\sqrt%{\pi} 2^n n!}  \right) ^{1/2}  \exp(-\frac{ %\alpha^2 x^2}{2} -\frac{i}{\hbar} E_n t ) H%( \alpha x) , \qquad (\alpha ^2= \frac%{\mu\omega}{\hbar}) 
+%	  \end{equation*}  
+%\end{frame}
+	
+
+
+\begin{frame}[label=current]
+  \frametitle{ 5、电子云}
+\例[33]{求处于基态氢原子的最概然半径}
+\解 基态概率分布
+  $$
+w_{10}(r)=R_{10}^2(r) r^2=\left[\left(\frac{z}{a_0}\right)^{3 / 2} 2 e^{-\frac{z}{a_0} r}\right]^2 r^2=\frac{4}{a_0^3} e^{-\frac{2}{a_0 r} r} r^2
+$$
+求一阶导数
+$$
+\frac{d w_{10}}{d r}=\frac{4}{a_0^3}\left(2 r e^{-2 r / a_0}-r^2 \frac{2}{a_0} e^{-2 r / a_0}\right)
+$$
+最概然半径
+$$
+\frac{4}{a_0^3}\left(2 r e^{-2 r / a_0}-r^2 \frac{2}{a_0} e^{-2 r / a_0} \right) =0 
+$$
+\end{frame} 
+
+\begin{frame}[label=current]
+  \frametitle{}
+  解得
+  $$
+  r=0, \quad r=\infty, \quad  r=a_0
+  $$
+\begin{figure}[htbp]
+  \centering
+  \includegraphics[width=0.4\textwidth]{figs/dzy.png}
+  %\caption{}
+    %\label{fig:}
+\end{figure}
+波尔半径$ r=a_0  $ 处只是电子出现概率最大的位置 
+\end{frame} 
+
+\begin{frame}
+	\frametitle{}
+  \begin{center}
+	   \includegraphics[width=1\textwidth]{figs/2022-03-30-18-45-45.png}
+  \end{center}
+\end{frame}
+
+\begin{frame}
+	\frametitle{}
+  \begin{center}
+	   \includegraphics[width=1\textwidth]{figs/2022-03-30-18-46-37.png}
+  \end{center}
+\end{frame}
+
+\begin{frame}
+	\frametitle{}
+  \begin{center}
+	   \includegraphics[width=1\textwidth]{figs/2022-03-30-18-48-34.png}
+  \end{center}
+\end{frame}
+
+\begin{frame}
+	\frametitle{}
+  \begin{center}
+	   \includegraphics[width=1\textwidth]{figs/2022-03-30-18-49-45.png}
+  \end{center}
+\end{frame}
+
+\begin{frame}
+	\frametitle{}
+  \begin{center}
+	   \includegraphics[width=1\textwidth]{figs/2022-03-30-18-55-10.png}
+  \end{center}
+\end{frame}
+
+
+\begin{frame}[label=current]
+  \frametitle{课外作业}
+  \begin{enumerate}
+    \item 试用不确定性原理估算氢原子基态能量
+    \item 粒子处于如下中心势场，试求能量本征值
+    \[U(r)= \frac{a}{r} + \frac{b}{r^2}, \qquad (a,b>0) \]
+    \item 求粒子处于如下势场中的能量本征值
+        \[ V(x) = \left\{ \begin{aligned}
+			&\frac{1}{2}\mu \omega x^2, qquad (x>0) \\ 
+			& \infty, \qquad (x<0)
+		\end{aligned}\right.\] 
+	\item 求粒子处于如下势场中的能量本征值
+        \[ V(x) = \lambda x, \qquad (\lambda>0)\] 
+    \item 写出氢原子第一激发态的波函数,并求$\psi _{210}$态时电子的径向分布函数、角向分布函数及最概然角度
+  \end{enumerate}
+\end{frame} 
+
+
+
+\begin{frame}[label=current]
+  \frametitle{本章要点}
+  \begin{enumerate}
+    \item 求解自由粒子波函数，箱归一化
+    \item 求解各种无限深势阱问题
+    \item 束缚态与量子化
+    \item 谐振子波函数，零点振动能, 数态
+    \item 量子隧道效应的表述，隧穿系数变化的基本规律及影响因素
+    \item 氢原子的能级,简并度,解函数，各力学量的可能值、概率、平均值计算
+    \item 电子云，最概然半径, 轨道取向, 最概然角度
+  \end{enumerate}
+
+\end{frame} 

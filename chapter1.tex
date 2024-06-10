@@ -1,0 +1,750 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame} [plain]
+    \frametitle{}
+    %\Background[2] 
+    \begin{center}
+    { {\bf \huge 第一章：绪论 }}
+    \end{center}  
+    \addtocounter{framenumber}{-1}   
+\end{frame}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{课程简介}
+
+\begin{frame}
+    \frametitle{课程目标}
+        \begin{enumerate}
+            \Item 量子力学基本理论
+            \Item 量子力学描述实际问题
+            \Item 量子力学求解
+        \end{enumerate}
+\end{frame}
+\begin{frame} 
+    \frametitle{分数构成}
+        \begin{enumerate}
+            \Item 平时成绩 30\%
+            \Item 期中成绩 20\%
+            \Item 期末成绩 50\%
+        \end{enumerate}
+\end{frame}
+
+\begin{frame} 
+    \frametitle{教学效果}
+    \centering
+    \includegraphics[width=1.0\textwidth,height=5.0cm]{figs/QMexam1.png}
+\end{frame}
+
+\begin{frame}
+    \frametitle{参考书目}
+        \begin{itemize}
+            \Item 《量子力学》卷I，II， 曾谨言， 科学出版社， 2008           
+            \Item Principles of quantum mechanics, shankar
+            \Item Modern quantum mechanics, shankar
+            \Item Lectures on quantum mechanics, weinberg
+            \Item Principles of quantum mechanics, Dirac
+        \end{itemize}
+\end{frame}
+
+\begin{frame}
+    \begin{atcbox}{三条军规}
+        \begin{enumerate}
+            \Item 具有波粒二象性的物体处于叠加态
+            \Item 不去测量，则保持在叠加态
+            \Item 测量，则得到的结果是随机的
+        \end{enumerate}
+    \end{atcbox}
+\end{frame}
+
+\section{能量子假说}
+
+\subsection{伟大成就}
+
+\begin{frame}[t]
+    \frametitle{经典物理伟大成就}
+    \begin{atcbox}
+    {经典物理伟大成就}
+        \begin{enumerate}
+            \Item 牛顿力学
+            \Item 电磁学
+            \Item 热力学与统计物理学
+        \end{enumerate}
+    \end{atcbox}  
+    \begin{quotation}
+        "There is nothing new to be discovered in physics now. All that remains is 
+        more and more precise measurements"   \\
+        \rightline{$\cdots$ Lord Kelvin (1900)\hspace{3em}}
+    \end{quotation}
+\end{frame}
+
+\begin{frame}
+    \frametitle{}
+    \begin{quotation}
+        "But the beauty and clearness ... is obscured by two small puzzling clouds \faCloud "  \\
+        \rightline{$\cdots$ Lord Kelvin (1900.4)\hspace{3em}}   
+    \end{quotation}
+    ~~ \vspace{0.3em}
+    \begin{atcbox}{两朵乌云}    
+        \begin{enumerate}
+        \Item 迈克尔逊-莫雷实验
+        \Item 黑体辐射实验
+        \end{enumerate}
+    \end{atcbox} 
+\end{frame}
+
+\begin{frame}
+    \frametitle{迈克尔逊-莫雷实验}
+    \begin{center}
+    \includegraphics[width=0.8\textwidth]{figs/michel.png}
+    \end{center}
+    干涉条纹零没移动. \dots \\
+    以太不存在
+\end{frame}
+
+\begin{frame}
+    建立相对论
+    \begin{center}
+        \includegraphics[width=0.4\textwidth]{figs/relativity.jpg}
+    \end{center}   
+    改变人们对时空的看法
+\end{frame}
+
+\begin{frame}
+    \frametitle{黑体辐射实验}
+    \begin{center}
+    \includegraphics[width=0.7\textwidth]{figs/2021-12-01-23-47-27.png}
+    \end{center}
+    经典物理学里没有能精确描述辐射曲线的函数
+\end{frame}
+\begin{frame}
+    量子力学建立
+    \begin{center}
+        \includegraphics[width=0.45\textwidth]{figs/mqm.jpg}
+    \end{center}   
+    改变了人们对物质的看法
+\end{frame}
+
+\begin{frame}
+    \frametitle{现代科学基石}
+    \begin{center}
+        \includegraphics[width=0.75\textwidth]{figs/stone.png}
+    \end{center}   
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{普朗克公式}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}
+    \frametitle{黑体辐射实验}
+    \emf[黑体:]  在任意温度下都能完全吸收任意波段电磁波的理想物体模型
+    \begin{center}
+        \includegraphics[width=0.5\textwidth]{figs/blackbody_radn_curves.png}
+    \end{center}
+    \emf[实验发现：] （1）物体在任何温度下都有热辐射，（2）峰位频率与温度成正比。
+\end{frame}
+
+\begin{frame}
+    \frametitle{三个经验公式}
+    \begin{center}
+        \includegraphics[width=0.7\textwidth]{figs/threelaws.png}
+    \end{center}
+\end{frame}
+
+\begin{frame} [t]
+    \frametitle{}
+    \emf[维恩公式：] 
+    \begin{equation*}
+        \rho(\nu) d \nu=c_{1} \nu^{3} e^{-c_{2} \nu / T} d \nu 
+    \end{equation*}
+    从电磁波理论导出 (1893), 只能正确描述高频辐射.\\ 
+    {\color{deepblue} Nobel Prize in physics（1911）}\\
+    ~~\\ 
+    \emf[瑞-金公式:] 
+    \begin{equation*}
+        \rho(\nu, T) d \nu=\frac{8 \pi}{c^{3}} \nu^{2} k T d \nu 
+    \end{equation*}
+    热力学统计物理学导出 (1900), 只能正确描述低频辐射.\\ 
+   {高频区存在紫外灾难} 
+    \begin{equation*}
+         \int_0 ^\infty \frac{8 \pi}{c^{3}} \nu^{2} k T d \nu \to \infty 
+    \end{equation*}
+    {\color{deepblue} Nobel Prize in physics（1904）}\\ \vspace{0.3em}
+\end{frame}
+
+\begin{frame}
+    \frametitle{}
+    \emf[普朗克公式:]  1900-10-19, Max Planck 为解决紫外灾难提出一个公式 
+    \begin{equation}
+        \boxed{\rho(\nu, T) d \nu=\frac{8 \pi}{c^{3}} \frac{h \nu^{3}}{e^{h \nu / K T}-1} d \nu}
+    \end{equation}
+    ${\color{red}\star}~$ 无理论来源, 经验公式，数据内插法，全波段相符！ \\
+    ~~\\ 
+    {\color{deepblue} Nobel Prize in physics（1918）}\\
+\end{frame}
+
+\begin{frame}
+    \centering
+    \begin{atcbox}{问题}
+        普朗克公式的理论来源在哪？
+    \end{atcbox}
+    \begin{atcbox}{方案}
+        1900-12-14, 普朗克基于\emf[能量子假说] 提出自己的解决方案
+    \end{atcbox}
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{能量子假说}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}{能量子假说}
+    \begin{atcbox}{能量子假说}
+    黑体是一份一份地辐射能量的(能量是量子化的
+    )
+    \begin{equation}
+        E=n\varepsilon \quad (n=1,2,3)
+    \end{equation}
+    能量子（单元）  $\varepsilon$ 是由热振动频率决定
+    \begin{equation}
+        \varepsilon=h\nu = \hbar \omega
+    \end{equation}
+    ${\color{red}\star}~$ 普朗克常数 $$h=6.6260693(11)\times 10^{-34} J\cdot s,\quad \hbar=\frac{h}{2\pi}= 1.0545\times 10^{-34} J\cdot s$$
+    \end{atcbox}
+\end{frame}
+
+\begin{frame} {推导公式}
+    玻耳兹曼能量分布定律
+    \begin{equation*}
+        \frac{N_{i}}{N}=\frac{\exp \left(-\frac{E_{i}}{k T}\right)}{\sum_{i} \exp \left(\frac{-E_{i}}{k T}\right)}
+    \end{equation*}
+    \begin{figure}[htbp]
+        \centering
+        \includegraphics[width=0.8\textwidth]{figs/bolzdistr.png}
+        %\caption{}
+        %\label{fig:}
+    \end{figure}
+\end{frame}
+
+\begin{frame}
+    \frametitle{}
+    {\Bullet} 若能量连续，$E - E+ dE$ 区的能量子占比
+    \begin{equation*}
+        \frac{e^{-E / k T}}{\int\limits_{0}^{\infty} e^{-E / k T} d E}
+    \end{equation*}  
+    平均能量 
+    \begin{equation*}
+        <E>=\int\limits_{0}^{\infty} E \frac{e^{-E / k T}}{\int\limits_{0}^{\infty} e^{-E / k T} d E} d E = -kT \frac{Ee^{-E / k T}\vert_0 ^\infty-\int\limits_{0}^{\infty} e^{-E / k T} d E } {\int\limits_{0}^{\infty} e^{-E / k T} d E }= kT
+    \end{equation*}
+\end{frame}
+
+\begin{frame}
+    \frametitle{}
+    {\Bullet} 若能量分立   
+    \begin{equation*}
+        \frac{e^{-E / k T}}{\int\limits_{0}^{\infty} e^{-E / k T} d E} 
+        \implies \frac{e^{-E / k T}}{\sum\limits_{0}^{\infty} e^{-E / k T}} 
+        \implies \frac{e^{-nh\nu / k T}}{\sum\limits_{0}^{\infty} e^{-nhv / k T}} 
+    \end{equation*}    
+    平均能量
+    \begin{equation*}
+        \begin{split}
+            <E> = \sum\limits_{0}^{\infty} nh\nu\frac{e^{-nh\nu / k T}}{\sum\limits_{0}^{\infty} e^{-nh\nu / k T}} 
+            = -h\nu \frac{d}{dx} \frac{n e^{-nx}}{\sum\limits_{0}^{\infty} e^{-nx}} 
+            = \frac{h\nu}{e^{h\nu/kT}-1} 
+        \end{split} 
+    \end{equation*}
+    能量分立的影响
+    \begin{equation*}
+        \text{(连续)} \quad k T \leftarrow \frac{h \nu}{e^{ h \nu / k T}-1} \quad \text{(分立)} 
+    \end{equation*}
+\end{frame}
+
+\begin{frame}
+    瑞-金公式（能量连续）
+    \begin{equation*}
+        \rho(\nu, T) d \nu=\frac{8 \pi}{c^{3}} \nu^{2} k T d \nu 
+    \end{equation*}
+    把式中 $kT$ 代换成 $\dfrac{h \nu}{e^{ h \nu / k T}-1}$, 得
+    \begin{equation*}
+        \rho(\nu, T) d \nu=\frac{8 \pi}{c^{3}} \frac{h \nu^{3}}{e^{h \nu / K T}-1} d \nu
+    \end{equation*}
+    这正是普朗克公式
+\end{frame}
+
+\begin{frame}
+    \begin{atcbox}{意义}
+        普朗克能量子假说打破了经典物理学所谓连续观念的束缚, 开启了量子力学的大门。 
+    \end{atcbox}
+\end{frame}
+
+\begin{frame}
+    \frametitle{}
+    \centering
+    \begin{atcbox}{}
+        历史上，普朗克，德拜，艾伦菲斯特，劳厄，洛伦兹,庞加莱，泡利，玻色，爱因斯坦等从多角度推导过黑体辐射公式，每一次推导都给物理学带来了新的知识.  黑体辐射是一只会下金蛋的鹅。
+    \end{atcbox}
+\end{frame}
+
+\begin{frame}
+    \frametitle{}
+    \begin{atcbox}{学术讨论}
+        ~~\\ 
+        普朗克黑体辐射公式的理论来源是什么？
+        ~~\\ 
+    \end{atcbox}
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}
+    \frametitle{作业}
+   \begin{enumerate}
+       \item 写出能量子假说的内容
+       \item 什么是能量子
+       \item 从普朗克黑体辐射公式导出瑞-金公式、维恩公式、维恩位移定律
+   \end{enumerate}
+\end{frame}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{波粒二象性} 
+
+\subsection{光的波粒二象性} 
+
+\begin{frame}
+    \frametitle{粒子-波的不可调和性}
+	\begin{columns}
+		\begin{column}[t]{0.49\linewidth}
+			\emf[粒子性：] 
+			\begin{itemize}
+				\Item  确定的位置、能量、动量等
+				\Item  两个粒子不能同时占据同一位置
+				\Item  同一粒子也不能同时占据多个位置
+				\Item  碰撞现象
+			\end{itemize}
+		\end{column}
+		\begin{column}[t]{0.46\linewidth}
+			\emf[波动性:] 
+			\vspace{1ex}
+			\begin{itemize}
+				\Item  确定的波长、振幅、相位等
+				\Item  可以同时出现在同一位置
+				\Item  可以同时占据多个位置
+				\Item  衍射、干涉，无碰撞
+			\end{itemize}
+		\end{column}
+	\end{columns}
+    ~~\\ 
+    物理实验和生活常识表明：一个物体要么是粒子,要那是波！
+\end{frame}
+
+\begin{frame} 
+    \frametitle{光是粒子还是波？}
+    \begin{figure}
+        \centering
+        \subfigure[]{\includegraphics[width=7.4cm]{figs/2021-12-02-15-26-40.png}}
+        \subfigure[]{\includegraphics[width=4.5cm]{figs/2021-12-06-11-44-50.png}}
+        %\caption{} %图片标题
+        %\label{fig:1}  
+    \end{figure} 
+    \setcounter{subfigure}{0}  
+\end{frame}
+
+\begin{frame} {光的波动说}
+	\begin{columns}
+		\begin{column}[t]{0.46\linewidth}
+            水波
+            \begin{center}
+                \includegraphics[width=2.5in,height=2.5in]{figs/2021-12-02-15-46-16.png}
+            \end{center}
+		\end{column}
+		\begin{column}[t]{0.46\linewidth}
+            光波
+            \begin{center}
+                \includegraphics[width=2.5in,height=2.5in]{figs/2021-12-02-15-49-36.png}
+            \end{center}
+		\end{column}
+	\end{columns}
+\end{frame}
+
+\begin{frame}
+    \begin{center}
+        \includegraphics[width=0.70\textwidth]{figs/2021-12-02-16-23-16.png}
+    \end{center}
+    光只是一定波长范围内的电磁波
+\end{frame}
+
+\begin{frame} 
+    波动说面临的困难：
+    \begin{itemize}
+        \Item  黑体辐射
+        \Item  光电效应
+        \Item  康普顿效应
+        \Item  氢原子光谱
+    \end{itemize}
+\end{frame}
+
+\begin{frame} 
+    \frametitle{光电效应实验}   
+    \begin{center}
+       \includegraphics[width=0.53\textwidth]{figs/2021-12-02-16-01-21.png}
+   \end{center}  
+   {\Bullet} 具有瞬时性 \\
+   {\Bullet} 存在临界频率 $\nu_0$ \\
+   {\Bullet} 光电子能量由光的频率决定
+\end{frame}  
+
+\begin{frame} 
+    1905, 爱因斯坦考虑推导普朗克公式  \\
+    \begin{itemize}
+        \Item  普朗克公式与实验相符但没有理论来源
+        \Item  瑞-金公式有理论来源但存在紫外灾难
+        \Item  为解决紫外灾难, 爱因斯坦提出光量子假说
+        \Item  利用光量子假说, 爱因斯坦解决了光电效应问题
+    \end{itemize}
+\end{frame}
+
+\begin{frame}
+    \frametitle{}
+       爱因斯坦认为：黑体辐射的光强分布应该就是光子数分布
+        \begin{figure}
+            \centering
+            \subfigure[光强分布]{\includegraphics[width=0.495\textwidth]{figs/blackbody_radn_curves.png}}
+            \subfigure[粒子数分布]{\includegraphics[width=0.495\textwidth]{figs/2022-01-17-14-21-43.png}}
+        \end{figure}
+    \setcounter{subfigure}{0}
+\end{frame}
+
+\begin{frame} 
+    \frametitle{光量子假说}
+    \begin{atcbox}{光量子假说}
+        {\begin{itemize}
+            \Item 光不仅具有波动性，也具有粒子性，称为光量子（光子）, 
+            \Item 光子具体确定的能量
+        \[\varepsilon=h\nu = \hbar \omega\]
+            \Item $n$ 个光量子的能量是 $$E = n\varepsilon = nh\nu$$
+            \Item 光子具有确定的动量 (1918) 
+            \[p=\frac{E}{c}=\frac{h\nu}{c}=\frac{h}{\lambda}, \quad \vec{p} = \frac{h}{\lambda} \vec{n} = \hbar \vec{k}\]
+        \end{itemize}}
+    \end{atcbox}
+\end{frame}
+
+\begin{frame} 
+    \frametitle{光电效应公式}
+    基于光量子假说，提出光电效应公式
+    \[
+    \frac{1}{2}m_eV_0^2=h\nu-W
+    \]
+    \begin{itemize}
+        \Item  瞬时性：光量子碰上电子时，能量被瞬时吸收
+        \Item  临界频率：$\nu_0=\frac{W}{h} $
+        \Item  光电子能量与光的频率决定: $E_k=h\nu-W$
+    \end{itemize}
+    ~~\\ 
+    {\color{deepblue} Nobel Prize in physics（1921）}
+\end{frame}
+
+\begin{frame} 
+    基于光电效应公式:
+$$
+\frac{1}{2}m_eV_0^2=h\nu-W
+$$
+1916年，密立根实验上测定普朗克系数，验证光子说\\
+~~\\ 
+{\color{deepblue}Nobel Prize in physics (1923)} 
+\end{frame}
+
+\begin{frame} 
+    \begin{atcbox}{光量子假说的意义}
+        \begin{itemize}
+            \Item  揭示能量子的本质：在于光本身是量子的，具有粒子性
+            \Item  揭示光的本质：光既具波动性又具粒子性。
+        \end{itemize}
+    \end{atcbox}
+    ~~\\ 
+    \begin{quotation}
+        "在近代物理学结出硕果的那些重大问题中，很难找到一个问题是爱因斯坦没有做出过重要贡献的。
+        在他的各种推测中，他有时可能也曾经没有中标的，例如他的光量子假设，就有点迷失了方向\dots"  \\
+        \rightline{$\cdots$ 普朗克\hspace{3em}}   
+    \end{quotation}
+\end{frame}
+
+\begin{frame}   
+    \frametitle{康普顿效应 (1922)}
+    
+    \begin{center}
+        \begin{overpic}[scale=0.35]{figs/comptonscattering.png}
+            \put(30,92){经验公式：$\lambda_{out}-\lambda_{in}=k(1-\cos \theta)$ }
+        \end{overpic} 
+    \end{center}  
+\end{frame}
+
+\begin{frame} 
+    ~~\\ 
+   \emf[ 推导经验公式：] 电子的能量
+    \begin{equation*}
+        E_e^2 =m_ec^2=p_e^2c^2 +m_0 ^2 c^4 
+    \end{equation*}
+    光子能量
+    \begin{equation*}
+        E =pc 
+    \end{equation*}
+    设初始电子不动，有能量守恒定律
+    \[E_i + m_0 c^2 = E_o + m_ec^2 \]
+    移项并平方
+    \begin{equation*}
+        \begin{split}
+        (E_i -E_o + m_0 c^2)^2 &= E_e ^2\\
+        (p_i c-p_o c + m_0 c^2) ^2 &= p_e ^2 c^2 +m_0 ^2 c^4 \\
+        (p_i-p_o)^2 +2 m_0 (p_i c-p_o c) &= p_e ^2 \qquad \cdots (1)
+    \end{split}
+    \end{equation*}
+\end{frame}
+
+\begin{frame}  
+    动量守恒定律
+    \[\vec{p}_i -\vec{p}_o = \vec{p}_e\]
+    标量化
+    \begin{equation*}
+        \begin{split}
+            (\vec{p}_i -\vec{p}_o)\cdot (\vec{p}_i -\vec{p}_o)  &= \vec{p}_e\cdot \vec{p}_e   \\
+            p_i ^2 + p_o ^2 -2p_i p_o \cos \theta &= p_e ^2  
+        \end{split}
+    \end{equation*}
+    代入（1）式, 得
+    \begin{equation*}
+        \begin{split}
+            p_i ^2 + p_o ^2 -2p_i p_o \cos \theta &= (p_i-p_o)^2 +2 m_0 (p_i c-p_o c) \\
+            \frac{1}{p_o} -\frac{1}{p_i} &= \frac{1}{m_0 c} (1-\cos \theta) \\
+            \lambda_o -\lambda_i &= \lambda _e (1-\cos \theta) 
+        \end{split}
+    \end{equation*}
+    \textcolor{red}{结束！}
+\end{frame}
+
+\begin{frame}   
+    \begin{atcbox}{意义}
+        康普顿效应表明:\\
+        {\Bullet}光具有粒子性 \\
+        {\Bullet} 波长为($\lambda$) 的光具有量子化动量 \[\vec{p}=\hbar \vec{k}\]
+        {\Bullet} 动量守恒定律在原子尺度有效
+    \end{atcbox}   
+    \color{deepred}{Nobel Prize in physics（1927）}\\
+\end{frame}
+
+\begin{frame}  
+     \frametitle{氢原子光谱}
+     \begin{center}
+        \includegraphics[width=0.6\textwidth]{figs/2022-01-17-14-02-45.png}
+    \end{center}  
+    经验公式：
+       $$\dfrac{1}{\lambda}=R_H c (\dfrac{1}{m^2} -\dfrac{1}{n^2})$$ 
+\end{frame}
+
+\begin{frame} 
+    \frametitle{}  
+    卢瑟福有核原子模型：
+    \begin{center}
+        \includegraphics[width=0.8\textwidth]{figs/utherford_atom.png}
+    \end{center}  
+\end{frame}
+
+\begin{frame}   \frametitle{}
+    \begin{atcbox}{玻尔的氢原子假说}
+        \begin{itemize}
+            \item 定态假设： 电子在核外作圆周运动，符合量子化条件的态是稳定的，不辐射能量，称为定态 
+            \[ L=n \frac{h}{2\pi}= n \hbar,\qquad (\oint p_i dq_i = n_i h)\] 
+            \item 跃迁假设：电子从一个定态跃迁到另一定态，会发射或吸收一个光子
+            \[ h\nu=E_n -E_m \]
+        \end{itemize}
+    \end{atcbox}
+\end{frame}
+
+\begin{frame}   
+    \frametitle{}
+    推导光谱经验公式\\
+    {\Bullet} 定态轨道半径:
+    \begin{equation*}
+        \begin{split}
+            m\frac{v^2}{r}&=\frac{1}{4\pi\epsilon_0} \frac{e^2}{r^2} \\
+            L_n=&n\hbar=mvr_n  \\
+            r_n&= n^2 (\frac{\epsilon_0 h^2}{m\pi e^2}) =n^2 r_1   
+        \end{split} 
+     \end{equation*}
+     {\Bullet} 定态轨道能量: 
+     \begin{equation*}
+        \begin{split}
+            E_n &= T + U \\
+            &= \frac{1}{2}mv^2- \frac{1}{4\pi\epsilon_0} \frac{e^2}{r_n ^2} \\
+            &= \frac{1}{n^2} (-\frac{m e^4}{8 \epsilon_0 ^2 h^2}) = \frac{E_1}{n^2}
+        \end{split}  
+     \end{equation*}
+\end{frame}
+
+\begin{frame} \frametitle{}
+    {\Bullet} 光谱: 
+    \begin{equation*}
+        \begin{split}
+         \nu&=\frac{E_n -E_m}{h} \\
+         &= \frac{m e^4}{4\pi \hbar ^3} [\frac{1}{m^2} -\frac{1}{n^2}]
+        \end{split}  
+     \end{equation*}
+     {\Bullet} 里德伯常量 : 
+     \[R_{theo}= \frac{m e^4}{4\pi \hbar ^3 c} =1.0973731\times 10^7 m^{-1}\]
+    \[R_{exp}=1.0974\times10^7 m^{-1} \]  
+\end{frame}
+
+\begin{frame}   
+    \frametitle{玻尔的原子模型}  
+    \begin{center}
+        \includegraphics[width=0.6\textwidth]{figs/bohrmodel.png}
+    \end{center}  
+\end{frame}
+
+\begin{frame}  
+  {\Bullet} In 1905, 爱因斯坦提出光量子具有确定的能量 \[ E = h\nu \] 
+  {\Bullet} In 1918, 爱因斯坦提出光量子具有确定的动量   \[ p=\frac{h}{\lambda}\]
+  至此，人们把无质量光量子称为光子（photon） 
+\end{frame}
+
+\begin{frame} 
+    \frametitle{}  
+    {\Bullet} 1905年爱因斯坦提出的光量子概念，不受名人的重视，普朗克把爱因斯坦的光量子概念说成是“迷失了方向”。\\
+    ~~\\ 
+    {\Bullet} 1913年，28岁的玻尔，创造性地把光量子概念用到卢瑟福模型上，成功破解氢原子光谱问题 \\
+    ~~\\ 
+    {\color{deepblue} {\Bullet} Nobel Prize in physics（1922）}\\ 
+\end{frame}
+
+\begin{frame} 
+    \frametitle{光的波粒二象性}  
+  $$\begin{cases}
+    \text{光具有波动性}\\
+    \text{~~\qquad 光的干涉} \\
+    \text{~~\qquad 光的衍射} \\
+    \text{光具有粒子性}\\
+    \text{~~\qquad 黑体辐射} \\
+    \text{~~\qquad 光电效应} \\
+    \text{~~\qquad 康普顿效应} \\
+   \end{cases}$$
+   ~~\\
+   光既具波动性又具粒子性，称为光的波-粒二象性 (wave-particle duality)
+\end{frame}
+
+\begin{frame}
+    \frametitle{}
+    \begin{atcbox}{学术讨论}
+        ~\\
+        How can the light behave like both particles and waves ?
+    \end{atcbox}
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{物质波假说}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}   
+  \frametitle{物质波假说}
+  \begin{atcbox}{物质波假说}
+  1923年, 德布罗意（de Broglie）提出：如果作为经典波的光能够具有量子粒子性，那么作为经典粒子的物体也具有量子波动性，波长和频率为
+  \[\lambda=\frac{h}{p}, \qquad \nu =\frac{E}{h}\]
+  \end{atcbox}
+\end{frame}
+
+\begin{frame}  
+    \frame{}
+    \例[1]{试计算玻尔氢原子轨道上电子的波长}
+    \解 根据定态假设，有
+    \begin{equation*}
+        \begin{split}
+            L&=n\hbar \\
+            \vec{r} \cdot \vec{p} & =  n\frac{h}{2 \pi} \\
+            2\pi r&=  n\frac{h}{p}\\
+            2\pi r&=  n\lambda  \\
+        \end{split} 
+     \end{equation*}
+     这正是驻波条件！ \\
+     代入 $n=1$,即得第一玻尔轨道上电子的波长
+     \[\lambda _e = (\frac{2\epsilon_0 h^2}{m e^2})\]
+\end{frame}
+
+
+\begin{frame}   
+  \frametitle{实验验证}
+  1、电子衍射实验(戴维森和革末, 1927)
+  \begin{center}
+    \includegraphics[width=0.46\textwidth]{figs/elediffr.jpeg} \\
+    \end{center} 
+\end{frame}
+\begin{frame}   
+    \begin{center}
+      \includegraphics[width=0.55\textwidth]{figs/scatting.png} \\
+    \end{center} 
+       由布拉格公式 $$2d\sin \theta=n\lambda $$
+       所得的电子波长，正好比电子的理论波长（德布罗意波长）相符\\
+       ~~\\ 
+  {\color{deepblue} Nobel Prize in physics（1937）}  
+  \end{frame}
+
+\begin{frame}{}
+    2、电子双缝干涉实验
+    \includemedia[
+    width=1.0\linewidth,height=0.58\linewidth, 
+    activate=pageopen,
+    addresource=figs/doubleslite-n.mp4,
+    flashvars={
+    source=figs/doubleslite-n.mp4
+    autoPlay=true
+    loop=true
+    }
+    ]{}{VPlayer.swf}
+\end{frame}
+
+\begin{frame}
+      \frametitle{}
+      3、$C_{60}$分子的双缝干涉实验
+    \begin{center}
+         \includegraphics[width=0.8\textwidth,height=2.3in]{figs/c60.png}
+    \end{center}
+\end{frame}
+
+\begin{frame}
+    \frametitle{}   
+    \begin{atcbox}{结论}
+    {波粒二象性是一切物质的本质特性}
+    \end{atcbox} 
+        \begin{figure}
+            \centering
+            \subfigure[]{\includegraphics[width=4.5cm]{figs/ds-1.jpeg}}
+            \subfigure[]{\includegraphics[width=4.5cm]{figs/ds-2.jpeg}}
+            \subfigure[]{\includegraphics[width=4.5cm]{figs/ds-3.jpeg}}
+        \end{figure}
+    \setcounter{subfigure}{0}
+\end{frame}
+
+\begin{frame}
+    \frametitle{学术讨论：}
+    \begin{atcbox}{Big problem}
+        \large  How to interpret the world where waves are particles and particles are waves？
+    \end{atcbox}
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}
+    \frametitle{课外作业}
+    \begin{enumerate}
+        \item 计算氢原子第一玻尔半径上电子的德布罗意波长
+        \item 计算一个静态电子经100 V电势差加速后的德布罗意波长
+        \item 一个He-Ne 激光器发射波长为633 nm的激光。若该激光器功率为1 mW，求每秒钟发射多少光子
+    \end{enumerate}
+\end{frame}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}
+    \frametitle{本章要点}
+    \begin{enumerate}
+        \item 黑体、紫外灾难、普朗克公式、普朗克能量子假说
+        \item 光电效应、光量子假说、光电效应公式
+        \item 定态、量子跃迁、玻尔氢原子模型
+        \item 物质波假说、电子的德布罗意波长
+        \item 康普顿效应实验、戴维森和革末实验、普朗克常数
+    \end{enumerate}
+\end{frame}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
